@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madelynn Ave | Meta Ads Strategic Audit Q1 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #16162a;
+            --bg-card-hover: #1e1e3a;
+            --border: rgba(255,255,255,0.06);
+            --accent-green: #00d9a5;
+            --accent-green-dim: rgba(0, 217, 165, 0.15);
+            --accent-purple: #8b5cf6;
+            --accent-purple-dim: rgba(139, 92, 246, 0.15);
+            --accent-blue: #3b82f6;
+            --accent-pink: #ec4899;
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --accent-brand: #785245;
+            --accent-brand-light: #D3CBC0;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6b6b80;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        .slide {
+            min-height: 100vh;
+            padding: 48px 64px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid var(--border);
+        }
+        .slide-number {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .slide-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-brand);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        h1 { font-family: 'DM Sans', sans-serif; font-size: 52px; font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+        h2 { font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; margin-bottom: 28px; }
+        h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+        h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        p { font-size: 15px; color: var(--text-secondary); max-width: 720px; }
+        .subtitle { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin-bottom: 32px; font-weight: 400; }
+        .cover { justify-content: center; align-items: center; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(120, 82, 69, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(0, 217, 165, 0.05) 0%, transparent 40%); }
+        .cover h1 { font-size: 56px; }
+        .cover .meta { margin-top: 48px; display: flex; gap: 48px; font-size: 13px; color: var(--text-secondary); }
+        .cover .meta span { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 32px 0; }
+        .metrics-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+        .metrics-grid.three-col-m { grid-template-columns: repeat(3, 1fr); }
+        .metric-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; position: relative; }
+        .metric-card.green { border-top: 3px solid var(--accent-green); }
+        .metric-card.purple { border-top: 3px solid var(--accent-purple); }
+        .metric-card.red { border-top: 3px solid var(--accent-red); }
+        .metric-card.orange { border-top: 3px solid var(--accent-orange); }
+        .metric-card.brand { border-top: 3px solid var(--accent-brand); }
+        .metric-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; }
+        .metric-value { font-family: 'DM Sans', sans-serif; font-size: 32px; font-weight: 700; color: var(--text-primary); line-height: 1.1; }
+        .metric-value.large { font-size: 40px; }
+        .metric-change { font-size: 12px; margin-top: 8px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+        .metric-change.up { color: var(--accent-green); }
+        .metric-change.down { color: var(--accent-red); }
+        .metric-change.neutral { color: var(--text-muted); }
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        .data-table th { text-align: left; padding: 12px 16px; background: var(--bg-card); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        .data-table tr:hover td { background: var(--bg-card-hover); }
+        .data-table .highlight { color: var(--text-primary); font-weight: 500; }
+        .data-table .green { color: var(--accent-green); font-weight: 600; }
+        .data-table .red { color: var(--accent-red); font-weight: 600; }
+        .data-table .purple { color: var(--accent-purple); font-weight: 600; }
+        .data-table .orange { color: var(--accent-orange); font-weight: 600; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+        .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+        .insight-box { background: var(--bg-card); border-left: 3px solid var(--accent-green); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
+        .insight-box.purple { border-left-color: var(--accent-purple); }
+        .insight-box.brand { border-left-color: var(--accent-brand); }
+        .insight-box.red { border-left-color: var(--accent-red); }
+        .insight-box.orange { border-left-color: var(--accent-orange); }
+        .insight-box h4 { color: var(--accent-green); margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .insight-box.purple h4 { color: var(--accent-purple); }
+        .insight-box.brand h4 { color: var(--accent-brand); }
+        .insight-box.red h4 { color: var(--accent-red); }
+        .insight-box.orange h4 { color: var(--accent-orange); }
+        .insight-box p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; max-width: none; }
+        .progress-container { margin: 12px 0; }
+        .progress-label { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 13px; color: var(--text-secondary); }
+        .progress-label .value { color: var(--text-primary); font-weight: 600; }
+        .progress-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+        .progress-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent-purple) 0%, var(--accent-green) 100%); }
+        .progress-fill.green { background: var(--accent-green); }
+        .progress-fill.purple { background: var(--accent-purple); }
+        .progress-fill.red { background: var(--accent-red); }
+        .progress-fill.orange { background: var(--accent-orange); }
+        .progress-fill.brand { background: var(--accent-brand); }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .concept-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; position: relative; overflow: hidden; }
+        .concept-card::after { content: ''; position: absolute; top: -30%; right: -30%; width: 60%; height: 60%; background: radial-gradient(circle, var(--accent-purple-dim) 0%, transparent 70%); pointer-events: none; }
+        .concept-number { font-family: 'DM Sans', sans-serif; font-size: 48px; font-weight: 700; color: rgba(139, 92, 246, 0.15); position: absolute; top: 16px; right: 20px; }
+        .concept-title { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; position: relative; z-index: 1; color: var(--text-primary); }
+        .tag { display: inline-block; padding: 4px 10px; background: var(--accent-purple-dim); border-radius: 6px; font-size: 10px; font-weight: 600; color: var(--accent-purple); margin-right: 6px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tag.green { background: var(--accent-green-dim); color: var(--accent-green); }
+        .tag.red { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.orange { background: rgba(245, 158, 11, 0.15); color: var(--accent-orange); }
+        .tag.brand { background: rgba(120, 82, 69, 0.2); color: var(--accent-brand-light); }
+        .check-list { list-style: none; margin: 16px 0; }
+        .check-list li { padding: 8px 0; padding-left: 24px; position: relative; color: var(--text-secondary); font-size: 14px; }
+        .check-list li::before { content: ''; position: absolute; left: 0; top: 12px; width: 8px; height: 8px; border-radius: 2px; background: var(--accent-green); }
+        .check-list li.red::before { background: var(--accent-red); }
+        .check-list li.orange::before { background: var(--accent-orange); }
+        .comparison { display: grid; grid-template-columns: 1fr 80px 1fr; gap: 24px; align-items: center; margin: 32px 0; }
+        .comparison-box { padding: 28px; border-radius: 12px; text-align: center; background: var(--bg-card); border: 1px solid var(--border); }
+        .comparison-box.old { border-color: rgba(239, 68, 68, 0.3); }
+        .comparison-box.new { border-color: rgba(0, 217, 165, 0.3); }
+        .comparison-vs { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 700; color: var(--text-muted); text-align: center; }
+        .slide-footer { margin-top: auto; padding-top: 32px; font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; }
+        @media print { .slide { page-break-after: always; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--bg-card); border-radius: 4px; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .badge.up { background: rgba(0,217,165,0.15); color: var(--accent-green); }
+        .badge.down { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+        .divider { height: 1px; background: var(--border); margin: 24px 0; }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Cover -->
+<section class="slide cover">
+    <div class="slide-tag">Meta Ads Strategic Audit</div>
+    <h1>Madelynn Ave</h1>
+    <p class="subtitle">Performance Analysis, Creative Diagnosis & Growth Roadmap</p>
+    <div class="meta">
+        <span>Feb 17 – Mar 18, 2026</span>
+        <span>vs Jan 18 – Feb 16, 2026</span>
+        <span>Target: 3.5x+ ROAS</span>
+        <span>Target CPA: $150–$310</span>
+    </div>
+</section>
+
+<!-- SLIDE 2: Executive Summary -->
+<section class="slide">
+    <span class="slide-number">02 / 13</span>
+    <div class="slide-tag">Executive Summary</div>
+    <h2>30-Day Performance Overview</h2>
+
+    <div class="metrics-grid">
+        <div class="metric-card orange">
+            <div class="metric-label">Total Ad Spend</div>
+            <div class="metric-value large">$41,353</div>
+            <div class="metric-change up">+45.2% vs prior period</div>
+        </div>
+        <div class="metric-card orange">
+            <div class="metric-label">Total Revenue</div>
+            <div class="metric-value">$71,066</div>
+            <div class="metric-change up">+79.1% vs prior period</div>
+        </div>
+        <div class="metric-card orange">
+            <div class="metric-label">Blended ROAS</div>
+            <div class="metric-value">1.72x</div>
+            <div class="metric-change up">vs 1.39x prior (target: 3.5x)</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Blended CPA</div>
+            <div class="metric-value">$326</div>
+            <div class="metric-change up">vs $401 prior period</div>
+        </div>
+        <div class="metric-card purple">
+            <div class="metric-label">Total Purchases</div>
+            <div class="metric-value">127</div>
+            <div class="metric-change up">+78.9% vs 71 prior</div>
+        </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="insight-box">
+            <h4>Positive Momentum</h4>
+            <p>Purchases up 79% and CPA improved from $401 to $326 period over period. ROAS recovered from 1.39x to 1.72x. AOV holding at $560, consistent with prior period. The Combined Christian + Fine Art test has scaled significantly and is driving meaningful volume alongside the core TLIMS campaign.</p>
+        </div>
+        <div class="insight-box red">
+            <h4>Critical Issues to Address</h4>
+            <p><strong style="color: var(--text-primary);">$20,751 in identifiable wasted spend</strong> on ads with ROAS below 1.5x or zero purchases with $200+ spend. ROAS still 51% below the 3.5x target. The Combined test is scaling fast but CPA at $473 per purchase is significantly above target. Easter campaign has spent $2,800 with only 11 purchases total.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>02 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 3: Period-Over-Period Comparison -->
+<section class="slide">
+    <span class="slide-number">03 / 13</span>
+    <div class="slide-tag">Trend Analysis</div>
+    <h2>Period-Over-Period Comparison</h2>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Jan 18 – Feb 16, 2026</th>
+                <th>Feb 17 – Mar 18, 2026</th>
+                <th>Change</th>
+                <th>Direction</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="highlight">Total Spend</td>
+                <td>$28,483</td>
+                <td>$41,353</td>
+                <td>+$12,870</td>
+                <td><span class="badge up">+45.2%</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Total Revenue</td>
+                <td>$39,679</td>
+                <td>$71,066</td>
+                <td>+$31,387</td>
+                <td><span class="badge up">+79.1%</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Purchases</td>
+                <td>71</td>
+                <td>127</td>
+                <td>+56</td>
+                <td><span class="badge up">+78.9%</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Blended ROAS</td>
+                <td>1.39x</td>
+                <td class="orange">1.72x</td>
+                <td>+0.33x</td>
+                <td><span class="badge up">+23.7%</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Blended CPA</td>
+                <td>$401</td>
+                <td class="green">$326</td>
+                <td>-$75</td>
+                <td><span class="badge up">-18.7%</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">AOV</td>
+                <td>$559</td>
+                <td>$560</td>
+                <td>+$1</td>
+                <td><span class="badge up">Stable</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="three-col" style="margin-top: 16px;">
+        <div class="card">
+            <h4 style="color: var(--accent-green);">What Is Improving</h4>
+            <ul class="check-list" style="font-size: 13px;">
+                <li>Purchases nearly doubled (+79%) on +45% more spend</li>
+                <li>CPA down 19% demonstrating better targeting</li>
+                <li>ROAS trend moving in the right direction</li>
+                <li>Revenue efficiency improving vs prior period</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-orange);">What Needs Attention</h4>
+            <ul class="check-list" style="font-size: 13px;">
+                <li class="orange">ROAS still 51% below the 3.5x target</li>
+                <li class="orange">Combined test CPA at $473, too high to scale</li>
+                <li class="orange">Fine Art ABO showing declining efficiency</li>
+                <li class="orange">Easter campaign spending without strong return</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-brand);">Strategic Context</h4>
+            <p style="font-size: 13px; color: var(--text-secondary);">Oscar confirmed in Slack that January outperformed historically slow seasonal norms. The account has now added the Combined test campaign which is consuming a significant portion of budget, pulling blended ROAS down while it finds its footing.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>03 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 4: Campaign Performance -->
+<section class="slide">
+    <span class="slide-number">04 / 13</span>
+    <div class="slide-tag">Campaign Analysis</div>
+    <h2>Campaign Performance Breakdown</h2>
+    <p style="margin-bottom: 24px; font-size: 14px;">Feb 17 – Mar 18, 2026. Revenue and purchase data sourced from ad-level aggregation for maximum accuracy.</p>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Campaign</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>ROAS</th>
+                <th>Purchases</th>
+                <th>CPA</th>
+                <th>vs Prior CPA</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.03);">
+                <td class="highlight">HM – TLIMS – CBO</td>
+                <td>$19,172</td>
+                <td class="green">$33,275</td>
+                <td class="orange">1.74x</td>
+                <td>72</td>
+                <td class="orange">$266</td>
+                <td><span class="badge up">vs $281 prior</span></td>
+                <td><span class="tag green">Scale</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">[TEST] Combined Christian + Fine Art</td>
+                <td>$13,231</td>
+                <td>$24,330</td>
+                <td class="orange">1.84x</td>
+                <td>28</td>
+                <td class="red">$473</td>
+                <td><span class="badge down">New campaign</span></td>
+                <td><span class="tag orange">Monitor</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">HM – Fine Art – ABO</td>
+                <td>$8,253</td>
+                <td>$13,461</td>
+                <td class="orange">1.63x</td>
+                <td>27</td>
+                <td class="red">$306</td>
+                <td><span class="badge down">vs $481 prior</span></td>
+                <td><span class="tag orange">Optimise</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">HM – Designer Trade Programme – CBO</td>
+                <td>$697</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td class="red">N/A</td>
+                <td><span class="badge down">Lead gen only</span></td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="three-col" style="margin-top: 16px;">
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h4 style="color: var(--accent-green);">TLIMS Campaign</h4>
+            <p style="font-size: 13px;">Core engine of the account. Driving 57% of all purchases at improving CPA. Value Optimisation ad set is the standout within this campaign at 2.74x ROAS. Good Shepherd video driving the highest volume and efficiency.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-orange);">
+            <h4 style="color: var(--accent-orange);">Combined Test Campaign</h4>
+            <p style="font-size: 13px;">Launched Jan 23 per Oscar's cross-category hypothesis. Has scaled to $13.2K spend with 28 purchases. ROAS at 1.84x is positive directional signal but CPA of $473 requires creative optimisation before further scaling to $300/day target.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-red);">
+            <h4 style="color: var(--accent-red);">Designer Trade Programme</h4>
+            <p style="font-size: 13px;">$697 spent with zero purchase revenue in current period. Dropped from $14K in previous period. If this is a lead-gen campaign, purchase ROAS is irrelevant but spend needs justification by lead quality and trade programme sign-ups. Recommend pausing until lead tracking is confirmed.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>04 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 5: Ad Set Deep Dive -->
+<section class="slide">
+    <span class="slide-number">05 / 13</span>
+    <div class="slide-tag">Ad Set Analysis</div>
+    <h2>Ad Set Performance Breakdown</h2>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Set</th>
+                <th>Campaign</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>ROAS</th>
+                <th>Purchases</th>
+                <th>CPA</th>
+                <th>ATC</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.05);">
+                <td class="highlight">Value Optimisation ⭐</td>
+                <td style="color: var(--text-muted); font-size: 12px;">TLIMS CBO</td>
+                <td>$6,218</td>
+                <td class="green">$17,012</td>
+                <td class="green">2.74x</td>
+                <td>31</td>
+                <td class="green">$201</td>
+                <td>258</td>
+                <td><span class="tag green">Top Performer</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Broad – Winter Collection</td>
+                <td style="color: var(--text-muted); font-size: 12px;">TLIMS CBO</td>
+                <td>$10,681</td>
+                <td>$14,558</td>
+                <td class="orange">1.36x</td>
+                <td>45</td>
+                <td class="orange">$237</td>
+                <td>426</td>
+                <td><span class="tag orange">Review</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Value Optimisation (2nd)</td>
+                <td style="color: var(--text-muted); font-size: 12px;">TLIMS CBO</td>
+                <td>$6,496</td>
+                <td>$8,659</td>
+                <td class="orange">1.33x</td>
+                <td>20</td>
+                <td class="orange">$325</td>
+                <td>155</td>
+                <td><span class="tag orange">Optimise</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Combined 50/50 – Value Opt – Broad US</td>
+                <td style="color: var(--text-muted); font-size: 12px;">Combined Test</td>
+                <td>$13,231</td>
+                <td>$24,330</td>
+                <td class="orange">1.84x</td>
+                <td>28</td>
+                <td class="red">$473</td>
+                <td>237</td>
+                <td><span class="tag orange">Monitor</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.03);">
+                <td class="highlight">Broad – Winter Collection (2nd)</td>
+                <td style="color: var(--text-muted); font-size: 12px;">TLIMS CBO</td>
+                <td>$6,370</td>
+                <td class="red">$4,012</td>
+                <td class="red">0.63x</td>
+                <td>7</td>
+                <td class="red">$910</td>
+                <td>124</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.03);">
+                <td class="highlight">Easter/Spring '26 – Combined 50/50 – VO</td>
+                <td style="color: var(--text-muted); font-size: 12px;">TLIMS CBO</td>
+                <td>$1,574</td>
+                <td class="red">$2,129</td>
+                <td class="red">1.35x</td>
+                <td>3</td>
+                <td class="red">$525</td>
+                <td>39</td>
+                <td><span class="tag red">Review</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="insight-box brand">
+        <h4>Key Finding: Two Value Optimisation Ad Sets Running in Same Campaign</h4>
+        <p>There are two Value Optimisation ad sets active within the TLIMS CBO campaign. Ad Set 1 is performing at 2.74x ROAS with a $201 CPA. Ad Set 2 is underperforming at 1.33x ROAS and $325 CPA. These two ad sets are likely cannibalising each other's auction exposure and splitting Meta's learning signals. Recommend consolidating into a single Value Optimisation ad set to concentrate conversion data and improve algorithm efficiency. The stronger-performing ad set should be kept; the weaker one paused.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>05 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 6: Top Creative Performers -->
+<section class="slide">
+    <span class="slide-number">06 / 13</span>
+    <div class="slide-tag">Creative Analysis</div>
+    <h2>Top Performing Ads (Feb 17 – Mar 18)</h2>
+    <p style="margin-bottom: 20px; font-size: 13px;">Sorted by ROAS. Minimum $100 spend threshold applied for statistical relevance.</p>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Name</th>
+                <th>Ad Set</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>ROAS</th>
+                <th>Purchases</th>
+                <th>CPA</th>
+                <th>ATC</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.06);">
+                <td class="highlight">Feb '26 – TLIMS – Brand Logo ⭐</td>
+                <td style="font-size: 12px; color: var(--text-muted);">Combined 50/50 – VO</td>
+                <td>$178</td>
+                <td class="green">$3,115</td>
+                <td class="green">17.50x</td>
+                <td>1</td>
+                <td class="green">$178</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 – Designed By Madelynn Ave – Copy</td>
+                <td style="font-size: 12px; color: var(--text-muted);">Broad – Winter Collection</td>
+                <td>$402</td>
+                <td class="green">$2,139</td>
+                <td class="green">5.32x</td>
+                <td>2</td>
+                <td class="green">$201</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td class="highlight">The Winter Collection – Video Testimonial</td>
+                <td style="font-size: 12px; color: var(--text-muted);">Broad – Winter Collection</td>
+                <td>$140</td>
+                <td class="green">$736</td>
+                <td class="green">5.26x</td>
+                <td>2</td>
+                <td class="green">$70</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td class="highlight">IG Post – He knows the weight of what you carry</td>
+                <td style="font-size: 12px; color: var(--text-muted);">Broad – Winter Collection</td>
+                <td>$118</td>
+                <td class="green">$563</td>
+                <td class="green">4.77x</td>
+                <td>1</td>
+                <td class="green">$118</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 – Designed By Madelynn Ave</td>
+                <td style="font-size: 12px; color: var(--text-muted);">Value Optimisation</td>
+                <td>$486</td>
+                <td class="green">$1,804</td>
+                <td class="green">3.71x</td>
+                <td>2</td>
+                <td class="green">$243</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 – TLIMS – Passage – Video Copy</td>
+                <td style="font-size: 12px; color: var(--text-muted);">Combined 50/50 – VO</td>
+                <td>$1,180</td>
+                <td class="green">$4,342</td>
+                <td class="green">3.68x</td>
+                <td>3</td>
+                <td class="orange">$393</td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td class="highlight">Video – Story – The Good Shepherd (VO ad set)</td>
+                <td style="font-size: 12px; color: var(--text-muted);">Value Optimisation</td>
+                <td>$3,099</td>
+                <td class="green">$9,080</td>
+                <td class="green">2.93x</td>
+                <td>18</td>
+                <td class="green">$172</td>
+                <td>144</td>
+            </tr>
+            <tr>
+                <td class="highlight">Fine Art – Eucalyptus (VO)</td>
+                <td style="font-size: 12px; color: var(--text-muted);">Fine Art – ABO</td>
+                <td>$1,037</td>
+                <td class="green">$3,028</td>
+                <td class="green">2.92x</td>
+                <td>4</td>
+                <td class="orange">$259</td>
+                <td>33</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="three-col" style="margin-top: 16px;">
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Winning Creative Patterns</h4>
+            <ul class="check-list" style="font-size: 12px;">
+                <li>Brand logo + product focus outperforms generic collection creative</li>
+                <li>Testimonial and video formats consistently top performers</li>
+                <li>Emotional faith-led hooks (He knows the weight) driving strong click intent</li>
+                <li>Passage + product pairings showing strong ROAS in Combined test</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">The Good Shepherd Insight</h4>
+            <p style="font-size: 12px; color: var(--text-secondary);">Good Shepherd video is the single highest-volume efficient ad in the account. At $3,099 spend, 18 purchases and $172 CPA it is the most scalable creative asset currently live. This aligns with Charles's January call-out when it was running at 5.14x ROAS. It has normalised but remains well within target CPA range.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-brand);">Immediate Scaling Candidates</h4>
+            <ul class="check-list" style="font-size: 12px;">
+                <li>Video – Story – Good Shepherd (primary scale vehicle)</li>
+                <li>Feb '26 – Designed By Madelynn Ave (both versions)</li>
+                <li>Feb '26 – TLIMS – Passage – Video Copy</li>
+                <li>Winter Collection Video Testimonial (need more spend data)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>06 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 7: Budget Waste Analysis -->
+<section class="slide">
+    <span class="slide-number">07 / 13</span>
+    <div class="slide-tag" style="color: var(--accent-red);">Budget Leak Analysis</div>
+    <h2>Underperforming Ads and Budget Waste</h2>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Name</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>ROAS</th>
+                <th>Purchases</th>
+                <th>ATC</th>
+                <th>Wasted Spend</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Introducing A Road To Bethlehem</td>
+                <td>$4,508</td>
+                <td>$5,500</td>
+                <td class="red">1.22x</td>
+                <td>18</td>
+                <td>183</td>
+                <td class="red">~$1,761</td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Feb '26 – Grid (Fine Art)</td>
+                <td>$3,701</td>
+                <td>$4,701</td>
+                <td class="red">1.27x</td>
+                <td>7</td>
+                <td>81</td>
+                <td class="red">~$1,000</td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Feb '26 – Peace, Be Still – Close Up and Passage</td>
+                <td>$1,594</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td>4</td>
+                <td class="red">$1,594</td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Video – Story – Good Shepherd (2nd ad set)</td>
+                <td>$3,106</td>
+                <td>$5,156</td>
+                <td class="red">1.66x</td>
+                <td>15</td>
+                <td>121</td>
+                <td class="orange">Inefficient duplicate</td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Feb '26 – TLIMS – Close Up and Passage (x3 variations)</td>
+                <td>$1,339</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td>22</td>
+                <td class="red">$1,339</td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Carousel – Fine Art</td>
+                <td>$811</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td>22</td>
+                <td class="red">$811</td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">I Know Them</td>
+                <td>$447</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td>15</td>
+                <td class="red">$447</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="two-col" style="margin-top: 16px;">
+        <div class="card" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2);">
+            <div class="metric-label">Total Identifiable Wasted Spend</div>
+            <div class="metric-value" style="color: var(--accent-red); font-size: 40px;">$20,751</div>
+            <p style="color: var(--text-muted); margin-top: 8px; font-size: 13px;">Ads with ROAS below 1.5x or zero purchases with $200+ spend in current period. This represents 50.2% of total spend this period generating poor or zero return.</p>
+        </div>
+        <div class="insight-box red">
+            <h4>Root Cause Analysis</h4>
+            <p><strong style="color: var(--text-primary);">Close-up and passage formats</strong> consistently failing to convert despite spend. Close-up creative works for engagement but not for driving purchases from cold audiences.<br><br>
+            <strong style="color: var(--text-primary);">Carousel formats</strong> generating adds-to-cart but failing to close. Possible disconnect between product variety shown and purchase intent.<br><br>
+            <strong style="color: var(--text-primary);">Good Shepherd running in two ad sets simultaneously</strong> at very different efficiency levels ($172 CPA vs $207 CPA). Consolidate to the better-performing ad set.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>07 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 8: Easter Campaign Assessment -->
+<section class="slide">
+    <span class="slide-number">08 / 13</span>
+    <div class="slide-tag">Seasonal Campaign Review</div>
+    <h2>Easter Campaign Assessment</h2>
+
+    <div class="metrics-grid four-col" style="margin-bottom: 24px;">
+        <div class="metric-card orange">
+            <div class="metric-label">Easter Total Spend</div>
+            <div class="metric-value">$2,781</div>
+            <div class="metric-change neutral">Mar '26 launch</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Purchases Generated</div>
+            <div class="metric-value">11</div>
+            <div class="metric-change down">Across all Easter ads</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Blended Easter CPA</div>
+            <div class="metric-value">$253</div>
+            <div class="metric-change neutral">Led by A Hill Far Away</div>
+        </div>
+        <div class="metric-card orange">
+            <div class="metric-label">Blended Easter ROAS</div>
+            <div class="metric-value">1.14x</div>
+            <div class="metric-change down">Still in learning phase</div>
+        </div>
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Name</th>
+                <th>Spend</th>
+                <th>ROAS</th>
+                <th>Purchases</th>
+                <th>CPA</th>
+                <th>ATC</th>
+                <th>Assessment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.03);">
+                <td class="highlight">Mar '26 – Easter – A Hill Far Away</td>
+                <td>$1,555</td>
+                <td class="orange">1.21x</td>
+                <td>10</td>
+                <td class="orange">$156</td>
+                <td>37</td>
+                <td><span class="tag orange">Most promising</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Mar '26 – Easter – A Hill Far Away (2nd)</td>
+                <td>$341</td>
+                <td class="orange">1.21x</td>
+                <td>1</td>
+                <td class="red">$341</td>
+                <td>8</td>
+                <td><span class="tag orange">Monitor</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.03);">
+                <td class="highlight">Mar '26 – Easter – Grid 4</td>
+                <td>$543</td>
+                <td class="red">0.94x</td>
+                <td>1</td>
+                <td class="red">$543</td>
+                <td>20</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.03);">
+                <td class="highlight">Mar '26 – Easter – Risen, He Lives, Glory, Last Supper (x8)</td>
+                <td>$342</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td class="red">N/A</td>
+                <td>7</td>
+                <td><span class="tag red">Early stage – monitor</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="insight-box orange">
+        <h4>Easter Campaign Strategy Recommendation</h4>
+        <p>A Hill Far Away is emerging as the standout Easter product with a $156 CPA on its strongest version. This is within the target range and is the only Easter ad generating meaningful volume. Easter is a genuine seasonal opportunity with a 3-4 week purchase window remaining. Consolidate Easter budget onto A Hill Far Away only and pause Grid 4 and zero-purchase product ads. Consider duplicating A Hill Far Away into the main Value Optimisation ad set rather than a standalone Easter ad set to leverage better audience data density. Oscar and Maddy submitted the Easter creative in early March; with enough spend behind the right product the window is still open to scale.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>08 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 9: Combined Test Assessment -->
+<section class="slide">
+    <span class="slide-number">09 / 13</span>
+    <div class="slide-tag">Test Campaign Review</div>
+    <h2>Combined Christian + Fine Art Test: Verdict</h2>
+
+    <div class="comparison">
+        <div class="comparison-box old">
+            <h4 style="color: var(--accent-orange); margin-bottom: 12px;">TEST CAMPAIGN</h4>
+            <div style="font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; color: var(--accent-orange);">1.84x</div>
+            <p style="font-size: 13px; margin-top: 8px; color: var(--text-muted);">Combined ROAS</p>
+            <p style="font-size: 13px; margin-top: 4px; color: var(--accent-red);">$473 CPA on 28 purchases</p>
+            <p style="font-size: 13px; margin-top: 4px; color: var(--text-muted);">$13,231 spend</p>
+        </div>
+        <div class="comparison-vs">vs</div>
+        <div class="comparison-box new">
+            <h4 style="color: var(--accent-green); margin-bottom: 12px;">CONTROL (TLIMS CBO)</h4>
+            <div style="font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; color: var(--accent-green);">1.74x</div>
+            <p style="font-size: 13px; margin-top: 8px; color: var(--text-muted);">Core Campaign ROAS</p>
+            <p style="font-size: 13px; margin-top: 4px; color: var(--accent-green);">$266 CPA on 72 purchases</p>
+            <p style="font-size: 13px; margin-top: 4px; color: var(--text-muted);">$19,172 spend</p>
+        </div>
+    </div>
+
+    <div class="three-col" style="margin-top: 24px;">
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">What the Data Shows</h4>
+            <ul class="check-list" style="font-size: 13px;">
+                <li>Combined ROAS (1.84x) is slightly higher than TLIMS (1.74x)</li>
+                <li>However CPA is $473 vs $266, nearly double</li>
+                <li>High ATC and checkout volume suggests purchase intent exists</li>
+                <li>TLIMS Brand Logo ad within Combined is the account's best performing single ad at 17.5x ROAS</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-orange);">Key Problem Identified</h4>
+            <p style="font-size: 13px;">The Combined ad set has 28 purchases from $13.2K spend. The TLIMS Brand Logo alone is delivering exceptional efficiency (17.5x ROAS, $178 spend for 1 purchase). The issue is the volume of zero-return ads running alongside it in the same combined ad set are dragging down blended CPA. The hypothesis is sound. The execution needs tightening.</p>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Recommended Action</h4>
+            <ul class="check-list" style="font-size: 13px;">
+                <li>Continue test but pause zero-purchase ads within Combined</li>
+                <li>Consolidate budget onto top 3 to 4 performing creatives in the combined ad set</li>
+                <li>Target: bring Combined CPA below $300 before scaling past $500/day</li>
+                <li>Revisit test verdict at end of March with clean data</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="insight-box brand">
+        <h4>Oscar's Cross-Category Hypothesis: Still Valid</h4>
+        <p>Oscar's original insight that customers enter through Christian art but purchase across both categories remains strategically correct. The Combined test has 237 adds-to-cart and 28 purchases, showing genuine buying behaviour. The TLIMS Brand Logo delivering 17.5x ROAS in the combined structure validates the concept. The path forward is creative consolidation, not campaign shutdown.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>09 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 10: Unit Economics -->
+<section class="slide">
+    <span class="slide-number">10 / 13</span>
+    <div class="slide-tag">Unit Economics</div>
+    <h2>Profitability Analysis</h2>
+
+    <div class="three-col">
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">Customer Economics</h4>
+            <table class="data-table" style="margin: 16px 0 0 0;">
+                <tr><td>AOV (current period)</td><td class="highlight">$560</td></tr>
+                <tr><td>Lifetime Value (LTV)</td><td class="green">$464</td></tr>
+                <tr><td>COGS (13.39%)</td><td class="highlight">~$75</td></tr>
+                <tr><td>Shipping Cost</td><td class="highlight">$30</td></tr>
+                <tr><td>CC Fees (2.9%)</td><td class="highlight">~$16</td></tr>
+                <tr><td>Break-even CPA</td><td class="green">$424</td></tr>
+                <tr><td><strong>Gross Margin per Sale</strong></td><td class="green">~$439</td></tr>
+            </table>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">Current Performance vs Target</h4>
+            <table class="data-table" style="margin: 16px 0 0 0;">
+                <tr><td>Blended CPA (30d)</td><td class="orange">$326</td></tr>
+                <tr><td>Target CPA</td><td class="highlight">$150 – $310</td></tr>
+                <tr><td>Break-even CPA</td><td class="green">$424</td></tr>
+                <tr><td>Best Ad Set CPA (VO 1)</td><td class="green">$201</td></tr>
+                <tr><td>Worst Ad Set CPA</td><td class="red">$910</td></tr>
+                <tr><td>Profit at $326 CPA</td><td class="orange">~$113/customer</td></tr>
+                <tr><td>Profit at $201 CPA</td><td class="green">~$238/customer</td></tr>
+            </table>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-orange);">Scale Scenarios</h4>
+            <table class="data-table" style="margin: 16px 0 0 0;">
+                <tr><td>Current daily spend</td><td class="highlight">~$1,378/day</td></tr>
+                <tr><td>Target daily spend (Q2)</td><td class="highlight">$1,500/day</td></tr>
+                <tr><td>Phase 2 target</td><td class="highlight">$2,000/day</td></tr>
+                <tr><td>Phase 3 target</td><td class="highlight">$3,000/day</td></tr>
+                <tr><td>Revenue at 3.5x ROAS, $1.5K/day</td><td class="green">$157,500/mo</td></tr>
+                <tr><td>Revenue at 3.5x ROAS, $3K/day</td><td class="green">$315,000/mo</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="insight-box" style="margin-top: 24px;">
+        <h4>Path to Profitability</h4>
+        <p>At current $326 CPA, each customer generates approximately $113 profit after ad spend. At the Value Optimisation ad set's $201 CPA, that rises to $238 per customer. The account is technically profitable at current blended CPA since $326 sits below the $424 break-even point. The mission now is efficiency, not survival. Eliminating the $20,751 in wasted spend and reallocating to the Value Optimisation ad set alone would push blended CPA well below $250 and unlock confident scaling.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>10 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 11: Immediate Action Plan -->
+<section class="slide">
+    <span class="slide-number">11 / 13</span>
+    <div class="slide-tag">Strategic Recommendations</div>
+    <h2>Immediate Action Plan</h2>
+
+    <div class="three-col">
+        <div class="concept-card">
+            <span class="concept-number" style="color: rgba(239,68,68,0.15);">01</span>
+            <div class="concept-title">Kill Waste Now</div>
+            <span class="tag red">This Week</span>
+            <ul class="check-list" style="font-size: 12px; margin-top: 12px; position: relative; z-index: 1;">
+                <li class="red">Pause Broad Winter Collection 2nd ad set ($6,370 at 0.63x)</li>
+                <li class="red">Pause Peace, Be Still Close Up and Passage ($1,594 at 0.00x)</li>
+                <li class="red">Pause all TLIMS Close Up and Passage variations (0.00x)</li>
+                <li class="red">Pause I Know Them, Carousel Fine Art (0.00x)</li>
+                <li class="red">Pause Fine Art Autumn Breeze and Art Flick Through</li>
+            </ul>
+            <p style="font-size: 11px; color: var(--accent-red); font-weight: 600; margin-top: 12px; position: relative; z-index: 1;">Frees ~$600 to $700/day to reallocate</p>
+        </div>
+
+        <div class="concept-card">
+            <span class="concept-number" style="color: rgba(0,217,165,0.15);">02</span>
+            <div class="concept-title">Consolidate and Scale</div>
+            <span class="tag green">This Week</span>
+            <ul class="check-list" style="font-size: 12px; margin-top: 12px; position: relative; z-index: 1;">
+                <li>Scale Good Shepherd video in the primary Value Optimisation ad set</li>
+                <li>Consolidate two Value Optimisation ad sets into one (keep the 2.74x performer)</li>
+                <li>Increase Value Optimisation daily budget by 20% initially</li>
+                <li>Reallocate recaptured budget to Value Optimisation ad set</li>
+            </ul>
+            <p style="font-size: 11px; color: var(--accent-green); font-weight: 600; margin-top: 12px; position: relative; z-index: 1;">Target: $8K+ to Value Optimisation weekly</p>
+        </div>
+
+        <div class="concept-card">
+            <span class="concept-number" style="color: rgba(245,158,11,0.15);">03</span>
+            <div class="concept-title">Easter Window</div>
+            <span class="tag orange">Urgent – 3 Weeks Remaining</span>
+            <ul class="check-list" style="font-size: 12px; margin-top: 12px; position: relative; z-index: 1;">
+                <li>Pause Grid 4 and all zero-purchase Easter ads</li>
+                <li>Concentrate all Easter budget on A Hill Far Away</li>
+                <li>Add A Hill Far Away into the main Value Optimisation ad set</li>
+                <li>Target $300/day on Easter creative through Apr 18</li>
+            </ul>
+            <p style="font-size: 11px; color: var(--accent-orange); font-weight: 600; margin-top: 12px; position: relative; z-index: 1;">Easter is 3 to 4 weeks out – act now</p>
+        </div>
+    </div>
+
+    <div class="three-col" style="margin-top: 24px;">
+        <div class="card">
+            <h4 style="color: var(--accent-purple);">04. Combined Test Cleanup</h4>
+            <ul class="check-list" style="font-size: 12px;">
+                <li>Pause zero-purchase ads within Combined 50/50 ad set</li>
+                <li>Keep TLIMS Brand Logo, Good Shepherd Brand Logo, TLIMS Passage Video</li>
+                <li>Hold budget steady at current level until CPA drops below $300</li>
+                <li>Final test verdict decision end of March</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-brand);">05. Creative Pipeline</h4>
+            <ul class="check-list" style="font-size: 12px;">
+                <li>Oscar mentioned filming studio is being prepared for Feb shooting</li>
+                <li>Prioritise authentic artist content when assets are ready</li>
+                <li>New creative brief: testimonial formats only, Good Shepherd and TLIMS focus</li>
+                <li>Designed By Madelynn Ave copy angle performing well – expand to new products</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4 style="color: var(--accent-green);">06. Ongoing Tracking</h4>
+            <ul class="check-list" style="font-size: 12px;">
+                <li>Triple Whale is live (Oscar confirmed) – cross-reference weekly</li>
+                <li>Establish weekly performance cadence Charles committed to</li>
+                <li>Scale signal: CPA below $200 for 3+ days triggers 20% budget increase</li>
+                <li>Pause signal: CPA above $424 (break-even) after $500+ ad spend</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>11 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 12: Q2 Budget Allocation -->
+<section class="slide">
+    <span class="slide-number">12 / 13</span>
+    <div class="slide-tag">Budget Strategy</div>
+    <h2>Q2 Budget Allocation Model</h2>
+
+    <div class="two-col">
+        <div>
+            <h3>Recommended Daily Budget Split ($1,500/day)</h3>
+
+            <div class="progress-container" style="margin-bottom: 20px;">
+                <div class="progress-label">
+                    <span><strong>TLIMS – Value Optimisation (consolidated)</strong></span>
+                    <span class="value" style="color: var(--accent-green);">45% / $675</span>
+                </div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill green" style="width: 45%"></div></div>
+                <p style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Primary revenue engine. Good Shepherd video is the scale vehicle. One consolidated ad set only.</p>
+            </div>
+
+            <div class="progress-container" style="margin-bottom: 20px;">
+                <div class="progress-label">
+                    <span><strong>TLIMS – Broad Winter Collection (trimmed)</strong></span>
+                    <span class="value" style="color: var(--accent-orange);">20% / $300</span>
+                </div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill orange" style="width: 20%"></div></div>
+                <p style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Pause underperforming ads within. Only Designed By Madelynn Ave, Testimonial Video and faith IG post active.</p>
+            </div>
+
+            <div class="progress-container" style="margin-bottom: 20px;">
+                <div class="progress-label">
+                    <span><strong>Combined Test (creative-consolidated)</strong></span>
+                    <span class="value" style="color: var(--accent-purple);">15% / $225</span>
+                </div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill purple" style="width: 15%"></div></div>
+                <p style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Hold at this level until CPA drops below $300. Top 3 creatives only.</p>
+            </div>
+
+            <div class="progress-container" style="margin-bottom: 20px;">
+                <div class="progress-label">
+                    <span><strong>Easter – A Hill Far Away</strong></span>
+                    <span class="value" style="color: var(--accent-orange);">13% / $200</span>
+                </div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill orange" style="width: 13%"></div></div>
+                <p style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Seasonal window is open. Single ad, single focus through Apr 18.</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-label">
+                    <span><strong>Creative Testing</strong></span>
+                    <span class="value" style="color: var(--accent-brand-light);">7% / $100</span>
+                </div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill brand" style="width: 7%"></div></div>
+                <p style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">New assets only. Artist content when filming begins.</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="card" style="margin-bottom: 16px;">
+                <h4 style="color: var(--accent-green);">Scale Triggers</h4>
+                <ul class="check-list" style="font-size: 13px;">
+                    <li>CPA below $200 for 3+ consecutive days: increase budget 20%</li>
+                    <li>ROAS above 3.0x for 5+ days: increase budget 20%</li>
+                    <li>Never increase by more than 25% in any 7-day window</li>
+                    <li>CTR above 2.5% on new creative: add to Value Optimisation</li>
+                </ul>
+            </div>
+            <div class="card" style="margin-bottom: 16px; border-color: rgba(239, 68, 68, 0.3);">
+                <h4 style="color: var(--accent-red);">Pause Triggers</h4>
+                <ul class="check-list" style="font-size: 13px;">
+                    <li class="red">0 purchases after $400+ spend on any single ad</li>
+                    <li class="red">CPA above $424 (break-even) after learning phase</li>
+                    <li class="red">ROAS below 1.0x after $600+ spend</li>
+                    <li class="red">Frequency above 4.0 on any ad set</li>
+                </ul>
+            </div>
+            <div class="insight-box" style="margin-top: 0;">
+                <p style="color: var(--text-primary);">At $1,500/day with 3.5x ROAS: <strong style="color: var(--accent-green);">$157,500/month revenue.</strong> At $3,000/day with 3.5x ROAS: <strong style="color: var(--accent-green);">$315,000/month</strong> – Oscar and Maddy's stated 12-month goal.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>12 / 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 13: Summary and Next Steps -->
+<section class="slide">
+    <span class="slide-number">13 / 13</span>
+    <div class="slide-tag">Summary</div>
+    <h2>Key Takeaways and Next Steps</h2>
+
+    <div class="three-col">
+        <div class="card" style="border-top: 3px solid var(--accent-red);">
+            <h3>Stop Immediately</h3>
+            <ul class="check-list" style="font-size: 13px;">
+                <li class="red"><strong>Pause</strong> Broad Winter Collection 2nd ad set (0.63x ROAS)</li>
+                <li class="red"><strong>Pause</strong> Peace, Be Still Close Up and Passage ($1,594, 0.00x)</li>
+                <li class="red"><strong>Pause</strong> all TLIMS Close Up Passage variations (0.00x)</li>
+                <li class="red"><strong>Pause</strong> Designer Trade Programme campaign (0 purchases)</li>
+                <li class="red"><strong>Pause</strong> Easter ads except A Hill Far Away</li>
+                <li class="red"><strong>Consolidate</strong> two Value Optimisation ad sets into one</li>
+            </ul>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--accent-purple);">
+            <h3>This Month Focus</h3>
+            <ul class="check-list" style="font-size: 13px;">
+                <li>Scale Good Shepherd video in consolidated Value Optimisation</li>
+                <li>Push A Hill Far Away as primary Easter product before Apr 20</li>
+                <li>Clean up Combined test – top 3 creatives only</li>
+                <li>Brief new testimonial creatives for Designed By Madelynn Ave angle</li>
+                <li>Set weekly CPA and ROAS review cadence with Oscar and Maddy</li>
+                <li>Confirm Triple Whale data alignment with Meta reporting</li>
+            </ul>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3>Q2 Targets</h3>
+            <ul class="check-list" style="font-size: 13px;">
+                <li>Blended CPA: <strong style="color: var(--accent-green);">below $250</strong></li>
+                <li>Blended ROAS: <strong style="color: var(--accent-green);">3.0x by end of April</strong></li>
+                <li>Value Optimisation CPA: <strong style="color: var(--accent-green);">below $180</strong></li>
+                <li>Monthly Revenue: <strong style="color: var(--accent-green);">$80,000+ by May</strong></li>
+                <li>Scale to $2,000/day when 3.0x ROAS is consistent</li>
+                <li>Artist content live in account by end of April</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="insight-box brand" style="margin-top: 24px;">
+        <h4>Strategic Summary</h4>
+        <p>The account has real momentum. Purchases are up 79% and CPA has dropped 19% period over period. The Value Optimisation ad set at $201 CPA and 2.74x ROAS proves the model works. The single biggest lever available is eliminating the $20,751 in wasted spend on zero-performing close-up and passage format ads, then redirecting that budget to the proven Value Optimisation structure with Good Shepherd and Designed By Madelynn Ave as lead creatives. Oscar's combined category hypothesis is validated by the data. The Combined test simply needs creative discipline before it can scale. Easter is a live seasonal opportunity: consolidate onto A Hill Far Away immediately. The path to Oscar and Maddy's $315K monthly goal runs directly through disciplined budget allocation and the creative content filming planned for February.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Meta Ads Strategic Audit Mar 2026</span>
+        <span>Prepared by Charles Piper, March 2026</span>
+    </div>
+</section>
+
+</body>
+</html>
