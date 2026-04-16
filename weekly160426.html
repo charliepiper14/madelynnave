@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madelynn Ave | Meta Ads Weekly Deep Dive | Apr 9-15, 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #16162a;
+            --bg-card-hover: #1e1e3a;
+            --border: rgba(255,255,255,0.06);
+            --accent-green: #00d9a5;
+            --accent-green-dim: rgba(0, 217, 165, 0.15);
+            --accent-purple: #8b5cf6;
+            --accent-purple-dim: rgba(139, 92, 246, 0.15);
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --accent-brand: #785245;
+            --accent-brand-light: #D3CBC0;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6b6b80;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 15px; }
+        .slide { min-height: 100vh; padding: 48px 64px; position: relative; display: flex; flex-direction: column; border-bottom: 1px solid var(--border); }
+        .slide-number { position: absolute; top: 24px; right: 32px; font-size: 13px; color: var(--text-muted); font-weight: 600; letter-spacing: 1px; }
+        .slide-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-brand); margin-bottom: 8px; font-weight: 600; }
+        h1 { font-family: 'DM Sans', sans-serif; font-size: 52px; font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+        h2 { font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; margin-bottom: 28px; }
+        h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+        h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        p { font-size: 15px; color: var(--text-secondary); max-width: 720px; }
+        .subtitle { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin-bottom: 32px; font-weight: 400; }
+        .cover { justify-content: center; align-items: center; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(120,82,69,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(239,68,68,0.04) 0%, transparent 40%); }
+        .cover h1 { font-size: 56px; }
+        .cover .meta { margin-top: 48px; display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; font-size: 13px; color: var(--text-secondary); }
+        .cover .meta span { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 32px 0; }
+        .metrics-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+        .metrics-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+        .metric-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
+        .metric-card.green { border-top: 3px solid var(--accent-green); }
+        .metric-card.purple { border-top: 3px solid var(--accent-purple); }
+        .metric-card.red { border-top: 3px solid var(--accent-red); }
+        .metric-card.orange { border-top: 3px solid var(--accent-orange); }
+        .metric-card.brand { border-top: 3px solid var(--accent-brand); }
+        .metric-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; }
+        .metric-value { font-family: 'DM Sans', sans-serif; font-size: 32px; font-weight: 700; color: var(--text-primary); line-height: 1.1; }
+        .metric-value.large { font-size: 40px; }
+        .metric-change { font-size: 12px; margin-top: 8px; font-weight: 600; }
+        .metric-change.up { color: var(--accent-green); }
+        .metric-change.down { color: var(--accent-red); }
+        .metric-change.neutral { color: var(--text-muted); }
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        .data-table th { text-align: left; padding: 12px 16px; background: var(--bg-card); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        .data-table tr:hover td { background: var(--bg-card-hover); }
+        .data-table .highlight { color: var(--text-primary); font-weight: 500; }
+        .data-table .green { color: var(--accent-green); font-weight: 600; }
+        .data-table .red { color: var(--accent-red); font-weight: 600; }
+        .data-table .purple { color: var(--accent-purple); font-weight: 600; }
+        .data-table .orange { color: var(--accent-orange); font-weight: 600; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+        .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+        .wwf-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 20px; }
+        .wwf-row { display: grid; grid-template-columns: 90px 1fr; gap: 16px; margin-bottom: 16px; }
+        .wwf-row:last-child { margin-bottom: 0; }
+        .wwf-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 8px; border-radius: 6px; text-align: center; align-self: start; margin-top: 2px; }
+        .wwf-label.what { background: rgba(255,255,255,0.08); color: var(--text-secondary); }
+        .wwf-label.why { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+        .wwf-label.fix { background: var(--accent-green-dim); color: var(--accent-green); }
+        .wwf-label.fix-red { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+        .wwf-text { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+        .wwf-text strong { color: var(--text-primary); }
+        .insight-box { background: var(--bg-card); border-left: 3px solid var(--accent-green); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
+        .insight-box.purple { border-left-color: var(--accent-purple); }
+        .insight-box.brand { border-left-color: var(--accent-brand); }
+        .insight-box.red { border-left-color: var(--accent-red); }
+        .insight-box.orange { border-left-color: var(--accent-orange); }
+        .insight-box h4 { color: var(--accent-green); margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .insight-box.purple h4 { color: var(--accent-purple); }
+        .insight-box.brand h4 { color: var(--accent-brand-light); }
+        .insight-box.red h4 { color: var(--accent-red); }
+        .insight-box.orange h4 { color: var(--accent-orange); }
+        .insight-box p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; max-width: none; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .concept-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; position: relative; overflow: hidden; }
+        .concept-number { font-family: 'DM Sans', sans-serif; font-size: 48px; font-weight: 700; color: rgba(139,92,246,0.15); position: absolute; top: 16px; right: 20px; }
+        .concept-title { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; position: relative; z-index: 1; color: var(--text-primary); }
+        .tag { display: inline-block; padding: 4px 10px; background: var(--accent-purple-dim); border-radius: 6px; font-size: 10px; font-weight: 600; color: var(--accent-purple); margin-right: 6px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tag.green { background: var(--accent-green-dim); color: var(--accent-green); }
+        .tag.red { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+        .tag.orange { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+        .tag.brand { background: rgba(120,82,69,0.2); color: var(--accent-brand-light); }
+        .check-list { list-style: none; margin: 16px 0; }
+        .check-list li { padding: 8px 0; padding-left: 24px; position: relative; color: var(--text-secondary); font-size: 14px; }
+        .check-list li::before { content: ''; position: absolute; left: 0; top: 12px; width: 8px; height: 8px; border-radius: 2px; background: var(--accent-green); }
+        .check-list li.red::before { background: var(--accent-red); }
+        .check-list li.orange::before { background: var(--accent-orange); }
+        .slide-footer { margin-top: auto; padding-top: 32px; font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; }
+        .note { font-size: 11px; color: var(--text-muted); font-style: italic; margin-bottom: 12px; }
+        .alert-bar { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); border-radius: 10px; padding: 14px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; font-size: 13px; color: #fca5a5; font-weight: 500; }
+        .alert-bar.orange { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.3); color: #fcd34d; }
+        @media print { .slide { page-break-after: always; } }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Cover -->
+<section class="slide cover">
+    <div class="slide-tag">Meta Ads Weekly Deep Dive</div>
+    <h1>Madelynn Ave</h1>
+    <p class="subtitle">Week-over-Week Performance Analysis, Diagnosis and Tactical Actions</p>
+    <div class="meta">
+        <span>Apr 9 - Apr 15, 2026</span>
+        <span>vs Apr 2 - Apr 8, 2026</span>
+        <span>Post-Easter Transition</span>
+        <span>Target: 3.5x+ ROAS</span>
+    </div>
+</section>
+
+<!-- SLIDE 2: Executive Summary -->
+<section class="slide">
+    <span class="slide-number">02 / 11</span>
+    <div class="slide-tag">Executive Summary</div>
+    <h2>This Week at a Glance (Apr 9 - 15)</h2>
+    <p class="note">All figures validated from clean single-period campaign, ad set, and ad-level CSV exports. Ad-level CSV used as source of truth for creative attribution. Campaign CSV used for top-line totals. Previous week figures from Apr 9 call deck (client-verified).</p>
+
+    <div class="metrics-grid">
+        <div class="metric-card orange">
+            <div class="metric-label">Weekly Spend</div>
+            <div class="metric-value large">$9,996</div>
+            <div class="metric-change down">+6.0% vs $9,427 prior</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Weekly Revenue</div>
+            <div class="metric-value">$11,109</div>
+            <div class="metric-change down">-68.6% vs $35,398 prior</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Blended ROAS</div>
+            <div class="metric-value">1.11x</div>
+            <div class="metric-change down">Well below target (3.5x). vs 3.76x prior</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Blended CPA</div>
+            <div class="metric-value">$909</div>
+            <div class="metric-change down">2.1x above $424 breakeven</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Total Purchases</div>
+            <div class="metric-value">11</div>
+            <div class="metric-change down">-65% vs 31 prior week</div>
+        </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="insight-box red">
+            <h4>A Tough Week - Three Things Broke at Once</h4>
+            <p>Revenue down 68.6% on near-identical spend. The Combined Test went from $19,047 last week to zero across $2,461. The TLIMS CBO Value Opt, which was the core engine at 3.43x and 7 purchases, fell to 0.38x and 1 purchase. On top of that, the Evergreen CBO is in its first full week absorbing $1,618 at 0.79x. Each situation has a different cause and a different fix, covered in slides 04 to 08.</p>
+        </div>
+        <div class="insight-box orange">
+            <h4>Not All Bad News</h4>
+            <p>Eden Collection went from 0.33x and 2 purchases last week to 2.84x and 5 purchases this week. Eden Video C1 is now the best individual ad in the account at 4.02x. In the Evergreen CBO, Abide With Me Narrative converted 1 purchase at 9.54x on just $133 in its first week. Neither number rescues the blended figure, but both show the account can still find buyers when the creative is right.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>02 / 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 3: Campaign Breakdown -->
+<section class="slide">
+    <span class="slide-number">03 / 11</span>
+    <div class="slide-tag">Campaign Analysis</div>
+    <h2>Campaign-Level Performance: WoW</h2>
+    <p class="note">From clean single-period campaign CSV (Apr 9-15 only, no comparison view). Previous week figures from Apr 9 call deck.</p>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Campaign</th>
+                <th>This Spend</th>
+                <th>Prior Spend</th>
+                <th>This Revenue</th>
+                <th>Prior Revenue</th>
+                <th>This ROAS</th>
+                <th>Prior ROAS</th>
+                <th>Purchases</th>
+                <th>CPA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(239,68,68,0.06);">
+                <td class="highlight">HM - TLIMS - CBO</td>
+                <td>$3,957</td>
+                <td>$3,910</td>
+                <td class="orange">$7,341</td>
+                <td>$6,668</td>
+                <td class="orange">1.86x</td>
+                <td class="orange">1.71x</td>
+                <td>8</td>
+                <td class="orange">$495</td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.08);">
+                <td class="highlight">[TEST] Combined Christian + Fine Art</td>
+                <td>$2,461</td>
+                <td>$2,590</td>
+                <td class="red">$0</td>
+                <td class="green">$19,047</td>
+                <td class="red">0.00x</td>
+                <td class="green">7.35x</td>
+                <td>0</td>
+                <td class="red">N/A</td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.04);">
+                <td class="highlight">HM - Fine Art - ABO</td>
+                <td>$1,960</td>
+                <td>$1,960</td>
+                <td class="orange">$2,495</td>
+                <td>$2,495</td>
+                <td class="orange">1.27x</td>
+                <td class="orange">1.27x</td>
+                <td>2</td>
+                <td class="red">$980</td>
+            </tr>
+            <tr style="background: rgba(139,92,246,0.04);">
+                <td class="highlight">HM Evergreen Christian Art CBO</td>
+                <td>$1,618</td>
+                <td>$1,618</td>
+                <td class="purple">$1,273</td>
+                <td style="color:var(--text-muted);">N/A</td>
+                <td class="purple">0.79x</td>
+                <td style="color:var(--text-muted);">N/A</td>
+                <td>1</td>
+                <td style="color:var(--accent-purple);">$1,618</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="insight-box red">
+            <h4>Combined Test: From 7.35x to Zero in One Week</h4>
+            <p>$2,461 spent, zero back. The Passage Video had 4,497 ThruPlays and 5 ATCs. Carousel 2, which drove $13,211 last week on 2 orders, didn't convert once. Good Shepherd Close Up had 7 ATCs that went nowhere. People are watching and adding to cart but not buying. Last week's result was Easter-driven and anchored by two big-ticket Carousel 2 orders. That demand is gone, and the ad set's creative slate hasn't been refreshed to compensate.</p>
+        </div>
+        <div class="insight-box orange">
+            <h4>TLIMS CBO Revenue Actually Up - but on Shaky Ground</h4>
+            <p>Campaign revenue went from $6,668 to $7,341 week on week and purchases held at 8, so the headline looks fine. The problem is what's underneath. Value Opt, which drove 7 of those 8 purchases last week at 3.43x, is down to 1 purchase at 0.38x this week. Eden Collection picked up the slack at 2.84x and 5 purchases. That's a good sign for Eden, but the campaign now has one ad set doing the work. Value Opt needs fresh creative in it fast.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>03 / 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 4: Problem 1 - Combined Test -->
+<section class="slide">
+    <span class="slide-number">04 / 11</span>
+    <div class="slide-tag">Problem 01 of 03</div>
+    <h2>Combined Test: $2,461 Spend, Zero Revenue</h2>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Name</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>Purchases</th>
+                <th>ATC</th>
+                <th>Checkouts</th>
+                <th>ThruPlays</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="highlight">Feb '26 - TLIMS - Close Up - Carousel</td>
+                <td>$751</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>3</td>
+                <td>1</td>
+                <td style="color:var(--text-muted);">0</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 - TLIMS - Passage - Video Copy</td>
+                <td>$654</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>5</td>
+                <td>0</td>
+                <td>4,497</td>
+                <td><span class="tag orange">Review</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 - The Good Shepherd - Close Up Passage</td>
+                <td>$448</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>7</td>
+                <td>0</td>
+                <td style="color:var(--text-muted);">0</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 - TLIMS - Brand Logo</td>
+                <td>$235</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>3</td>
+                <td>0</td>
+                <td style="color:var(--text-muted);">0</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 - Timeless Pieces - Video Copy</td>
+                <td>$223</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>4</td>
+                <td>1</td>
+                <td>126</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Carousel 2 - Fine Art</td>
+                <td>$71</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>4</td>
+                <td>0</td>
+                <td style="color:var(--text-muted);">0</td>
+                <td><span class="tag orange">Monitor</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 - Website To Wall Copy</td>
+                <td>$45</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>26</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="wwf-box">
+        <div class="wwf-row">
+            <div class="wwf-label what">What</div>
+            <div class="wwf-text"><strong>$2,461 spent, zero purchases, zero revenue.</strong> The Passage Video ran to 4,497 ThruPlays. The Close Up Carousel ran. Carousel 2 Fine Art, which drove $13,211 last week, ran. Nothing converted. ATCs are there across several ads but no one's closing at checkout.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label why">Why</div>
+            <div class="wwf-text">Last week's $19,047 was built on two high-AOV Carousel 2 orders plus a Passage Video that caught the peak of Easter consideration. <strong>That tailwind is gone.</strong> The same creative slate that was fresh a few weeks ago has now been in front of the same audience long enough that the people who were going to buy, have bought. ATCs without checkouts is frequency fatigue, not targeting failure.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label fix">Fix</div>
+            <div class="wwf-text">Pause the five confirmed non-converters at ad level today: Close Up Carousel, Good Shepherd Close Up, TLIMS Brand Logo, Timeless Pieces Video, Website To Wall. <strong>Don't touch the ad set.</strong> Leave the Passage Video for another 3 days given the ThruPlay volume. Then get Oscar's new April creative (Ads 1 and 2) into this ad set immediately. Fresh creative into the existing structure is all this needs.</div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>04 / 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 5: Problem 2 - TLIMS CBO Value Opt Drop -->
+<section class="slide">
+    <span class="slide-number">05 / 11</span>
+    <div class="slide-tag">Problem 02 of 03</div>
+    <h2>TLIMS CBO Value Opt: From 3.43x to 0.38x</h2>
+
+    <div class="metrics-grid three-col">
+        <div class="metric-card red">
+            <div class="metric-label">Value Opt This Week</div>
+            <div class="metric-value">0.38x</div>
+            <div class="metric-change down">vs 3.43x last week</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Purchases</div>
+            <div class="metric-value">1</div>
+            <div class="metric-change down">vs 7 last week</div>
+        </div>
+        <div class="metric-card orange">
+            <div class="metric-label">Spend</div>
+            <div class="metric-value">$1,478</div>
+            <div class="metric-change neutral">vs $1,521 last week</div>
+        </div>
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Name</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>Purchases</th>
+                <th>ATC</th>
+                <th>ThruPlays</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Feb '26 - Abide With Me - Close Up Passage</td>
+                <td>$441</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>2</td>
+                <td style="color:var(--text-muted);">0</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Video - Story - The Good Shepherd Copy</td>
+                <td>$641</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>24</td>
+                <td>419</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Feb '26 - TLIMS Best Seller Video Copy</td>
+                <td>$204</td>
+                <td class="red">$0</td>
+                <td class="red">0</td>
+                <td>3</td>
+                <td>776</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.05);">
+                <td class="highlight">Feb '26 - Designed By Madelynn Ave</td>
+                <td>$149</td>
+                <td class="green">$556</td>
+                <td class="green">1</td>
+                <td>4</td>
+                <td style="color:var(--text-muted);">0</td>
+                <td><span class="tag green">Keep Running</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="wwf-box">
+        <div class="wwf-row">
+            <div class="wwf-label what">What</div>
+            <div class="wwf-text">Value Opt went from <strong>3.43x and 7 purchases last week to 0.38x and 1 purchase.</strong> Three ads took $1,286 between them and returned nothing. Good Shepherd Story Video had 24 ATCs and 419 ThruPlays, zero purchases. Designed By Madelynn Ave was the only ad that converted, 1 purchase at $556.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label why">Why</div>
+            <div class="wwf-text">Abide With Me Close Up and TLIMS Best Seller Video have been non-converters for several weeks running. They should have come out sooner. The Good Shepherd Story Video is a different story: 419 ThruPlays and 24 ATCs tells you the creative is pulling people in, <strong>but 0 purchases across that much funnel activity means something's breaking at the bottom</strong>, likely the product page or a price commitment issue for that specific audience segment.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label fix">Fix</div>
+            <div class="wwf-text">Pause Abide With Me Close Up, TLIMS Best Seller Video, and Good Shepherd Story Video at ad level today. <strong>Don't change the ad set budget or targeting.</strong> Designed By Madelynn Ave just proved the ad set can still buy. Get Oscar's new April creative in here alongside it. Passage-style formats applied to new products are the priority given what's worked here historically.</div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>05 / 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 6: Eden Collection Turnaround + Easter Cliff -->
+<section class="slide">
+    <span class="slide-number">06 / 11</span>
+    <div class="slide-tag">Positive Reversal + Upcoming Risk</div>
+    <h2>Eden Collection: 0.33x to 2.84x in One Week</h2>
+
+    <div class="metrics-grid three-col">
+        <div class="metric-card green">
+            <div class="metric-label">Eden ROAS This Week</div>
+            <div class="metric-value">2.84x</div>
+            <div class="metric-change up">vs 0.33x last week</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Eden Purchases</div>
+            <div class="metric-value">5</div>
+            <div class="metric-change up">vs 2 last week</div>
+        </div>
+        <div class="metric-card orange">
+            <div class="metric-label">Eden Spend</div>
+            <div class="metric-value">$1,768</div>
+            <div class="metric-change neutral">CPA $354</div>
+        </div>
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Name</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>ROAS</th>
+                <th>Purchases</th>
+                <th>ATC</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.07);">
+                <td class="highlight">Mar '26 - Spring - Eden - Video - C1</td>
+                <td>$1,006</td>
+                <td class="green">$4,043</td>
+                <td class="green">4.02x</td>
+                <td>2</td>
+                <td>39</td>
+                <td><span class="tag green">Best Ad in Account</span></td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.04);">
+                <td class="highlight">Mar '26 - Spring - Designer Christian Art Static</td>
+                <td>$99</td>
+                <td class="green">$298</td>
+                <td class="green">3.01x</td>
+                <td>2</td>
+                <td>7</td>
+                <td><span class="tag green">Protect</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Mar '26 - Easter Collection - Grid 3</td>
+                <td>$415</td>
+                <td class="orange">$1,205</td>
+                <td class="orange">2.90x</td>
+                <td>1</td>
+                <td>15</td>
+                <td><span class="tag orange">Monitor Post-Easter</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Mar '26 - Easter Collection - Risen</td>
+                <td>$140</td>
+                <td class="green">$556</td>
+                <td class="green">3.97x</td>
+                <td>1</td>
+                <td>4</td>
+                <td><span class="tag orange">Monitor Post-Easter</span></td>
+            </tr>
+            <tr style="background: rgba(245,158,11,0.04);">
+                <td class="highlight">Mar '26 - Spring - Eden Vertical Video C1</td>
+                <td>$583</td>
+                <td class="orange">$684</td>
+                <td class="orange">1.17x</td>
+                <td>1</td>
+                <td>15</td>
+                <td><span class="tag orange">Review</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.04);">
+                <td class="highlight">Mar '26 - Easter Collection - Grid 2</td>
+                <td>$111</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td>4</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.04);">
+                <td class="highlight">Mar '26 - Spring - Eden Heirloom Video C1</td>
+                <td>$39</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td>3</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="wwf-box">
+        <div class="wwf-row">
+            <div class="wwf-label what">What</div>
+            <div class="wwf-text">Eden went from 0.33x and 2 purchases last week to <strong>2.84x and 5 purchases</strong> this week. Eden Video C1 is now the best ad in the account at 4.02x on $1,006 spend. Designer Christian Art Static added 2 more purchases at 3.01x. The Easter ads in Eden (Grid 3 and Risen) are also converting but on borrowed time.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label why">Why it turned</div>
+            <div class="wwf-text">Learning phase friction has cleared. Eden Video C1 has enough purchase history now that Meta knows exactly who to show it to. <strong>The budget that was going to the video ads we paused last week is now concentrating on the two creatives that can actually convert.</strong> This is what a learning phase exit should look like.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label fix">Easter Cutoff - Act This Week</div>
+            <div class="wwf-text">Grid 3 and Risen are performing now but both are Easter-themed. <strong>Pause both on or before April 18</strong>, proactively, before the signal goes negative. Eden Video C1 and Designer Christian Art Static are not Easter-dependent and should keep running. Eden Vertical Video at 1.17x gets one more week. Pause Grid 2 and Eden Heirloom today, both have real spend and zero return. Once the Easter ads come out, Eden Video C1 gets the full budget and that's where you want it.</div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>06 / 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 7: Evergreen CBO Week 1 -->
+<section class="slide">
+    <span class="slide-number">07 / 11</span>
+    <div class="slide-tag">New Campaign Launch</div>
+    <h2>Evergreen Christian Art CBO: Week 1 Full Review</h2>
+    <p class="note">Launched April 10. Six creatives across top Christian art products. $300/day value optimisation, Advantage+ audience. Data below is the full Apr 9-15 window with only 5 days of actual delivery.</p>
+
+    <div class="metrics-grid four-col">
+        <div class="metric-card purple">
+            <div class="metric-label">Total Spend</div>
+            <div class="metric-value">$1,618</div>
+            <div class="metric-change neutral">$324/day avg, 5 days</div>
+        </div>
+        <div class="metric-card purple">
+            <div class="metric-label">Total Revenue</div>
+            <div class="metric-value">$1,273</div>
+            <div class="metric-change neutral">0.79x blended ROAS</div>
+        </div>
+        <div class="metric-card purple">
+            <div class="metric-label">Purchases</div>
+            <div class="metric-value">1</div>
+            <div class="metric-change neutral">Abide With Me Narrative</div>
+        </div>
+        <div class="metric-card purple">
+            <div class="metric-label">ATCs / Checkouts</div>
+            <div class="metric-value">11 / 5</div>
+            <div class="metric-change neutral">Funnel building</div>
+        </div>
+    </div>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Name</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>ROAS</th>
+                <th>Purchases</th>
+                <th>ATC</th>
+                <th>Checkouts</th>
+                <th>ThruPlays</th>
+                <th>Signal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.07);">
+                <td class="highlight">Apr '26 - Abide With Me - Narrative Video</td>
+                <td>$133</td>
+                <td class="green">$1,273</td>
+                <td class="green">9.54x</td>
+                <td class="green">1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>76</td>
+                <td><span class="tag green">Early Standout</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Apr '26 - Peace Be Still - Narrative Video</td>
+                <td>$784</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td class="red">0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>9,987</td>
+                <td><span class="tag red">Concern</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Apr '26 - The Last Supper - Reveal Video</td>
+                <td>$280</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td class="red">0</td>
+                <td>6</td>
+                <td>2</td>
+                <td>408</td>
+                <td><span class="tag orange">ATC Signal</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Apr '26 - The Good Shepherd - BTS Video</td>
+                <td>$269</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td class="red">0</td>
+                <td>2</td>
+                <td>1</td>
+                <td>218</td>
+                <td><span class="tag orange">Monitor</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Apr '26 - Abide With Me - BTS Video</td>
+                <td>$88</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td class="red">0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>62</td>
+                <td><span class="tag brand">Low Delivery</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Apr '26 - By Still Waters - BTS Video</td>
+                <td>$63</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td class="red">0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>46</td>
+                <td><span class="tag brand">Low Delivery</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="wwf-box">
+        <div class="wwf-row">
+            <div class="wwf-label what">What</div>
+            <div class="wwf-text"><strong>1 purchase from Abide With Me Narrative at 9.54x on $133.</strong> Zero purchases from the other five ads combined. Peace Be Still Narrative received the most budget at $784 and generated 9,987 ThruPlays with zero ATCs, zero checkouts, and zero purchases.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label why">Why</div>
+            <div class="wwf-text">Abide With Me Narrative converting at 9.54x in week 1 is a good sign, consistent with how the Passage Video format has historically performed for this account. Peace Be Still is a different problem. <strong>Nearly 10,000 ThruPlays with zero funnel activity at any stage</strong> means people are watching the full video and then doing nothing. That's a creative angle issue, not targeting. The ad is engaging as content but it's not motivating anyone to buy.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label fix-red">Fix - Urgent</div>
+            <div class="wwf-text">Pause Peace Be Still Narrative today. It's absorbed the most CBO budget this week with zero return at any funnel stage. <strong>Don't adjust the campaign or ad set budget.</strong> Once it's paused, the CBO will redistribute towards Abide With Me Narrative, Last Supper Reveal (6 ATCs, 2 checkouts), and Good Shepherd BTS. Those three deserve more delivery time before any further calls. Review week 2 before touching anything else.</div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>07 / 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 8: Fine Art ABO -->
+<section class="slide">
+    <span class="slide-number">08 / 11</span>
+    <div class="slide-tag">Campaign Deep Dive</div>
+    <h2>Fine Art ABO: New Creatives Live, Core Holding</h2>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Name</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>ROAS</th>
+                <th>Purchases</th>
+                <th>ATC</th>
+                <th>ThruPlays</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.06);">
+                <td class="highlight">Mar '26 - Easter Collection - A Hill Far Away</td>
+                <td>$653</td>
+                <td class="green">$2,338</td>
+                <td class="green">3.58x</td>
+                <td>1</td>
+                <td>11</td>
+                <td>28,098</td>
+                <td><span class="tag orange">Post-Easter Watch</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Apr '26 - Path Perspective - Video</td>
+                <td>$649</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td>12</td>
+                <td>1,018</td>
+                <td><span class="tag green">Learning - Do Not Touch</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Apr '26 - Stillness - Video</td>
+                <td>$252</td>
+                <td class="orange">$157</td>
+                <td class="orange">0.62x</td>
+                <td>1</td>
+                <td>2</td>
+                <td>102</td>
+                <td><span class="tag orange">Week 1 - Monitor</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.04);">
+                <td class="highlight">Fine Art - Autumn Thoughts</td>
+                <td>$174</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td>3</td>
+                <td style="color:var(--text-muted);">0</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.04);">
+                <td class="highlight">Feb '26 - Grid</td>
+                <td>$162</td>
+                <td class="red">$0</td>
+                <td class="red">0.00x</td>
+                <td>0</td>
+                <td>0</td>
+                <td style="color:var(--text-muted);">0</td>
+                <td><span class="tag red">Pause</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="wwf-box">
+        <div class="wwf-row">
+            <div class="wwf-label what">What</div>
+            <div class="wwf-text"><strong>2 purchases at 1.27x ROAS.</strong> A Hill Far Away converted 1 at 3.58x. Stillness got 1 purchase in its first week on $252. Path Perspective is spending $649 with 12 ATCs and 1,018 ThruPlays but no purchase yet. Autumn Thoughts and Feb Grid are both running with nothing to show for it.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label why">Why it's below target</div>
+            <div class="wwf-text">Path Perspective and Stillness together spent $901 in week 1 at low ROAS. That's expected and fine. The actual drag is Autumn Thoughts ($174, 3 ATCs, 0 purchases) and Feb Grid ($162, 0 ATCs, 0 purchases) sitting in the ad set burning budget with no conversion case. <strong>A Hill Far Away also had 28,098 ThruPlays this week</strong>, meaning frequency is building on its core audience. The Easter framing won't help it post-April 18 either.</div>
+        </div>
+        <div class="wwf-row">
+            <div class="wwf-label fix">Fix</div>
+            <div class="wwf-text">Pause Autumn Thoughts and Feb Grid today. Leave Path Perspective alone for at least 14 days. Give Stillness another week. Keep A Hill Far Away running but watch it closely after April 18. If the 3-day rolling ROAS drops below 2.5x, reduce budget rather than pause outright. <strong>Get Glory into this ad set as soon as it's ready</strong>, that's the forward cover once A Hill Far Away fades.</div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>08 / 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 9: Waste Analysis -->
+<section class="slide">
+    <span class="slide-number">09 / 11</span>
+    <div class="slide-tag">Budget Waste Analysis</div>
+    <h2>Zero-Purchase Spend This Week</h2>
+    <p class="note">Ads with $40+ spend and zero purchases. New creatives in their first 14 days (Path Perspective, Stillness, most Evergreen CBO ads) excluded from the actionable waste column and listed separately.</p>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad Name</th>
+                <th>Campaign</th>
+                <th>Spend</th>
+                <th>ATC</th>
+                <th>Context</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(239,68,68,0.06);">
+                <td class="highlight">Apr '26 - Peace Be Still - Narrative Video</td>
+                <td style="font-size:11px;color:var(--text-muted);">Evergreen CBO</td>
+                <td>$784</td>
+                <td>0</td>
+                <td style="font-size:11px;color:var(--text-muted);">9,987 ThruPlays, 0 ATC, 0 CO, 0 purchases. Total funnel failure.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.06);">
+                <td class="highlight">Feb '26 - TLIMS - Close Up Carousel</td>
+                <td style="font-size:11px;color:var(--text-muted);">Combined Test</td>
+                <td>$751</td>
+                <td>3</td>
+                <td style="font-size:11px;color:var(--text-muted);">Was converting last week. Zero this week. Audience exhausted.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.06);">
+                <td class="highlight">Video - Story - Good Shepherd Copy</td>
+                <td style="font-size:11px;color:var(--text-muted);">TLIMS CBO Value Opt</td>
+                <td>$641</td>
+                <td>24</td>
+                <td style="font-size:11px;color:var(--text-muted);">High ATC, zero conversion. Audience intent not closing at purchase.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Feb '26 - TLIMS - Passage Video Copy</td>
+                <td style="font-size:11px;color:var(--text-muted);">Combined Test</td>
+                <td>$654</td>
+                <td>5</td>
+                <td style="font-size:11px;color:var(--text-muted);">4,497 ThruPlays. Strong engagement, zero purchases. Give 3 more days.</td>
+                <td><span class="tag orange">Monitor 3 Days</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Feb '26 - Abide With Me - Close Up Passage</td>
+                <td style="font-size:11px;color:var(--text-muted);">TLIMS CBO Value Opt</td>
+                <td>$441</td>
+                <td>2</td>
+                <td style="font-size:11px;color:var(--text-muted);">Recurring non-converter. Multiple weeks, no purchase.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+            <tr style="background: rgba(239,68,68,0.05);">
+                <td class="highlight">Feb '26 - Good Shepherd - Close Up Passage</td>
+                <td style="font-size:11px;color:var(--text-muted);">Combined Test</td>
+                <td>$448</td>
+                <td>7</td>
+                <td style="font-size:11px;color:var(--text-muted);">ATC activity not converting. Pause and replace with new creative.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 - TLIMS Best Seller Video Copy</td>
+                <td style="font-size:11px;color:var(--text-muted);">TLIMS CBO Value Opt</td>
+                <td>$204</td>
+                <td>3</td>
+                <td style="font-size:11px;color:var(--text-muted);">776 ThruPlays, 0 purchases. No conversion signal.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 - TLIMS - Brand Logo</td>
+                <td style="font-size:11px;color:var(--text-muted);">Combined Test</td>
+                <td>$235</td>
+                <td>3</td>
+                <td style="font-size:11px;color:var(--text-muted);">Branding format, no purchase intent generated.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 - Timeless Pieces - Video Copy</td>
+                <td style="font-size:11px;color:var(--text-muted);">Combined Test</td>
+                <td>$223</td>
+                <td>4</td>
+                <td style="font-size:11px;color:var(--text-muted);">1 checkout, 0 purchases. Conversion not closing.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Fine Art - Autumn Thoughts</td>
+                <td style="font-size:11px;color:var(--text-muted);">Fine Art ABO</td>
+                <td>$174</td>
+                <td>3</td>
+                <td style="font-size:11px;color:var(--text-muted);">Zero conversion signal. Budget needed for new creatives.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+            <tr>
+                <td class="highlight">Feb '26 - Grid (Fine Art ABO)</td>
+                <td style="font-size:11px;color:var(--text-muted);">Fine Art ABO</td>
+                <td>$162</td>
+                <td>0</td>
+                <td style="font-size:11px;color:var(--text-muted);">Zero ATCs, zero signal at any funnel stage.</td>
+                <td><span class="tag red">Pause Today</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="card" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2);">
+            <div class="metric-label">Confirmed Actionable Zero-Purchase Waste</div>
+            <div class="metric-value" style="color: var(--accent-red); font-size: 40px; margin-top: 8px;">$4,063</div>
+            <p style="color: var(--text-muted); margin-top: 8px; font-size: 13px;">9 ads to pause today plus Passage Video on 3-day watch. That's 40.6% of total spend returning zero. Redirected to Eden Video C1 at 4.02x and Abide With Me Narrative at 9.54x, this spend would have added roughly $16,000+ in revenue this week.</p>
+        </div>
+        <div class="insight-box red">
+            <h4>Where to Start</h4>
+            <p>Peace Be Still Narrative ($784, zero ATC) is the most urgent. It took the biggest share of Evergreen CBO budget with no funnel activity at any stage. Next, the Combined Test cleanup: Close Up Carousel, Good Shepherd Close Up, TLIMS Brand Logo, Timeless Pieces. Clear all five at once so the ad set is clean when the new April creative goes in. Abide With Me Close Up and Good Shepherd Story Video come out of TLIMS CBO Value Opt. Autumn Thoughts and Feb Grid are clean pauses in Fine Art ABO with no case for keeping either.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>09 / 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 10: Actions This Week -->
+<section class="slide">
+    <span class="slide-number">10 / 11</span>
+    <div class="slide-tag">Tactical Actions</div>
+    <h2>Immediate Actions: This Week</h2>
+
+    <div class="three-col">
+        <div class="concept-card">
+            <span class="concept-number" style="color: rgba(239,68,68,0.15);">01</span>
+            <div class="concept-title">Pause at Ad Level Today</div>
+            <span class="tag red">Immediate - Do Not Delay</span>
+            <ul class="check-list" style="font-size: 12px; margin-top: 12px; position: relative; z-index: 1;">
+                <li class="red">Apr '26 - Peace Be Still Narrative in Evergreen CBO ($784, 0 ATC, 0 purch)</li>
+                <li class="red">Feb '26 - TLIMS Close Up Carousel in Combined Test ($751, 0 purch)</li>
+                <li class="red">Video Story - Good Shepherd Copy in TLIMS CBO Value Opt ($641, 24 ATC, 0 purch)</li>
+                <li class="red">Feb '26 - Good Shepherd Close Up Passage in Combined Test ($448, 7 ATC, 0 purch)</li>
+                <li class="red">Feb '26 - Abide With Me Close Up Passage in TLIMS CBO Value Opt ($441, 0 purch)</li>
+                <li class="red">Feb '26 - TLIMS Brand Logo in Combined Test ($235, 0 purch)</li>
+                <li class="red">Feb '26 - Timeless Pieces Video Copy in Combined Test ($223, 0 purch)</li>
+                <li class="red">Feb '26 - TLIMS Best Seller Video Copy in TLIMS CBO Value Opt ($204, 0 purch)</li>
+                <li class="red">Fine Art - Autumn Thoughts in Fine Art ABO ($174, 0 purch)</li>
+                <li class="red">Feb '26 - Grid in Fine Art ABO ($162, 0 ATC, 0 purch)</li>
+                <li class="red">Mar '26 - Easter Grid 2 and Eden Heirloom in Eden Collection ($111 + $39, 0 purch)</li>
+            </ul>
+            <p style="font-size: 11px; color: var(--accent-red); font-weight: 600; margin-top: 12px; position: relative; z-index: 1;">Frees approx $4,063 in confirmed waste. Ad-level only. No ad set or campaign changes.</p>
+        </div>
+
+        <div class="concept-card">
+            <span class="concept-number" style="color: rgba(0,217,165,0.15);">02</span>
+            <div class="concept-title">Protect and Reinforce Winners</div>
+            <span class="tag green">This Week</span>
+            <ul class="check-list" style="font-size: 12px; margin-top: 12px; position: relative; z-index: 1;">
+                <li>Eden Video C1 (4.02x): leave it alone. It's the best ad in the account.</li>
+                <li>Abide With Me Narrative in Evergreen CBO (9.54x): once Peace Be Still is paused, the CBO will shift budget here automatically. No manual action needed.</li>
+                <li>A Hill Far Away in Fine Art ABO (3.58x): hold through April 18 then set a 2.5x ROAS watch on a 3-day rolling basis before any budget move.</li>
+                <li>Designer Christian Art Static in Eden (3.01x, 2 purch): protect it. It's the second best Eden ad and it's evergreen.</li>
+                <li>Designed By Madelynn Ave in TLIMS CBO Value Opt (3.73x): keep running.</li>
+                <li>TLIMS Passage Video in Combined Test: 4,497 ThruPlays and 5 ATCs. Give it to April 19 before deciding.</li>
+            </ul>
+        </div>
+
+        <div class="concept-card">
+            <span class="concept-number" style="color: rgba(245,158,11,0.15);">03</span>
+            <div class="concept-title">New Creative Into Gap</div>
+            <span class="tag orange">This Week</span>
+            <ul class="check-list" style="font-size: 12px; margin-top: 12px; position: relative; z-index: 1;">
+                <li class="orange">Oscar's April folder, Ads 1 and 2 (new Passage-style formats) into Combined Test and TLIMS CBO Value Opt today. The ad sets are fine structurally. They just need fresh creative.</li>
+                <li class="orange">Easter cutoff April 18: pause Grid 3, Risen, and He Lives in Eden before the signal goes negative. Do it proactively.</li>
+                <li>Whitelisted creator ad: once the post is live, build the CBO with each hook as a separate ad and get it running this week.</li>
+                <li>Glory: check production timeline with Oscar. It's the next creative in line for Fine Art ABO once A Hill Far Away fades.</li>
+                <li>Path Perspective and Stillness: both have early funnel signal. Leave them alone for at least 14 days.</li>
+            </ul>
+            <p style="font-size: 11px; color: var(--accent-orange); font-weight: 600; margin-top: 12px; position: relative; z-index: 1;">The ad sets are fine. The creative ran out. That's the fix.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>10 / 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 11: Summary -->
+<section class="slide">
+    <span class="slide-number">11 / 11</span>
+    <div class="slide-tag">Summary</div>
+    <h2>Key Takeaways and Targets</h2>
+
+    <div class="three-col">
+        <div class="card" style="border-top: 3px solid var(--accent-red);">
+            <h3>Where We Stand</h3>
+            <ul class="check-list" style="font-size: 13px;">
+                <li class="red">Blended ROAS 1.11x, well below the 3.5x target</li>
+                <li class="red">11 purchases at $909 CPA, 2.1x above breakeven</li>
+                <li class="red">Revenue down 68.6% week on week on flat spend</li>
+                <li class="red">Combined Test: $2,461 spent with zero purchases or revenue</li>
+                <li class="red">TLIMS CBO Value Opt: dropped from 3.43x to 0.38x</li>
+                <li class="red">$4,063 in confirmed zero-purchase waste across the account</li>
+                <li class="orange">Evergreen CBO in learning phase week 1, expected range</li>
+                <li class="orange">Easter intent cliff arrives April 18</li>
+            </ul>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3>What Is Working</h3>
+            <ul class="check-list" style="font-size: 13px;">
+                <li>Eden Video C1: 4.02x ROAS, 2 purchases, best ad in account. Eden reversed from 0.33x to 2.84x.</li>
+                <li>Abide With Me Narrative (Evergreen): 9.54x, 1 purchase in week 1. Outstanding early signal.</li>
+                <li>A Hill Far Away: 3.58x, 1 purchase, 28K ThruPlays. Still converting, watch after April 18.</li>
+                <li>Easter Collection: Risen at 3.97x and Grid 3 at 2.90x. Capture value before April 18.</li>
+                <li>Designer Christian Art Static: 3.01x, 2 purchases in Eden. Evergreen-capable creative.</li>
+                <li>Designed By Madelynn Ave: 3.73x, 1 purchase in TLIMS Value Opt. Only surviving converter in that ad set.</li>
+                <li>Path Perspective: 12 ATCs, 1,018 ThruPlays in week 1. Healthy learning phase signal.</li>
+            </ul>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--accent-purple);">
+            <h3>Next Week Targets</h3>
+            <ul class="check-list" style="font-size: 13px;">
+                <li>All 11 ad-level pauses from slide 10 confirmed in Ads Manager today</li>
+                <li>Oscar's April new creatives (Ads 1 and 2) live in Combined Test and TLIMS Value Opt by April 17</li>
+                <li>Easter ads (Grid 3, Risen, He Lives) paused in Eden on or before April 18</li>
+                <li>Blended ROAS target: 2.5x+ next week as fresh creative enters and waste is cleared. Full 3.5x+ target when Eden and Evergreen CBO stabilise.</li>
+                <li>Evergreen CBO: do not add new creative or change budget until week 2 review. Let learning phase run with remaining 5 ads.</li>
+                <li>Thursday call: Combined Test post-new-creative signal, Evergreen CBO week 2 read, A Hill Far Away post-Easter data</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="insight-box brand" style="margin-top: 24px;">
+        <h4>Where We're At</h4>
+        <p>Tough week. Revenue down 68.6% on flat spend, 1.11x blended ROAS, 11 purchases. The Combined Test creative slate ran out of steam right as Easter demand dropped off. TLIMS CBO Value Opt lost its converters to fatigue with nothing fresh in position to replace them. Evergreen CBO is in week 1 burning spend in learning phase. Three different problems, but all creative rotation. Not targeting, not structure, not the audience. Eden Video C1 at 4.02x and Abide With Me Narrative at 9.54x in its first week show the account can still perform when the creative is right. The priority is simple: pause the waste today, get Oscar's new April creative into the two ad sets that need it, and manage the Easter cutoff before April 18. Once that's done and the Evergreen CBO clears learning phase, the account's in a much better position than this week suggests.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Deep Dive Apr 16, 2026</span>
+        <span>Prepared by Charles Piper, April 2026</span>
+    </div>
+</section>
+
+</body>
+</html>
