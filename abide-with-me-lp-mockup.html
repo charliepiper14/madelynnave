@@ -123,15 +123,14 @@ h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;line-he
 .gallery{background:var(--light);padding:88px 0;}
 .gallery-head{text-align:center;margin-bottom:48px;}
 .gallery-head h2{font-size:38px;}
-.gal-layout{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:186px 186px 186px;gap:8px;max-width:1240px;margin:0 auto;padding:0 56px;}
-.gal-main{grid-row:span 3;overflow:hidden;position:relative;cursor:pointer;}
-.gal-main img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease,opacity 0.25s ease;}
-.gal-main:hover img{transform:scale(1.04);}
+.gal-layout{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:8px;max-width:1240px;margin:0 auto;padding:0 56px;}
+.gal-main{grid-row:span 2;overflow:hidden;position:relative;}
+.gal-main img{width:100%;height:100%;object-fit:cover;transition:opacity 0.25s ease;}
 .gal-thumb{overflow:hidden;cursor:pointer;position:relative;}
-.gal-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease,opacity 0.3s;}
+.gal-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
 .gal-thumb:hover img{transform:scale(1.05);}
 .gal-thumb.active{outline:2px solid var(--brown);outline-offset:-2px;}
-.gal-thumb.active img{opacity:0.8;}
+.gal-thumb.active img{opacity:0.75;}
 
 /* ====== REVIEWS ====== */
 .reviews{padding:100px 0;}
@@ -505,24 +504,21 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       <img
         id="galMainImg"
         src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp"
-        alt="Abide With Me in the home"
-        loading="lazy"
+        alt="Above a console table in an entryway"
+        loading="eager"
       />
     </div>
-    <div class="gal-thumb active fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp" data-alt="Above a console table in an entryway">
-      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp" alt="Above a console table" loading="lazy" />
-    </div>
-    <div class="gal-thumb fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651995/Bright-Livingroom_cogxys.webp" data-alt="In a bright modern living room">
-      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651995/Bright-Livingroom_cogxys.webp" alt="In a bright modern living room" loading="lazy" />
-    </div>
-    <div class="gal-thumb fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651996/Large-Art-Console-Table_rg1jc8.webp" data-alt="Large format art on a feature wall">
-      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651996/Large-Art-Console-Table_rg1jc8.webp" alt="Feature wall setting" loading="lazy" />
-    </div>
-    <div class="gal-thumb fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653959/Dining-Room_95523796-48f4-47bc-9067-85efc630c7b7_s1u1iw.webp" data-alt="Abide With Me in a dining room">
+    <div class="gal-thumb active" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653959/Dining-Room_95523796-48f4-47bc-9067-85efc630c7b7_s1u1iw.webp" data-alt="Abide With Me in a dining room">
       <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653959/Dining-Room_95523796-48f4-47bc-9067-85efc630c7b7_s1u1iw.webp" alt="Dining room setting" loading="lazy" />
     </div>
-    <div class="gal-thumb fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653960/Brown-Couch-with-Art-II_658a50dc-6229-4e0c-af3f-4bc7148ffc78_kmgoou.webp" data-alt="Abide With Me above a brown sofa">
-      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653960/Brown-Couch-with-Art-II_658a50dc-6229-4e0c-af3f-4bc7148ffc78_kmgoou.webp" alt="Above a brown leather sofa" loading="lazy" />
+    <div class="gal-thumb" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651995/Bright-Livingroom_cogxys.webp" data-alt="In a bright modern living room">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651995/Bright-Livingroom_cogxys.webp" alt="In a bright modern living room" loading="lazy" />
+    </div>
+    <div class="gal-thumb" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp" data-alt="Above a console table in an entryway">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp" alt="Above a console table" loading="lazy" />
+    </div>
+    <div class="gal-thumb" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653960/Brown-Couch-with-Art-II_658a50dc-6229-4e0c-af3f-4bc7148ffc78_kmgoou.webp" data-alt="Abide With Me above a brown sofa">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653960/Brown-Couch-with-Art-II_658a50dc-6229-4e0c-af3f-4bc7148ffc78_kmgoou.webp" alt="Above a brown sofa" loading="lazy" />
     </div>
   </div>
 </section>
@@ -616,35 +612,36 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
 </div>
 
 <script>
-// Scroll animations
+// Scroll animations — exclude gallery thumbs from fade to avoid opacity conflict
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 }, {threshold:0.1});
 document.querySelectorAll('.fade').forEach(el => io.observe(el));
 
 // Gallery thumbnail switcher
-const mainImg = document.getElementById('galMainImg');
-const thumbs = document.querySelectorAll('.gal-thumb');
+(function(){
+  const mainImg = document.getElementById('galMainImg');
+  if(!mainImg) return;
+  const thumbs = document.querySelectorAll('.gal-thumb');
 
-thumbs.forEach(thumb => {
-  thumb.addEventListener('click', () => {
-    const src = thumb.dataset.src;
-    const alt = thumb.dataset.alt;
+  thumbs.forEach(function(thumb){
+    thumb.addEventListener('click', function(){
+      var src = thumb.getAttribute('data-src');
+      var alt = thumb.getAttribute('data-alt');
+      if(mainImg.src === src) return;
 
-    // Fade out, swap, fade in
-    mainImg.style.transition = 'opacity 0.25s ease';
-    mainImg.style.opacity = '0';
-    setTimeout(() => {
-      mainImg.src = src;
-      mainImg.alt = alt;
-      mainImg.style.opacity = '1';
-    }, 220);
+      mainImg.style.opacity = '0';
+      setTimeout(function(){
+        mainImg.src = src;
+        mainImg.alt = alt || '';
+        mainImg.style.opacity = '1';
+      }, 220);
 
-    // Update active state
-    thumbs.forEach(t => t.classList.remove('active'));
-    thumb.classList.add('active');
+      thumbs.forEach(function(t){ t.classList.remove('active'); });
+      thumb.classList.add('active');
+    });
   });
-});
+})();
 </script>
 </body>
 </html>
