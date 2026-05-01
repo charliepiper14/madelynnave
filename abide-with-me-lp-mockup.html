@@ -123,11 +123,15 @@ h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;line-he
 .gallery{background:var(--light);padding:88px 0;}
 .gallery-head{text-align:center;margin-bottom:48px;}
 .gallery-head h2{font-size:38px;}
-.gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:8px;max-width:1240px;margin:0 auto;padding:0 56px;}
-.gal-item{overflow:hidden;cursor:zoom-in;}
-.gal-item:first-child{grid-row:span 2;}
-.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
-.gal-item:hover img{transform:scale(1.05);}
+.gal-layout{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:186px 186px 186px;gap:8px;max-width:1240px;margin:0 auto;padding:0 56px;}
+.gal-main{grid-row:span 3;overflow:hidden;position:relative;cursor:pointer;}
+.gal-main img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease,opacity 0.25s ease;}
+.gal-main:hover img{transform:scale(1.04);}
+.gal-thumb{overflow:hidden;cursor:pointer;position:relative;}
+.gal-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease,opacity 0.3s;}
+.gal-thumb:hover img{transform:scale(1.05);}
+.gal-thumb.active{outline:2px solid var(--brown);outline-offset:-2px;}
+.gal-thumb.active img{opacity:0.8;}
 
 /* ====== REVIEWS ====== */
 .reviews{padding:100px 0;}
@@ -198,6 +202,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
   .hero-body{padding:44px 44px 44px 40px;}
   .story .section-wrap,.craft .section-wrap{gap:56px;}
   .gal-grid{padding:0 36px;gap:6px;}
+  .gal-layout{padding:0 36px;gap:6px;}
   .reviews .section-wrap,.featured-rev{padding-left:36px;padding-right:36px;}
   .video-inner{padding:0 36px;gap:52px;}
   .final .section-wrap{padding:0 36px;}
@@ -258,8 +263,9 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
   .gallery{padding:60px 0;}
   .gallery-head{padding:0 24px;}
   .gallery-head h2{font-size:30px;}
-  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;padding:0 24px;gap:6px;}
-  .gal-item:first-child{grid-row:span 2;grid-column:span 1;}
+  .gal-layout{grid-template-columns:1fr 1fr;grid-template-rows:auto;padding:0 24px;gap:6px;}
+  .gal-main{grid-row:span 1;height:220px;}
+  .gal-thumb{height:160px;}
 
   .reviews{padding:64px 0;}
   .reviews-head{padding:0 24px;margin-bottom:40px;}
@@ -494,15 +500,29 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
     <div class="eyebrow">In The Home</div>
     <h2>See it in every room</h2>
   </div>
-  <div class="gal-grid">
-    <div class="gal-item fade">
-      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp" alt="Above a console table in an entryway" loading="lazy" />
+  <div class="gal-layout">
+    <div class="gal-main" id="galMain">
+      <img
+        id="galMainImg"
+        src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp"
+        alt="Abide With Me in the home"
+        loading="lazy"
+      />
     </div>
-    <div class="gal-item fade">
+    <div class="gal-thumb active fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp" data-alt="Above a console table in an entryway">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp" alt="Above a console table" loading="lazy" />
+    </div>
+    <div class="gal-thumb fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651995/Bright-Livingroom_cogxys.webp" data-alt="In a bright modern living room">
       <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651995/Bright-Livingroom_cogxys.webp" alt="In a bright modern living room" loading="lazy" />
     </div>
-    <div class="gal-item fade">
-      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651996/Large-Art-Console-Table_rg1jc8.webp" alt="Large format art on a feature wall" loading="lazy" />
+    <div class="gal-thumb fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651996/Large-Art-Console-Table_rg1jc8.webp" data-alt="Large format art on a feature wall">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651996/Large-Art-Console-Table_rg1jc8.webp" alt="Feature wall setting" loading="lazy" />
+    </div>
+    <div class="gal-thumb fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653959/Dining-Room_95523796-48f4-47bc-9067-85efc630c7b7_s1u1iw.webp" data-alt="Abide With Me in a dining room">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653959/Dining-Room_95523796-48f4-47bc-9067-85efc630c7b7_s1u1iw.webp" alt="Dining room setting" loading="lazy" />
+    </div>
+    <div class="gal-thumb fade" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653960/Brown-Couch-with-Art-II_658a50dc-6229-4e0c-af3f-4bc7148ffc78_kmgoou.webp" data-alt="Abide With Me above a brown sofa">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777653960/Brown-Couch-with-Art-II_658a50dc-6229-4e0c-af3f-4bc7148ffc78_kmgoou.webp" alt="Above a brown leather sofa" loading="lazy" />
     </div>
   </div>
 </section>
@@ -596,10 +616,35 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
 </div>
 
 <script>
+// Scroll animations
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 }, {threshold:0.1});
 document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+// Gallery thumbnail switcher
+const mainImg = document.getElementById('galMainImg');
+const thumbs = document.querySelectorAll('.gal-thumb');
+
+thumbs.forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    const src = thumb.dataset.src;
+    const alt = thumb.dataset.alt;
+
+    // Fade out, swap, fade in
+    mainImg.style.transition = 'opacity 0.25s ease';
+    mainImg.style.opacity = '0';
+    setTimeout(() => {
+      mainImg.src = src;
+      mainImg.alt = alt;
+      mainImg.style.opacity = '1';
+    }, 220);
+
+    // Update active state
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+  });
+});
 </script>
 </body>
 </html>
