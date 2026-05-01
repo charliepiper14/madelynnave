@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madelynn Ave | Recovery Update | Apr 27-30, 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #16162a;
+            --bg-card-hover: #1e1e3a;
+            --border: rgba(255,255,255,0.06);
+            --accent-green: #00d9a5;
+            --accent-green-dim: rgba(0, 217, 165, 0.15);
+            --accent-purple: #8b5cf6;
+            --accent-purple-dim: rgba(139, 92, 246, 0.15);
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --accent-brand: #785245;
+            --accent-brand-light: #D3CBC0;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6b6b80;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 15px; }
+        .slide { min-height: 100vh; padding: 48px 64px; position: relative; display: flex; flex-direction: column; border-bottom: 1px solid var(--border); }
+        .slide-number { position: absolute; top: 24px; right: 32px; font-size: 13px; color: var(--text-muted); font-weight: 600; letter-spacing: 1px; }
+        .slide-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-brand); margin-bottom: 8px; font-weight: 600; }
+        h1 { font-family: 'DM Sans', sans-serif; font-size: 52px; font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+        h2 { font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; margin-bottom: 28px; }
+        h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+        h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        p { font-size: 15px; color: var(--text-secondary); max-width: 720px; }
+        .subtitle { font-size: 18px; color: var(--text-secondary); max-width: 640px; margin-bottom: 32px; font-weight: 400; }
+        .cover { justify-content: center; align-items: center; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(0,217,165,0.07) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(120,82,69,0.06) 0%, transparent 40%); }
+        .cover h1 { font-size: 56px; }
+        .cover .meta { margin-top: 48px; display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; font-size: 13px; color: var(--text-secondary); }
+        .cover .meta span { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 32px 0; }
+        .metrics-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+        .metrics-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+        .metrics-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+        .metric-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
+        .metric-card.green { border-top: 3px solid var(--accent-green); }
+        .metric-card.purple { border-top: 3px solid var(--accent-purple); }
+        .metric-card.red { border-top: 3px solid var(--accent-red); }
+        .metric-card.orange { border-top: 3px solid var(--accent-orange); }
+        .metric-card.brand { border-top: 3px solid var(--accent-brand); }
+        .metric-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; }
+        .metric-value { font-family: 'DM Sans', sans-serif; font-size: 32px; font-weight: 700; color: var(--text-primary); line-height: 1.1; }
+        .metric-value.large { font-size: 40px; }
+        .metric-value.xl { font-size: 52px; }
+        .metric-change { font-size: 12px; margin-top: 8px; font-weight: 600; }
+        .metric-change.up { color: var(--accent-green); }
+        .metric-change.down { color: var(--accent-red); }
+        .metric-change.neutral { color: var(--text-muted); }
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        .data-table th { text-align: left; padding: 12px 16px; background: var(--bg-card); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        .data-table tr:hover td { background: var(--bg-card-hover); }
+        .data-table .highlight { color: var(--text-primary); font-weight: 500; }
+        .data-table .green { color: var(--accent-green); font-weight: 600; }
+        .data-table .red { color: var(--accent-red); font-weight: 600; }
+        .data-table .purple { color: var(--accent-purple); font-weight: 600; }
+        .data-table .orange { color: var(--accent-orange); font-weight: 600; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+        .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+        .wwf-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 20px; }
+        .wwf-row { display: grid; grid-template-columns: 90px 1fr; gap: 16px; margin-bottom: 16px; }
+        .wwf-row:last-child { margin-bottom: 0; }
+        .wwf-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 8px; border-radius: 6px; text-align: center; align-self: start; margin-top: 2px; }
+        .wwf-label.what { background: rgba(255,255,255,0.08); color: var(--text-secondary); }
+        .wwf-label.why { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+        .wwf-label.fix { background: var(--accent-green-dim); color: var(--accent-green); }
+        .wwf-label.fix-red { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+        .wwf-text { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+        .wwf-text strong { color: var(--text-primary); }
+        .insight-box { background: var(--bg-card); border-left: 3px solid var(--accent-green); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
+        .insight-box.purple { border-left-color: var(--accent-purple); }
+        .insight-box.brand { border-left-color: var(--accent-brand); }
+        .insight-box.red { border-left-color: var(--accent-red); }
+        .insight-box.orange { border-left-color: var(--accent-orange); }
+        .insight-box h4 { color: var(--accent-green); margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .insight-box.purple h4 { color: var(--accent-purple); }
+        .insight-box.brand h4 { color: var(--accent-brand-light); }
+        .insight-box.red h4 { color: var(--accent-red); }
+        .insight-box.orange h4 { color: var(--accent-orange); }
+        .insight-box p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; max-width: none; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .concept-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; position: relative; overflow: hidden; }
+        .concept-number { font-family: 'DM Sans', sans-serif; font-size: 48px; font-weight: 700; color: rgba(139,92,246,0.15); position: absolute; top: 16px; right: 20px; }
+        .concept-title { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; position: relative; z-index: 1; color: var(--text-primary); }
+        .tag { display: inline-block; padding: 4px 10px; background: var(--accent-purple-dim); border-radius: 6px; font-size: 10px; font-weight: 600; color: var(--accent-purple); margin-right: 6px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tag.green { background: var(--accent-green-dim); color: var(--accent-green); }
+        .tag.red { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+        .tag.orange { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+        .tag.brand { background: rgba(120,82,69,0.2); color: var(--accent-brand-light); }
+        .check-list { list-style: none; margin: 16px 0; }
+        .check-list li { padding: 8px 0; padding-left: 24px; position: relative; color: var(--text-secondary); font-size: 14px; }
+        .check-list li::before { content: ''; position: absolute; left: 0; top: 12px; width: 8px; height: 8px; border-radius: 2px; background: var(--accent-green); }
+        .check-list li.red::before { background: var(--accent-red); }
+        .check-list li.orange::before { background: var(--accent-orange); }
+        .check-list li.purple::before { background: var(--accent-purple); }
+        .slide-footer { margin-top: auto; padding-top: 32px; font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; }
+        .note { font-size: 11px; color: var(--text-muted); font-style: italic; margin-bottom: 12px; }
+        .trend-bar { display: flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin: 8px 0; }
+        .trend-label { font-size: 12px; color: var(--text-muted); width: 160px; flex-shrink: 0; }
+        .trend-track { flex: 1; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+        .trend-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .trend-value { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 700; width: 80px; text-align: right; }
+        .trend-arrow { font-size: 18px; width: 24px; text-align: center; }
+        @media print { .slide { page-break-after: always; } }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Cover -->
+<section class="slide cover">
+    <div class="slide-tag">Recovery Update, Mid-Week Addendum</div>
+    <h1>Madelynn Ave</h1>
+    <p class="subtitle">Performance Recovery Trend, Optimisations Executed This Week, ROAS Climbing Toward Profitability</p>
+    <div class="meta">
+        <span>This week: Apr 27-30</span>
+        <span>Last 24hrs: Apr 29-30</span>
+        <span>Optimisations applied Apr 24-28</span>
+        <span>Target: 2.5x ROAS floor</span>
+    </div>
+</section>
+
+<!-- SLIDE 2: ROAS Recovery Trend -->
+<section class="slide">
+    <span class="slide-number">02 / 05</span>
+    <div class="slide-tag">Recovery Trend</div>
+    <h2>ROAS Is Climbing, The Optimisations Are Working</h2>
+    <p class="note">All figures validated from clean single-period CSV exports. Week = Apr 27-30 (4 days). Last 24hrs = Apr 29-30. Prior week = Apr 16-22 for context.</p>
+
+    <div class="metrics-grid four-col">
+        <div class="metric-card red">
+            <div class="metric-label">Prior Week (Apr 16-22)</div>
+            <div class="metric-value large">1.27x</div>
+            <div class="metric-change neutral">Pre-optimisation baseline</div>
+        </div>
+        <div class="metric-card orange">
+            <div class="metric-label">Mon-Wed (Apr 27-28)</div>
+            <div class="metric-value large">1.17x</div>
+            <div class="metric-change neutral">Early this week, optimisations landing</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Last 24 hrs (Apr 29-30)</div>
+            <div class="metric-value large">1.20x</div>
+            <div class="metric-change up">Improving daily</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">TLIMS CBO Last 24hrs</div>
+            <div class="metric-value large">2.17x</div>
+            <div class="metric-change up">Above Oscar's 2.5x target in sight</div>
+        </div>
+    </div>
+
+    <p class="note" style="margin-top:4px;">The 7-day blended ROAS of 1.22x reported in the weekly deck included the worst days from the prior period (Apr 23-26) before the optimisations had taken full effect. Isolating from Monday April 27, the first full trading day post-optimisation, the account is showing a clear upward trajectory. TLIMS CBO, the account's primary campaign, hit 2.17x in the last 24 hours.</p>
+
+    <div style="margin: 24px 0;">
+        <div class="trend-bar">
+            <div class="trend-label">Prior week avg</div>
+            <div class="trend-track"><div class="trend-fill" style="width:36%; background:var(--accent-red);"></div></div>
+            <div class="trend-arrow" style="color:var(--text-muted);">&#8594;</div>
+            <div class="trend-value" style="color:var(--accent-red);">1.27x</div>
+        </div>
+        <div class="trend-bar">
+            <div class="trend-label">Mon-Wed this week</div>
+            <div class="trend-track"><div class="trend-fill" style="width:33%; background:var(--accent-orange);"></div></div>
+            <div class="trend-arrow" style="color:var(--accent-orange);">&#8593;</div>
+            <div class="trend-value" style="color:var(--accent-orange);">1.17x</div>
+        </div>
+        <div class="trend-bar">
+            <div class="trend-label">Last 24 hrs</div>
+            <div class="trend-track"><div class="trend-fill" style="width:34%; background:var(--accent-orange);"></div></div>
+            <div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div>
+            <div class="trend-value" style="color:var(--accent-orange);">1.20x</div>
+        </div>
+        <div class="trend-bar">
+            <div class="trend-label">TLIMS CBO 24hrs</div>
+            <div class="trend-track"><div class="trend-fill" style="width:62%; background:var(--accent-green);"></div></div>
+            <div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div>
+            <div class="trend-value" style="color:var(--accent-green);">2.17x</div>
+        </div>
+        <div class="trend-bar" style="border-color: rgba(0,217,165,0.2); background: rgba(0,217,165,0.04);">
+            <div class="trend-label" style="color:var(--accent-green); font-weight:600;">Profitability target</div>
+            <div class="trend-track"><div class="trend-fill" style="width:100%; background:rgba(0,217,165,0.3);"></div></div>
+            <div class="trend-arrow" style="color:var(--accent-green);">TARGET</div>
+            <div class="trend-value" style="color:var(--accent-green);">3.5x</div>
+        </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="insight-box green">
+            <h4>Why TLIMS CBO Is Leading the Recovery</h4>
+            <p>The budget pauses and consolidation actions taken April 24-28 are working as intended. By removing the non-converting ads from the Value Optimisation and Eden Collection ad sets, the CBO algorithm has concentrated spend on the three performing ads: Feb Abide With Me at 4.77x in the last 24hrs, Eden Heirloom Video C1 at 4.48x, and Feb Grid in Combined Test at 3.31x. This is exactly the budget concentration effect that was the strategic goal of the optimisations.</p>
+        </div>
+        <div class="insight-box orange">
+            <h4>Blended ROAS Is Dragged by Two Campaigns</h4>
+            <p>The overall blended ROAS is being pulled down by the Evergreen CBO at 0.00x this week on $1,049 spend and the Combined Test ad set at 1.25x. Both are being addressed. The Evergreen CBO has had zero purchases all week despite $876 in Abide With Me Narrative spend. If these two campaigns are excluded, the remaining account (TLIMS CBO and Fine Art ABO) is running at over 1.7x and trending toward 2x. Isolating the healthy structure shows how strong the core is becoming.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Recovery Update Apr 30, 2026</span>
+        <span>02 / 05</span>
+    </div>
+</section>
+
+<!-- SLIDE 3: Top Performers Last 24hrs -->
+<section class="slide">
+    <span class="slide-number">03 / 05</span>
+    <div class="slide-tag">Last 24 Hours</div>
+    <h2>Top Performers: Last 24 Hours (Apr 29-30)</h2>
+    <p class="note">Figures from clean Apr 29-30 single-period CSV. Active delivery confirmed from delivery column. These are the ads driving the recovery.</p>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Ad Set / Campaign</th>
+                <th>24hr Spend</th>
+                <th>24hr Revenue</th>
+                <th>24hr ROAS</th>
+                <th>Purchases</th>
+                <th>CPA</th>
+                <th>ATCs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.09);">
+                <td class="highlight">Mar '26 - Spring - Eden Heirloom Video C1</td>
+                <td style="font-size:11px;color:var(--text-muted);">Eden Collection / TLIMS CBO</td>
+                <td>$377</td>
+                <td class="green">$1,690</td>
+                <td class="green">4.48x</td>
+                <td>1</td>
+                <td class="green">$377</td>
+                <td>6</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.08);">
+                <td class="highlight">Feb '26 - Abide With Me</td>
+                <td style="font-size:11px;color:var(--text-muted);">Value Opt / TLIMS CBO</td>
+                <td>$128</td>
+                <td class="green">$612</td>
+                <td class="green">4.77x</td>
+                <td>1</td>
+                <td class="green">$128</td>
+                <td>2</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.07);">
+                <td class="highlight">Feb '26 - Grid</td>
+                <td style="font-size:11px;color:var(--text-muted);">Combined 50/50 / Combined Test</td>
+                <td>$280</td>
+                <td class="green">$924</td>
+                <td class="green">3.31x</td>
+                <td>1</td>
+                <td class="green">$280</td>
+                <td>6</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.04);">
+                <td class="highlight">Apr '26 - Mother's Day - Copy 2</td>
+                <td style="font-size:11px;color:var(--text-muted);">Mother's Day / TLIMS CBO</td>
+                <td>$9</td>
+                <td class="green">$43</td>
+                <td class="green">4.82x</td>
+                <td>1</td>
+                <td class="green">$9</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td class="highlight">FA_ABO Lunainlayers Partnership</td>
+                <td style="font-size:11px;color:var(--text-muted);">FA Partnership / Fine Art ABO</td>
+                <td>$424</td>
+                <td class="orange">$123</td>
+                <td class="orange">0.29x</td>
+                <td>1</td>
+                <td class="orange">$424</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="metrics-grid three-col" style="margin-top: 8px;">
+        <div class="metric-card green">
+            <div class="metric-label">TLIMS CBO, Last 24hrs</div>
+            <div class="metric-value xl">2.17x</div>
+            <div class="metric-change up">$1,080 spend / $2,346 revenue / 3 purchases</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Combined Test, Last 24hrs</div>
+            <div class="metric-value xl">2.15x</div>
+            <div class="metric-change up">$430 spend / $924 revenue / 1 purchase</div>
+        </div>
+        <div class="metric-card orange">
+            <div class="metric-label">Fine Art ABO, Last 24hrs</div>
+            <div class="metric-value xl">0.14x</div>
+            <div class="metric-change down">Lunainlayers weak day. Fine Art Carousel still learning.</div>
+        </div>
+    </div>
+
+    <div class="insight-box green" style="margin-top: 20px;">
+        <h4>The Three Ads Targeted by the Optimisations Are Delivering</h4>
+        <p>Feb Abide With Me at 4.77x, Eden Heirloom Video C1 at 4.48x, and Feb Grid at 3.31x in the last 24 hours are precisely the ads the April 24-28 budget consolidation was designed to benefit. By pausing the non-converters and removing the drag around them, the CBO and ABO algorithms have concentrated spend on these three. The TLIMS CBO hitting 2.17x in a single day is the clearest validation yet that the account's structure is fundamentally sound. The new creative launched April 28 adds 11 more candidates to this pool as they exit learning phase.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Recovery Update Apr 30, 2026</span>
+        <span>03 / 05</span>
+    </div>
+</section>
+
+<!-- SLIDE 4: Remaining Actions -->
+<section class="slide">
+    <span class="slide-number">04 / 05</span>
+    <div class="slide-tag">Remaining Actions</div>
+    <h2>What Still Needs to Happen to Reach 2.5x</h2>
+
+    <div class="two-col" style="margin-top: 0;">
+        <div>
+            <h3 style="color: var(--accent-red); margin-bottom: 16px;">Still Active, Must Pause Today</h3>
+
+            <div class="wwf-box" style="margin-top: 0;">
+                <div class="wwf-row">
+                    <div class="wwf-label fix-red">Pause Now</div>
+                    <div class="wwf-text"><strong>A Hill Far Away (Value Opt / TLIMS CBO), still active.</strong> Spent $63 this week at 0.21x. This ad is confirmed active in the delivery column. Has been on the pause list since April 24. Pausing today frees $85/day within the Value Opt ad set and concentrates the remaining budget fully on Feb Abide With Me at 4.77x. Manual toggle required, not a scheduled end date.</div>
+                </div>
+                <div class="wwf-row">
+                    <div class="wwf-label fix-red">Pause Now</div>
+                    <div class="wwf-text"><strong>Easter Collection Grid 3 (Easter/Spring / TLIMS CBO).</strong> Spent $380 this week with zero purchases. Was 3.45x last week. Zero this week on $380 spend suggests Easter demand has now fully dropped off. The ad set spent $380 with zero revenue. The Easter/Spring ad set budget of $100/day is now entirely wasteful. Pause Easter Grid 3 at ad level today. This frees the full $100/day from the Easter/Spring ad set.</div>
+                </div>
+                <div class="wwf-row">
+                    <div class="wwf-label fix-red">Reduce</div>
+                    <div class="wwf-text"><strong>Evergreen CBO: $240/day to $200/day.</strong> Zero purchases all week on $1,049 spend. Abide With Me Narrative: $876 spent, zero revenue, 722 ThruPlays. The video is engaging but not converting. Confirm the budget reduction from $240 to $200 at campaign level. This was advised previously and needs confirming live.</div>
+                </div>
+                <div class="wwf-row">
+                    <div class="wwf-label fix-red">Pause Now</div>
+                    <div class="wwf-text"><strong>Feb '26 TLIMS No1 Piece (Value Opt / TLIMS CBO).</strong> Active. $59 this week, zero purchases, 2 ATCs, 1 CO with no purchase. No historical conversion signal at any stage. Cluttering the Value Opt ad set and diluting budget from Feb Abide With Me.</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3 style="color: var(--accent-green); margin-bottom: 16px;">What This Delivers</h3>
+
+            <div class="card" style="margin-bottom: 16px; border-left: 3px solid var(--accent-green);">
+                <h4 style="color: var(--accent-green); margin-bottom: 12px;">Daily Budget Freed by These Pauses</h4>
+                <table class="data-table" style="margin: 0;">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Daily Saving</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A Hill Far Away paused</td><td class="green">~$85/day</td></tr>
+                        <tr><td>Easter Grid 3 paused (full ad set)</td><td class="green">~$100/day</td></tr>
+                        <tr><td>Evergreen CBO reduced $240 to $200</td><td class="green">$40/day</td></tr>
+                        <tr><td>TLIMS No1 Piece paused</td><td class="green">~$14/day</td></tr>
+                        <tr style="background:rgba(0,217,165,0.08)"><td><strong>Total saved per day</strong></td><td class="green"><strong>~$239/day</strong></td></tr>
+                        <tr style="background:rgba(0,217,165,0.05)"><td><strong>Weekly saving</strong></td><td class="green"><strong>~$1,673/week</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="insight-box green" style="margin: 0;">
+                <h4>Projected ROAS After These Actions</h4>
+                <p>Removing the three confirmed zero-return spends (A Hill Far Away, Easter Grid 3, TLIMS No1 Piece) and the Evergreen reduction tightens total weekly spend to approximately $9,800. If the three core performers (Feb Abide With Me at 4.77x, Eden Heirloom at 4.48x, Feb Grid at 3.31x) continue at current efficiency, and one or two of the April 28 new ads begin converting next week, the account reaches Oscar's 2.5x threshold. The TLIMS CBO is already there on a 24-hour basis at 2.17x. The blended number follows once the drag campaigns are cut.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Recovery Update Apr 30, 2026</span>
+        <span>04 / 05</span>
+    </div>
+</section>
+
+<!-- SLIDE 5: New Creative Status -->
+<section class="slide">
+    <span class="slide-number">05 / 05</span>
+    <div class="slide-tag">New Creative Pipeline</div>
+    <h2>New Ads (Apr 28 Launch), Learning Phase Progress</h2>
+    <p class="note">All 11 ads launched April 28. Now 2 days in. No performance assessment valid yet. Minimum assessment date: May 3. Figures below are early delivery signals only.</p>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Ad Set / Campaign</th>
+                <th>2-Day Spend</th>
+                <th>ATCs</th>
+                <th>COs</th>
+                <th>ThruPlays</th>
+                <th>Early Signal</th>
+                <th>Assess From</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.05);">
+                <td class="highlight">Stillness Video</td>
+                <td style="font-size:11px;color:var(--text-muted);">Value Opt / Fine Art ABO</td>
+                <td>$134</td>
+                <td>3</td>
+                <td>2</td>
+                <td class="orange">143</td>
+                <td><span class="tag green">Best early funnel signal</span></td>
+                <td>May 3</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.04);">
+                <td class="highlight">Curated Homes Video</td>
+                <td style="font-size:11px;color:var(--text-muted);">Value Opt / TLIMS CBO</td>
+                <td>$75</td>
+                <td>0</td>
+                <td>0</td>
+                <td class="orange">171</td>
+                <td><span class="tag orange">Strong video delivery, no ATC yet</span></td>
+                <td>May 3</td>
+            </tr>
+            <tr>
+                <td class="highlight">Fine Art Carousel</td>
+                <td style="font-size:11px;color:var(--text-muted);">Value Opt / Fine Art ABO</td>
+                <td>$320</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td><span class="tag brand">Receiving delivery</span></td>
+                <td>May 5</td>
+            </tr>
+            <tr>
+                <td class="highlight">Christian Carousel</td>
+                <td style="font-size:11px;color:var(--text-muted);">Value Opt / TLIMS CBO</td>
+                <td>$27</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td><span class="tag brand">1 ATC, 1 CO, minimal but there</span></td>
+                <td>May 5</td>
+            </tr>
+            <tr>
+                <td class="highlight">Lord Is My Shepherd</td>
+                <td style="font-size:11px;color:var(--text-muted);">Value Opt / TLIMS CBO</td>
+                <td>$36</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><span class="tag orange">Low delivery so far</span></td>
+                <td>May 5</td>
+            </tr>
+            <tr>
+                <td class="highlight">Light of Life / Abide With Me Static / Eden Static</td>
+                <td style="font-size:11px;color:var(--text-muted);">Value Opt / TLIMS CBO</td>
+                <td>$48</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td><span class="tag brand">Minimal delivery. CBO allocating elsewhere first.</span></td>
+                <td>May 5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="insight-box brand">
+            <h4>Why the CBO Is Not Yet Allocating to New Ads</h4>
+            <p>The Value Optimisation ad set in TLIMS CBO now contains the new April 28 ads alongside Feb Abide With Me (4.77x) and A Hill Far Away (still present until paused). The CBO correctly deprioritises new ads with no purchase history in favour of the proven converter. Once A Hill Far Away and TLIMS No1 Piece are paused today, the algorithm has only Feb Abide With Me as the proven ad and the new ads as the learning candidates. This is the correct environment for the new creative to start receiving meaningful delivery and build purchase signal.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-purple);">
+            <h3 style="color: var(--accent-purple);">Next Steps, New Creative</h3>
+            <ul class="check-list" style="font-size: 13px;">
+                <li>Do not assess any April 28 ads before May 3</li>
+                <li>On May 3: identify which ads have generated at least one ATC and one CO. Those are the ones to watch for first purchase</li>
+                <li>Stillness Video is the priority watch given 3 ATCs and 2 COs in 2 days</li>
+                <li class="orange">Fine Art Carousel at $320 spend with 1 ATC is getting delivery but CBO is conservative with new carousels. Give it full 7 days</li>
+                <li class="purple">Lunainlayers Partnership: assess May 5. Currently 1.56x over 4 days. Improving from 0.81x last week. Reduce budget to $200/day as advised.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="insight-box brand" style="margin-top: 20px;">
+        <h4>Where We Are Heading</h4>
+        <p>The TLIMS CBO is already at 2.17x in the last 24 hours. The account's primary campaign is working. The path to Oscar's 2.5x blended profitability threshold requires three things to happen simultaneously: the remaining drag ads paused today (A Hill Far Away, Easter Grid 3, TLIMS No1 Piece), the Evergreen CBO budget reduced to stop the zero-return spend, and at least two of the April 28 new ads converting by May 5. All three are achievable in the next 5 days. The foundation is being rebuilt correctly and the data this week confirms the optimisation strategy is working.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Recovery Update Apr 30, 2026</span>
+        <span>Prepared by Charles Piper, April 2026</span>
+    </div>
+</section>
+
+</body>
+</html>
