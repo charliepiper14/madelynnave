@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abide With Me — Madelynn Ave</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brown: #785245;
+  --warm: #D3CBC0;
+  --light: #F2EFE9;
+  --dark-accent: #BCB1A0;
+  --cream: #FAF8F5;
+  --text-dark: #2C2420;
+  --text-mid: #5C4F47;
+  --text-light: #9E8E84;
+  --gold: #B8975A;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text-dark);font-weight:300;overflow-x:hidden;}
+
+.announcement{background:var(--brown);color:#fff;text-align:center;padding:10px 20px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:500;}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:var(--cream);border-bottom:1px solid rgba(120,82,69,0.1);position:sticky;top:0;z-index:100;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--brown);}
+.nav-trust{font-size:12px;color:var(--text-mid);letter-spacing:0.5px;}
+.nav-cta{background:var(--brown);color:#fff;border:none;padding:12px 28px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.25s;}
+.nav-cta:hover{background:var(--text-dark);}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 120px);}
+.hero-image{position:relative;overflow:hidden;background:#1a1410;}
+.hero-image iframe{width:100%;height:100%;display:block;border:0;min-height:500px;}
+.hero-badge{position:absolute;bottom:32px;left:32px;background:rgba(250,248,245,0.95);padding:12px 20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--brown);font-weight:500;z-index:2;}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:64px 72px;background:var(--cream);}
+.hero-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--brown);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.hero-tag::before{content:'';display:block;width:32px;height:1px;background:var(--brown);}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;line-height:1.1;color:var(--text-dark);margin-bottom:24px;}
+.hero-headline em{font-style:italic;color:var(--brown);}
+.hero-subhead{font-size:15px;line-height:1.75;color:var(--text-mid);max-width:420px;margin-bottom:36px;}
+.hero-scripture{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--brown);border-left:2px solid var(--warm);padding-left:18px;margin-bottom:40px;line-height:1.6;}
+.hero-scripture cite{display:block;font-size:12px;letter-spacing:1px;font-style:normal;margin-top:6px;color:var(--text-light);}
+.price-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;}
+.price-main{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;color:var(--text-dark);margin-bottom:4px;}
+.price-note{font-size:12px;color:var(--text-light);letter-spacing:0.5px;margin-bottom:32px;}
+.cta-primary{display:block;width:100%;background:var(--brown);color:#fff;border:none;padding:18px 32px;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background 0.25s,transform 0.15s;text-align:center;text-decoration:none;margin-bottom:12px;}
+.cta-primary:hover{background:var(--text-dark);transform:translateY(-1px);}
+.cta-secondary{display:block;width:100%;background:transparent;color:var(--brown);border:1px solid var(--warm);padding:16px 32px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;transition:all 0.25s;text-align:center;text-decoration:none;}
+.cta-secondary:hover{border-color:var(--brown);background:rgba(120,82,69,0.05);}
+.trust-row{display:flex;gap:24px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(120,82,69,0.1);}
+.trust-item{font-size:11px;color:var(--text-light);letter-spacing:0.5px;display:flex;align-items:center;gap:6px;}
+.trust-item::before{content:'';width:16px;height:1px;background:var(--warm);flex-shrink:0;}
+
+.proof-bar{background:var(--light);border-top:1px solid rgba(120,82,69,0.12);border-bottom:1px solid rgba(120,82,69,0.12);padding:24px 48px;display:flex;align-items:center;justify-content:center;gap:64px;}
+.proof-stat{text-align:center;}
+.proof-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;color:var(--brown);line-height:1;}
+.proof-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-top:4px;}
+.proof-div{width:1px;height:36px;background:var(--warm);}
+
+.story{display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto;padding:96px 48px;gap:80px;align-items:center;}
+.section-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--brown);font-weight:500;margin-bottom:20px;}
+.section-headline{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;line-height:1.2;color:var(--text-dark);margin-bottom:24px;}
+.section-body{font-size:15px;line-height:1.85;color:var(--text-mid);margin-bottom:20px;}
+.story-images{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px;}
+.story-img-main{grid-column:1/-1;overflow:hidden;height:300px;}
+.story-img-small{height:180px;overflow:hidden;}
+.story-img-main img,.story-img-small img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;}
+.story-img-main:hover img,.story-img-small:hover img{transform:scale(1.04);}
+
+.objections{background:var(--text-dark);color:var(--cream);padding:80px 48px;}
+.obj-inner{max-width:1100px;margin:0 auto;}
+.obj-header{text-align:center;margin-bottom:56px;}
+.obj-header .section-tag{color:var(--warm);}
+.obj-header .section-headline{color:var(--cream);font-size:44px;}
+.obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.obj-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:rgba(211,203,192,0.2);line-height:1;margin-bottom:12px;}
+.obj-q{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--warm);margin-bottom:14px;line-height:1.3;font-style:italic;}
+.obj-a{font-size:14px;line-height:1.8;color:rgba(250,248,245,0.7);}
+
+.craft{padding:96px 48px;max-width:1200px;margin:0 auto;}
+.craft-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.craft-img{position:relative;overflow:hidden;height:560px;}
+.craft-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.craft-img-cap{position:absolute;bottom:24px;right:24px;background:rgba(250,248,245,0.9);padding:10px 16px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--brown);}
+.craft-features{display:flex;flex-direction:column;gap:0;margin-top:32px;}
+.craft-feat{display:flex;gap:20px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(120,82,69,0.1);}
+.craft-feat:last-child{border-bottom:none;}
+.feat-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--brown);font-weight:500;letter-spacing:1px;flex-shrink:0;margin-top:3px;}
+.feat-title{font-size:13px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dark);margin-bottom:6px;}
+.feat-body{font-size:13px;line-height:1.75;color:var(--text-mid);}
+
+.gallery{background:var(--light);padding:80px 48px;}
+.gallery-header{text-align:center;margin-bottom:48px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:1200px;margin:0 auto;}
+.gal-item{overflow:hidden;height:320px;cursor:zoom-in;}
+.gal-item:first-child{grid-column:span 2;height:400px;}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
+.gal-item:hover img{transform:scale(1.04);}
+
+.reviews{padding:96px 48px;max-width:1100px;margin:0 auto;}
+.reviews-header{text-align:center;margin-bottom:56px;}
+.reviews-rating{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px;}
+.stars{color:var(--gold);font-size:20px;letter-spacing:2px;}
+.rating-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;color:var(--brown);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:32px;}
+.review-card{background:var(--light);padding:32px;}
+.review-card::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:80px;color:var(--warm);line-height:0.8;display:block;margin-bottom:12px;}
+.review-stars{color:var(--gold);font-size:13px;margin-bottom:14px;}
+.review-text{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;line-height:1.65;color:var(--text-dark);margin-bottom:20px;}
+.review-author{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);}
+.review-author span{color:var(--brown);display:block;margin-top:2px;font-size:10px;}
+.featured-review{background:var(--brown);color:#fff;padding:48px 56px;display:grid;grid-template-columns:1fr 200px;gap:48px;align-items:center;}
+.featured-text{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;font-weight:300;line-height:1.55;}
+.featured-meta{text-align:center;}
+.featured-stars{color:var(--gold);font-size:16px;margin-bottom:8px;}
+.featured-name{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+
+.custom{background:var(--text-dark);padding:80px 48px;color:var(--cream);}
+.custom-inner{max-width:1000px;margin:0 auto;text-align:center;}
+.custom .section-tag{color:var(--warm);}
+.custom .section-headline{color:var(--cream);font-size:44px;margin-bottom:20px;}
+.custom-sub{font-size:16px;color:rgba(250,248,245,0.65);line-height:1.8;max-width:640px;margin:0 auto 48px;}
+.custom-opts{display:flex;justify-content:center;gap:0;margin-bottom:48px;border:1px solid rgba(211,203,192,0.2);}
+.custom-opt{flex:1;padding:24px 20px;border-right:1px solid rgba(211,203,192,0.2);text-align:center;}
+.custom-opt:last-child{border-right:none;}
+.opt-icon{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--warm);margin-bottom:10px;}
+.opt-label{font-size:13px;color:rgba(250,248,245,0.55);font-weight:300;}
+
+.final-cta{padding:96px 48px;text-align:center;max-width:800px;margin:0 auto;}
+.final-sub{font-size:16px;color:var(--text-mid);line-height:1.75;margin-bottom:40px;}
+.cta-group{display:flex;gap:12px;justify-content:center;max-width:480px;margin:0 auto 24px;}
+.cta-group .cta-primary,.cta-group .cta-secondary{flex:1;margin-bottom:0;}
+.guarantee{font-size:12px;color:var(--text-light);letter-spacing:0.5px;}
+
+footer{background:var(--text-dark);color:rgba(250,248,245,0.4);padding:32px 48px;text-align:center;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;}
+footer a{color:rgba(250,248,245,0.4);text-decoration:none;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;letter-spacing:4px;color:var(--warm);display:block;margin-bottom:16px;}
+
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--cream);border-top:1px solid rgba(120,82,69,0.15);padding:12px 20px;z-index:200;align-items:center;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,0.1);}
+.price-sm{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-dark);white-space:nowrap;flex-shrink:0;}
+.sticky-bar .cta-primary{flex:1;padding:14px 16px;margin:0;font-size:11px;}
+
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* ---- TABLET: 768px - 1024px ---- */
+@media(max-width:1024px){
+  nav{padding:16px 32px;}
+  .nav-trust{display:none;}
+  .hero{grid-template-columns:1fr 1fr;min-height:auto;}
+  .hero-image iframe{min-height:420px;}
+  .hero-content{padding:48px 40px;}
+  .hero-headline{font-size:42px;}
+  .story{padding:72px 32px;gap:48px;}
+  .objections{padding:64px 32px;}
+  .craft{padding:72px 32px;}
+  .gallery{padding:64px 32px;}
+  .reviews{padding:72px 32px;}
+  .obj-grid{gap:24px;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .gal-item:first-child{grid-column:span 2;}
+  .proof-bar{gap:32px;padding:20px 32px;}
+  .featured-review{padding:36px 40px;}
+  .custom-opts{gap:0;}
+}
+
+/* ---- MOBILE LARGE: up to 768px ---- */
+@media(max-width:768px){
+  .announcement{font-size:10px;letter-spacing:1px;padding:8px 16px;}
+  nav{padding:14px 20px;}
+  .nav-trust{display:none;}
+  .nav-logo{font-size:18px;letter-spacing:2px;}
+  .nav-cta{padding:10px 18px;font-size:10px;letter-spacing:2px;}
+
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-image{height:56vw;min-height:260px;}
+  .hero-image iframe{min-height:260px;}
+  .hero-badge{bottom:16px;left:16px;padding:8px 14px;font-size:10px;}
+  .hero-content{padding:36px 24px;}
+  .hero-tag{font-size:9px;letter-spacing:2.5px;margin-bottom:14px;}
+  .hero-headline{font-size:36px;margin-bottom:18px;}
+  .hero-subhead{font-size:14px;margin-bottom:28px;max-width:100%;}
+  .hero-scripture{font-size:15px;margin-bottom:28px;}
+  .price-main{font-size:30px;}
+  .price-note{font-size:11px;margin-bottom:24px;}
+  .cta-primary{padding:16px 24px;font-size:11px;letter-spacing:2px;}
+  .cta-secondary{padding:14px 24px;font-size:10px;}
+  .trust-row{flex-wrap:wrap;gap:12px;margin-top:20px;padding-top:20px;}
+  .trust-item{font-size:10px;}
+
+  .proof-bar{flex-wrap:wrap;gap:20px 32px;padding:20px 24px;justify-content:space-around;}
+  .proof-div{display:none;}
+  .proof-num{font-size:24px;}
+  .proof-label{font-size:9px;}
+
+  .story{grid-template-columns:1fr;padding:56px 24px;gap:36px;}
+  .section-headline{font-size:32px;margin-bottom:18px;}
+  .section-body{font-size:14px;margin-bottom:16px;}
+  .story-img-main{height:220px;}
+  .story-img-small{height:140px;}
+
+  .objections{padding:56px 24px;}
+  .obj-header{margin-bottom:40px;}
+  .obj-header .section-headline{font-size:32px;}
+  .obj-grid{grid-template-columns:1fr;gap:36px;}
+  .obj-num{font-size:40px;}
+  .obj-q{font-size:20px;}
+  .obj-a{font-size:13px;}
+
+  .craft{padding:56px 24px;}
+  .craft-inner{grid-template-columns:1fr;gap:36px;}
+  .craft-img{height:260px;}
+  .craft-img-cap{bottom:16px;right:16px;padding:8px 12px;font-size:9px;}
+  .craft-feat{padding:20px 0;}
+
+  .gallery{padding:56px 20px;}
+  .gallery-header{margin-bottom:32px;}
+  .gallery-grid{grid-template-columns:1fr 1fr;gap:6px;}
+  .gal-item{height:200px;}
+  .gal-item:first-child{grid-column:span 2;height:260px;}
+
+  .reviews{padding:56px 24px;}
+  .reviews-header{margin-bottom:40px;}
+  .reviews-grid{grid-template-columns:1fr;gap:20px;}
+  .review-card{padding:24px;}
+  .review-card::before{font-size:60px;}
+  .review-text{font-size:16px;}
+  .featured-review{grid-template-columns:1fr;gap:28px;padding:32px 28px;text-align:center;}
+  .featured-text{font-size:20px;}
+  .rating-num{font-size:26px;}
+
+  .custom{padding:56px 24px;}
+  .custom .section-headline{font-size:34px;}
+  .custom-sub{font-size:14px;margin-bottom:32px;}
+  .custom-opts{flex-direction:column;border:1px solid rgba(211,203,192,0.2);}
+  .custom-opt{border-right:none;border-bottom:1px solid rgba(211,203,192,0.2);padding:18px 20px;}
+  .custom-opt:last-child{border-bottom:none;}
+
+  .final-cta{padding:56px 24px;}
+  .final-cta .section-headline{font-size:36px !important;}
+  .final-sub{font-size:14px;margin-bottom:32px;}
+  .cta-group{flex-direction:column;max-width:100%;}
+
+  footer{padding:24px 20px;font-size:10px;}
+  .footer-logo{font-size:16px;letter-spacing:3px;}
+
+  .sticky-bar{display:flex;}
+  body{padding-bottom:76px;}
+}
+
+/* ---- MOBILE SMALL: up to 480px ---- */
+@media(max-width:480px){
+  .announcement{font-size:9px;letter-spacing:0.5px;padding:7px 12px;}
+  nav{padding:12px 16px;}
+  .nav-logo{font-size:16px;letter-spacing:1.5px;}
+  .nav-cta{padding:9px 14px;font-size:9px;letter-spacing:1.5px;}
+
+  .hero-image{height:70vw;min-height:220px;}
+  .hero-image iframe{min-height:220px;}
+  .hero-content{padding:28px 18px;}
+  .hero-headline{font-size:30px;}
+  .hero-subhead{font-size:13px;}
+  .hero-scripture{font-size:14px;padding-left:14px;}
+  .price-main{font-size:26px;}
+
+  .proof-bar{gap:16px 24px;padding:16px 18px;}
+  .proof-num{font-size:22px;}
+
+  .story{padding:44px 18px;gap:28px;}
+  .section-headline{font-size:28px;}
+  .story-img-main{height:180px;}
+  .story-img-small{height:120px;}
+
+  .objections{padding:44px 18px;}
+  .obj-header .section-headline{font-size:28px;}
+  .obj-q{font-size:18px;}
+
+  .craft{padding:44px 18px;}
+  .craft-img{height:220px;}
+
+  .gallery{padding:44px 14px;}
+  .gallery-grid{gap:4px;}
+  .gal-item{height:160px;}
+  .gal-item:first-child{height:210px;}
+
+  .reviews{padding:44px 18px;}
+  .review-card{padding:20px 18px;}
+  .review-text{font-size:15px;}
+  .featured-review{padding:28px 20px;}
+  .featured-text{font-size:17px;}
+
+  .custom{padding:44px 18px;}
+  .custom .section-headline{font-size:28px;}
+  .custom-opt{padding:14px 16px;}
+
+  .final-cta{padding:44px 18px;}
+  .final-cta .section-headline{font-size:28px !important;}
+
+  .sticky-bar{padding:10px 16px;gap:10px;}
+  .price-sm{font-size:17px;}
+  body{padding-bottom:70px;}
+}
+
+/* ---- MOBILE XS: up to 360px ---- */
+@media(max-width:360px){
+  .nav-logo{font-size:14px;letter-spacing:1px;}
+  .nav-cta{padding:8px 12px;font-size:9px;letter-spacing:1px;}
+  .hero-headline{font-size:26px;}
+  .section-headline{font-size:24px;}
+  .hero-image{height:75vw;}
+  .hero-image iframe{min-height:200px;}
+  .proof-num{font-size:20px;}
+  .gallery-grid{grid-template-columns:1fr;}
+  .gal-item:first-child{grid-column:span 1;height:220px;}
+  .gal-item{height:180px;}
+  .obj-q{font-size:17px;}
+  .featured-text{font-size:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="announcement">20% Off Sitewide &nbsp;&middot;&nbsp; Discount Applies Automatically At Checkout</div>
+
+<nav>
+  <div class="nav-logo">Madelynn Ave</div>
+  <div class="nav-trust"><span style="color:var(--gold)">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &nbsp;4.95/5 &nbsp;&middot;&nbsp; 2,400+ Homes</div>
+  <a href="#get-yours" class="nav-cta">Customise Yours</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-image">
+    <iframe src="https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=MadelynAve-Abidewithme-video_iqfhhm" style="height:auto;width:100%;aspect-ratio:640/360;min-height:500px;" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen frameborder="0"></iframe>
+    <div class="hero-badge">Original Oil &nbsp;&middot;&nbsp; Hand Painted</div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">Designer Christian Art</div>
+    <h1 class="hero-headline">The piece your<br>home has been<br><em>waiting for</em></h1>
+    <p class="hero-subhead">Most Christian art was not made for homes like yours. This was. Painted in oils by hand and reproduced as a beautifully framed print that holds its own in the most carefully built rooms in America.</p>
+    <blockquote class="hero-scripture">
+      Abide in Me, and I in you. As the branch cannot bear fruit of itself, unless it abides in the vine, neither can you, unless you abide in Me.
+      <cite>John 15:4</cite>
+    </blockquote>
+    <div class="price-label">Starting from</div>
+    <div class="price-main">$297</div>
+    <p class="price-note">Fully customisable &nbsp;&middot;&nbsp; 50+ sizes and frames available</p>
+    <a href="https://madelynnave.com/products/abide-with-me-horizontal" class="cta-primary" id="get-yours">Customise Your Piece</a>
+    <a href="#story" class="cta-secondary">See It In Every Room</a>
+    <div class="trust-row">
+      <div class="trust-item">Free US shipping</div>
+      <div class="trust-item">30-day returns</div>
+      <div class="trust-item">Handmade in the USA</div>
+    </div>
+  </div>
+</section>
+
+<div class="proof-bar">
+  <div class="proof-stat"><div class="proof-num">4.95</div><div class="proof-label">Average Rating</div></div>
+  <div class="proof-div"></div>
+  <div class="proof-stat"><div class="proof-num">2,400+</div><div class="proof-label">Homes Transformed</div></div>
+  <div class="proof-div"></div>
+  <div class="proof-stat"><div class="proof-num">100%</div><div class="proof-label">Hand Painted Originals</div></div>
+  <div class="proof-div"></div>
+  <div class="proof-stat"><div class="proof-num">50+</div><div class="proof-label">Frame and Size Options</div></div>
+</div>
+
+<section class="story fade-up" id="story">
+  <div>
+    <div class="section-tag">The Artwork</div>
+    <h2 class="section-headline">Beautiful faith should not be this hard to find</h2>
+    <p class="section-body">You have spent years building a home that reflects who you are. Every piece of furniture chosen with intention. Every corner considered. You know exactly what belongs in your space and what does not.</p>
+    <p class="section-body">You want your faith present in your home. But you refuse to hang something on the wall that does not meet the standard of everything else you have built. That is the problem Madelynn Ave was created to solve.</p>
+    <p class="section-body">Every piece was painted by hand by Madelyn, a classically trained artist and practicing interior designer. Not licensed. Not mass produced. Not AI generated. Original oil paintings reproduced with precision and care into beautifully framed prints made for high-end homes.</p>
+  </div>
+  <div class="story-images">
+    <div class="story-img-main"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651654/Beige-Couch_iwlcgy.webp" alt="Abide With Me above a beige sofa" /></div>
+    <div class="story-img-small"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777652119/close_detail_l15lwq.webp" alt="Close detail of hand painted brushwork" /></div>
+    <div class="story-img-small"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777652429/Designed-by-Madelynn-Ave_9f81f772-bcd3-42a8-b309-629de0ec82d6_sjm5wy.webp" alt="Designed by Madelynn Ave" /></div>
+  </div>
+</section>
+
+<section class="objections">
+  <div class="obj-inner">
+    <div class="obj-header fade-up">
+      <div class="section-tag">Common Questions</div>
+      <h2 class="section-headline">Everything you want to know before you decide</h2>
+    </div>
+    <div class="obj-grid">
+      <div class="fade-up">
+        <div class="obj-num">01</div>
+        <div class="obj-q">Will it actually look good in my space?</div>
+        <p class="obj-a">Every piece is designed with interior design sensibility first. Madelyn is an active residential interior designer. The colour palettes, proportions, and tones are calibrated for high-end interiors. The gallery below shows the same piece across six different room styles. If your interior is neutral, warm, or transitional, it belongs.</p>
+      </div>
+      <div class="fade-up">
+        <div class="obj-num">02</div>
+        <div class="obj-q">Am I buying the original or a reproduction?</div>
+        <p class="obj-a">You are buying a museum-quality fine art reproduction of an original oil painting by Madelyn. The original exists. Your print is reproduced from it at the highest resolution on archival-grade materials, then hand-finished and framed. It carries the depth and character of the original into your home. Every piece ships with an authenticity certificate.</p>
+      </div>
+      <div class="fade-up">
+        <div class="obj-num">03</div>
+        <div class="obj-q">Is the price worth it?</div>
+        <p class="obj-a">The pieces that stop your guests and stay in your home for decades are never the ones found on sale. Madelynn Ave is priced to reflect the original artwork, the handmade reproduction process, and the custom framing. It is not comparable to a print you can find anywhere. If you are building a home you are proud of, this is the purchase that completes it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="craft" id="craft">
+  <div class="craft-inner">
+    <div class="craft-img fade-up">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651579/Hero_Image_lnaop3.webp" alt="Abide With Me framed print" />
+      <div class="craft-img-cap">Painted by Hand &nbsp;&middot;&nbsp; Finished in the USA</div>
+    </div>
+    <div class="fade-up">
+      <div class="section-tag">The Standard</div>
+      <h2 class="section-headline">Every detail considered</h2>
+      <div class="craft-features">
+        <div class="craft-feat">
+          <div class="feat-num">01</div>
+          <div><div class="feat-title">Original Oil Painting</div><p class="feat-body">Every piece begins as an original work by Madelyn, painted by hand in oils. Not commissioned. Not AI assisted. Not stock. An original that exists once and reproduces from nowhere else.</p></div>
+        </div>
+        <div class="craft-feat">
+          <div class="feat-num">02</div>
+          <div><div class="feat-title">50+ Frame and Size Options</div><p class="feat-body">No other company in this space offers this level of customisation. Choose from over 50 combinations of frame style, finish, and size. The piece is built to your space, not the other way around.</p></div>
+        </div>
+        <div class="craft-feat">
+          <div class="feat-num">03</div>
+          <div><div class="feat-title">Interior Design Pedigree</div><p class="feat-body">Madelyn's background as a successful residential interior designer informs every colour decision, composition choice, and proportional judgment. The pieces are designed to live in high-end homes because their creator has spent a career building them.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="gallery-header fade-up">
+    <div class="section-tag">In The Home</div>
+    <h2 class="section-headline" style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--text-dark);">See it in every room</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gal-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651946/Large-Art-Console-Table_f43ipe.webp" alt="Above console table entryway" /></div>
+    <div class="gal-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651992/Brown-Couch-with-Art-II_658a50dc-6229-4e0c-af3f-4bc7148ffc78_114x144_crop_center_vavcmh.webp" alt="Brown leather sofa setting" /></div>
+    <div class="gal-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651995/Bright-Livingroom_cogxys.webp" alt="Bright modern living room" /></div>
+    <div class="gal-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777651996/Large-Art-Console-Table_rg1jc8.webp" alt="Large art console table" /></div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="reviews-header fade-up">
+    <div class="reviews-rating">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rating-num">4.95 / 5</div>
+    </div>
+    <div class="section-tag">What Owners Say</div>
+    <h2 class="section-headline" style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--text-dark);">From the homes it lives in</h2>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card fade-up">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">Every single guest who comes to our home asks where I found it. It changed the entire feeling of our living room. I never thought I would find Christian art that looked this good.</p>
+      <div class="review-author">Sarah M.<span>Verified Purchase &nbsp;&middot;&nbsp; Houston, TX</span></div>
+    </div>
+    <div class="review-card fade-up">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">I am an interior designer and I have recommended this to three of my clients. The quality is extraordinary. It photographs beautifully and holds its own next to everything else in the room.</p>
+      <div class="review-author">Jennifer L.<span>Verified Purchase &nbsp;&middot;&nbsp; Nashville, TN</span></div>
+    </div>
+    <div class="review-card fade-up">
+      <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="review-text">I have looked for years for something like this. Something that felt like it belonged in a beautifully decorated home but carried real meaning. This is it. It makes me happy every time I walk into the room.</p>
+      <div class="review-author">Kathleen R.<span>Verified Purchase &nbsp;&middot;&nbsp; Atlanta, GA</span></div>
+    </div>
+  </div>
+  <div class="featured-review fade-up">
+    <div class="featured-text">"Thank you for sharing your gifts and talents and showing the beauty and comfort of the Lord Jesus in this wonderful artwork. It is the first thing people notice when they walk in. It is the last thing I look at before I leave."</div>
+    <div class="featured-meta">
+      <div class="featured-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="featured-name">Michoude Roussel<br>Verified Customer</div>
+    </div>
+  </div>
+</section>
+
+<section class="custom">
+  <div class="custom-inner">
+    <div class="section-tag fade-up">Made For Your Space</div>
+    <h2 class="section-headline fade-up">Choose every detail.<br>Make it yours.</h2>
+    <p class="custom-sub fade-up">No standard sizes. No limited frames. Abide With Me is fully customisable to your space, your wall, and your style. Select your dimensions, choose your frame finish, and receive a piece built precisely for the room it will live in.</p>
+    <div class="custom-opts fade-up">
+      <div class="custom-opt"><div class="opt-icon">Size</div><div class="opt-label">Any dimension from small accent to statement wall piece</div></div>
+      <div class="custom-opt"><div class="opt-icon">Frame</div><div class="opt-label">50+ frame styles from natural wood to gallery black</div></div>
+      <div class="custom-opt"><div class="opt-icon">Material</div><div class="opt-label">Archival canvas or fine art paper</div></div>
+      <div class="custom-opt"><div class="opt-icon">Finish</div><div class="opt-label">Matte or glazed with protective coating</div></div>
+    </div>
+    <a href="https://madelynnave.com/products/abide-with-me-horizontal" class="cta-primary fade-up" style="max-width:380px;margin:0 auto;">Customise Your Piece Now</a>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="section-tag fade-up">Ready When You Are</div>
+  <h2 class="section-headline fade-up" style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--text-dark);margin-bottom:20px;">The room is ready.<br><em style="color:var(--brown)">The piece is here.</em></h2>
+  <p class="final-sub fade-up">You have built something worth finishing. Abide With Me was painted for exactly the kind of home you have and the kind of person you are. Customise your piece today and receive it ready to hang, ready to stay, and ready to mean something every day you walk past it.</p>
+  <div class="cta-group fade-up">
+    <a href="https://madelynnave.com/products/abide-with-me-horizontal" class="cta-primary">Customise Your Piece</a>
+    <a href="https://madelynnave.com/collections/designer-christian-art" class="cta-secondary">View Full Collection</a>
+  </div>
+  <p class="guarantee">Free US shipping &nbsp;&middot;&nbsp; 30-day returns &nbsp;&middot;&nbsp; Handmade in the USA</p>
+</section>
+
+<footer>
+  <span class="footer-logo">Madelynn Ave</span>
+  <a href="https://madelynnave.com">madelynnave.com</a> &nbsp;&middot;&nbsp;
+  <a href="https://madelynnave.com/collections/designer-christian-art">Christian Art</a> &nbsp;&middot;&nbsp;
+  <a href="https://madelynnave.com/collections/fine-art">Fine Art</a>
+</footer>
+
+<div class="sticky-bar">
+  <div class="price-sm">From $297</div>
+  <a href="https://madelynnave.com/products/abide-with-me-horizontal" class="cta-primary">Customise Yours</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.12});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
