@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Madelynn Ave | Master Implementation Guide | May 8, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-primary: #0A0E1A;
+    --bg-secondary: #0F1424;
+    --bg-card: #141B2E;
+    --bg-card-hover: #1A2238;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-medium: rgba(255, 255, 255, 0.10);
+    --text-primary: #FFFFFF;
+    --text-secondary: #A8B0C2;
+    --text-tertiary: #6B7280;
+    --accent-green: #10B981;
+    --accent-purple: #8B5CF6;
+    --accent-orange: #F59E0B;
+    --accent-red: #EF4444;
+    --accent-blue: #3B82F6;
+    --brand-warm: #BCA88C;
+    --brand-tan: #D3CBC0;
+    --brand-cream: #F2EFE9;
+    --brand-clay: #785245;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.deck { max-width: 1280px; margin: 0 auto; padding: 40px 20px; }
+
+.slide {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 56px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-subtle);
+    position: relative;
+    min-height: 720px;
+    overflow: hidden;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-purple), var(--brand-warm));
+    opacity: 0.7;
+}
+
+.slide-number {
+    position: absolute;
+    top: 32px; right: 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.slide-tag {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-green);
+    background: rgba(16, 185, 129, 0.10);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(16, 185, 129, 0.20);
+}
+
+.slide-tag.purple { color: var(--accent-purple); background: rgba(139, 92, 246, 0.10); border-color: rgba(139, 92, 246, 0.20); }
+.slide-tag.orange { color: var(--accent-orange); background: rgba(245, 158, 11, 0.10); border-color: rgba(245, 158, 11, 0.20); }
+.slide-tag.brand { color: var(--brand-warm); background: rgba(188, 168, 140, 0.10); border-color: rgba(188, 168, 140, 0.20); }
+.slide-tag.red { color: var(--accent-red); background: rgba(239, 68, 68, 0.10); border-color: rgba(239, 68, 68, 0.20); }
+.slide-tag.blue { color: var(--accent-blue); background: rgba(59, 130, 246, 0.10); border-color: rgba(59, 130, 246, 0.20); }
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #A8B0C2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.10;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+}
+
+h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 14px;
+}
+
+p.lead {
+    font-size: 17px;
+    color: var(--text-primary);
+    font-weight: 400;
+    line-height: 1.55;
+    max-width: 920px;
+}
+
+.divider { height: 1px; background: var(--border-subtle); margin: 28px 0; }
+
+.cover { text-align: left; position: relative; }
+
+.cover::after {
+    content: "";
+    position: absolute;
+    bottom: -40%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(16,185,129,0.10) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.cover h1 { font-size: 68px; }
+
+.cover-meta {
+    display: flex;
+    gap: 40px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+}
+
+.cover-meta-item { display: flex; flex-direction: column; }
+
+.cover-meta-item .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 6px;
+}
+
+.cover-meta-item .value {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.brand-stripe { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+
+.brand-stripe .dot {
+    width: 8px; height: 8px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent-green);
+}
+
+.brand-stripe .text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+/* Unit card - the core element */
+.unit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 24px;
+    border-top: 3px solid var(--accent-green);
+}
+
+.unit-card.video { border-top-color: var(--accent-blue); }
+.unit-card.carousel { border-top-color: var(--accent-orange); }
+.unit-card.static { border-top-color: var(--accent-green); }
+
+.unit-header {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.unit-num {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-purple));
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -0.02em;
+}
+
+.unit-title h3 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.unit-title .ad-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent-green);
+    background: rgba(16,185,129,0.06);
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(16,185,129,0.15);
+    display: inline-block;
+}
+
+.unit-format-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+.unit-format-tag.static { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+.unit-format-tag.video { background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); }
+.unit-format-tag.carousel { background: rgba(245, 158, 11, 0.15); color: var(--accent-orange); }
+
+.unit-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.meta-block {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.meta-block .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 6px;
+}
+
+.meta-block .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-primary);
+    word-break: break-word;
+    line-height: 1.45;
+}
+
+.meta-block .value.green { color: var(--accent-green); }
+.meta-block .value.blue { color: var(--accent-blue); }
+.meta-block .value.orange { color: var(--accent-orange); }
+
+/* Headline display */
+.headline-display {
+    background: linear-gradient(135deg, rgba(188,168,140,0.08) 0%, rgba(120,82,69,0.04) 100%);
+    border: 1px solid rgba(188,168,140,0.20);
+    border-left: 3px solid var(--brand-warm);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+}
+
+.headline-display .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--brand-warm);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.headline-display .text {
+    font-family: 'Inter', serif;
+    font-size: 22px;
+    color: var(--text-primary);
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Copy variants */
+.copy-variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+
+.copy-block {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 16px 18px;
+}
+
+.copy-block .copy-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.copy-block .copy-label .name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    font-weight: 600;
+}
+
+.copy-block .copy-label .length-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--accent-green);
+    background: rgba(16,185,129,0.08);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.copy-block .copy-label .length-tag.medium { color: var(--accent-orange); background: rgba(245,158,11,0.08); }
+.copy-block .copy-label .length-tag.long { color: var(--accent-purple); background: rgba(139,92,246,0.08); }
+
+.copy-block .copy-text {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    white-space: pre-line;
+}
+
+.copy-block .copy-text strong { color: var(--text-primary); font-weight: 500; }
+
+/* Single column for static carousels with shared copy */
+.copy-single {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 8px;
+}
+
+.copy-single .copy-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.copy-single .copy-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    font-weight: 600;
+}
+
+.copy-single .copy-text-area {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+/* Carousel cards detail */
+.carousel-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.carousel-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 11.5px;
+}
+
+.carousel-card .card-num {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+}
+
+.carousel-card .card-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.carousel-card .card-url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent-green);
+    word-break: break-word;
+}
+
+/* Tables */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
+}
+
+.data-table thead { background: rgba(255, 255, 255, 0.025); }
+
+.data-table th {
+    padding: 12px;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.data-table td {
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    vertical-align: middle;
+}
+
+.data-table tr:last-child td { border-bottom: none; }
+.data-table td.highlight { color: var(--text-primary); font-weight: 600; }
+.data-table td.green { color: var(--accent-green); font-weight: 600; }
+.data-table td.purple { color: var(--accent-purple); font-weight: 600; }
+.data-table td.orange { color: var(--accent-orange); font-weight: 600; }
+
+/* Tags */
+.tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.tag.green { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+.tag.purple { background: rgba(139, 92, 246, 0.15); color: var(--accent-purple); }
+.tag.orange { background: rgba(245, 158, 11, 0.15); color: var(--accent-orange); }
+.tag.red { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+.tag.blue { background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); }
+.tag.brand { background: rgba(188, 168, 140, 0.15); color: var(--brand-warm); }
+
+.insight-box {
+    background: rgba(16, 185, 129, 0.04);
+    border: 1px solid rgba(16, 185, 129, 0.18);
+    border-left: 3px solid var(--accent-green);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-top: 18px;
+}
+
+.insight-box.purple { background: rgba(139, 92, 246, 0.04); border-color: rgba(139, 92, 246, 0.18); border-left-color: var(--accent-purple); }
+.insight-box.orange { background: rgba(245, 158, 11, 0.04); border-color: rgba(245, 158, 11, 0.18); border-left-color: var(--accent-orange); }
+.insight-box.red { background: rgba(239, 68, 68, 0.04); border-color: rgba(239, 68, 68, 0.18); border-left-color: var(--accent-red); }
+
+.insight-box h4 { color: var(--text-primary); margin-bottom: 8px; font-size: 14px; }
+.insight-box p { color: var(--text-secondary); font-size: 13.5px; margin-bottom: 0; }
+
+.slide-footer {
+    position: absolute;
+    bottom: 28px; left: 56px; right: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 20px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 20px; }
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.card.green { border-left: 3px solid var(--accent-green); }
+.card.purple { border-left: 3px solid var(--accent-purple); }
+.card.orange { border-left: 3px solid var(--accent-orange); }
+.card.red { border-left: 3px solid var(--accent-red); }
+.card.brand { border-left: 3px solid var(--brand-warm); }
+.card.blue { border-left: 3px solid var(--accent-blue); }
+
+.callout-banner {
+    background: linear-gradient(135deg, rgba(16,185,129,0.06) 0%, rgba(139,92,246,0.04) 100%);
+    border: 1px solid rgba(16,185,129,0.20);
+    border-left: 3px solid var(--accent-green);
+    border-radius: 10px;
+    padding: 16px 22px;
+    margin: 18px 0;
+}
+
+.callout-banner h4 { color: var(--text-primary); font-size: 14px; margin-bottom: 6px; letter-spacing: 0.05em; }
+.callout-banner p { font-size: 13px; color: var(--text-secondary); margin-bottom: 0; }
+
+.step-list { margin-top: 14px; }
+
+.step {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: start;
+}
+
+.step:last-child { border-bottom: none; }
+
+.step-num {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-purple));
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-body h4 { margin-bottom: 6px; color: var(--text-primary); font-size: 16px; }
+.step-body p { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+
+@media print {
+    .slide { page-break-after: always; min-height: auto; }
+    body { background: white; }
+}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+<!-- ============================================== -->
+<!-- SLIDE 01: COVER -->
+<!-- ============================================== -->
+<section class="slide cover">
+    <span class="slide-number">01 / 14</span>
+    <div class="brand-stripe">
+        <span class="dot"></span>
+        <span class="text">Madelynn Ave x Heath Media</span>
+    </div>
+    <div class="slide-tag">Master Implementation Guide, May Refresh</div>
+    <h1>Eight Units.<br>Built. Named.<br>Placed. Ready.</h1>
+    <p class="lead" style="max-width: 800px; margin-top: 18px;">One consolidated guide. Each new ad with its filename, ad name, headline, full ad copy, destination URL, and exact campaign placement. Built from the 30-day account data, the May 7 Oscar call, and the ad copy PDF. Copy and paste straight into Ads Manager.</p>
+
+    <div class="cover-meta">
+        <div class="cover-meta-item">
+            <span class="label">Prepared by</span>
+            <span class="value">Charles Piper</span>
+        </div>
+        <div class="cover-meta-item">
+            <span class="label">For</span>
+            <span class="value">Oscar Abadillo</span>
+        </div>
+        <div class="cover-meta-item">
+            <span class="label">Launch window</span>
+            <span class="value">Friday May 9, evening</span>
+        </div>
+        <div class="cover-meta-item">
+            <span class="label">Creative units</span>
+            <span class="value">3 Statics, 3 Videos, 2 Carousels</span>
+        </div>
+        <div class="cover-meta-item">
+            <span class="label">Active campaigns</span>
+            <span class="value">3 receiving new ads</span>
+        </div>
+        <div class="cover-meta-item">
+            <span class="label">Target lift, week one</span>
+            <span class="value">Account ROAS 1.64x to 2.00x</span>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>01 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 02: HOW TO USE THIS DOCUMENT -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">02 / 14</span>
+    <div class="slide-tag purple">How to Use This Document</div>
+    <h2>Eight unit cards, one structure each</h2>
+    <p class="lead">Slides 4 through 11 contain one complete unit card per new ad. Each card holds everything needed to build that ad in Ads Manager. Slides 12 to 14 cover the cleanup, the build sequence, and the Memorial Day handoff.</p>
+
+    <div class="two-col" style="margin-top: 22px;">
+        <div class="card green">
+            <h3 style="color: var(--accent-green);">What is on every unit card</h3>
+            <table class="data-table" style="font-size: 12px; margin-top: 10px;">
+                <tbody>
+                    <tr><td class="highlight" style="width: 38%;">Source filename</td><td>The original creative as supplied</td></tr>
+                    <tr><td class="highlight">New filename</td><td>Renamed for cleaner asset library hygiene</td></tr>
+                    <tr><td class="highlight">Ad name</td><td>The exact name to enter in Ads Manager</td></tr>
+                    <tr><td class="highlight">Format type</td><td>Static, Video, or Carousel</td></tr>
+                    <tr><td class="highlight">Headline</td><td>The post primary text headline as supplied in the ad copy PDF</td></tr>
+                    <tr><td class="highlight">Copy variants</td><td>Three primary text variants per ad, short, medium, long, ready for split testing</td></tr>
+                    <tr><td class="highlight">Destination URL</td><td>The exact landing page</td></tr>
+                    <tr><td class="highlight">Campaign and ad set</td><td>Where the ad lives</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card brand">
+            <h3 style="color: var(--brand-warm);">The placement summary in one table</h3>
+            <table class="data-table" style="font-size: 11.5px; margin-top: 10px;">
+                <thead>
+                    <tr><th>#</th><th>Type</th><th>Goes into</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>01</td><td><span class="tag green">Static</span></td><td>TLIMS CBO ▸ Value Optimisation</td></tr>
+                    <tr><td>02</td><td><span class="tag green">Static</span></td><td>TLIMS CBO ▸ Value Optimisation</td></tr>
+                    <tr><td>03</td><td><span class="tag green">Static</span></td><td>Evergreen CBO ▸ Value Opt Evergreen</td></tr>
+                    <tr><td>04</td><td><span class="tag blue">Video</span></td><td>Evergreen CBO ▸ Value Opt Evergreen</td></tr>
+                    <tr><td>05</td><td><span class="tag blue">Video</span></td><td>TLIMS CBO ▸ Eden Collection</td></tr>
+                    <tr><td>06</td><td><span class="tag blue">Video</span></td><td>TLIMS CBO ▸ Value Optimisation</td></tr>
+                    <tr><td>07</td><td><span class="tag orange">Carousel</span></td><td>Evergreen CBO ▸ Value Opt Evergreen</td></tr>
+                    <tr><td>08</td><td><span class="tag orange">Carousel</span></td><td>TLIMS CBO ▸ Value Optimisation</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="callout-banner">
+        <h4>NAMING CONVENTION USED THROUGHOUT</h4>
+        <p>Every new ad name follows the established account pattern, &lt;Date&gt; - [&lt;Theme&gt; -] &lt;Product&gt; [- &lt;Variant&gt;] - &lt;Format&gt; - &lt;Iteration&gt;. Single hyphens with one space on each side. No en-dashes. Date prefix May '26. The convention is derived from the Mar '26 Spring round which used the most disciplined structure already in the account.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>02 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 03: PRE-LAUNCH CLEANUP -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">03 / 14</span>
+    <div class="slide-tag red">Pre-Launch Cleanup, Thursday Evening</div>
+    <h2>Clear the slots before new creative goes live</h2>
+    <p class="lead">Eleven ad-level pauses, one campaign disband, one campaign rename. Every action backed by 30-day data. New creative cannot land cleanly inside dirty ad sets, this is the foundation.</p>
+
+    <table class="data-table" style="margin-top: 18px; font-size: 11.5px;">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Where</th>
+                <th>30-day evidence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="highlight red">Pause</td>
+                <td>TLIMS CBO ▸ Eden Collection ▸ Mar '26 Spring Eden Heirloom Video C1</td>
+                <td>$2,101 spent, 1.08x ROAS, 2 purchases. Largest active drag.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Confirm pause</td>
+                <td>TLIMS CBO ▸ Eden Collection ▸ Mar '26 Spring Eden Vertical Video C1</td>
+                <td>$1,059 spent, 0.65x ROAS. Already inactive.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Confirm pause</td>
+                <td>Evergreen ▸ Apr '26 Last Supper Reveal Video</td>
+                <td>$1,188 spent, 0.83x ROAS, 1 purchase.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Confirm pause</td>
+                <td>Evergreen ▸ Apr '26 Abide With Me BTS Video</td>
+                <td>$750 spent, 0.47x ROAS, 2 purchases.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Pause</td>
+                <td>TLIMS CBO ▸ Value Optimisation ▸ 28 Apr '26 Lord Is My Shepherd</td>
+                <td>$41 spent, zero purchases. Algorithm de-prioritised.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Pause</td>
+                <td>TLIMS CBO ▸ Value Optimisation ▸ 28 Apr '26 Abide With Me Static</td>
+                <td>$41 spent, zero purchases.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Pause</td>
+                <td>TLIMS CBO ▸ Value Optimisation ▸ 28 Apr '26 Eden Static</td>
+                <td>$19 spent, zero purchases.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Pause</td>
+                <td>TLIMS CBO ▸ Value Optimisation ▸ 28 Apr '26 Christian Carousel</td>
+                <td>$39 spent, zero purchases.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Pause</td>
+                <td>TLIMS CBO ▸ Value Optimisation ▸ 28 Apr '26 Light of Life</td>
+                <td>$7 spent, zero purchases.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Pause</td>
+                <td>TLIMS CBO ▸ Value Optimisation ▸ 28 Apr '26 Curated Homes Video</td>
+                <td>$105 spent, zero purchases.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Pause</td>
+                <td>TLIMS CBO ▸ Value Optimisation ▸ all four brand logo statics</td>
+                <td>$144 cumulative, zero purchases. Algorithm de-prioritised.</td>
+            </tr>
+            <tr>
+                <td class="highlight red">Pause</td>
+                <td>Fine Art ABO ▸ Value Optimisation ▸ 28 Apr '26 Stillness Video</td>
+                <td>$169 spent, zero purchases.</td>
+            </tr>
+            <tr>
+                <td class="highlight purple">Disband campaign</td>
+                <td>HM - Fine Art - ABO entire campaign</td>
+                <td>0.98x ROAS over 30 days, $10,339 spent for $10,170 revenue. Below breakeven. Confirmed with Oscar May 7.</td>
+            </tr>
+            <tr>
+                <td class="highlight purple">Migrate post ID</td>
+                <td>28 Apr '26 Fine Art Carousel from Fine Art ABO into Combined 50/50 ad set</td>
+                <td>$1,498 spent at 1.27x. Preserves learning, adds Fine Art angle to the 2.48x ad set.</td>
+            </tr>
+            <tr>
+                <td class="highlight purple">Rename campaign</td>
+                <td>HM - Fine Art - ABO - Value Opt - Broad US becomes HM - Combined Test - CBO</td>
+                <td>Aligns campaign label with how it has been referenced since January.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="insight-box red" style="margin-top: 16px;">
+        <h4>Critical, do NOT pause</h4>
+        <p>Carousel 2 Fine Art inside Combined 50/50 stays live. 30-day ROAS is 7.74x at $2,019 spent, the highest in the account by ROAS. Recent week's $75 spend was algorithmic wind-down within a healthy CBO, not failure. The previous week one analysis missed this, the 30-day picture vindicates leaving it alone.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>03 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 04: UNIT 01 - WITH THE FATHER STATIC -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">04 / 14</span>
+    <div class="slide-tag green">Unit 01 of 08</div>
+    <h2>With The Father Static</h2>
+
+    <div class="unit-card static">
+        <div class="unit-header">
+            <div class="unit-num">01</div>
+            <div class="unit-title">
+                <h3>With The Father Static, Christian, Made For Homes Like Yours</h3>
+                <span class="ad-name">May '26 - With The Father - Static - C1</span>
+            </div>
+            <div class="unit-format-tag static">Static</div>
+        </div>
+
+        <div class="unit-meta-grid">
+            <div class="meta-block">
+                <div class="label">Source filename</div>
+                <div class="value">Ad_1.png</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">New filename for asset library</div>
+                <div class="value green">May26_WTF_Static_C1.png</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Campaign</div>
+                <div class="value">HM - TLIMS - CBO</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Ad set</div>
+                <div class="value">Value Optimisation</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Destination URL</div>
+                <div class="value blue">https://madelynnave.com/products/with-the-father-vertical</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">CTA button</div>
+                <div class="value">Shop Now</div>
+            </div>
+        </div>
+
+        <div class="headline-display">
+            <div class="label">Headline (post text or main image overlay)</div>
+            <div class="text">Made For Homes Like Yours</div>
+        </div>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px; color: var(--text-primary);">Primary text variants, three to A/B test</h4>
+        <div class="copy-variants">
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 1, Short</span>
+                    <span class="length-tag">36 words</span>
+                </div>
+                <div class="copy-text">Most Christian art was never designed for a home like yours.
+
+This was.
+
+Created by an artist and professional interior designer who knows exactly what your walls need.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 2, Medium</span>
+                    <span class="length-tag medium">110 words</span>
+                </div>
+                <div class="copy-text">There is a reason Madelynn Ave feels different.
+
+Our founder is not just an artist. She is a professional interior designer who has spent years understanding what makes a home extraordinary. Every piece she paints was designed with that eye. That standard. That knowledge of exactly what belongs in a beautifully curated space.
+
+With The Father is one of those pieces. Soft greens and warm neutrals, painted with the kind of quiet intention that only a trained designer can bring to a canvas.
+
+This is Christian artwork made exclusively for homes like yours.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 3, Long</span>
+                    <span class="length-tag long">175 words</span>
+                </div>
+                <div class="copy-text">Anyone can make Christian art.
+
+Very few can make it right for a home like yours.
+
+Madelynn Ave's founder is both a trained artist and a professional interior designer. That combination is rare. And it is exactly why every piece in this collection feels different from anything else you have ever seen in the Christian art space.
+
+She doesn't just paint. She designs with purpose. With proportion. With a deep understanding of what makes a room feel collected, intentional, and beautiful.
+
+With The Father was born from that place. Soft greens and warm browns layered with quiet confidence, designed to move through a well curated space the way only a piece made by someone who truly understands interiors can.
+
+This is not Christian art made for everyone.
+
+It was made for you.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+        </div>
+
+        <div class="insight-box" style="margin-top: 18px;">
+            <h4>Why this lives in TLIMS CBO Value Optimisation</h4>
+            <p>This ad set delivered 1.68x over 30 days, 9 purchases on $5,939 spent. The Feb '26 Abide With Me ad inside it is the only sustained performer at 2.21x with $2,219 spent. The bench needs fresh Christian creative. With The Father is a proven product family, the Mar '26 With The Father - Static - C1 (now paused) only got $11 spend before being deprioritised, this is the second iteration with stronger room context and brand framing.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>04 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 05: UNIT 02 - TLIMS REVIEWS STATIC -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">05 / 14</span>
+    <div class="slide-tag green">Unit 02 of 08</div>
+    <h2>TLIMS Reviews Static</h2>
+
+    <div class="unit-card static">
+        <div class="unit-header">
+            <div class="unit-num">02</div>
+            <div class="unit-title">
+                <h3>The Lord Is My Shepherd Testimonial Static</h3>
+                <span class="ad-name">May '26 - TLIMS - Reviews - Static - C1</span>
+            </div>
+            <div class="unit-format-tag static">Static</div>
+        </div>
+
+        <div class="unit-meta-grid">
+            <div class="meta-block">
+                <div class="label">Source filename</div>
+                <div class="value">Ad_2.png</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">New filename for asset library</div>
+                <div class="value green">May26_TLIMS_Reviews_Static_C1.png</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Campaign</div>
+                <div class="value">HM - TLIMS - CBO</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Ad set</div>
+                <div class="value">Value Optimisation</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Destination URL</div>
+                <div class="value blue">https://madelynnave.com/products/tlims</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">CTA button</div>
+                <div class="value">Shop Now</div>
+            </div>
+        </div>
+
+        <div class="headline-display">
+            <div class="label">Headline</div>
+            <div class="text">Serene. Timeless. Made for Your Home.</div>
+        </div>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px;">Primary text variants</h4>
+        <div class="copy-variants">
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 1, Short</span>
+                    <span class="length-tag">35 words</span>
+                </div>
+                <div class="copy-text">Timeless. Serene. Perfect for any room.
+
+Her words. Not ours.
+
+Shop The Lord Is My Shepherd at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 2, Medium</span>
+                    <span class="length-tag medium">85 words</span>
+                </div>
+                <div class="copy-text">She wanted something that brought peace to her living room.
+
+She found it.
+
+Muted, earthy tones that feel timeless. A piece that blends beautifully with any decor without losing an ounce of its character. The kind of art that makes a room feel exactly the way you always wanted it to feel.
+
+That is what The Lord Is My Shepherd does.
+
+Shop yours at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 3, Long</span>
+                    <span class="length-tag long">155 words</span>
+                </div>
+                <div class="copy-text">She knew what she was looking for.
+
+Muted tones. Earthy warmth. Something that brought a sense of peace into her living room without overpowering it. Something timeless. Something that worked with everything she had already built.
+
+She found it in The Lord Is My Shepherd.
+
+And she is not alone.
+
+This is one of Madelynn Ave's most loved pieces for exactly that reason. It moves through a beautifully designed space the way great art always does. Quietly. Confidently. Like it was always supposed to be there.
+
+Serene enough to calm a room. Versatile enough to belong in any one.
+
+Shop The Lord Is My Shepherd at Madelynn Ave.</div>
+            </div>
+        </div>
+
+        <div class="insight-box" style="margin-top: 18px;">
+            <h4>Why this lives in TLIMS CBO Value Optimisation</h4>
+            <p>The Reviews variant tag was established by Feb '26 - TLIMS - Reviews - Video. Adopting Reviews keeps the testimonial creative family unified. TLIMS is the account's flagship product, the campaign is named for it. A static testimonial featuring Juliana S directly under the TLIMS ROAS banner reinforces the trust signal in the campaign that needs it most.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>05 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 06: UNIT 03 - CHRISTIAN COLLECTION GRID STATIC -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">06 / 14</span>
+    <div class="slide-tag green">Unit 03 of 08</div>
+    <h2>Christian Collection Grid Static</h2>
+
+    <div class="unit-card static">
+        <div class="unit-header">
+            <div class="unit-num">03</div>
+            <div class="unit-title">
+                <h3>Designer Christian Collection Grid, 9 piece showcase</h3>
+                <span class="ad-name">May '26 - Christian Collection - Grid - Static - C1</span>
+            </div>
+            <div class="unit-format-tag static">Static</div>
+        </div>
+
+        <div class="unit-meta-grid">
+            <div class="meta-block">
+                <div class="label">Source filename</div>
+                <div class="value">Ad_3.png</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">New filename for asset library</div>
+                <div class="value green">May26_ChristianCollection_Grid_Static_C1.png</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Campaign</div>
+                <div class="value">HM Evergreen Christian Art CBO</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Ad set</div>
+                <div class="value">Value Optimisation Broad US Evergreen</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Destination URL</div>
+                <div class="value blue">https://madelynnave.com/collections/designer-christian-art</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">CTA button</div>
+                <div class="value">Shop Now</div>
+            </div>
+        </div>
+
+        <div class="headline-display">
+            <div class="label">Headline</div>
+            <div class="text">Designer Christian artwork made for homes like yours</div>
+        </div>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px;">Primary text variants</h4>
+        <div class="copy-variants">
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 1, Short</span>
+                    <span class="length-tag">42 words</span>
+                </div>
+                <div class="copy-text">A curated collection of Christian artwork, designed for the home that values both beauty and faith.
+
+Timeless. Elevated. Meaningful.
+
+Each piece hand painted in oils and beautifully reproduced as a framed print.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 2, Medium</span>
+                    <span class="length-tag medium">95 words</span>
+                </div>
+                <div class="copy-text">Christian art has been waiting for someone who actually understands design.
+
+That is the gap Madelynn Ave was built to close.
+
+Every piece in this collection begins as an original oil painting by a founder who is both a trained artist and a professional interior designer. Soft. Curated. Made to anchor the most thoughtful rooms in the world.
+
+This is what Christian artwork looks like when it is made for a beautifully designed home.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 3, Long</span>
+                    <span class="length-tag long">160 words</span>
+                </div>
+                <div class="copy-text">The women who find Madelynn Ave tend to stay.
+
+Not because they were looking for Christian art. But because they were looking for something they could not quite name. A piece with real depth. Real texture. The kind of quiet, unmistakable quality that lets you know immediately that something was made by hand and made with care.
+
+That is what every piece in this collection carries.
+
+Each one begins as an original oil painting by a founder who is both a trained artist and a professional interior designer. Beautifully reproduced as framed prints, they bring the depth and detail of the originals into your home.
+
+Designer Christian artwork made for homes like yours.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+        </div>
+
+        <div class="insight-box" style="margin-top: 18px;">
+            <h4>Why this lives in Evergreen Christian Art CBO</h4>
+            <p>This is broad collection-level creative, the format Meta uses to find new audience signal in evergreen contexts. The Evergreen ad set has spent $7,513 over 30 days at 0.96x ROAS, the largest ROAS drag in the active account. Three of its six historical ads are deeply negative. A new collection-level grid lifts the new-audience reach signal that drives evergreen acquisition.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>06 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 07: UNIT 04 - CHRISTIAN COLLECTION NARRATIVE VIDEO -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">07 / 14</span>
+    <div class="slide-tag blue">Unit 04 of 08</div>
+    <h2>Christian Collection Narrative Video</h2>
+
+    <div class="unit-card video">
+        <div class="unit-header">
+            <div class="unit-num">04</div>
+            <div class="unit-title">
+                <h3>Christian Collection Brand Narrative Video, Not For Every Home</h3>
+                <span class="ad-name">May '26 - Christian Collection - Narrative - Video - C1</span>
+            </div>
+            <div class="unit-format-tag video">Video</div>
+        </div>
+
+        <div class="unit-meta-grid">
+            <div class="meta-block">
+                <div class="label">Source filename</div>
+                <div class="value">Video_Ad_1.mp4</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">New filename for asset library</div>
+                <div class="value green">May26_ChristianCollection_Narrative_Video_C1.mp4</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Campaign</div>
+                <div class="value">HM Evergreen Christian Art CBO</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Ad set</div>
+                <div class="value">Value Optimisation Broad US Evergreen</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Destination URL</div>
+                <div class="value blue">https://madelynnave.com/collections/designer-christian-art</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">CTA button</div>
+                <div class="value">Shop Now</div>
+            </div>
+        </div>
+
+        <div class="headline-display">
+            <div class="label">Headline</div>
+            <div class="text">Not for Every Home. For Yours.</div>
+        </div>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px;">Primary text variants</h4>
+        <div class="copy-variants">
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 1, Short</span>
+                    <span class="length-tag">29 words</span>
+                </div>
+                <div class="copy-text">Some rooms stay with you long after you leave them.
+
+The art is always why.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 2, Medium</span>
+                    <span class="length-tag medium">90 words</span>
+                </div>
+                <div class="copy-text">The rooms that stop you were never an accident.
+
+Every detail in them was chosen with intention. With taste. With something deeper underneath the beauty that most people can't quite name but everyone can feel.
+
+That something is what Madelynn Ave was built to create.
+
+Designer Christian artwork for the kind of home that stays with people long after they leave it.
+
+Not for every home. For yours.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 3, Long</span>
+                    <span class="length-tag long">175 words</span>
+                </div>
+                <div class="copy-text">You have walked into a room and felt it before.
+
+That quiet, unmistakable sense that everything in this space was chosen on purpose. That beauty and meaning were never competing here. That whoever built this room understood something most people never figure out.
+
+Great rooms are anchored by great art.
+
+Madelynn Ave creates designer Christian artwork for exactly that kind of room. Each piece begins as an original oil painting by a founder who is both a trained artist and a professional interior designer. Thoughtfully reproduced as beautifully framed prints, every detail of the richness and texture of the original work is preserved and brought into your home.
+
+This is not artwork for every home.
+
+It was made for yours.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+        </div>
+
+        <div class="insight-box" style="margin-top: 18px;">
+            <h4>Why this lives in Evergreen Christian Art CBO</h4>
+            <p>The Evergreen ad set's strongest performer is Apr '26 Abide With Me Narrative Video at 1.39x with 9 purchases on $4,249 spent. The Narrative tag was established by that ad. Adding a second Narrative video at the collection level creates coordinated brand-narrative signal in the same ad set, reinforces what is working, and replaces the dragging Last Supper Reveal Video.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>07 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 08: UNIT 05 - EDEN LIFESTYLE VIDEO C2 -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">08 / 14</span>
+    <div class="slide-tag blue">Unit 05 of 08</div>
+    <h2>Eden Lifestyle Video, second iteration</h2>
+
+    <div class="unit-card video">
+        <div class="unit-header">
+            <div class="unit-num">05</div>
+            <div class="unit-title">
+                <h3>Eden Lifestyle Video, second iteration of Eden video lineage</h3>
+                <span class="ad-name">May '26 - Eden - Lifestyle - Video - C2</span>
+            </div>
+            <div class="unit-format-tag video">Video</div>
+        </div>
+
+        <div class="unit-meta-grid">
+            <div class="meta-block">
+                <div class="label">Source filename</div>
+                <div class="value">Video_Ad_2.mp4</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">New filename for asset library</div>
+                <div class="value green">May26_Eden_Lifestyle_Video_C2.mp4</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Campaign</div>
+                <div class="value">HM - TLIMS - CBO</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Ad set</div>
+                <div class="value">HM Spring '26 Eden Collection Value Opt Broad US</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Destination URL</div>
+                <div class="value blue">https://madelynnave.com/products/eden-vertical</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">CTA button</div>
+                <div class="value">Shop Now</div>
+            </div>
+        </div>
+
+        <div class="headline-display">
+            <div class="label">Headline</div>
+            <div class="text">Not Every Home Has This. Yours Could.</div>
+        </div>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px;">Primary text variants</h4>
+        <div class="copy-variants">
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 1, Short</span>
+                    <span class="length-tag">17 words</span>
+                </div>
+                <div class="copy-text">Not every home has this.
+
+Yours could.
+
+Shop Eden at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 2, Medium</span>
+                    <span class="length-tag medium">80 words</span>
+                </div>
+                <div class="copy-text">The rooms that leave an impression were never accidental.
+
+They were built by people who understand that every detail speaks. That the art on the wall says something about the people who chose it. That beauty and meaning, when combined with intention, create something no one forgets.
+
+Eden was made for that kind of room.
+
+For that kind of person.
+
+Shop Eden at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 3, Long</span>
+                    <span class="length-tag long">175 words</span>
+                </div>
+                <div class="copy-text">There are people who decorate their homes.
+
+And there are people who curate them.
+
+The difference is felt the moment you walk through the door. In the quiet confidence of every chosen detail. In the way nothing is accidental and everything belongs. In the art on the wall that anchors the entire room without trying.
+
+Eden is that piece.
+
+A tapestry inspired landscape rendered in soft vintage greens, warm blues, and earthy neutrals. Chinoiserie elegance woven into the timeless romance of toile. Originally painted in oils and thoughtfully reproduced as a beautifully framed print that carries every detail of the original work into your home.
+
+This is not a piece for every room.
+
+It was made for yours.
+
+Shop Eden at Madelynn Ave.</div>
+            </div>
+        </div>
+
+        <div class="insight-box orange" style="margin-top: 18px;">
+            <h4>Why this is C2 not C1, and why it lives in the Eden Collection ad set</h4>
+            <p>Mar '26 Spring Eden Video C1 already exists at 3.01x ROAS on $2,675 spent, currently inactive. The new Eden video is iteration two of that lineage, hence C2. It goes into the Spring '26 Eden Collection ad set inside TLIMS CBO, the same ad set the proven Eden Video C1 lived in. That ad set runs at 1.68x with 11 purchases on $6,834 over 30 days. The new video replaces the dragging Eden Heirloom at 1.08x. Audience signal in this ad set is already optimised for Eden, the new creative inherits clean reach.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>08 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 09: UNIT 06 - WITH THE FATHER NARRATIVE VIDEO -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">09 / 14</span>
+    <div class="slide-tag blue">Unit 06 of 08</div>
+    <h2>With The Father Narrative Video</h2>
+
+    <div class="unit-card video">
+        <div class="unit-header">
+            <div class="unit-num">06</div>
+            <div class="unit-title">
+                <h3>With The Father Faith Narrative Video</h3>
+                <span class="ad-name">May '26 - With The Father - Narrative - Video - C1</span>
+            </div>
+            <div class="unit-format-tag video">Video</div>
+        </div>
+
+        <div class="unit-meta-grid">
+            <div class="meta-block">
+                <div class="label">Source filename</div>
+                <div class="value">Video_Ad_3.mp4</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">New filename for asset library</div>
+                <div class="value green">May26_WTF_Narrative_Video_C1.mp4</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Campaign</div>
+                <div class="value">HM - TLIMS - CBO</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Ad set</div>
+                <div class="value">Value Optimisation</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Destination URL</div>
+                <div class="value blue">https://madelynnave.com/products/with-the-father-vertical</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">CTA button</div>
+                <div class="value">Shop Now</div>
+            </div>
+        </div>
+
+        <div class="headline-display">
+            <div class="label">Headline</div>
+            <div class="text">Beauty and Faith in the Same Room.</div>
+        </div>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px;">Primary text variants</h4>
+        <div class="copy-variants">
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 1, Short</span>
+                    <span class="length-tag">36 words</span>
+                </div>
+                <div class="copy-text">He withdrew to quiet places to be with the Father.
+
+Your home can carry that same stillness.
+
+With The Father by Madelynn Ave.
+
+Shop now at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 2, Medium</span>
+                    <span class="length-tag medium">125 words</span>
+                </div>
+                <div class="copy-text">There is something sacred about a quiet room.
+
+A space that feels set apart. Intentional. Anchored by something deeper than furniture and fabric.
+
+With The Father was painted for exactly that kind of space. Inspired by the moments Christ withdrew from the noise to be alone with God, this piece carries that same stillness into your home. Soft greens and warm browns, rendered with quiet devotion and designed for the woman who wants her space to reflect not just her taste but her faith.
+
+This is what it looks like when a room means something.
+
+Shop With The Father at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 3, Long</span>
+                    <span class="length-tag long">200 words</span>
+                </div>
+                <div class="copy-text">He left the crowds.
+
+He found a quiet place. And He was with the Father. ✝
+
+There is something about that image that never leaves you. The intentionality of it. The decision to step away from everything and simply be present with God. To let that stillness be enough.
+
+With The Father was born from that place.
+
+Painted in oils in the Madelynn Ave studio and thoughtfully reproduced as a beautifully framed print, this piece carries the devotion of that moment into the most beautiful rooms in the world. Soft greens and warm browns layered with quiet intention, designed for the woman who understands that a truly extraordinary home is not just curated with taste.
+
+It is anchored in faith.
+
+This is Christian artwork for the room that says everything about who you are and what you believe without saying a word.
+
+Shop With The Father at Madelynn Ave.</div>
+            </div>
+        </div>
+
+        <div class="insight-box" style="margin-top: 18px;">
+            <h4>Why this lives in TLIMS CBO Value Optimisation</h4>
+            <p>Replicates the TLIMS Passage Video format that drove 8.11x ROAS historically. The Narrative tag is established in the account, this is the second video in the May refresh using that angle. Sits alongside Feb '26 Abide With Me at 2.21x and the existing Good Shepherd Story Video at 2.70x, joining a bench of working Christian narrative-led video creative.</p>
+        </div>
+
+        <div class="insight-box orange" style="margin-top: 14px;">
+            <h4>Preserve Oscar's Latin Cross emoji in Copy 3</h4>
+            <p>The ✝ (U+271D, Latin Cross) appears once in Copy 3 only, after "He was with the Father." This is the only emoji across the entire ad copy package and Oscar placed it intentionally to punctuate the sacred moment. Copy and paste the variant text exactly as shown above, do not strip the cross.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>09 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 10: UNIT 07 - ABIDE WITH ME CAROUSEL -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">10 / 14</span>
+    <div class="slide-tag orange">Unit 07 of 08</div>
+    <h2>Abide With Me Carousel</h2>
+
+    <div class="unit-card carousel">
+        <div class="unit-header">
+            <div class="unit-num">07</div>
+            <div class="unit-title">
+                <h3>Abide With Me Single-Product Story Carousel, six cards</h3>
+                <span class="ad-name">May '26 - Abide With Me - Carousel - C1</span>
+            </div>
+            <div class="unit-format-tag carousel">Carousel</div>
+        </div>
+
+        <div class="unit-meta-grid">
+            <div class="meta-block">
+                <div class="label">Source filenames</div>
+                <div class="value">Card_1.png to Card_6.png</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">New filenames for asset library</div>
+                <div class="value green">May26_AbideWithMe_Carousel_C1_01.png to _06.png</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Campaign</div>
+                <div class="value">HM Evergreen Christian Art CBO</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Ad set</div>
+                <div class="value">Value Optimisation Broad US Evergreen</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Destination URL, all cards</div>
+                <div class="value blue">https://madelynnave.com/products/abide-with-me-horizontal</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">CTA button</div>
+                <div class="value">Shop Now</div>
+            </div>
+        </div>
+
+        <div class="headline-display">
+            <div class="label">Headline</div>
+            <div class="text">Your Home Has Been Waiting for This.</div>
+        </div>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px;">Six carousel cards, sequence</h4>
+        <div class="carousel-cards">
+            <div class="carousel-card">
+                <div class="card-num">Card 01</div>
+                <div class="card-title">Abide With Me Hero</div>
+                <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 0;">Full lifestyle hero with title overlay</p>
+            </div>
+            <div class="carousel-card">
+                <div class="card-num">Card 02</div>
+                <div class="card-title">Hand-painted originals</div>
+                <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 0;">Texture and craft framing</p>
+            </div>
+            <div class="carousel-card">
+                <div class="card-num">Card 03</div>
+                <div class="card-title">Gallery view</div>
+                <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 0;">Designer Christian Artwork brand context</p>
+            </div>
+            <div class="carousel-card">
+                <div class="card-num">Card 04</div>
+                <div class="card-title">The meaning behind the artwork</div>
+                <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 0;">Spiritual narrative card</p>
+            </div>
+            <div class="carousel-card">
+                <div class="card-num">Card 05</div>
+                <div class="card-title">Loved by thoughtful homes</div>
+                <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 0;">Elaine T testimonial</p>
+            </div>
+            <div class="carousel-card">
+                <div class="card-num">Card 06</div>
+                <div class="card-title">Made for beautiful spaces</div>
+                <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 0;">Final lifestyle close with brand mark</p>
+            </div>
+        </div>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px;">Primary text variants</h4>
+        <div class="copy-variants">
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 1, Short</span>
+                    <span class="length-tag">26 words</span>
+                </div>
+                <div class="copy-text">Some pieces furnish a home.
+
+This one defines it.
+
+Shop Abide With Me at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 2, Medium</span>
+                    <span class="length-tag medium">90 words</span>
+                </div>
+                <div class="copy-text">You have been looking for Christian art worthy of your home.
+
+Not just meaningful. Beautiful. The kind of piece that earns its place on your wall and keeps it for years.
+
+Abide With Me was made for exactly that.
+
+Hand painted in oils. Thoughtfully reproduced as a beautifully framed print. Designed for the modern Christian home that refuses to settle for ordinary.
+
+Shop Abide With Me at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 3, Long</span>
+                    <span class="length-tag long">170 words</span>
+                </div>
+                <div class="copy-text">There is a piece for every kind of home.
+
+And then there is the piece for yours.
+
+Abide With Me was inspired by the quiet, sacred relationship that deepens the more time we spend with the Savior. Painted in oils and reproduced as a beautifully framed print, it carries that stillness into every room it enters. Soft. Neutral. Deeply intentional.
+
+The kind of art that does not just sit on a wall.
+
+It anchors one.
+
+People who own this piece describe it as the most meaningful thing in their home. Not because it announces itself. Because it draws you in in a way nothing else quite does.
+
+This is Christian artwork made for a home like yours.
+
+Shop Abide With Me at Madelynn Ave.</div>
+            </div>
+        </div>
+
+        <div class="insight-box orange" style="margin-top: 18px;">
+            <h4>Why this lives in Evergreen Christian Art CBO</h4>
+            <p>Reinforces the Apr '26 Abide With Me Narrative Video at 1.39x with 9 purchases, the strongest active ad in this campaign. Coordinated Abide With Me product signal across two formats in the same ad set creates compounding brand recall. Placing it in TLIMS CBO would have it competing against the existing Feb '26 Abide With Me ad at 2.21x, which is the wrong outcome.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>10 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 11: UNIT 08 - CHRISTIAN MIX CLOSEUP CAROUSEL -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">11 / 14</span>
+    <div class="slide-tag orange">Unit 08 of 08</div>
+    <h2>Christian Mix Close Up Carousel</h2>
+
+    <div class="unit-card carousel">
+        <div class="unit-header">
+            <div class="unit-num">08</div>
+            <div class="unit-title">
+                <h3>Multi-Product Christian Close Up Carousel, six pieces</h3>
+                <span class="ad-name">May '26 - Christian Mix - Close Up - Carousel - C1</span>
+            </div>
+            <div class="unit-format-tag carousel">Carousel</div>
+        </div>
+
+        <div class="unit-meta-grid">
+            <div class="meta-block">
+                <div class="label">Source filenames</div>
+                <div class="value">Six closeup PNGs (Abide_With_me, Gethsemane, Last_Supper, Peace_Be_Still, TLIMS, With_The_Father)</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">New filenames for asset library</div>
+                <div class="value green">May26_ChristianMix_CloseUp_Carousel_C1_01.png to _06.png</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Campaign</div>
+                <div class="value">HM - TLIMS - CBO</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Ad set</div>
+                <div class="value">Value Optimisation</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">Destination URL</div>
+                <div class="value blue">Per card, see card-by-card mapping below</div>
+            </div>
+            <div class="meta-block">
+                <div class="label">CTA button</div>
+                <div class="value">Shop Now</div>
+            </div>
+        </div>
+
+        <div class="headline-display">
+            <div class="label">Headline</div>
+            <div class="text">Handcrafted Art. Feel the Difference.</div>
+        </div>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px;">Six carousel cards with individual product URLs</h4>
+        <table class="data-table" style="font-size: 11.5px;">
+            <thead>
+                <tr><th>Card</th><th>Product</th><th>Source file</th><th>Destination URL</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight">01</td>
+                    <td>Abide With Me</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">Abide_With_me.png</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">/products/abide-with-me-horizontal</td>
+                </tr>
+                <tr>
+                    <td class="highlight">02</td>
+                    <td>Gethsemane</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">Gethsemane.png</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">/products/gethsemane</td>
+                </tr>
+                <tr>
+                    <td class="highlight">03</td>
+                    <td>Peace, Be Still</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">Peace__Be_Still.png</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">/products/peace-be-still-vertical</td>
+                </tr>
+                <tr>
+                    <td class="highlight">04</td>
+                    <td>The Last Supper</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">The_Last_Supper.png</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">/products/the-last-supper</td>
+                </tr>
+                <tr>
+                    <td class="highlight">05</td>
+                    <td>The Lord Is My Shepherd</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">The_Lord_Is_My_Shepherd.png</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">/products/tlims</td>
+                </tr>
+                <tr>
+                    <td class="highlight">06</td>
+                    <td>With The Father</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">With_The_Father.png</td>
+                    <td style="font-family:'JetBrains Mono',monospace; font-size:10.5px;">/products/with-the-father-vertical</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4 style="margin-top: 18px; margin-bottom: 12px;">Primary text variants</h4>
+        <div class="copy-variants">
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 1, Short</span>
+                    <span class="length-tag">25 words</span>
+                </div>
+                <div class="copy-text">Christian artwork for the woman who understands the value of real art.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 2, Medium</span>
+                    <span class="length-tag medium">85 words</span>
+                </div>
+                <div class="copy-text">Most art is made to fill a wall.
+
+Madelynn Ave was made to fill a room with something that lasts.
+
+Every piece begins as an original oil painting. Hand crafted with the kind of depth, texture, and intention that only a human hand can bring. The difference is not something you have to look for.
+
+It finds you.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+
+            <div class="copy-block">
+                <div class="copy-label">
+                    <span class="name">Copy 3, Long</span>
+                    <span class="length-tag long">170 words</span>
+                </div>
+                <div class="copy-text">The people who find Madelynn Ave tend to stay.
+
+Not because they were looking for Christian art. But because they were looking for something they could not quite name. A piece with real depth. Real texture. The kind of quiet, unmistakable quality that lets you know immediately that something was made by hand and made with care.
+
+That is what every piece in this collection carries.
+
+Each one begins as an original oil painting, crafted with the kind of intention that no mass production process can replicate. Not because we say so. Because you can see it. Feel it. Recognize it the moment it is on your wall.
+
+This is Christian artwork for the woman who knows the difference.
+
+Shop the collection at Madelynn Ave.</div>
+            </div>
+        </div>
+
+        <div class="insight-box orange" style="margin-top: 18px;">
+            <h4>Why this lives in TLIMS CBO Value Optimisation</h4>
+            <p>This is a multi-product carousel that mirrors the Feb '26 Grid pattern that drove 2.92x in Combined 50/50 over 30 days. Applying the same multi-product carousel structure to a Christian audience inside the campaign that needs fresh creative most. Six product URLs spread the click signal across the entire Christian range, supporting cross-product discovery.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>11 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 12: BUILD SEQUENCE -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">12 / 14</span>
+    <div class="slide-tag">Build Sequence</div>
+    <h2>The order of operations, top to bottom</h2>
+    <p class="lead">Every step in sequence. Sequence is part of the strategy because Meta reacts to changes in the order they happen.</p>
+
+    <div class="step-list">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <h4>Cleanup pauses, Thursday May 8 evening</h4>
+                <p>All eleven ad-level pauses listed on slide 3. Zero ad set or campaign budget changes at this stage. Confirms Eden Heirloom paused, Last Supper Reveal stays paused, all dead 28 April creatives off.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <h4>Disband Fine Art ABO, migrate Fine Art Carousel, Friday May 9 morning</h4>
+                <p>Export post ID for the 28 April Fine Art Carousel before pausing the Fine Art ABO Value Optimisation ad set. Pause campaign delivery. Import post ID into Combined 50/50 ad set as a new ad. Existing $1,498 spend learning preserved.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+                <h4>Rename HM Fine Art ABO Value Opt Broad US to HM Combined Test CBO, Friday May 9</h4>
+                <p>Naming alignment only, no structural impact.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+                <h4>Eden Collection budget step-down, Friday May 9 to Sunday May 11</h4>
+                <p>$200 daily down to $100. Apply across three days at no more than 25% per move to avoid learning phase reset. $200 to $150 Friday, $150 to $112 Saturday, $112 to $100 Sunday.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+                <h4>Upload all eight new creative units, Friday May 9 afternoon</h4>
+                <p>Match exact filenames and ad names from each unit card. Confirm UTMs populated for Triple Whale attribution. Confirm Pixel events firing on each destination URL via Meta Pixel Helper.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-body">
+                <h4>Place ads in assigned ad sets, scheduled active for Saturday 6 AM Eastern</h4>
+                <p>Four units into TLIMS CBO Value Optimisation. One Eden video into Spring '26 Eden Collection. Three units into Evergreen Value Opt Evergreen.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">7</div>
+            <div class="step-body">
+                <h4>Verification within two hours of activation, Saturday May 10 morning</h4>
+                <p>All eight ads showing as Active. Pixel firing confirmed across all destination URLs. UTMs landing correctly in Triple Whale dashboard. Loom walkthrough sent to Oscar via Slack by 10 AM Eastern.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">8</div>
+            <div class="step-body">
+                <h4>Hold for seven days, Saturday May 10 to Friday May 16</h4>
+                <p>No actions, no pauses, no budget moves. Daily monitoring only.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">9</div>
+            <div class="step-body">
+                <h4>Memorial Day BOGO ad set build, Thursday May 14 to Friday May 15</h4>
+                <p>Oscar provides BOGO promo creative Thursday May 14. Build new ad set inside TLIMS CBO named exactly Memorial Day '26 - Value Opt - Broad US, mirroring Mother's Day '26 ad set structure. Daily $150 to start. Mother's Day ad set wound down to $0 daily May 15. BOGO live Saturday May 16.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">10</div>
+            <div class="step-body">
+                <h4>Day 7 review of new creative, Friday May 16</h4>
+                <p>Apply success criteria from slide 14 to all eight new units. Pause underperformers. Scale winners. Hold the marginals.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>12 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 13: POST-LAUNCH STATE SUMMARY -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">13 / 14</span>
+    <div class="slide-tag green">Post-Launch State Summary</div>
+    <h2>What every active ad set looks like by Saturday May 10</h2>
+    <p class="lead">Five active ad sets across three campaigns. The new creative is distributed deliberately to lift the two ad sets that need it most while protecting the two that are already performing.</p>
+
+    <div class="two-col" style="margin-top: 22px;">
+        <div class="card green">
+            <h3 style="color: var(--accent-green);">TLIMS CBO ▸ Value Optimisation</h3>
+            <p style="font-size: 12px; color: var(--text-tertiary);">Daily ~$200, 30-day baseline 1.68x</p>
+            <table class="data-table" style="font-size: 11.5px; margin-top: 8px;">
+                <thead><tr><th>Ad</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>Feb '26 - Abide With Me <span class="tag green" style="margin-left:4px;">2.21x</span></td><td>Existing</td></tr>
+                    <tr><td>Video - Story - The Good Shepherd Copy <span class="tag green" style="margin-left:4px;">2.70x</span></td><td>Existing</td></tr>
+                    <tr><td>May '26 - With The Father - Static - C1</td><td>NEW</td></tr>
+                    <tr><td>May '26 - TLIMS - Reviews - Static - C1</td><td>NEW</td></tr>
+                    <tr><td>May '26 - With The Father - Narrative - Video - C1</td><td>NEW</td></tr>
+                    <tr><td>May '26 - Christian Mix - Close Up - Carousel - C1</td><td>NEW</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card brand">
+            <h3 style="color: var(--brand-warm);">TLIMS CBO ▸ Spring '26 Eden Collection</h3>
+            <p style="font-size: 12px; color: var(--text-tertiary);">Daily $100 (stepped down from $200), 30-day baseline 1.68x</p>
+            <table class="data-table" style="font-size: 11.5px; margin-top: 8px;">
+                <thead><tr><th>Ad</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>Mar '26 - Spring - Eden - Static - C1</td><td>Retained</td></tr>
+                    <tr><td>May '26 - Eden - Lifestyle - Video - C2</td><td>NEW</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size: 11px; color: var(--text-tertiary); margin-top: 8px;">Optional, reactivate Mar '26 Spring Eden Video C1 at 3.01x as a parallel test alongside the new C2 video.</p>
+        </div>
+
+        <div class="card purple">
+            <h3 style="color: var(--accent-purple);">TLIMS CBO ▸ Mother's Day '26</h3>
+            <p style="font-size: 12px; color: var(--text-tertiary);">Daily ~$50 to wind down by May 15</p>
+            <table class="data-table" style="font-size: 11.5px; margin-top: 8px;">
+                <thead><tr><th>Ad</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>Apr '26 - Mother's Day - Copy 1 <span class="tag green" style="margin-left:4px;">4.86x</span></td><td>Active until May 15</td></tr>
+                    <tr><td>Apr '26 - Mother's Day - Copy 2</td><td>Active until May 15</td></tr>
+                    <tr><td>Apr '26 - Mother's Day - Copy 3</td><td>Active until May 15</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card orange">
+            <h3 style="color: var(--accent-orange);">HM Combined Test CBO ▸ Combined 50/50</h3>
+            <p style="font-size: 12px; color: var(--text-tertiary);">Daily ~$310, 30-day baseline 2.48x</p>
+            <table class="data-table" style="font-size: 11.5px; margin-top: 8px;">
+                <thead><tr><th>Ad</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>Carousel 2 - Fine Art <span class="tag green" style="margin-left:4px;">7.74x</span></td><td>Existing</td></tr>
+                    <tr><td>Feb '26 - Grid <span class="tag green" style="margin-left:4px;">2.92x</span></td><td>Existing</td></tr>
+                    <tr><td>28 Apr '26 - Fine Art Carousel <span class="tag" style="margin-left:4px; background:rgba(245,158,11,0.15); color:var(--accent-orange);">1.27x</span></td><td>Migrated from Fine Art ABO</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card green" style="grid-column: 1 / -1;">
+            <h3 style="color: var(--accent-green);">HM Evergreen Christian Art CBO ▸ Value Optimisation Broad US Evergreen</h3>
+            <p style="font-size: 12px; color: var(--text-tertiary);">Daily ~$250, 30-day baseline 0.96x, the largest lift opportunity</p>
+            <table class="data-table" style="font-size: 11.5px; margin-top: 8px;">
+                <thead><tr><th>Ad</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>Apr '26 - Abide With Me - Narrative Video <span class="tag green" style="margin-left:4px;">1.39x</span></td><td>Existing winner</td></tr>
+                    <tr><td>May '26 - Christian Collection - Grid - Static - C1</td><td>NEW</td></tr>
+                    <tr><td>May '26 - Christian Collection - Narrative - Video - C1</td><td>NEW</td></tr>
+                    <tr><td>May '26 - Abide With Me - Carousel - C1</td><td>NEW</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size: 11px; color: var(--text-tertiary); margin-top: 8px;">Goal for week one, lift the ad set blended ROAS from 0.96x to at least 1.5x. The Abide With Me Carousel reinforces the existing Narrative Video product signal rather than competing with it.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>13 / 14</span>
+    </div>
+</section>
+
+
+<!-- ============================================== -->
+<!-- SLIDE 14: SUCCESS CRITERIA AND THE ARC -->
+<!-- ============================================== -->
+<section class="slide">
+    <span class="slide-number">14 / 14</span>
+    <div class="slide-tag brand">Day 7 Decisions and the 17-Day Arc</div>
+    <h2>How each unit gets judged, and where this leads</h2>
+    <p class="lead">No ad gets pulled before seven days. After seven days every ad gets read against the same simple criteria. Below threshold, clear decision. Above threshold, scale or compound.</p>
+
+    <table class="data-table" style="margin-top: 18px;">
+        <thead>
+            <tr>
+                <th>Outcome at day 7</th>
+                <th>Decision</th>
+                <th>Rationale</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="tag green">Above 3.5x ROAS</span></td>
+                <td class="highlight green">Scale, build duplicate in sister ad set, replicate format</td>
+                <td>This is the super-ad signal. Compound the find.</td>
+            </tr>
+            <tr>
+                <td><span class="tag blue">1.61x to 3.5x ROAS</span></td>
+                <td class="highlight">Hold, monitor for another 7 days</td>
+                <td>Above breakeven, below target. Many ads mature in week two.</td>
+            </tr>
+            <tr>
+                <td><span class="tag orange">Under 1.61x with spend over $250</span></td>
+                <td class="highlight orange">Pause at ad level, free the slot</td>
+                <td>Below breakeven on enough spend to be confident.</td>
+            </tr>
+            <tr>
+                <td><span class="tag red">Under $50 spend after 7 days</span></td>
+                <td class="highlight red">Pause at ad level, Meta has decided</td>
+                <td>Algorithm has de-prioritised. Forcing it via budget changes only resets learning.</td>
+            </tr>
+            <tr>
+                <td><span class="tag purple">Strong ATC and IC, weak ROAS</span></td>
+                <td class="highlight purple">Hold, investigate landing page or attribution</td>
+                <td>Top of funnel is working, downstream is the issue. Creative is doing its job.</td>
+            </tr>
+            <tr>
+                <td><span class="tag brand">Healthy ROAS but low spend (under $200)</span></td>
+                <td class="highlight">Hold and observe, do not artificially boost</td>
+                <td>Mirror of Carousel 2 Fine Art's 30-day pattern. Algorithm may scale it on its own.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="three-col" style="margin-top: 24px;">
+        <div class="card green">
+            <h3 style="color: var(--accent-green);">Week 1, May 9 to May 15</h3>
+            <p style="font-size: 13px;"><strong style="color: var(--text-primary);">Purpose</strong>, let new creative read clean.</p>
+            <p style="font-size: 13px;">All eight new units live by Saturday May 10. Eleven legacy ads paused. Fine Art ABO disbanded with carousel migrated. Daily monitoring only. By Friday May 15 every new ad has its first proper data point.</p>
+        </div>
+
+        <div class="card purple">
+            <h3 style="color: var(--accent-purple);">Week 2, May 16 to May 22</h3>
+            <p style="font-size: 13px;"><strong style="color: var(--text-primary);">Purpose</strong>, decisions and Memorial Day launch.</p>
+            <p style="font-size: 13px;">Day 7 read on every new ad. Memorial Day BOGO ads live Saturday May 16 or Sunday May 17. Mother's Day wound down by May 15. Winners get duplicates built.</p>
+        </div>
+
+        <div class="card brand">
+            <h3 style="color: var(--brand-warm);">Memorial Day, May 23 to May 25</h3>
+            <p style="font-size: 13px;"><strong style="color: var(--text-primary);">Purpose</strong>, capture the second-biggest seasonal window.</p>
+            <p style="font-size: 13px;">BOGO live. Conversion rates spike per Oscar's historical pattern. Account-wide spend increase aligned to demand surge. Promotion runs through Memorial Day Monday, extends one week if performance justifies.</p>
+        </div>
+    </div>
+
+    <div class="insight-box" style="margin-top: 22px;">
+        <h4>The biggest single unlock from this refresh</h4>
+        <p>Lifting the Evergreen ad set from 0.96x to 1.5x is a $1,300 weekly revenue gain on the same spend. That is achievable with three new units replacing three known dragging ads. If two or more new units cross 3.5x within seven days, the path to $1,500 daily profitable spend, the threshold required for the brand's market dominance trajectory laid out in the original brief, becomes a two to three week proposition rather than a quarter-long one.</p>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Master Implementation Guide | May 8, 2026</span>
+        <span>14 / 14</span>
+    </div>
+</section>
+
+</div>
+
+</body>
+</html>
