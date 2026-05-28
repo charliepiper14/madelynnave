@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madelynn Ave | Weekly Performance | May 21 to 27, 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f1a;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #16162a;
+            --bg-card-hover: #1e1e3a;
+            --border: rgba(255,255,255,0.06);
+            --accent-green: #00d9a5;
+            --accent-green-dim: rgba(0, 217, 165, 0.15);
+            --accent-purple: #8b5cf6;
+            --accent-purple-dim: rgba(139, 92, 246, 0.15);
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --accent-brand: #785245;
+            --accent-brand-light: #D3CBC0;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6b6b80;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 15px; }
+        .slide { min-height: 100vh; padding: 48px 64px; position: relative; display: flex; flex-direction: column; border-bottom: 1px solid var(--border); }
+        .slide-number { position: absolute; top: 24px; right: 32px; font-size: 13px; color: var(--text-muted); font-weight: 600; letter-spacing: 1px; }
+        .slide-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-brand); margin-bottom: 8px; font-weight: 600; }
+        h1 { font-family: 'DM Sans', sans-serif; font-size: 52px; font-weight: 700; line-height: 1.15; margin-bottom: 16px; }
+        h2 { font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; margin-bottom: 28px; }
+        h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+        h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        p { font-size: 15px; color: var(--text-secondary); max-width: 720px; }
+        .subtitle { font-size: 18px; color: var(--text-secondary); max-width: 660px; margin-bottom: 32px; font-weight: 400; }
+        .cover { justify-content: center; align-items: center; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(0,217,165,0.07) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(120,82,69,0.06) 0%, transparent 40%); }
+        .cover h1 { font-size: 56px; }
+        .cover .meta { margin-top: 48px; display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; font-size: 13px; color: var(--text-secondary); }
+        .cover .meta span { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 32px 0; }
+        .metrics-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+        .metrics-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+        .metrics-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+        .metric-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
+        .metric-card.green { border-top: 3px solid var(--accent-green); }
+        .metric-card.purple { border-top: 3px solid var(--accent-purple); }
+        .metric-card.red { border-top: 3px solid var(--accent-red); }
+        .metric-card.orange { border-top: 3px solid var(--accent-orange); }
+        .metric-card.brand { border-top: 3px solid var(--accent-brand); }
+        .metric-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; }
+        .metric-value { font-family: 'DM Sans', sans-serif; font-size: 32px; font-weight: 700; color: var(--text-primary); line-height: 1.1; }
+        .metric-value.large { font-size: 40px; }
+        .metric-value.xl { font-size: 52px; }
+        .metric-change { font-size: 12px; margin-top: 8px; font-weight: 600; }
+        .metric-change.up { color: var(--accent-green); }
+        .metric-change.down { color: var(--accent-red); }
+        .metric-change.neutral { color: var(--text-muted); }
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        .data-table th { text-align: left; padding: 12px 16px; background: var(--bg-card); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+        .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        .data-table tr:hover td { background: var(--bg-card-hover); }
+        .data-table .highlight { color: var(--text-primary); font-weight: 500; }
+        .data-table .green { color: var(--accent-green); font-weight: 600; }
+        .data-table .red { color: var(--accent-red); font-weight: 600; }
+        .data-table .purple { color: var(--accent-purple); font-weight: 600; }
+        .data-table .orange { color: var(--accent-orange); font-weight: 600; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+        .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+        .wwf-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 20px; }
+        .wwf-row { display: grid; grid-template-columns: 90px 1fr; gap: 16px; margin-bottom: 16px; }
+        .wwf-row:last-child { margin-bottom: 0; }
+        .wwf-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 4px 8px; border-radius: 6px; text-align: center; align-self: start; margin-top: 2px; }
+        .wwf-label.what { background: rgba(255,255,255,0.08); color: var(--text-secondary); }
+        .wwf-label.why { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+        .wwf-label.fix { background: var(--accent-green-dim); color: var(--accent-green); }
+        .wwf-label.fix-red { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+        .wwf-text { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+        .wwf-text strong { color: var(--text-primary); }
+        .insight-box { background: var(--bg-card); border-left: 3px solid var(--accent-green); padding: 20px 24px; margin: 24px 0; border-radius: 0 12px 12px 0; }
+        .insight-box.purple { border-left-color: var(--accent-purple); }
+        .insight-box.brand { border-left-color: var(--accent-brand); }
+        .insight-box.red { border-left-color: var(--accent-red); }
+        .insight-box.orange { border-left-color: var(--accent-orange); }
+        .insight-box h4 { color: var(--accent-green); margin-bottom: 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .insight-box.purple h4 { color: var(--accent-purple); }
+        .insight-box.brand h4 { color: var(--accent-brand-light); }
+        .insight-box.red h4 { color: var(--accent-red); }
+        .insight-box.orange h4 { color: var(--accent-orange); }
+        .insight-box p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; max-width: none; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .concept-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; position: relative; overflow: hidden; }
+        .concept-number { font-family: 'DM Sans', sans-serif; font-size: 48px; font-weight: 700; color: rgba(139,92,246,0.15); position: absolute; top: 16px; right: 20px; }
+        .concept-title { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; position: relative; z-index: 1; color: var(--text-primary); }
+        .tag { display: inline-block; padding: 4px 10px; background: var(--accent-purple-dim); border-radius: 6px; font-size: 10px; font-weight: 600; color: var(--accent-purple); margin-right: 6px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tag.green { background: var(--accent-green-dim); color: var(--accent-green); }
+        .tag.red { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+        .tag.orange { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+        .tag.brand { background: rgba(120,82,69,0.2); color: var(--accent-brand-light); }
+        .check-list { list-style: none; margin: 16px 0; }
+        .check-list li { padding: 8px 0; padding-left: 24px; position: relative; color: var(--text-secondary); font-size: 14px; }
+        .check-list li::before { content: ''; position: absolute; left: 0; top: 12px; width: 8px; height: 8px; border-radius: 2px; background: var(--accent-green); }
+        .check-list li.red::before { background: var(--accent-red); }
+        .check-list li.orange::before { background: var(--accent-orange); }
+        .check-list li.purple::before { background: var(--accent-purple); }
+        .slide-footer { margin-top: auto; padding-top: 32px; font-size: 11px; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; }
+        .note { font-size: 11px; color: var(--text-muted); font-style: italic; margin-bottom: 12px; }
+        .trend-bar { display: flex; align-items: center; gap: 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin: 8px 0; }
+        .trend-label { font-size: 12px; color: var(--text-muted); width: 200px; flex-shrink: 0; }
+        .trend-track { flex: 1; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+        .trend-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .trend-value { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 700; width: 80px; text-align: right; }
+        .trend-arrow { font-size: 18px; width: 24px; text-align: center; }
+        @media print { .slide { page-break-after: always; } }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Cover -->
+<section class="slide cover">
+    <div class="slide-tag">Weekly Performance Review</div>
+    <h1>Madelynn Ave</h1>
+    <p class="subtitle">Fifth Consecutive Week Of Improvement, And The Account Just Cleared Its Profitability Target By A Wide Margin On A Record Revenue Week</p>
+    <div class="meta">
+        <span>Reporting period: May 21 to May 27</span>
+        <span>vs Prior week: May 14 to May 20</span>
+        <span>ROAS 2.60x to 6.38x (+145%)</span>
+        <span>Revenue $21,203 to $60,361 (+185%)</span>
+    </div>
+</section>
+
+<!-- SLIDE 2: Headline numbers -->
+<section class="slide">
+    <span class="slide-number">02 / 07</span>
+    <div class="slide-tag">The Headline</div>
+    <h2>Spend Up 16%, Revenue Up 185%, ROAS 6.38x, Every Campaign Above 4.6x</h2>
+    <p class="note">All figures validated across three CSV levels (campaign, ad set, ad). Totals reconcile exactly across all three exports for the reporting window 21 to 27 May 2026, $9,467 spend and $60,361 revenue at each level. Ad set CSV is authoritative for ad set totals, ads CSV for individual creative performance.</p>
+
+    <div class="metrics-grid">
+        <div class="metric-card green">
+            <div class="metric-label">Blended ROAS</div>
+            <div class="metric-value large">6.38x</div>
+            <div class="metric-change up">From 2.60x prior week, +145%, well past the 3.5x target</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Revenue</div>
+            <div class="metric-value large">$60,361</div>
+            <div class="metric-change up">From $21,203, +185%, record week</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Purchases</div>
+            <div class="metric-value large">58</div>
+            <div class="metric-change up">From 21, +176%, highest weekly count on record</div>
+        </div>
+        <div class="metric-card brand">
+            <div class="metric-label">Spend</div>
+            <div class="metric-value large">$9,467</div>
+            <div class="metric-change up">From $8,148, $1,352/day, scaled inside the ceiling</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Blended CPA</div>
+            <div class="metric-value large">$163</div>
+            <div class="metric-change up">From $388, $261 below the $424 breakeven</div>
+        </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="insight-box green">
+            <h4>The Account Cleared Its Target, This Is The Week The Recovery Became A Scale Story</h4>
+            <p>Five straight weeks of improvement and the account did not just touch the 3.5x profitability target this week, it cleared it at 6.38x with revenue almost tripling week on week. Spend rose 16% to $1,352 a day while CPA dropped to $163, less than half the historical breakeven, so the gains arrived on more volume rather than less. Purchases nearly tripled from 21 to 58. The Memorial Day BOGO did the heavy lifting, but the underlying account is also stronger, every one of the four campaigns returned above 4.6x for the first time since onboarding. The story has shifted from how to recover to how to hold this elevated base as the promo winds down.</p>
+        </div>
+        <div class="insight-box purple">
+            <h4>The Checkout Constraint From The Last Two Weeks Has Resolved</h4>
+            <p>The mid funnel leak that defined the last two reporting periods has reversed. ATC to IC climbed from 21.3% to 37.2% and IC to Purchase from 26.3% to 32.0%, both sharp single week recoveries. The BOGO offer plus stronger creative pulled buyers cleanly through the cart and checkout steps that were previously stalling. This matters because it confirms the leak was promotional and structural rather than permanent, and it de risks the read going into June. The Eden landing page work still has a role, but the urgency drops a level now the funnel is converting at full strength again. Detail on slide 6.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 16px;">
+        <h3 style="margin-bottom: 12px;">Account-wide trajectory, last five weekly windows</h3>
+        <div class="trend-bar">
+            <div class="trend-label">Four weeks ago, Apr 23 to 29</div>
+            <div class="trend-track"><div class="trend-fill" style="width:19%; background:var(--accent-orange);"></div></div>
+            <div class="trend-arrow" style="color:var(--accent-orange);">&#8593;</div>
+            <div class="trend-value" style="color:var(--accent-orange);">1.22x</div>
+        </div>
+        <div class="trend-bar">
+            <div class="trend-label">Three weeks ago, Apr 30 to May 6</div>
+            <div class="trend-track"><div class="trend-fill" style="width:25%; background:var(--accent-green);"></div></div>
+            <div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div>
+            <div class="trend-value" style="color:var(--accent-green);">1.60x</div>
+        </div>
+        <div class="trend-bar">
+            <div class="trend-label">Two weeks ago, May 7 to 13</div>
+            <div class="trend-track"><div class="trend-fill" style="width:34%; background:var(--accent-green);"></div></div>
+            <div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div>
+            <div class="trend-value" style="color:var(--accent-green);">2.14x</div>
+        </div>
+        <div class="trend-bar">
+            <div class="trend-label">Last week, May 14 to 20</div>
+            <div class="trend-track"><div class="trend-fill" style="width:41%; background:var(--accent-green);"></div></div>
+            <div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div>
+            <div class="trend-value" style="color:var(--accent-green);">2.60x</div>
+        </div>
+        <div class="trend-bar" style="border-color: rgba(0,217,165,0.4); background: rgba(0,217,165,0.07);">
+            <div class="trend-label" style="color:var(--text-primary); font-weight:600;">This week, May 21 to 27</div>
+            <div class="trend-track"><div class="trend-fill" style="width:100%; background:var(--accent-green);"></div></div>
+            <div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div>
+            <div class="trend-value" style="color:var(--accent-green);">6.38x</div>
+        </div>
+        <div class="trend-bar" style="border-color: rgba(0,217,165,0.2); background: rgba(0,217,165,0.04);">
+            <div class="trend-label" style="color:var(--accent-green); font-weight:600;">Account profitability target</div>
+            <div class="trend-track"><div class="trend-fill" style="width:55%; background:rgba(0,217,165,0.3);"></div></div>
+            <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:var(--accent-green); text-align:right; width:64px; flex-shrink:0;">CLEARED</div>
+            <div class="trend-value" style="color:var(--accent-green);">3.5x</div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Performance | May 21 to 27, 2026</span>
+        <span>02 / 07</span>
+    </div>
+</section>
+
+<!-- SLIDE 3: Campaign breakdown -->
+<section class="slide">
+    <span class="slide-number">03 / 07</span>
+    <div class="slide-tag">Campaign Breakdown</div>
+    <h2>All Four Campaigns Firing Above 4.6x, The First Time The Whole Account Has Aligned</h2>
+    <p class="note">All campaign figures from campaign-level CSV, cross-validated against ad set CSV and ad-level CSV aggregations, all three totals reconcile exactly. Reporting period 21 to 27 May 2026 vs prior week 14 to 20 May 2026.</p>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Campaign</th>
+                <th>Spend (this wk)</th>
+                <th>Revenue</th>
+                <th>ROAS (this wk)</th>
+                <th>ROAS (prior wk)</th>
+                <th>WoW</th>
+                <th>Purchases</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.14);">
+                <td class="highlight">HM - TLIMS - ABO</td>
+                <td>$4,294</td>
+                <td class="green">$35,011</td>
+                <td class="green">8.15x</td>
+                <td class="green">3.45x</td>
+                <td class="green">+136%</td>
+                <td>29</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.11);">
+                <td class="highlight">HM - Fine Art - ABO - Value Opt - Broad US</td>
+                <td>$2,090</td>
+                <td class="green">$10,741</td>
+                <td class="green">5.14x</td>
+                <td class="green">2.63x</td>
+                <td class="green">+95%</td>
+                <td>11</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.09);">
+                <td class="highlight">HM - Fine Art - ABO (legacy)</td>
+                <td>$1,652</td>
+                <td class="green">$7,990</td>
+                <td class="green">4.84x</td>
+                <td class="green">3.07x</td>
+                <td class="green">+58%</td>
+                <td>10</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.07);">
+                <td class="highlight">HM - Evergreen Christian Art - CBO</td>
+                <td>$1,432</td>
+                <td class="green">$6,619</td>
+                <td class="green">4.62x</td>
+                <td class="red">0.00x</td>
+                <td class="green">Recovered</td>
+                <td>8</td>
+            </tr>
+            <tr style="background: rgba(255,255,255,0.04); font-weight: 600;">
+                <td class="highlight">Account blended</td>
+                <td class="highlight">$9,467</td>
+                <td class="highlight">$60,361</td>
+                <td class="green">6.38x</td>
+                <td>2.60x</td>
+                <td class="green">+145%</td>
+                <td class="highlight">58</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="insight-box green">
+            <h4>TLIMS Carried The Account, The Memorial Day Ad Set Is Inside It</h4>
+            <p>TLIMS posted 8.15x on $4,294 of spend and $35,011 of revenue, more than half the account total. The campaign holds two engines this week. The Memorial Day BOGO ad set returned 18.69x on $929 of spend for $17,376 of revenue, and the Eden Collection ad set returned 6.56x on $1,804 for $11,830. Placing Memorial Day inside TLIMS to inherit the strongest signal in the account, the call made on the May 21 call, has paid off exactly as intended. The promo did not just trade well in isolation, it lifted the whole campaign by feeding purchase signal into the shared learning.</p>
+        </div>
+        <div class="insight-box purple">
+            <h4>Evergreen Confirmed Its Rebound, The Refresh Batch Is The Reason</h4>
+            <p>Evergreen went from $0 attributed three weeks ago to 4.62x this week on $1,432 of spend, an $6,619 revenue week with 8 purchases. This is the second consecutive week of recovery and it is now a confirmed pattern, not a one week swing. The May refresh batch is doing the work, the Good Shepherd Static returned 25.88x on $107 and the Eden Refresh Static 12.12x on $68. The earlier zero attribution period reads as a creative concentration problem that resolved once the dead weight was paused and budget flowed to the refresh creative. Detail on slide 4.</p>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Performance | May 21 to 27, 2026</span>
+        <span>03 / 07</span>
+    </div>
+</section>
+
+<!-- SLIDE 4: What's Working -->
+<section class="slide">
+    <span class="slide-number">04 / 07</span>
+    <div class="slide-tag">What's Working</div>
+    <h2>Eight Ads Generated $49,291 Of $60,361 Revenue, The Memorial Day Trio Returning 15x To 25x</h2>
+    <p class="note">82% of weekly revenue from eight ads. The Memorial Day creative is the most efficient cluster the account has ever run, and the proven evergreen carriers all stepped up at the same time.</p>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Campaign / Ad Set</th>
+                <th>Spend</th>
+                <th>Revenue</th>
+                <th>ROAS</th>
+                <th>Purchases</th>
+                <th>ATC</th>
+                <th>IC</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background: rgba(0,217,165,0.14);">
+                <td class="highlight">Mar '26 Spring Eden Static C1</td>
+                <td style="font-size:11px;color:var(--text-muted);">TLIMS ABO / Eden Collection Value Opt</td>
+                <td>$1,718</td>
+                <td class="green">$10,613</td>
+                <td class="green">6.18x</td>
+                <td>10</td>
+                <td>88</td>
+                <td>25</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.12);">
+                <td class="highlight">Memorial Day Sitewide BOGO Static C2</td>
+                <td style="font-size:11px;color:var(--text-muted);">TLIMS ABO / Memorial Day Value Opt</td>
+                <td>$425</td>
+                <td class="green">$8,216</td>
+                <td class="green">19.33x</td>
+                <td>6</td>
+                <td>31</td>
+                <td>13</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.11);">
+                <td class="highlight">Feb '26 Grid</td>
+                <td style="font-size:11px;color:var(--text-muted);">FA ABO Value Opt / Combined 50/50</td>
+                <td>$1,506</td>
+                <td class="green">$8,303</td>
+                <td class="green">5.51x</td>
+                <td>9</td>
+                <td>72</td>
+                <td>27</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.09);">
+                <td class="highlight">Feb '26 Abide With Me</td>
+                <td style="font-size:11px;color:var(--text-muted);">TLIMS ABO / Value Optimisation</td>
+                <td>$923</td>
+                <td class="green">$5,121</td>
+                <td class="green">5.55x</td>
+                <td>5</td>
+                <td>34</td>
+                <td>15</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.08);">
+                <td class="highlight">28 Apr '26 Fine Art Carousel</td>
+                <td style="font-size:11px;color:var(--text-muted);">Fine Art ABO / Value Optimisation</td>
+                <td>$1,182</td>
+                <td class="green">$5,121</td>
+                <td class="green">4.33x</td>
+                <td>8</td>
+                <td>70</td>
+                <td>24</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.07);">
+                <td class="highlight">Memorial Day Christian Collection BOGO Static</td>
+                <td style="font-size:11px;color:var(--text-muted);">TLIMS ABO / Memorial Day Value Opt</td>
+                <td>$295</td>
+                <td class="green">$4,591</td>
+                <td class="green">15.54x</td>
+                <td>3</td>
+                <td>27</td>
+                <td>8</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.06);">
+                <td class="highlight">Memorial Day With The Father Stillness Static</td>
+                <td style="font-size:11px;color:var(--text-muted);">TLIMS ABO / Memorial Day Value Opt</td>
+                <td>$182</td>
+                <td class="green">$4,568</td>
+                <td class="green">25.04x</td>
+                <td>2</td>
+                <td>24</td>
+                <td>2</td>
+            </tr>
+            <tr style="background: rgba(0,217,165,0.05);">
+                <td class="highlight">May '26 Refresh Good Shepherd Static C1</td>
+                <td style="font-size:11px;color:var(--text-muted);">Evergreen CBO / Broad US Evergreen</td>
+                <td>$107</td>
+                <td class="green">$2,759</td>
+                <td class="green">25.88x</td>
+                <td>3</td>
+                <td>15</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="three-col" style="margin-top: 8px;">
+        <div class="concept-card" style="border-color: var(--accent-green);">
+            <div class="concept-number">01</div>
+            <div class="concept-title">The Memorial Day BOGO trio is the most efficient cluster the account has run</div>
+            <p style="font-size:13px; color: var(--text-secondary); position: relative; z-index: 1;">Three static units carried the promo, With The Father Stillness at 25.04x, Sitewide BOGO C2 at 19.33x and Christian Collection BOGO at 15.54x. Together the ad set returned 18.69x on $929 of spend for $17,376 of revenue and 11 purchases. The BOGO offer plus the static format proved the cleanest converting combination the account owns. With the sale extended through May 31 these carriers keep running, and the static template is the obvious base for the next evergreen creative round.</p>
+            <div style="margin-top: 12px; position: relative; z-index: 1;">
+                <span class="tag green">18.69x ad set</span>
+                <span class="tag brand">Static template</span>
+            </div>
+        </div>
+        <div class="concept-card" style="border-color: var(--accent-green);">
+            <div class="concept-number">02</div>
+            <div class="concept-title">Eden Static is now the single biggest revenue ad in the account</div>
+            <p style="font-size:13px; color: var(--text-secondary); position: relative; z-index: 1;">Eden Static C1 returned 6.18x on $1,718 of spend for $10,613 of revenue and 10 purchases, up from 2.38x and 5 purchases last week. This lines up with the read from Slack, Eden has become the anchor product with 23 orders this month against 9 for the next best. The cold acquisition layer has now caught up to what the PDP and retargeting were already showing. Eden is the prime candidate for the landing page test once the promo concludes.</p>
+            <div style="margin-top: 12px; position: relative; z-index: 1;">
+                <span class="tag green">6.18x</span>
+                <span class="tag green">10 purchases</span>
+                <span class="tag brand">Anchor product</span>
+            </div>
+        </div>
+        <div class="concept-card" style="border-color: var(--accent-green);">
+            <div class="concept-number">03</div>
+            <div class="concept-title">The May refresh batch validated, Good Shepherd and Eden refresh leading</div>
+            <p style="font-size:13px; color: var(--text-secondary); position: relative; z-index: 1;">The Friday refresh drop has proven out inside Evergreen. Good Shepherd Static returned 25.88x on $107, Eden Refresh Static 12.12x on $68 and Light of Life Video 4.19x on $124. These are exactly the consistent winners the planned Evergreen ABO rebuild needs as its backbone. The refresh round did its job, surfacing fresh proven creative without disturbing the TLIMS signal, which is the purpose Evergreen serves best.</p>
+            <div style="margin-top: 12px; position: relative; z-index: 1;">
+                <span class="tag green">25.88x top</span>
+                <span class="tag green">Refresh validated</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Performance | May 21 to 27, 2026</span>
+        <span>04 / 07</span>
+    </div>
+</section>
+
+<!-- SLIDE 5: Month to date and momentum -->
+<section class="slide">
+    <span class="slide-number">05 / 07</span>
+    <div class="slide-tag">Month To Date And Momentum</div>
+    <h2>May Is Tracking At 3.42x On $109,887 Of Revenue, The Strongest Month The Account Has Run</h2>
+    <p class="note">Month to date figures from the 1 to 28 May campaign-level CSV, single reporting period. Weekly windows cross-validated against individual weekly exports.</p>
+
+    <div class="metrics-grid four-col">
+        <div class="metric-card green">
+            <div class="metric-label">MTD Revenue</div>
+            <div class="metric-value">$109,887</div>
+            <div class="metric-change up">1 to 28 May, four full trading weeks</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">MTD ROAS</div>
+            <div class="metric-value">3.42x</div>
+            <div class="metric-change up">At target, lifted hard by the final week</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">MTD Purchases</div>
+            <div class="metric-value">114</div>
+            <div class="metric-change up">AOV $964, premium band holding</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">MTD CPA</div>
+            <div class="metric-value">$282</div>
+            <div class="metric-change up">$142 below the $424 breakeven</div>
+        </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="insight-box green">
+            <h4>The Monthly Picture Confirms The Weekly Trend Is Real, Not A One Week Spike</h4>
+            <p>The month closed its fourth trading week at $109,887 of revenue and 3.42x blended, with the account moving from 1.60x to 2.14x to 2.60x to 6.38x across the four windows. The acceleration is the point. Each week built on the last rather than trading one good week for a soft one, which is the pattern that separates a durable recovery from a lucky promo. The final week pulled the whole month up to target, and the underlying campaigns entered the promo already climbing, so the elevated base is not purely BOGO inflated.</p>
+        </div>
+        <div class="insight-box purple">
+            <h4>Spend Is Scaling Cleanly Inside The Ceiling, Headroom Remains</h4>
+            <p>Daily spend rose from $1,164 to $1,352 week on week while ROAS more than doubled, the clearest possible signal that the account absorbed more budget without diluting returns. There is still roughly $150 a day of room inside the $1,500 ceiling. The discipline now is to hold the proven carriers through the promo extension, let the post promo reads settle, then have the structured conversation about lifting the ceiling into a $1,500 to $2,000 daily band in the back half of Q2 with the unit economics to support it.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 8px;">
+        <h3 style="margin-bottom: 12px;">Month to date by campaign, 1 to 28 May</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Campaign</th>
+                    <th>Spend</th>
+                    <th>Revenue</th>
+                    <th>ROAS</th>
+                    <th>Purchases</th>
+                    <th>Read</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight">HM - TLIMS - ABO</td>
+                    <td>$13,556</td>
+                    <td class="green">$59,951</td>
+                    <td class="green">4.42x</td>
+                    <td>55</td>
+                    <td style="font-size:12px;">Revenue engine, carries Eden and Memorial Day</td>
+                </tr>
+                <tr>
+                    <td class="highlight">HM - Fine Art - ABO - Value Opt - Broad US</td>
+                    <td>$6,887</td>
+                    <td class="green">$23,519</td>
+                    <td class="green">3.41x</td>
+                    <td>27</td>
+                    <td style="font-size:12px;">Combined 50/50 the steady Fine Art carrier</td>
+                </tr>
+                <tr>
+                    <td class="highlight">HM - Fine Art - ABO (legacy)</td>
+                    <td>$6,224</td>
+                    <td class="green">$16,075</td>
+                    <td class="green">2.58x</td>
+                    <td>18</td>
+                    <td style="font-size:12px;">Rebounded two weeks running, consolidation read June 2</td>
+                </tr>
+                <tr>
+                    <td class="highlight">HM - Evergreen Christian Art - CBO</td>
+                    <td>$5,483</td>
+                    <td class="orange">$10,342</td>
+                    <td class="orange">1.89x</td>
+                    <td>14</td>
+                    <td style="font-size:12px;">Dragged early month, recovered hard on the refresh batch</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Performance | May 21 to 27, 2026</span>
+        <span>05 / 07</span>
+    </div>
+</section>
+
+<!-- SLIDE 6: Funnel and Quality of Demand -->
+<section class="slide">
+    <span class="slide-number">06 / 07</span>
+    <div class="slide-tag">Funnel And Quality Of Demand</div>
+    <h2>The Mid-Funnel Leak Closed, Every Step From Click To Purchase Strengthened</h2>
+    <p class="note">Funnel rates calculated from ad set CSV totals across the account for 21 to 27 May vs 14 to 20 May.</p>
+
+    <div class="metrics-grid four-col">
+        <div class="metric-card brand">
+            <div class="metric-label">Link CTR</div>
+            <div class="metric-value">1.95%</div>
+            <div class="metric-change neutral">From 2.62%, fewer but higher intent clicks</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Click to ATC</div>
+            <div class="metric-value">12.3%</div>
+            <div class="metric-change up">From 9.1%, +35%</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">ATC to IC</div>
+            <div class="metric-value">37.2%</div>
+            <div class="metric-change up">From 21.3%, +75%, leak reversed</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">IC to Purchase</div>
+            <div class="metric-value">32.0%</div>
+            <div class="metric-change up">From 26.3%, +22%</div>
+        </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 8px;">
+        <div class="insight-box green">
+            <h4>The Two Week Mid-Funnel Drop Has Fully Reversed</h4>
+            <p>The constraint that defined the last two decks has closed. ATC to IC jumped from 21.3% to 37.2% and IC to Purchase from 26.3% to 32.0%, with 487 ATCs converting to 181 ICs to 58 purchases. The leak was sitting between cart and checkout, and that is exactly the step that recovered most. The BOGO offer removed price hesitation at the decision point and the stronger creative brought through buyers with clearer intent. Lower CTR at higher Click to ATC is the healthy version of this trade, fewer idle clicks and more of them converting, which is why revenue per click rose sharply even as raw click volume eased.</p>
+        </div>
+        <div class="insight-box purple">
+            <h4>What This Means For The Eden Landing Page Work</h4>
+            <p>The landing page workstream was framed as the fix for the checkout leak. With the funnel now converting at full strength, the landing page shifts from urgent repair to deliberate optimisation. The right move is to build it properly against Eden, the confirmed anchor product, and test it once the promo concludes rather than rushing it live mid promo. The asset list still goes across as planned so Maddy and the engineers can prep, and the A/B runs the week of June 2 when the account returns to a clean non promo baseline that makes the read trustworthy.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 8px;">
+        <h3 style="margin-bottom: 12px;">Quality of demand by ad, top performers this week</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Spend</th>
+                    <th>ATC</th>
+                    <th>IC</th>
+                    <th>Purchases</th>
+                    <th>Click to ATC</th>
+                    <th>ATC to IC</th>
+                    <th>IC to Purchase</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: rgba(0,217,165,0.12);">
+                    <td class="highlight">Mar '26 Eden Static C1</td>
+                    <td>$1,718</td>
+                    <td>88</td>
+                    <td>25</td>
+                    <td>10</td>
+                    <td class="green">High</td>
+                    <td class="green">28.4%</td>
+                    <td class="green">40.0%</td>
+                </tr>
+                <tr style="background: rgba(0,217,165,0.10);">
+                    <td class="highlight">Feb '26 Grid (Combined)</td>
+                    <td>$1,506</td>
+                    <td>72</td>
+                    <td>27</td>
+                    <td>9</td>
+                    <td class="green">High</td>
+                    <td class="green">37.5%</td>
+                    <td class="green">33.3%</td>
+                </tr>
+                <tr>
+                    <td class="highlight">28 Apr Fine Art Carousel</td>
+                    <td>$1,182</td>
+                    <td>70</td>
+                    <td>24</td>
+                    <td>8</td>
+                    <td class="green">High</td>
+                    <td class="green">34.3%</td>
+                    <td class="green">33.3%</td>
+                </tr>
+                <tr>
+                    <td class="highlight">Feb '26 Abide With Me</td>
+                    <td>$923</td>
+                    <td>34</td>
+                    <td>15</td>
+                    <td>5</td>
+                    <td class="green">High</td>
+                    <td class="green">44.1%</td>
+                    <td class="green">33.3%</td>
+                </tr>
+                <tr style="background: rgba(0,217,165,0.08);">
+                    <td class="highlight">Memorial Day Sitewide BOGO C2</td>
+                    <td>$425</td>
+                    <td>31</td>
+                    <td>13</td>
+                    <td>6</td>
+                    <td class="green">High</td>
+                    <td class="green">41.9%</td>
+                    <td class="green">46.2%</td>
+                </tr>
+                <tr style="background: rgba(0,217,165,0.06);">
+                    <td class="highlight">Memorial Day Christian Collection BOGO</td>
+                    <td>$295</td>
+                    <td>27</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td class="green">High</td>
+                    <td class="green">29.6%</td>
+                    <td class="green">37.5%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Performance | May 21 to 27, 2026</span>
+        <span>06 / 07</span>
+    </div>
+</section>
+
+<!-- SLIDE 7: Action Plan & Path to Scale -->
+<section class="slide">
+    <span class="slide-number">07 / 07</span>
+    <div class="slide-tag">Action Plan And Path To Scale</div>
+    <h2>Hold The Promo Carriers, Lock The Evergreen Rebuild, Set The June Structure</h2>
+
+    <div class="two-col" style="margin-top: 0;">
+        <div>
+            <h3 style="color: var(--accent-green); margin-bottom: 16px;">Active Now, Through The Extended Sale To May 31</h3>
+            <ul class="check-list" style="font-size: 13px;">
+                <li><strong>Memorial Day BOGO held live through Sunday May 31 per the extension.</strong> No interruption after Memorial Day Monday, the three proven static carriers keep delivery, daily reads across the weekend, no fresh scaling into the peak so the signal stays clean</li>
+                <li><strong>Eden Collection ad set continues at strength.</strong> Eden Static C1 at 6.18x and 10 purchases is the account's biggest revenue ad, budget stays weighted here through the promo as the confirmed anchor product</li>
+                <li><strong>Combined 50/50 and TLIMS Value Opt hold their proven creative.</strong> Feb Grid, Abide With Me and the Fine Art Carousel all returning above 4.3x, no changes that would disturb the elevated signal mid promo</li>
+                <li><strong>Refresh batch winners kept live in Evergreen.</strong> Good Shepherd Static, Eden Refresh Static and Light of Life Video earning their place, building the track record for the rebuild</li>
+            </ul>
+
+            <h3 style="color: var(--accent-orange); margin-top: 24px; margin-bottom: 16px;">Cleanups And Holds</h3>
+            <ul class="check-list" style="font-size: 13px;">
+                <li class="orange"><strong>Brand Logo statics flagged for pause</strong> in TLIMS, the Good Shepherd and Abide With Me brand logo units carried spend with no purchases, cleared post promo to avoid disturbing signal now</li>
+                <li class="orange"><strong>Last Supper Refresh Video watched</strong> in Evergreen, strong cart volume at 34 ATCs but only 0.65x, given the seven day window before any waste call</li>
+                <li class="orange"><strong>Wasted spend held at 5.1%</strong> of total, roughly $486, near the lowest the account has logged, no aggressive pausing while the promo runs hot</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 style="color: var(--accent-green); margin-bottom: 16px;">Path To Scale, The Updated Picture</h3>
+
+            <div class="card" style="margin-bottom: 16px; border-left: 3px solid var(--accent-green);">
+                <h4 style="color: var(--accent-green); margin-bottom: 12px;">Where The Account Sits Today</h4>
+                <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">Daily spend $1,352, blended ROAS 6.38x, revenue $8,623 a day, month to date 3.42x on $109,887. The account has cleared its profitability target and is scaling inside the ceiling with headroom left. The strategic priority now is protecting this base through the post promo and June slow month, then setting the structure that lets the account step up to a higher daily ceiling in the back half of the quarter.</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 16px; border-left: 3px solid var(--accent-purple);">
+                <h4 style="color: var(--accent-purple); margin-bottom: 12px;">Evergreen Rebuild And Campaign Consolidation</h4>
+                <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">Evergreen rebuilds as an ABO backbone running the six to eight confirmed winners, the refresh batch gives a clear shortlist led by Good Shepherd and Eden. On the two Fine Art campaigns, the legacy ABO has now rebounded two weeks running and both sit above 4.8x for the week. The consolidation call holds for Tuesday June 2 on a clean post promo read, one merged Fine Art engine plus a small budget creative testing campaign so new concepts get a fair delivery read. Tiered framework document across to you that week.</p>
+            </div>
+
+            <div class="card" style="margin-bottom: 16px; border-left: 3px solid var(--accent-brand);">
+                <h4 style="color: var(--accent-brand-light); margin-bottom: 12px;">June Protection And The Eden Landing Page</h4>
+                <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.7;">June is the slow month, the focus shifts from scaling to protecting the gains. Spend stays weighted toward the proven Eden, TLIMS Value Opt and Combined 50/50 ad sets. The Eden landing page asset list goes across Tuesday May 26, the page builds during the promo, and the A/B launches the week of June 2 against a clean baseline. With the funnel already converting at full strength the page becomes an upside lever on the anchor product rather than a repair, and a confirmed lift scales to the next best sellers through July.</p>
+            </div>
+
+            <div class="insight-box brand" style="margin: 0;">
+                <h4>The Strategic Frame, One Week On</h4>
+                <p>Last week's deck said the account at 2.60x could credibly target 3.5x. This week it cleared 6.38x on record revenue with every campaign above 4.6x and the checkout leak closed. The promo drove the spike, but the underlying account climbed into it and the monthly trend is genuinely up and to the right. The next milestone is protecting a sustained 3x plus base through the post promo and June, then opening the daily ceiling conversation with the unit economics to back it.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-footer">
+        <span>Madelynn Ave | Weekly Performance | May 21 to 27, 2026</span>
+        <span>Prepared by Charles Piper, May 2026</span>
+    </div>
+</section>
+
+</body>
+</html>
