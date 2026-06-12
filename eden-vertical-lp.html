@@ -143,14 +143,14 @@ h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;line-he
 /* ====== LIGHTBOX ====== */
 .lightbox{position:fixed;inset:0;background:rgba(36,30,26,0.95);z-index:1000;display:none;align-items:center;justify-content:center;}
 .lightbox.open{display:flex;}
-.lb-img{max-width:90vw;max-height:86vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
-.lb-close,.lb-prev,.lb-next{position:absolute;background:none;border:none;color:rgba(255,255,255,0.82);cursor:pointer;transition:color 0.2s;z-index:2;}
-.lb-close{top:22px;right:30px;font-size:38px;line-height:1;font-weight:200;}
-.lb-prev,.lb-next{top:50%;transform:translateY(-50%);font-size:58px;font-weight:200;padding:0 26px;line-height:1;}
-.lb-prev{left:6px;}
-.lb-next{right:6px;}
+.lb-img{max-width:92vw;max-height:84vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+.lb-close,.lb-prev,.lb-next{position:absolute;background:none;border:none;color:rgba(255,255,255,0.9);cursor:pointer;transition:color 0.2s;z-index:2;text-shadow:0 1px 8px rgba(0,0,0,0.65);-webkit-tap-highlight-color:transparent;}
+.lb-close{top:18px;right:22px;font-size:40px;line-height:1;font-weight:200;padding:6px 10px;}
+.lb-prev,.lb-next{top:50%;transform:translateY(-50%);font-size:60px;font-weight:200;padding:18px 22px;line-height:1;}
+.lb-prev{left:2px;}
+.lb-next{right:2px;}
 .lb-close:hover,.lb-prev:hover,.lb-next:hover{color:#fff;}
-.lb-count{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.6);font-size:11px;letter-spacing:2px;text-transform:uppercase;}
+.lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.7);font-size:11px;letter-spacing:2px;text-transform:uppercase;text-shadow:0 1px 6px rgba(0,0,0,0.6);}
 
 /* ====== REVIEWS ====== */
 .reviews{padding:100px 0;}
@@ -181,18 +181,19 @@ h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;line-he
 .cust-grid{max-width:1180px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
 .cust-preview{position:sticky;top:104px;}
 .cust-stage{background:var(--light);border:1px solid rgba(120,82,69,0.1);padding:36px;display:flex;align-items:center;justify-content:center;min-height:460px;overflow:hidden;}
-.cust-stage img{max-height:440px;width:auto;object-fit:contain;transition:opacity 0.3s ease;box-shadow:0 24px 48px rgba(44,36,32,0.16);}
+.cust-stage img{max-height:440px;max-width:100%;width:auto;object-fit:contain;transition:opacity 0.3s ease;box-shadow:0 24px 48px rgba(44,36,32,0.16);}
 .cust-cap{margin-top:18px;text-align:center;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);}
 .cust-cap strong{color:var(--brown);font-weight:500;}
 
-.cust-price-row{display:flex;align-items:baseline;justify-content:space-between;margin-top:24px;padding-top:24px;border-top:1px solid rgba(120,82,69,0.12);}
+.cust-buy{margin-top:6px;}
+.cust-price-row{display:flex;align-items:baseline;justify-content:space-between;margin-top:8px;padding-top:24px;border-top:1px solid rgba(120,82,69,0.12);}
 .cust-price-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);}
 .cust-price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;color:var(--text-dark);line-height:1;}
 .cust-cart{display:block;width:100%;margin-top:20px;padding:18px;text-align:center;}
 .cust-secure{text-align:center;font-size:10.5px;letter-spacing:0.5px;color:var(--text-light);margin-top:12px;}
 
 .cust-field{margin-bottom:34px;}
-.cust-field-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid rgba(120,82,69,0.14);padding-bottom:10px;margin-bottom:20px;}
+.cust-field-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:2px 10px;border-bottom:1px solid rgba(120,82,69,0.14);padding-bottom:10px;margin-bottom:20px;}
 .cust-field-head .label{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-dark);font-weight:500;}
 .cust-field-head .value{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--brown);font-weight:500;}
 
@@ -392,8 +393,18 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
   .gal-cell{height:92px;}
   .frame-grid{grid-template-columns:repeat(5,1fr);gap:8px;}
   .swatch .dot{width:100%;max-width:46px;aspect-ratio:1;height:auto;}
+  .opt-cards{grid-template-columns:1fr;}
+  .cust-grid{gap:34px;}
+  .cust-stage img{max-height:320px;}
   .final h2{font-size:28px;}
   .featured-rev{margin:0;}
+}
+
+/* ====== TOUCH DEVICES ====== */
+@media(hover:none){
+  .swatch .tip{display:none;}
+  .gal-zoom{opacity:0.92;}
+  .hero-img:hover img,.gal-feature:hover img,.gal-cell:hover img,.story-main:hover img,.story-sm:hover img{transform:none;}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -675,12 +686,6 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
         <img id="custImg" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255735/eden-frame-oak_k3tsqg.jpg" alt="Eden preview">
       </div>
       <div class="cust-cap" id="custCap">Artisanal Canvas &middot; 30&Prime; x 40&Prime; &middot; <strong>Unfinished Oak</strong></div>
-      <div class="cust-price-row">
-        <div class="cust-price-label">Your Eden</div>
-        <div class="cust-price" id="custPrice">$717</div>
-      </div>
-      <a href="https://madelynnave.com/products/eden-vertical" class="btn cust-cart" id="custCart">Add To Cart</a>
-      <div class="cust-secure">Completed securely on madelynnave.com</div>
     </div>
 
     <!-- CONTROLS -->
@@ -737,6 +742,16 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
         </div>
         <p class="finish-note" id="finishNote">Border selection will not change your selected frame size</p>
         <div class="glaze-opts" id="finishOpts"></div>
+      </div>
+
+      <!-- Buy -->
+      <div class="cust-buy">
+        <div class="cust-price-row">
+          <div class="cust-price-label">Your Eden</div>
+          <div class="cust-price" id="custPrice">$717</div>
+        </div>
+        <a href="https://madelynnave.com/products/eden-vertical" class="btn cust-cart" id="custCart">Add To Cart</a>
+        <div class="cust-secure">Completed securely on madelynnave.com</div>
       </div>
 
     </div>
