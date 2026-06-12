@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eden &mdash; Madelynn Ave</title>
+<meta name="description" content="Eden is a hand-painted oil masterpiece reproduced at museum grade. A tapestry-inspired landscape made to be the true focal point of the most carefully designed rooms. Fully customisable in 19 designer frames.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brown:#785245;
+  --brown-dark:#5e3e33;
+  --warm:#D3CBC0;
+  --light:#F2EFE9;
+  --cream:#FAF8F5;
+  --text-dark:#2C2420;
+  --text-mid:#5C4F47;
+  --text-light:#9E8E84;
+  --gold:#B8975A;
+  --sage:#7D8466;
+  --sage-deep:#5B6048;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text-dark);font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;height:auto;}
+a{color:inherit;}
+
+/* ====== ANNOUNCEMENT ====== */
+.bar{background:var(--brown);color:#fff;text-align:center;padding:11px 16px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;line-height:1.4;}
+
+/* ====== NAV ====== */
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 56px;background:var(--cream);border-bottom:1px solid rgba(120,82,69,0.1);position:sticky;top:0;z-index:100;gap:16px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--brown);white-space:nowrap;flex-shrink:0;text-decoration:none;}
+.nav-trust{font-size:12px;color:var(--text-mid);letter-spacing:0.3px;text-align:center;flex:1;}
+.nav-trust span{color:var(--gold);}
+.btn{display:inline-block;background:var(--brown);color:#fff;padding:13px 28px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:background 0.22s,transform 0.15s;white-space:nowrap;flex-shrink:0;text-align:center;}
+.btn:hover{background:var(--brown-dark);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--brown);border:1px solid var(--warm);letter-spacing:2px;}
+.btn-outline:hover{border-color:var(--brown);background:rgba(120,82,69,0.05);transform:translateY(-1px);}
+
+/* ====== HERO ====== */
+.hero{display:grid;grid-template-columns:55% 45%;height:calc(100vh - 90px);max-height:880px;min-height:560px;overflow:hidden;}
+.hero-img{position:relative;overflow:hidden;height:100%;}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 28%;transition:transform 10s ease;}
+.hero-img:hover img{transform:scale(1.04);}
+.hero-badge{position:absolute;bottom:28px;left:28px;background:rgba(250,248,245,0.96);padding:10px 18px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--brown);font-weight:500;}
+.hero-body{display:flex;flex-direction:column;justify-content:center;padding:56px 64px 56px 60px;background:var(--cream);}
+.hero-eyebrow{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--brown);font-weight:500;margin-bottom:18px;display:flex;align-items:center;gap:14px;}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--brown);flex-shrink:0;}
+h1{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:300;line-height:1.06;color:var(--text-dark);margin-bottom:22px;letter-spacing:-0.5px;}
+h1 em{font-style:italic;color:var(--brown);}
+.hero-desc{font-size:15px;line-height:1.8;color:var(--text-mid);max-width:410px;margin-bottom:26px;}
+.pullquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--brown);border-left:2px solid var(--warm);padding-left:16px;margin-bottom:34px;line-height:1.65;max-width:420px;}
+.pullquote cite{display:block;font-size:11px;letter-spacing:1.5px;font-style:normal;margin-top:6px;color:var(--text-light);text-transform:uppercase;}
+.price-block{margin-bottom:26px;}
+.price-from{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);margin-bottom:5px;}
+.price-val{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:400;color:var(--text-dark);line-height:1;}
+.price-sub{font-size:11px;color:var(--text-light);letter-spacing:0.3px;margin-top:6px;}
+.hero-btns{display:flex;flex-direction:column;gap:10px;margin-bottom:26px;}
+.hero-btns .btn{width:100%;padding:17px 24px;font-size:11px;}
+.hero-trust{display:flex;flex-wrap:wrap;gap:16px;padding-top:22px;border-top:1px solid rgba(120,82,69,0.1);}
+.trust-item{font-size:11px;color:var(--text-light);display:flex;align-items:center;gap:7px;}
+.trust-item::before{content:'';width:14px;height:1px;background:var(--warm);flex-shrink:0;}
+
+/* ====== PROOF BAR ====== */
+.proof{background:var(--light);border-top:1px solid rgba(120,82,69,0.1);border-bottom:1px solid rgba(120,82,69,0.1);padding:28px 48px;display:flex;align-items:center;justify-content:center;}
+.proof-item{text-align:center;flex:1;padding:0 24px;}
+.proof-item+.proof-item{border-left:1px solid var(--warm);}
+.proof-n{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;color:var(--brown);line-height:1;}
+.proof-l{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);margin-top:6px;}
+
+/* ====== SECTION HELPERS ====== */
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--brown);font-weight:500;margin-bottom:16px;}
+h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;line-height:1.15;color:var(--text-dark);margin-bottom:20px;}
+.body-text{font-size:15px;line-height:1.85;color:var(--text-mid);margin-bottom:18px;}
+.section-wrap{max-width:1240px;margin:0 auto;padding:0 56px;}
+
+/* ====== STORY ====== */
+.story{padding:100px 0;}
+.story .section-wrap{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center;}
+.story-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.story-main{grid-column:1/-1;height:330px;overflow:hidden;position:relative;}
+.story-sm{height:210px;overflow:hidden;}
+.story-main img,.story-sm img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;}
+.story-main:hover img,.story-sm:hover img{transform:scale(1.05);}
+
+/* ====== VIDEO SECTION ====== */
+.video-section{background:var(--text-dark);padding:96px 0;}
+.video-inner{max-width:1240px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.video-wrap{position:relative;overflow:hidden;background:#000;}
+.video-wrap iframe{width:100%;aspect-ratio:9/16;display:block;border:0;}
+.video-text .eyebrow{color:var(--warm);}
+.video-text h2{color:var(--cream);font-size:40px;}
+.video-text .body-text{color:rgba(250,248,245,0.65);}
+.video-features{display:flex;flex-direction:column;gap:20px;margin-top:32px;}
+.vfeat{display:flex;align-items:flex-start;gap:16px;}
+.vfeat-dot{width:6px;height:6px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:6px;}
+.vfeat-text{font-size:14px;color:rgba(250,248,245,0.6);line-height:1.6;}
+.vfeat-text strong{color:var(--warm);font-weight:500;}
+
+/* ====== OBJECTIONS ====== */
+.objections{padding:100px 0;background:var(--text-dark);border-top:1px solid rgba(211,203,192,0.08);}
+.obj-header{text-align:center;margin-bottom:64px;}
+.obj-header .eyebrow{color:var(--warm);}
+.obj-header h2{color:var(--cream);font-size:46px;max-width:760px;margin:0 auto;}
+.obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(211,203,192,0.1);}
+.obj-card{background:rgba(44,36,32,0.6);padding:44px 36px;position:relative;}
+.obj-n{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:rgba(211,203,192,0.08);line-height:1;position:absolute;top:28px;right:28px;}
+.obj-q{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--warm);margin-bottom:16px;line-height:1.3;font-style:italic;position:relative;}
+.obj-a{font-size:14px;line-height:1.85;color:rgba(250,248,245,0.6);}
+
+/* ====== CRAFT ====== */
+.craft{padding:100px 0;}
+.craft .section-wrap{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center;}
+.craft-img{position:relative;height:620px;overflow:hidden;}
+.craft-img img{width:100%;height:100%;object-fit:cover;}
+.craft-cap{position:absolute;bottom:24px;right:24px;background:rgba(250,248,245,0.92);padding:10px 16px;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--brown);}
+.craft-list{display:flex;flex-direction:column;margin-top:28px;}
+.craft-item{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid rgba(120,82,69,0.1);}
+.craft-item:last-child{border-bottom:none;}
+.craft-n{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--brown);font-weight:600;letter-spacing:1px;flex-shrink:0;padding-top:2px;}
+.craft-title{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-dark);margin-bottom:6px;}
+.craft-body{font-size:13px;line-height:1.8;color:var(--text-mid);}
+
+/* ====== GALLERY ====== */
+.gallery{background:var(--light);padding:88px 0;}
+.gallery-head{text-align:center;margin-bottom:48px;}
+.gallery-head h2{font-size:38px;}
+.gal-layout{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:8px;max-width:1240px;margin:0 auto;padding:0 56px;}
+.gal-main{grid-row:span 2;overflow:hidden;position:relative;}
+.gal-main img{width:100%;height:100%;object-fit:cover;transition:opacity 0.25s ease;}
+.gal-thumb{overflow:hidden;cursor:pointer;position:relative;}
+.gal-thumb img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
+.gal-thumb:hover img{transform:scale(1.05);}
+.gal-thumb.active{outline:2px solid var(--brown);outline-offset:-2px;}
+.gal-thumb.active img{opacity:0.78;}
+
+/* ====== REVIEWS ====== */
+.reviews{padding:100px 0;}
+.reviews-head{text-align:center;margin-bottom:60px;}
+.stars-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;}
+.stars{color:var(--gold);font-size:18px;letter-spacing:3px;}
+.stars-n{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;color:var(--brown);}
+.reviews-head h2{font-size:42px;}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px;}
+.rev-card{background:var(--light);padding:32px;display:flex;flex-direction:column;}
+.rev-card-stars{color:var(--gold);font-size:12px;margin-bottom:14px;letter-spacing:2px;}
+.rev-text{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;line-height:1.6;color:var(--text-dark);margin-bottom:20px;flex:1;}
+.rev-text::before{content:'\201C';font-size:48px;color:var(--warm);line-height:0.8;display:block;margin-bottom:8px;}
+.rev-author{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);}
+.rev-author strong{color:var(--brown);display:block;margin-bottom:2px;font-weight:500;letter-spacing:1.5px;}
+.featured-rev{background:var(--brown);padding:52px 64px;display:grid;grid-template-columns:1fr 190px;gap:56px;align-items:center;}
+.feat-text{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;font-weight:300;line-height:1.55;color:#fff;}
+.feat-meta{text-align:center;}
+.feat-stars{color:var(--gold);font-size:14px;margin-bottom:10px;letter-spacing:2px;}
+.feat-name{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);line-height:1.7;}
+.feat-name strong{color:#fff;display:block;font-weight:500;}
+
+/* ====== CUSTOMISER ====== */
+.customise{padding:100px 0;background:var(--cream);border-top:1px solid rgba(120,82,69,0.1);}
+.cust-head{text-align:center;margin-bottom:54px;}
+.cust-head h2{font-size:46px;}
+.cust-head p{font-size:15px;color:var(--text-mid);max-width:560px;margin:0 auto;line-height:1.8;}
+.cust-grid{max-width:1180px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.cust-preview{position:sticky;top:104px;}
+.cust-stage{background:var(--light);border:1px solid rgba(120,82,69,0.1);padding:36px;display:flex;align-items:center;justify-content:center;min-height:460px;overflow:hidden;}
+.cust-stage img{max-height:440px;width:auto;object-fit:contain;transition:opacity 0.3s ease;box-shadow:0 24px 48px rgba(44,36,32,0.16);}
+.cust-cap{margin-top:18px;text-align:center;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);}
+.cust-cap strong{color:var(--brown);font-weight:500;}
+
+.cust-price-row{display:flex;align-items:baseline;justify-content:space-between;margin-top:24px;padding-top:24px;border-top:1px solid rgba(120,82,69,0.12);}
+.cust-price-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);}
+.cust-price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;color:var(--text-dark);line-height:1;}
+.cust-cart{display:block;width:100%;margin-top:20px;padding:18px;text-align:center;}
+.cust-secure{text-align:center;font-size:10.5px;letter-spacing:0.5px;color:var(--text-light);margin-top:12px;}
+
+.cust-field{margin-bottom:34px;}
+.cust-field-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid rgba(120,82,69,0.14);padding-bottom:10px;margin-bottom:20px;}
+.cust-field-head .label{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-dark);font-weight:500;}
+.cust-field-head .value{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--brown);font-weight:500;}
+
+.opt-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.opt-card{border:1px solid var(--warm);background:#fff;padding:18px;cursor:pointer;transition:border-color 0.2s,background 0.2s;}
+.opt-card:hover{border-color:var(--brown);}
+.opt-card.sel{border-color:var(--brown);background:rgba(120,82,69,0.04);}
+.opt-card .ttl{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dark);margin-bottom:8px;}
+.opt-card .desc{font-size:11.5px;line-height:1.6;color:var(--text-mid);}
+
+.frame-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.swatch{position:relative;display:flex;flex-direction:column;align-items:center;cursor:pointer;}
+.swatch .dot{width:46px;height:46px;border-radius:50%;border:1px solid rgba(120,82,69,0.25);box-shadow:inset 0 1px 3px rgba(0,0,0,0.18);transition:transform 0.18s ease,box-shadow 0.18s ease;}
+.swatch:hover .dot{transform:scale(1.06);}
+.swatch.sel .dot{box-shadow:0 0 0 2px var(--cream),0 0 0 4px var(--brown);}
+.swatch.beaded .dot{background-image:radial-gradient(rgba(255,255,255,0.55) 1px,transparent 1.4px);background-size:7px 7px;}
+.swatch .tip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--text-dark);color:#fff;font-size:10px;letter-spacing:0.5px;padding:5px 9px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:5;}
+.swatch .tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--text-dark);}
+.swatch:hover .tip{opacity:1;}
+
+.size-select{position:relative;}
+.size-select select{width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:1px solid var(--warm);padding:16px 44px 16px 18px;font-family:'Jost',sans-serif;font-size:14px;color:var(--text-dark);cursor:pointer;border-radius:0;}
+.size-select select:focus{outline:none;border-color:var(--brown);}
+.size-select::after{content:'';position:absolute;right:18px;top:50%;width:8px;height:8px;border-right:1.5px solid var(--brown);border-bottom:1.5px solid var(--brown);transform:translateY(-70%) rotate(45deg);pointer-events:none;}
+
+.glaze-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.glaze{border:1px solid var(--warm);background:#fff;padding:16px 18px;cursor:pointer;display:flex;align-items:center;gap:11px;transition:border-color 0.2s,background 0.2s;}
+.glaze:hover{border-color:var(--brown);}
+.glaze.sel{border-color:var(--brown);background:rgba(120,82,69,0.04);}
+.glaze .ring{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--text-light);flex-shrink:0;position:relative;transition:border-color 0.2s;}
+.glaze.sel .ring{border-color:var(--brown);}
+.glaze.sel .ring::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--brown);}
+.glaze .gl-txt{font-size:12.5px;color:var(--text-dark);line-height:1.4;}
+
+/* ====== FAQ ====== */
+.faq{padding:100px 0;background:var(--light);}
+.faq .section-wrap{max-width:880px;}
+.faq-head{text-align:center;margin-bottom:48px;}
+.faq-head h2{font-size:42px;}
+.faq-item{border-bottom:1px solid rgba(120,82,69,0.14);}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:26px 44px 26px 0;font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--text-dark);position:relative;line-height:1.3;}
+.faq-q::after{content:'';position:absolute;right:8px;top:34px;width:9px;height:9px;border-right:1.5px solid var(--brown);border-bottom:1.5px solid var(--brown);transform:rotate(45deg);transition:transform 0.25s ease;}
+.faq-item.open .faq-q::after{transform:rotate(225deg);top:38px;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.32s ease;}
+.faq-a-inner{padding:0 0 26px;font-size:14px;line-height:1.85;color:var(--text-mid);max-width:760px;}
+.faq-a-inner a{color:var(--brown);text-decoration:underline;text-underline-offset:2px;}
+
+/* ====== FINAL CTA ====== */
+.final{padding:104px 0;text-align:center;}
+.final .section-wrap{max-width:760px;}
+.final h2{font-size:50px;margin-bottom:18px;}
+.final h2 em{font-style:italic;color:var(--brown);}
+.final-sub{font-size:16px;color:var(--text-mid);line-height:1.8;margin-bottom:40px;}
+.final-btns{display:flex;gap:10px;justify-content:center;margin-bottom:22px;}
+.final-btns .btn{padding:18px 36px;}
+.guarantee{font-size:11px;color:var(--text-light);letter-spacing:0.5px;}
+
+/* ====== FOOTER ====== */
+footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:center;justify-content:space-between;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:4px;color:var(--warm);text-transform:uppercase;text-decoration:none;}
+.footer-links{display:flex;gap:28px;}
+.footer-links a{color:rgba(250,248,245,0.35);text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
+.footer-links a:hover{color:var(--warm);}
+
+/* ====== STICKY BAR ====== */
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--cream);border-top:1px solid rgba(120,82,69,0.15);padding:12px 20px;z-index:200;align-items:center;gap:14px;box-shadow:0 -6px 24px rgba(0,0,0,0.1);}
+.sticky-price{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text-dark);white-space:nowrap;flex-shrink:0;}
+.sticky-price small{font-size:11px;font-family:'Jost',sans-serif;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:1px;}
+.sticky .btn{flex:1;padding:15px 16px;font-size:10px;margin:0;}
+
+/* ====== ANIMATIONS ====== */
+.fade{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.fade.in{opacity:1;transform:none;}
+.fade:nth-child(2){transition-delay:.08s;}
+.fade:nth-child(3){transition-delay:.16s;}
+
+/* ====== TABLET ====== */
+@media(max-width:1100px){
+  .section-wrap{padding:0 36px;}
+  nav{padding:16px 36px;}
+  .hero{grid-template-columns:52% 48%;max-height:none;}
+  h1{font-size:46px;}
+  .hero-body{padding:44px 44px 44px 40px;}
+  .story .section-wrap,.craft .section-wrap{gap:56px;}
+  .gal-layout{padding:0 36px;gap:6px;}
+  .video-inner{padding:0 36px;gap:52px;}
+  .cust-grid{padding:0 36px;gap:40px;}
+  .reviews .section-wrap,.featured-rev{padding-left:36px;padding-right:36px;}
+  .final .section-wrap{padding:0 36px;}
+  footer{padding:28px 36px;}
+}
+
+/* ====== MOBILE ====== */
+@media(max-width:768px){
+  .bar{font-size:9px;letter-spacing:1.5px;padding:9px 12px;}
+  nav{padding:13px 20px;gap:12px;}
+  .nav-trust{display:none;}
+  .nav-logo{font-size:17px;letter-spacing:2.5px;}
+  .btn{padding:13px 20px;font-size:10px;letter-spacing:2px;}
+
+  .hero{grid-template-columns:1fr;max-height:none;min-height:auto;height:auto;}
+  .hero-img{height:72vw;min-height:260px;max-height:440px;}
+  .hero-badge{bottom:14px;left:14px;padding:8px 13px;font-size:9px;}
+  .hero-body{padding:34px 24px;}
+  h1{font-size:38px;}
+  .hero-desc,.pullquote{max-width:100%;}
+  .price-val{font-size:32px;}
+
+  .proof{padding:20px 24px;flex-wrap:wrap;}
+  .proof-item{padding:12px 16px;flex:1 1 45%;}
+  .proof-item+.proof-item{border-left:none;}
+  .proof-item:nth-child(odd){border-right:1px solid var(--warm);}
+  .proof-item:nth-child(n+3){border-top:1px solid var(--warm);}
+  .proof-n{font-size:26px;}
+
+  .section-wrap{padding:0 24px;}
+  .story{padding:64px 0;}
+  .story .section-wrap{grid-template-columns:1fr;gap:36px;}
+  h2{font-size:32px;}
+  .story-main{height:260px;}
+  .story-sm{height:150px;}
+
+  .video-section{padding:64px 0;}
+  .video-inner{grid-template-columns:1fr;padding:0 24px;gap:32px;}
+  .video-wrap{max-width:340px;margin:0 auto;width:100%;}
+  .video-text h2{font-size:32px;}
+
+  .objections{padding:64px 0;}
+  .obj-header{margin-bottom:44px;}
+  .obj-header h2{font-size:32px;}
+  .obj-grid{grid-template-columns:1fr;}
+  .obj-card{padding:32px 28px;}
+  .obj-q{font-size:20px;}
+  .obj-n{font-size:52px;}
+
+  .craft{padding:64px 0;}
+  .craft .section-wrap{grid-template-columns:1fr;gap:36px;}
+  .craft-img{height:300px;}
+
+  .gallery{padding:60px 0;}
+  .gallery-head{padding:0 24px;}
+  .gallery-head h2{font-size:30px;}
+  .gal-layout{grid-template-columns:1fr 1fr;grid-template-rows:auto;padding:0 24px;gap:6px;}
+  .gal-main{grid-row:span 1;height:240px;}
+  .gal-thumb{height:150px;}
+
+  .reviews{padding:64px 0;}
+  .reviews-head{padding:0 24px;margin-bottom:40px;}
+  .reviews-head h2{font-size:32px;}
+  .rev-grid{grid-template-columns:1fr;padding:0 24px;gap:16px;}
+  .featured-rev{grid-template-columns:1fr;gap:28px;padding:36px 28px;text-align:center;margin:0 24px;}
+  .feat-text{font-size:20px;}
+
+  .customise{padding:64px 0;}
+  .cust-head{padding:0 24px;}
+  .cust-head h2{font-size:32px;}
+  .cust-grid{grid-template-columns:1fr;padding:0 24px;gap:40px;}
+  .cust-preview{position:relative;top:0;}
+  .cust-stage{min-height:0;padding:24px;}
+  .cust-stage img{max-height:360px;}
+  .frame-grid{gap:12px;}
+  .swatch .dot{width:42px;height:42px;}
+
+  .faq{padding:60px 0;}
+  .faq-head h2{font-size:30px;}
+  .faq-q{font-size:18px;padding-right:36px;}
+
+  .final{padding:64px 0;}
+  .final .section-wrap{padding:0 24px;}
+  .final h2{font-size:34px;}
+  .final-sub{font-size:14px;}
+  .final-btns{flex-direction:column;align-items:stretch;max-width:340px;margin:0 auto 22px;}
+
+  footer{flex-direction:column;gap:20px;padding:28px 24px;text-align:center;}
+  .footer-links{gap:20px;flex-wrap:wrap;justify-content:center;}
+
+  .sticky{display:flex;}
+  body{padding-bottom:76px;}
+}
+
+@media(max-width:480px){
+  .nav-logo{font-size:15px;letter-spacing:2px;}
+  h1{font-size:32px;}
+  .proof-item{flex:1 1 100%;}
+  .proof-item:nth-child(odd){border-right:none;}
+  .proof-item:nth-child(n+2){border-top:1px solid var(--warm);}
+  h2{font-size:28px;}
+  .obj-header h2,.video-text h2,.cust-head h2,.faq-head h2{font-size:28px;}
+  .gal-layout{grid-template-columns:1fr;}
+  .gal-main,.gal-thumb{height:220px;}
+  .frame-grid{grid-template-columns:repeat(5,1fr);gap:8px;}
+  .swatch .dot{width:100%;max-width:46px;aspect-ratio:1;height:auto;}
+  .final h2{font-size:28px;}
+  .featured-rev{margin:0;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important;}
+  .fade{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="bar">20% Off Sitewide &nbsp;&middot;&nbsp; Applied Automatically At Checkout &nbsp;&middot;&nbsp; Free US Shipping</div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://madelynnave.com" class="nav-logo">Madelynn Ave</a>
+  <div class="nav-trust"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span> &nbsp;4.95/5 &nbsp;&middot;&nbsp; 2,400+ Homes Transformed</div>
+  <a href="#customise" class="btn nav-cta">Customise Yours</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255528/eden-room-04_gsffyy.jpg" alt="Eden vertical fine art print centered above a stone fireplace in a bright, high-end living room" loading="eager">
+    <div class="hero-badge">Original Oil &nbsp;&middot;&nbsp; Painted By Hand</div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-eyebrow">Fine Art &nbsp;&middot;&nbsp; Designed &amp; Painted By Hand</div>
+    <h1>A paradise of<br>a different<br><em>era</em></h1>
+    <p class="hero-desc">Eden is a hand-painted oil masterpiece, reproduced at museum grade. A tapestry-inspired landscape made to be the true and tasteful focal point of the most carefully designed rooms in America.</p>
+    <blockquote class="pullquote">
+      Calling to mind the beauty of the Earth, Eden was made for home curators who value a blend of distinctiveness and year-round versatility.
+      <cite>Eden &middot; Designed &amp; Painted by Madelynn Ave</cite>
+    </blockquote>
+    <div class="price-block">
+      <div class="price-from">Starting from</div>
+      <div class="price-val">$697</div>
+      <div class="price-sub">Fully customisable &nbsp;&middot;&nbsp; 19 designer frames &nbsp;&middot;&nbsp; canvas or cotton paper</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#customise" class="btn">Customise Your Eden</a>
+      <a href="#gallery" class="btn btn-outline">See It In Every Room</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">Free US shipping</div>
+      <div class="trust-item">14-day returns</div>
+      <div class="trust-item">Handmade in the USA</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof">
+  <div class="proof-item"><div class="proof-n">4.95</div><div class="proof-l">Average Rating</div></div>
+  <div class="proof-item"><div class="proof-n">2,400+</div><div class="proof-l">Homes Transformed</div></div>
+  <div class="proof-item"><div class="proof-n">100%</div><div class="proof-l">Hand-Painted Original</div></div>
+  <div class="proof-item"><div class="proof-n">USA</div><div class="proof-l">Made &amp; Framed</div></div>
+</div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="section-wrap">
+    <div class="fade">
+      <div class="eyebrow">The Artwork</div>
+      <h2>Not licensed. Not AI. Painted by hand.</h2>
+      <p class="body-text">Eden begins as an original oil painting by Madelyn, a classically trained artist and practicing residential interior designer. It is a study in the timeless intricacy of tapestry, reimagined for the way homes are designed today.</p>
+      <p class="body-text">Every palette decision, proportion, and composition is guided by a career spent building high-end interiors. The result is artwork that carries real meaning and impeccable taste, calibrated to live beautifully in the most considered rooms.</p>
+      <p class="body-text">Your piece is reproduced from the original at museum grade, hand-finished, and framed to order. Distinctive enough to be noticed, versatile enough to belong all year round.</p>
+    </div>
+    <div class="story-imgs fade">
+      <div class="story-main">
+        <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255767/eden-brand-card_en5h1y.jpg" alt="Eden, designed and painted by Madelynn Ave" loading="lazy">
+      </div>
+      <div class="story-sm">
+        <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255795/eden-detail-crop_gzxe16.jpg" alt="Close detail of Eden's hand-painted brushwork" loading="lazy">
+      </div>
+      <div class="story-sm">
+        <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255735/eden-frame-oak_k3tsqg.jpg" alt="Eden framed in unfinished oak" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-inner">
+    <div class="video-wrap fade">
+      <iframe
+        src="https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=eden-video-1_yj1sbp"
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen
+        title="Eden by Madelynn Ave"
+        loading="lazy"></iframe>
+    </div>
+    <div class="video-text fade">
+      <div class="eyebrow">See The Piece</div>
+      <h2>Watch Eden come to life</h2>
+      <p class="body-text">This is not a stock graphic. Eden is an original oil painting reproduced at the highest level of craft available, delivered ready to hang in the room you have spent years building.</p>
+      <div class="video-features">
+        <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>Painted by hand in oils</strong> by Madelyn, a classically trained artist and interior designer</div></div>
+        <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>Museum-grade reproduction</strong> on archival artisanal canvas or cotton paper</div></div>
+        <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>19 designer frames</strong> and custom sizing up to 94 by 57 inches</div></div>
+        <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>Exclusive to Madelynn Ave</strong> and made in the USA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section class="objections">
+  <div class="section-wrap">
+    <div class="obj-header fade">
+      <div class="eyebrow">Before You Decide</div>
+      <h2>Everything you want to know</h2>
+    </div>
+    <div class="obj-grid">
+      <div class="obj-card fade">
+        <div class="obj-n">01</div>
+        <div class="obj-q">Will it actually look right in my space?</div>
+        <p class="obj-a">Eden was composed by a working interior designer, with a muted, collected palette calibrated for high-end neutral and warm interiors. It reads as distinctive without ever shouting. The gallery below shows it across living rooms, dining rooms, and entryways. If your home is neutral, warm, or transitional, it belongs.</p>
+      </div>
+      <div class="obj-card fade">
+        <div class="obj-n">02</div>
+        <div class="obj-q">Am I buying the original or a reproduction?</div>
+        <p class="obj-a">You are buying a museum-grade fine art reproduction of an original oil painting by Madelyn. The original exists. Yours is reproduced from it at the highest resolution on archival materials, then hand-finished and framed. The artwork is exclusive to Madelynn Ave and reproduces from nowhere else.</p>
+      </div>
+      <div class="obj-card fade">
+        <div class="obj-n">03</div>
+        <div class="obj-q">Is the price worth it?</div>
+        <p class="obj-a">The pieces that stop your guests and stay on your wall for decades are never the ones found on sale. Eden is priced to reflect the original artwork, the handmade reproduction, and the designer framing. It is not comparable to a print you can find anywhere. If you are finishing a home you are proud of, this is the piece that completes it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRAFT -->
+<section class="craft">
+  <div class="section-wrap">
+    <div class="craft-img fade">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255651/eden-frame-walnut_yon4jo.jpg" alt="Eden framed in walnut, full view" loading="lazy">
+      <div class="craft-cap">Painted By Hand &nbsp;&middot;&nbsp; Finished In The USA</div>
+    </div>
+    <div class="fade">
+      <div class="eyebrow">The Standard</div>
+      <h2>Every detail<br>considered</h2>
+      <div class="craft-list">
+        <div class="craft-item">
+          <div class="craft-n">01</div>
+          <div>
+            <div class="craft-title">Original Oil Painting</div>
+            <p class="craft-body">Eden begins as an original work by Madelyn, painted by hand in oils. Not commissioned, not AI assisted, not stock. An original that exists once and reproduces from nowhere else.</p>
+          </div>
+        </div>
+        <div class="craft-item">
+          <div class="craft-n">02</div>
+          <div>
+            <div class="craft-title">Museum-Grade Reproduction</div>
+            <p class="craft-body">Reproduced with state-of-the-art techniques for the highest level of detail and colour accuracy, and scalable up to 94 by 57 inches without losing the character of the original.</p>
+          </div>
+        </div>
+        <div class="craft-item">
+          <div class="craft-n">03</div>
+          <div>
+            <div class="craft-title">Designer Frames &amp; Materials</div>
+            <p class="craft-body">Choose from 19 frames handcrafted in hardwoods and metals for fine art. On artisanal canvas hand-stretched over kiln-dried wood with a matte finish, or on cotton watercolour paper.</p>
+          </div>
+        </div>
+        <div class="craft-item">
+          <div class="craft-n">04</div>
+          <div>
+            <div class="craft-title">Interior Design Pedigree</div>
+            <p class="craft-body">Madelyn's career as a successful residential interior designer informs every colour decision and proportion. Eden was designed to live in high-end homes because its creator has spent a career building them.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-head fade">
+    <div class="eyebrow">In The Home</div>
+    <h2>See it in every room</h2>
+  </div>
+  <div class="gal-layout">
+    <div class="gal-main" id="galMain">
+      <img id="galMainImg" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255594/eden-room-02_n7hazd.jpg" alt="Eden above a stone fireplace in a Mediterranean living room" loading="eager">
+    </div>
+    <div class="gal-thumb active" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255594/eden-room-02_n7hazd.jpg" data-alt="Eden above a stone fireplace in a Mediterranean living room">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255594/eden-room-02_n7hazd.jpg" alt="Stone fireplace living room" loading="lazy">
+    </div>
+    <div class="gal-thumb" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255312/eden-room-11_byre1d.jpg" data-alt="Eden in a grand vaulted dining room with plaster walls">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255312/eden-room-11_byre1d.jpg" alt="Vaulted dining room" loading="lazy">
+    </div>
+    <div class="gal-thumb" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255378/eden-room-09_edwd2l.jpg" data-alt="Eden in a dining room viewed through a stone archway">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255378/eden-room-09_edwd2l.jpg" alt="Dining room through a stone arch" loading="lazy">
+    </div>
+    <div class="gal-thumb" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255625/eden-room-01_fxef3q.jpg" data-alt="Eden in a warm living room with boucle chairs">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255625/eden-room-01_fxef3q.jpg" alt="Warm living room" loading="lazy">
+    </div>
+    <div class="gal-thumb" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255407/eden-room-08_icbkox.jpg" data-alt="Eden in a bright coastal dining room above an oak sideboard">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255407/eden-room-08_icbkox.jpg" alt="Bright dining room" loading="lazy">
+    </div>
+    <div class="gal-thumb" data-src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255466/eden-room-06_voykh1.jpg" data-alt="Eden in an entryway above an oak console table">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255466/eden-room-06_voykh1.jpg" alt="Entryway console" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="section-wrap">
+    <div class="reviews-head fade">
+      <div class="stars-row">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="stars-n">4.95 / 5</div>
+      </div>
+      <div class="eyebrow">What Owners Say</div>
+      <h2>From the homes it lives in</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card fade">
+        <div class="rev-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">Absolutely gorgeous print. The colors are exceptional, and the paper is top quality. So pleased.</p>
+        <div class="rev-author"><strong>Dell</strong>Verified Customer</div>
+      </div>
+      <div class="rev-card fade">
+        <div class="rev-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">Very satisfied with my purchase. Quality is great and arrived on time.</p>
+        <div class="rev-author"><strong>Michael Shott</strong>Verified Customer</div>
+      </div>
+      <div class="rev-card fade">
+        <div class="rev-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">The painting we got was absolutely perfect for our living room.</p>
+        <div class="rev-author"><strong>Juliana Sabino</strong>Verified Customer &nbsp;&middot;&nbsp; Boston, US</div>
+      </div>
+    </div>
+    <div class="featured-rev fade">
+      <div class="feat-text">"I recently received the artwork from Madelynn Ave, and I couldn't be happier. The picture is absolutely stunning."</div>
+      <div class="feat-meta">
+        <div class="feat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="feat-name"><strong>Elaine Tyas</strong>Verified Customer<br>New York City, US</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMISER -->
+<section class="customise" id="customise">
+  <div class="cust-head fade">
+    <div class="eyebrow">Made For Your Space</div>
+    <h2>Customise your Eden</h2>
+    <p>No standard sizes. No basic frames. Build Eden precisely for the wall it will live on, then complete your order securely on madelynnave.com.</p>
+  </div>
+  <div class="cust-grid">
+
+    <!-- PREVIEW -->
+    <div class="cust-preview fade">
+      <div class="cust-stage">
+        <img id="custImg" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255735/eden-frame-oak_k3tsqg.jpg" alt="Eden preview">
+      </div>
+      <div class="cust-cap" id="custCap">Artisanal Canvas &middot; 30&Prime; x 40&Prime; &middot; <strong>Unfinished Oak</strong></div>
+      <div class="cust-price-row">
+        <div class="cust-price-label">Your Eden</div>
+        <div class="cust-price" id="custPrice">$697</div>
+      </div>
+      <a href="https://madelynnave.com/products/eden-vertical" class="btn cust-cart" id="custCart">Add To Cart</a>
+      <div class="cust-secure">Completed securely on madelynnave.com</div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="cust-controls fade">
+
+      <!-- Material -->
+      <div class="cust-field">
+        <div class="cust-field-head">
+          <span class="label">Choose a material</span>
+          <span class="value" id="matLabel">Artisanal Canvas</span>
+        </div>
+        <div class="opt-cards" id="matCards">
+          <div class="opt-card sel" data-mat="Artisanal Canvas">
+            <div class="ttl">Artisanal Canvas</div>
+            <div class="desc">Ideal without glass. Ideal for large sizes. Linen-like texture.</div>
+          </div>
+          <div class="opt-card" data-mat="Cotton Paper">
+            <div class="ttl">Cotton Paper</div>
+            <div class="desc">Ideal behind glass. Ideal with a mat. Watercolour paper texture.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frame -->
+      <div class="cust-field">
+        <div class="cust-field-head">
+          <span class="label">Choose a frame</span>
+          <span class="value" id="frameLabel">Unfinished Oak</span>
+        </div>
+        <div class="frame-grid" id="frameGrid"></div>
+      </div>
+
+      <!-- Size -->
+      <div class="cust-field">
+        <div class="cust-field-head">
+          <span class="label">Choose a size</span>
+          <span class="value">Required</span>
+        </div>
+        <div class="size-select">
+          <select id="sizeSelect" aria-label="Choose a size">
+            <option value="0" selected>30&quot; W x 40&quot; H &mdash; $697</option>
+            <option value="1">36&quot; W x 48&quot; H &mdash; $1,127</option>
+            <option value="2">40&quot; W x 60&quot; H &mdash; $1,477</option>
+            <option value="3">Choose My Own Size &mdash; Request a quote</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Glazing -->
+      <div class="cust-field">
+        <div class="cust-field-head">
+          <span class="label">Choose glazing</span>
+          <span class="value" id="glazeLabel">No Acrylic Glass</span>
+        </div>
+        <div class="glaze-opts" id="glazeOpts">
+          <div class="glaze sel" data-glaze="No Acrylic Glass">
+            <span class="ring"></span>
+            <span class="gl-txt">No Acrylic Glass<br><span style="color:var(--text-light);font-size:11px;">Recommended</span></span>
+          </div>
+          <div class="glaze" data-glaze="Acrylic Glass">
+            <span class="ring"></span>
+            <span class="gl-txt">Acrylic Glass</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-wrap">
+    <div class="faq-head fade">
+      <div class="eyebrow">Good To Know</div>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">I need help picking what will look good in my home. Do you help with that?</button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Every order is backed by our Free Design Consultation Guarantee, a complimentary 30 minute one-on-one with our interior designer where you can ask anything and get her expert advice. For deeper help we also offer a Room Refresh service, e-design, and full-service interior design.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Am I buying the original or a reproduction?</button>
+        <div class="faq-a"><div class="faq-a-inner">You receive a museum-grade fine art reproduction of an original oil painting hand-painted by Madelyn. The artwork is made for Madelynn Ave exclusively, which means the piece is unique to us and reproduces from nowhere else.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What materials, sizes, and frames can I choose?</button>
+        <div class="faq-a"><div class="faq-a-inner">Choose artisanal canvas, hand-stretched over kiln-dried wood and finished matte, or cotton watercolour paper. Sizes run from 30 by 40 inches up to a custom 94 by 57 inches without losing detail. Every piece is professionally framed, with 19 designer frames handcrafted in hardwoods and metals.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Where is Eden made?</button>
+        <div class="faq-a"><div class="faq-a-inner">Every piece, framed or unframed, is proudly made in the USA.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does production and shipping take?</button>
+        <div class="faq-a"><div class="faq-a-inner">Art prints typically ship within 1 to 4 days. Tailor-made frames and framed canvases take about 5 to 7 days to produce. Shipping is then about 5 to 7 days, and it is free nationwide. These are carrier estimates and can vary.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is your return policy?</button>
+        <div class="faq-a"><div class="faq-a-inner">Every piece is covered by our 14-day return policy. If it arrives and is not exactly what you envisioned, return it in its original condition for a partial refund. Full details are on the <a href="https://madelynnave.com/policies/refund-policy" target="_blank" rel="noopener">returns page</a>.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you offer financing?</button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. On orders from $50 you can pay in 8 weeks interest free, or over 12 months at 15% APR. Choose Shop Pay at checkout and the application guides you through the rest.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you offer trade discounts?</button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We offer trade discounts for interior designers, decorators, home stagers, architects, and other trade professionals. Contact customersupport@madelynnave.com to get started.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="section-wrap">
+    <div class="eyebrow fade">Ready When You Are</div>
+    <h2 class="fade">The room is ready.<br><em>The piece is here.</em></h2>
+    <p class="final-sub fade">Eden was painted for exactly the kind of home you have built. Customise yours today and receive it ready to hang, ready to stay, and ready to mean something every day you walk past it.</p>
+    <div class="final-btns fade">
+      <a href="https://madelynnave.com/products/eden-vertical" class="btn">Customise Your Eden</a>
+      <a href="https://madelynnave.com/collections/fine-art" class="btn btn-outline">View Fine Art Collection</a>
+    </div>
+    <p class="guarantee">Free US shipping &nbsp;&middot;&nbsp; 14-day returns &nbsp;&middot;&nbsp; Handmade in the USA</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://madelynnave.com" class="footer-logo">Madelynn Ave</a>
+  <div class="footer-links">
+    <a href="https://madelynnave.com">madelynnave.com</a>
+    <a href="https://madelynnave.com/collections/fine-art">Fine Art</a>
+    <a href="https://madelynnave.com/collections/designer-christian-art">Christian Art</a>
+    <a href="https://madelynnave.com/collections/best-sellers">Best Sellers</a>
+  </div>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky">
+  <div class="sticky-price">
+    <small>Starting from</small>
+    $697
+  </div>
+  <a href="#customise" class="btn">Customise Yours</a>
+</div>
+
+<script>
+/* ---- Scroll reveal ---- */
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+})();
+
+/* ---- Gallery switcher ---- */
+(function(){
+  var mainImg = document.getElementById('galMainImg');
+  if(!mainImg) return;
+  var thumbs = document.querySelectorAll('.gal-thumb');
+  thumbs.forEach(function(thumb){
+    thumb.addEventListener('click', function(){
+      var src = thumb.getAttribute('data-src');
+      var alt = thumb.getAttribute('data-alt');
+      if(mainImg.getAttribute('src') === src) return;
+      mainImg.style.opacity = '0';
+      setTimeout(function(){
+        mainImg.src = src;
+        mainImg.alt = alt || '';
+        mainImg.style.opacity = '1';
+      }, 220);
+      thumbs.forEach(function(t){ t.classList.remove('active'); });
+      thumb.classList.add('active');
+    });
+  });
+})();
+
+/* ---- FAQ accordion ---- */
+(function(){
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+
+/* ---- Customiser ---- */
+(function(){
+  var RENDER = {
+    oak:    'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255735/eden-frame-oak_k3tsqg.jpg',
+    gold:   'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255682/eden-frame-gold_otbpnp.jpg',
+    walnut: 'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255651/eden-frame-walnut_yon4jo.jpg',
+    black:  'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255708/eden-frame-black_sv8evf.jpg'
+  };
+
+  /* 19 frames, exact order + labels, tone family for preview, swatch background, beaded flag */
+  var FRAMES = [
+    {name:'Floater Oak',        fam:'oak',    bg:'linear-gradient(135deg,#e8d2a8,#c49a64)'},
+    {name:'Floater Gold',       fam:'gold',   bg:'linear-gradient(135deg,#e8cd80,#b8902f)'},
+    {name:'Floater Walnut',     fam:'walnut', bg:'linear-gradient(135deg,#7c5638,#3f2a1a)'},
+    {name:'Floater Black',      fam:'black',  bg:'linear-gradient(135deg,#3a3a3a,#0d0d0d)'},
+    {name:'Unfinished Oak',     fam:'oak',    bg:'linear-gradient(135deg,#ecdcbd,#cdac7d)'},
+    {name:'Bronze &amp; Black', fam:'black',  bg:'linear-gradient(135deg,#8a6a3a 0%,#8a6a3a 42%,#1a1a1a 58%)'},
+    {name:'Espresso',           fam:'walnut', bg:'linear-gradient(135deg,#4a3526,#241813)'},
+    {name:'Champagne Vintage',  fam:'gold',   bg:'linear-gradient(135deg,#e8dcc0,#cbb78a)'},
+    {name:'Premium Oak',        fam:'oak',    bg:'linear-gradient(135deg,#d9b884,#b08a55)'},
+    {name:'Matte Black',        fam:'black',  bg:'linear-gradient(135deg,#2e2e2e,#101010)'},
+    {name:'Champagne Beaded',   fam:'gold',   bg:'linear-gradient(135deg,#e8dcc0,#cbb78a)', beaded:true},
+    {name:'Black &amp; Gold II',fam:'black',  bg:'linear-gradient(135deg,#1a1a1a 0%,#1a1a1a 55%,#c9a14a 66%)'},
+    {name:'Black &amp; Gold III',fam:'black', bg:'linear-gradient(135deg,#c9a14a 0%,#1a1a1a 38%,#1a1a1a 62%,#c9a14a 100%)'},
+    {name:'Antique Silver',     fam:'oak',    bg:'linear-gradient(135deg,#dad9d3,#a8a89f)'},
+    {name:'Gold Beaded',        fam:'gold',   bg:'linear-gradient(135deg,#e6c878,#b8902f)', beaded:true},
+    {name:'Gold Ornate',        fam:'gold',   bg:'linear-gradient(135deg,#e3c06a,#9c7321)'},
+    {name:'Gold Leaf Wave',     fam:'gold',   bg:'linear-gradient(135deg,#f0d488,#b8902f)'},
+    {name:'Gallery Wrap Canvas',fam:'oak',    bg:'linear-gradient(135deg,#f2ece0,#dcd2c0)'},
+    {name:'Rolled Canvas',      fam:'oak',    bg:'linear-gradient(135deg,#efe7d8,#d6c9b2)'}
+  ];
+
+  var SIZES = [
+    {label:'30&Prime; x 40&Prime;', total:697},
+    {label:'36&Prime; x 48&Prime;', total:1127},
+    {label:'40&Prime; x 60&Prime;', total:1477},
+    {label:'Custom size', total:null}
+  ];
+
+  var state = { material:'Artisanal Canvas', frame:4, size:0, glaze:'No Acrylic Glass' };
+
+  var custImg   = document.getElementById('custImg');
+  var custCap   = document.getElementById('custCap');
+  var custPrice = document.getElementById('custPrice');
+  var custCart  = document.getElementById('custCart');
+  var frameLabel= document.getElementById('frameLabel');
+  var matLabel  = document.getElementById('matLabel');
+  var glazeLabel= document.getElementById('glazeLabel');
+  var grid      = document.getElementById('frameGrid');
+
+  function money(n){ return '$' + n.toLocaleString('en-US'); }
+
+  function plain(s){ return s.replace('&amp;','&'); }
+
+  function render(){
+    var f = FRAMES[state.frame];
+    var s = SIZES[state.size];
+    custImg.style.opacity = '0';
+    setTimeout(function(){
+      custImg.src = RENDER[f.fam];
+      custImg.alt = 'Eden framed in ' + plain(f.name);
+      custImg.style.opacity = '1';
+    }, 180);
+    custCap.innerHTML = state.material + ' &middot; ' + s.label + ' &middot; <strong>' + f.name + '</strong>';
+    frameLabel.innerHTML = f.name;
+    matLabel.textContent = state.material;
+    glazeLabel.textContent = state.glaze;
+    if(s.total === null){
+      custPrice.textContent = 'Quote';
+      custCart.textContent = 'Request A Quote';
+    } else {
+      custPrice.textContent = money(s.total);
+      custCart.textContent = 'Add To Cart';
+    }
+  }
+
+  /* Build frame swatches */
+  FRAMES.forEach(function(f, i){
+    var el = document.createElement('div');
+    el.className = 'swatch' + (i === state.frame ? ' sel' : '') + (f.beaded ? ' beaded' : '');
+    el.setAttribute('role','button');
+    el.setAttribute('tabindex','0');
+    el.setAttribute('aria-label', plain(f.name) + ' frame');
+    el.innerHTML = '<span class="dot" style="background:' + f.bg + '"></span><span class="tip">' + f.name + '</span>';
+    function pick(){
+      state.frame = i;
+      grid.querySelectorAll('.swatch').forEach(function(x){ x.classList.remove('sel'); });
+      el.classList.add('sel');
+      render();
+    }
+    el.addEventListener('click', pick);
+    el.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pick(); } });
+    el.addEventListener('mouseenter', function(){ frameLabel.innerHTML = f.name; });
+    el.addEventListener('mouseleave', function(){ frameLabel.innerHTML = FRAMES[state.frame].name; });
+    grid.appendChild(el);
+  });
+
+  /* Material */
+  document.querySelectorAll('#matCards .opt-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      document.querySelectorAll('#matCards .opt-card').forEach(function(c){ c.classList.remove('sel'); });
+      card.classList.add('sel');
+      state.material = card.getAttribute('data-mat');
+      render();
+    });
+  });
+
+  /* Size */
+  document.getElementById('sizeSelect').addEventListener('change', function(e){
+    state.size = parseInt(e.target.value, 10);
+    render();
+  });
+
+  /* Glazing */
+  document.querySelectorAll('#glazeOpts .glaze').forEach(function(g){
+    g.addEventListener('click', function(){
+      document.querySelectorAll('#glazeOpts .glaze').forEach(function(x){ x.classList.remove('sel'); });
+      g.classList.add('sel');
+      state.glaze = g.getAttribute('data-glaze');
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
