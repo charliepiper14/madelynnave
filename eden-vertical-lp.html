@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eden &mdash; Madelynn Ave</title>
-<meta name="description" content="Eden is a hand-painted oil masterpiece reproduced at museum grade. A tapestry-inspired landscape made to be the true focal point of the most carefully designed rooms. Fully customisable in 19 designer frames.">
+<title>Eden - Madelynn Ave</title>
+<meta name="description" content="Eden is a hand-painted oil masterpiece reproduced at museum grade. A tapestry-inspired landscape made to be the true focal point of the most carefully designed rooms. Framed by hand in oak, walnut, gold, or black.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -173,64 +173,60 @@ h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;line-he
 .feat-name{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);line-height:1.7;}
 .feat-name strong{color:#fff;display:block;font-weight:500;}
 
-/* ====== CUSTOMISER ====== */
-.customise{padding:100px 0;background:var(--cream);border-top:1px solid rgba(120,82,69,0.1);}
-.cust-head{text-align:center;margin-bottom:54px;}
-.cust-head h2{font-size:46px;}
-.cust-head p{font-size:15px;color:var(--text-mid);max-width:560px;margin:0 auto;line-height:1.8;}
-.cust-grid{max-width:1180px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-.cust-preview{position:sticky;top:104px;}
-.cust-stage{background:var(--light);border:1px solid rgba(120,82,69,0.1);padding:36px;display:flex;align-items:center;justify-content:center;min-height:460px;overflow:hidden;}
-.cust-stage img{max-height:440px;max-width:100%;width:auto;object-fit:contain;transition:opacity 0.3s ease;box-shadow:0 24px 48px rgba(44,36,32,0.16);}
-.cust-cap{margin-top:18px;text-align:center;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);}
-.cust-cap strong{color:var(--brown);font-weight:500;}
+/* ====== PRODUCT (EMBEDDED PDP) ====== */
+.product{padding:100px 0;background:var(--cream);border-top:1px solid rgba(120,82,69,0.1);}
+.prod-head{text-align:center;margin-bottom:50px;padding:0 24px;}
+.prod-head h2{font-size:46px;}
+.prod-head p{font-size:15px;color:var(--text-mid);max-width:560px;margin:0 auto;line-height:1.8;}
+.prod-grid{max-width:1140px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.prod-media{position:sticky;top:96px;}
+.prod-stage{background:var(--light);border:1px solid rgba(120,82,69,0.1);padding:34px;display:flex;align-items:center;justify-content:center;min-height:440px;overflow:hidden;}
+.prod-stage img{max-height:420px;max-width:100%;width:auto;object-fit:contain;transition:opacity 0.3s ease;box-shadow:0 24px 48px rgba(44,36,32,0.16);}
+.prod-cap{margin-top:16px;text-align:center;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);}
+.prod-cap strong{color:var(--brown);font-weight:500;}
+.prod-info{padding-top:2px;}
+.prod-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;color:var(--text-dark);line-height:1.1;margin-bottom:14px;text-wrap:balance;}
+.prod-badges{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:20px;}
+.prod-badge{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--brown);font-weight:500;display:flex;align-items:center;gap:6px;}
+.prod-badge::before{content:'\2713';color:var(--sage);font-weight:700;font-size:12px;}
+.prod-price{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:400;color:var(--text-dark);line-height:1;margin-bottom:28px;}
+.prod-field{margin-bottom:24px;}
+.prod-field-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:2px 10px;margin-bottom:12px;}
+.prod-field-head .label{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-dark);font-weight:500;}
+.prod-field-head .value{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--brown);font-weight:500;}
+.frame-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.frame-opt{border:1px solid var(--warm);background:#fff;padding:9px 6px 8px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s;-webkit-tap-highlight-color:transparent;}
+.frame-opt:hover{border-color:var(--brown);}
+.frame-opt.sel{border-color:var(--brown);background:rgba(120,82,69,0.05);}
+.frame-sw{display:block;width:100%;height:38px;border-radius:2px;margin-bottom:7px;border:1px solid rgba(120,82,69,0.2);box-shadow:inset 0 1px 3px rgba(0,0,0,0.16);}
+.frame-opt span:last-child{font-size:11px;letter-spacing:0.5px;color:var(--text-dark);}
+.size-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.size-pill{border:1px solid var(--warm);background:#fff;padding:15px 8px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s;font-size:13.5px;color:var(--text-dark);letter-spacing:0.5px;-webkit-tap-highlight-color:transparent;}
+.size-pill:hover{border-color:var(--brown);}
+.size-pill.sel{border-color:var(--brown);background:rgba(120,82,69,0.05);}
+.prod-cart{display:block;width:100%;margin-top:30px;padding:18px;text-align:center;}
+.prod-subbadges{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-top:18px;}
+.prod-subbadges span{font-size:11px;letter-spacing:0.5px;color:var(--text-light);}
+.prod-secure{text-align:center;font-size:10.5px;letter-spacing:0.5px;color:var(--text-light);margin-top:12px;}
 
-.cust-buy{margin-top:6px;}
-.cust-price-row{display:flex;align-items:baseline;justify-content:space-between;margin-top:8px;padding-top:24px;border-top:1px solid rgba(120,82,69,0.12);}
-.cust-price-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);}
-.cust-price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;color:var(--text-dark);line-height:1;}
-.cust-cart{display:block;width:100%;margin-top:20px;padding:18px;text-align:center;}
-.cust-secure{text-align:center;font-size:10.5px;letter-spacing:0.5px;color:var(--text-light);margin-top:12px;}
+/* ====== SEE IT IN REAL LIFE ====== */
+.reallife{padding:90px 0;background:var(--light);border-top:1px solid rgba(120,82,69,0.08);}
+.reallife-head{text-align:center;margin-bottom:44px;padding:0 24px;}
+.reallife-head h2{font-size:38px;}
+.reallife-head p{font-size:15px;color:var(--text-mid);max-width:580px;margin:14px auto 0;line-height:1.8;}
+.rl-grid{max-width:1140px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.rl-card{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--warm);border:1px solid rgba(120,82,69,0.1);}
+.rl-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
+.rl-card:hover img{transform:scale(1.05);}
+.rl-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.rl-cap{position:absolute;left:0;right:0;bottom:0;padding:16px 14px 12px;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:linear-gradient(to top,rgba(20,16,13,0.62),transparent);pointer-events:none;}
 
-.cust-field{margin-bottom:34px;}
-.cust-field-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:2px 10px;border-bottom:1px solid rgba(120,82,69,0.14);padding-bottom:10px;margin-bottom:20px;}
-.cust-field-head .label{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-dark);font-weight:500;}
-.cust-field-head .value{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--brown);font-weight:500;}
+/* ====== CTA STRIP ====== */
+.cta-strip{text-align:center;margin-top:50px;padding:0 24px;}
+.cta-strip .btn{min-width:248px;}
 
-.opt-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.opt-card{border:1px solid var(--warm);background:#fff;padding:18px;cursor:pointer;transition:border-color 0.2s,background 0.2s;}
-.opt-card:hover{border-color:var(--brown);}
-.opt-card.sel{border-color:var(--brown);background:rgba(120,82,69,0.04);}
-.opt-card .ttl{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dark);margin-bottom:8px;}
-.opt-card .desc{font-size:11.5px;line-height:1.6;color:var(--text-mid);}
-
-.frame-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
-.swatch{position:relative;display:flex;flex-direction:column;align-items:center;cursor:pointer;}
-.swatch .dot{width:46px;height:46px;border-radius:50%;border:1px solid rgba(120,82,69,0.25);box-shadow:inset 0 1px 3px rgba(0,0,0,0.18);transition:transform 0.18s ease,box-shadow 0.18s ease;}
-.swatch:hover .dot{transform:scale(1.06);}
-.swatch.sel .dot{box-shadow:0 0 0 2px var(--cream),0 0 0 4px var(--brown);}
-.swatch.beaded .dot{background-image:radial-gradient(rgba(255,255,255,0.55) 1px,transparent 1.4px);background-size:7px 7px;}
-.swatch .tip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--text-dark);color:#fff;font-size:10px;letter-spacing:0.5px;padding:5px 9px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.16s ease;z-index:5;}
-.swatch .tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--text-dark);}
-.swatch:hover .tip{opacity:1;}
-
-.size-select{position:relative;}
-.size-select select{width:100%;appearance:none;-webkit-appearance:none;background:#fff;border:1px solid var(--warm);padding:16px 44px 16px 18px;font-family:'Jost',sans-serif;font-size:14px;color:var(--text-dark);cursor:pointer;border-radius:0;}
-.size-select select:focus{outline:none;border-color:var(--brown);}
-.size-select::after{content:'';position:absolute;right:18px;top:50%;width:8px;height:8px;border-right:1.5px solid var(--brown);border-bottom:1.5px solid var(--brown);transform:translateY(-70%) rotate(45deg);pointer-events:none;}
-
-.glaze-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.glaze{border:1px solid var(--warm);background:#fff;padding:16px 18px;cursor:pointer;display:flex;align-items:center;gap:11px;transition:border-color 0.2s,background 0.2s;}
-.glaze:hover{border-color:var(--brown);}
-.glaze.sel{border-color:var(--brown);background:rgba(120,82,69,0.04);}
-.glaze .ring{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--text-light);flex-shrink:0;position:relative;transition:border-color 0.2s;}
-.glaze.sel .ring{border-color:var(--brown);}
-.glaze.sel .ring::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--brown);}
-.glaze .gl-txt{font-size:12.5px;color:var(--text-dark);line-height:1.4;}
-.gl-sub{color:var(--text-light);font-size:11px;}
-.add-tag{display:inline-block;background:var(--brown-dark);color:#fff;font-size:11px;letter-spacing:0.5px;padding:2px 9px;border-radius:11px;margin-left:6px;vertical-align:middle;}
-.finish-note{display:none;font-size:12px;color:var(--text-mid);line-height:1.5;margin-bottom:16px;}
-.finish-note.show{display:block;}
+/* anchor offset for sticky nav */
+section[id]{scroll-margin-top:88px;}
 
 /* ====== FAQ ====== */
 .faq{padding:100px 0;background:var(--light);}
@@ -284,7 +280,8 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
   .story .section-wrap,.craft .section-wrap{gap:56px;}
   .gal-wrap{padding:0 36px;}
   .video-inner{padding:0 36px;gap:52px;}
-  .cust-grid{padding:0 36px;gap:40px;}
+  .prod-grid{padding:0 36px;gap:44px;}
+  .rl-grid{padding:0 36px;}
   .reviews .section-wrap,.featured-rev{padding-left:36px;padding-right:36px;}
   .final .section-wrap{padding:0 36px;}
   footer{padding:28px 36px;}
@@ -354,15 +351,23 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
   .featured-rev{grid-template-columns:1fr;gap:28px;padding:36px 28px;text-align:center;margin:0 24px;}
   .feat-text{font-size:20px;}
 
-  .customise{padding:64px 0;}
-  .cust-head{padding:0 24px;}
-  .cust-head h2{font-size:32px;}
-  .cust-grid{grid-template-columns:1fr;padding:0 24px;gap:40px;}
-  .cust-preview{position:relative;top:0;}
-  .cust-stage{min-height:0;padding:24px;}
-  .cust-stage img{max-height:360px;}
-  .frame-grid{gap:12px;}
-  .swatch .dot{width:42px;height:42px;}
+  .product{padding:64px 0;}
+  .prod-head{padding:0 24px;}
+  .prod-head h2{font-size:32px;}
+  .prod-grid{grid-template-columns:1fr;padding:0 24px;gap:36px;}
+  .prod-media{position:relative;top:0;}
+  .prod-stage{min-height:0;padding:24px;}
+  .prod-stage img{max-height:360px;}
+  .prod-title{font-size:30px;}
+  .prod-price{font-size:36px;margin-bottom:24px;}
+
+  .reallife{padding:60px 0;}
+  .reallife-head{padding:0 24px;}
+  .reallife-head h2{font-size:30px;}
+  .rl-grid{grid-template-columns:repeat(2,1fr);padding:0 24px;gap:12px;}
+
+  .cta-strip{margin-top:42px;}
+  .cta-strip .btn{width:100%;max-width:340px;}
 
   .faq{padding:60px 0;}
   .faq-head h2{font-size:30px;}
@@ -388,23 +393,23 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
   .proof-item:nth-child(odd){border-right:none;}
   .proof-item:nth-child(n+2){border-top:1px solid var(--warm);}
   h2{font-size:28px;}
-  .obj-header h2,.video-text h2,.cust-head h2,.faq-head h2{font-size:28px;}
+  .obj-header h2,.video-text h2,.prod-head h2,.reallife-head h2,.faq-head h2{font-size:28px;}
   .gal-feature{height:240px;}
   .gal-cell{height:92px;}
-  .frame-grid{grid-template-columns:repeat(5,1fr);gap:8px;}
-  .swatch .dot{width:100%;max-width:46px;aspect-ratio:1;height:auto;}
-  .opt-cards{grid-template-columns:1fr;}
-  .cust-grid{gap:34px;}
-  .cust-stage img{max-height:320px;}
+  .frame-row{gap:8px;}
+  .frame-sw{height:32px;}
+  .frame-opt span:last-child{font-size:10px;}
+  .size-pill{font-size:12.5px;padding:13px 6px;}
+  .prod-stage img{max-height:300px;}
+  .rl-cap{font-size:9.5px;padding:12px 10px 10px;}
   .final h2{font-size:28px;}
   .featured-rev{margin:0;}
 }
 
 /* ====== TOUCH DEVICES ====== */
 @media(hover:none){
-  .swatch .tip{display:none;}
   .gal-zoom{opacity:0.92;}
-  .hero-img:hover img,.gal-feature:hover img,.gal-cell:hover img,.story-main:hover img,.story-sm:hover img{transform:none;}
+  .hero-img:hover img,.gal-feature:hover img,.gal-cell:hover img,.story-main:hover img,.story-sm:hover img,.rl-card:hover img{transform:none;}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -422,7 +427,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
 <nav>
   <a href="https://madelynnave.com" class="nav-logo">Madelynn Ave</a>
   <div class="nav-trust"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span> &nbsp;4.95/5 &nbsp;&middot;&nbsp; 2,400+ Homes Transformed</div>
-  <a href="#customise" class="btn nav-cta">Customise Yours</a>
+  <a href="#product" class="btn nav-cta">Bring Eden Home</a>
 </nav>
 
 <!-- HERO -->
@@ -440,12 +445,12 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       <cite>Eden &middot; Designed &amp; Painted by Madelynn Ave</cite>
     </blockquote>
     <div class="price-block">
-      <div class="price-from">Starting from</div>
-      <div class="price-val">$717</div>
-      <div class="price-sub">Fully customisable &nbsp;&middot;&nbsp; 19 designer frames &nbsp;&middot;&nbsp; canvas or cotton paper</div>
+      <div class="price-from">Made to order</div>
+      <div class="price-val">$729</div>
+      <div class="price-sub">Oak, walnut, gold, or black &nbsp;&middot;&nbsp; three sizes &nbsp;&middot;&nbsp; ready to hang</div>
     </div>
     <div class="hero-btns">
-      <a href="#customise" class="btn">Customise Your Eden</a>
+      <a href="#product" class="btn">Bring Eden Home</a>
       <a href="#gallery" class="btn btn-outline">See It In Every Room</a>
     </div>
     <div class="hero-trust">
@@ -486,6 +491,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       </div>
     </div>
   </div>
+  <div class="cta-strip fade"><a href="#product" class="btn">Bring Eden Home</a></div>
 </section>
 
 <!-- VIDEO -->
@@ -505,12 +511,13 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       <p class="body-text">This is not a stock graphic. Eden is an original oil painting reproduced at the highest level of craft available, delivered ready to hang in the room you have spent years building.</p>
       <div class="video-features">
         <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>Painted by hand in oils</strong> by Madelyn, a classically trained artist and interior designer</div></div>
-        <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>Museum-grade reproduction</strong> on archival artisanal canvas or cotton paper</div></div>
-        <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>19 designer frames</strong> and custom sizing up to 94 by 57 inches</div></div>
+        <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>Museum-grade giclée reproduction</strong> on archival cotton canvas</div></div>
+        <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>Four designer frames</strong> in oak, walnut, gold, and black</div></div>
         <div class="vfeat"><div class="vfeat-dot"></div><div class="vfeat-text"><strong>Exclusive to Madelynn Ave</strong> and made in the USA</div></div>
       </div>
     </div>
   </div>
+  <div class="cta-strip fade"><a href="#product" class="btn">Bring Eden Home</a></div>
 </section>
 
 <!-- OBJECTIONS -->
@@ -538,6 +545,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       </div>
     </div>
   </div>
+  <div class="cta-strip fade"><a href="#product" class="btn">Bring Eden Home</a></div>
 </section>
 
 <!-- CRAFT -->
@@ -562,14 +570,14 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
           <div class="craft-n">02</div>
           <div>
             <div class="craft-title">Museum-Grade Reproduction</div>
-            <p class="craft-body">Reproduced with state-of-the-art techniques for the highest level of detail and colour accuracy, and scalable up to 94 by 57 inches without losing the character of the original.</p>
+            <p class="craft-body">Reproduced with state-of-the-art techniques for the highest level of detail and colour accuracy, and reproduced to preserve every detail and the character of the original.</p>
           </div>
         </div>
         <div class="craft-item">
           <div class="craft-n">03</div>
           <div>
             <div class="craft-title">Designer Frames &amp; Materials</div>
-            <p class="craft-body">Choose from 19 frames handcrafted in hardwoods and metals for fine art. On artisanal canvas hand-stretched over kiln-dried wood with a matte finish, or on cotton watercolour paper.</p>
+            <p class="craft-body">Framed by hand in oak, walnut, gold, or black, each crafted for fine art. Giclée printed on cotton canvas with a matte finish, then made to order.</p>
           </div>
         </div>
         <div class="craft-item">
@@ -582,6 +590,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       </div>
     </div>
   </div>
+  <div class="cta-strip fade"><a href="#product" class="btn">Bring Eden Home</a></div>
 </section>
 
 <!-- GALLERY -->
@@ -622,6 +631,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       </div>
     </div>
   </div>
+  <div class="cta-strip fade"><a href="#product" class="btn">Bring Eden Home</a></div>
 </section>
 
 <!-- LIGHTBOX -->
@@ -632,6 +642,38 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
   <button class="lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
   <div class="lb-count" id="lbCount"></div>
 </div>
+
+<!-- SEE IT IN REAL LIFE -->
+<section class="reallife" id="reallife">
+  <div class="reallife-head fade">
+    <div class="eyebrow">On Camera</div>
+    <h2>See it in real life</h2>
+    <p>Eden in motion and in real rooms. Creator collaborations are in the works and will land right here as they arrive.</p>
+  </div>
+  <div class="rl-grid">
+    <div class="rl-card rl-video fade">
+      <iframe
+        src="https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=eden-video-2_m3d5nh"
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+        allowfullscreen
+        title="Eden in motion"
+        loading="lazy"></iframe>
+    </div>
+    <div class="rl-card fade">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/f_auto,q_auto,c_fill,g_auto,ar_4:5,w_700/v1781255625/eden-room-01_fxef3q.jpg" alt="Eden on the wall of a warm living room with boucle chairs" loading="lazy">
+      <div class="rl-cap">In the living room</div>
+    </div>
+    <div class="rl-card fade">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/f_auto,q_auto,c_fill,g_auto,ar_4:5,w_700/v1781255466/eden-room-06_voykh1.jpg" alt="Eden above an oak console table in an entryway" loading="lazy">
+      <div class="rl-cap">In the entryway</div>
+    </div>
+    <div class="rl-card fade">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/f_auto,q_auto,c_fill,g_auto,ar_4:5,w_700/v1781255407/eden-room-08_icbkox.jpg" alt="Eden in a bright coastal dining room above an oak sideboard" loading="lazy">
+      <div class="rl-cap">In the dining room</div>
+    </div>
+  </div>
+  <div class="cta-strip fade"><a href="#product" class="btn">Bring Eden Home</a></div>
+</section>
 
 <!-- REVIEWS -->
 <section class="reviews">
@@ -668,95 +710,76 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
         <div class="feat-name"><strong>Elaine Tyas</strong>Verified Customer<br>New York City, US</div>
       </div>
     </div>
+    <div class="cta-strip fade"><a href="#product" class="btn">Bring Eden Home</a></div>
   </div>
 </section>
 
-<!-- CUSTOMISER -->
-<section class="customise" id="customise">
-  <div class="cust-head fade">
-    <div class="eyebrow">Made For Your Space</div>
-    <h2>Customise your Eden</h2>
-    <p>No standard sizes. No basic frames. Build Eden precisely for the wall it will live on, then complete your order securely on madelynnave.com.</p>
+<!-- ============================================================
+     PRODUCT SLOT  ->  theme's native Product section
+     LIVE SHOPIFY BUILD:
+       Rebuild this landing page as a Shopify page/product template
+       and place the theme "Product" section (product: eden-vertical-1)
+       into this slot. That renders the real product: real variants,
+       real inline Add to Cart, real checkout, fewer clicks, native
+       order handling. Delete the static preview block below at build.
+     STAGING ONLY (this file):
+       The block below is a visual stand-in for that section so the
+       layout reads correctly. Its Add to Cart links to the live PDP
+       to finish the purchase until the native section is in place.
+     ============================================================ -->
+<section class="product" id="product">
+  <div class="prod-head fade">
+    <div class="eyebrow">Make It Yours</div>
+    <h2>Eden, made to order</h2>
+    <p>Choose your frame and size, then add to cart. A few clicks, completed securely on madelynnave.com.</p>
   </div>
-  <div class="cust-grid">
+  <div class="prod-grid">
 
-    <!-- PREVIEW -->
-    <div class="cust-preview fade">
-      <div class="cust-stage">
-        <img id="custImg" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255735/eden-frame-oak_k3tsqg.jpg" alt="Eden preview">
+    <!-- MEDIA -->
+    <div class="prod-media fade">
+      <div class="prod-stage">
+        <img id="prodImg" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255735/eden-frame-oak_k3tsqg.jpg" alt="Eden framed in oak">
       </div>
-      <div class="cust-cap" id="custCap">Artisanal Canvas &middot; 30&Prime; x 40&Prime; &middot; <strong>Unfinished Oak</strong></div>
+      <div class="prod-cap" id="prodCap">Shown in <strong>Oak</strong> &middot; 30&Prime; x 40&Prime;</div>
     </div>
 
-    <!-- CONTROLS -->
-    <div class="cust-controls fade">
+    <!-- BUY -->
+    <div class="prod-info fade">
+      <h3 class="prod-title">Eden - Vertical</h3>
+      <div class="prod-badges">
+        <span class="prod-badge">Heirloom Quality</span>
+        <span class="prod-badge">Framed By Hand</span>
+        <span class="prod-badge">Lifetime Warranty</span>
+      </div>
+      <div class="prod-price" id="prodPrice">$729</div>
 
-      <!-- Material -->
-      <div class="cust-field">
-        <div class="cust-field-head">
-          <span class="label">Choose a material</span>
-          <span class="value" id="matLabel">Artisanal Canvas</span>
+      <div class="prod-field">
+        <div class="prod-field-head">
+          <span class="label">Frame</span>
+          <span class="value" id="frameValue">Oak</span>
         </div>
-        <div class="opt-cards" id="matCards">
-          <div class="opt-card sel" data-mat="Artisanal Canvas">
-            <div class="ttl">Artisanal Canvas</div>
-            <div class="desc">Ideal without glass. Ideal for large sizes. Linen-like texture.</div>
-          </div>
-          <div class="opt-card" data-mat="Cotton Paper">
-            <div class="ttl">Cotton Paper</div>
-            <div class="desc">Ideal behind glass. Ideal with a mat. Watercolour paper texture.</div>
-          </div>
-        </div>
+        <div class="frame-row" id="frameRow"></div>
       </div>
 
-      <!-- Frame -->
-      <div class="cust-field">
-        <div class="cust-field-head">
-          <span class="label">Choose a frame</span>
-          <span class="value" id="frameLabel">Unfinished Oak</span>
+      <div class="prod-field">
+        <div class="prod-field-head">
+          <span class="label">Size</span>
+          <span class="value" id="sizeValue">30&Prime; x 40&Prime;</span>
         </div>
-        <div class="frame-grid" id="frameGrid"></div>
+        <div class="size-row" id="sizeRow"></div>
       </div>
 
-      <!-- Size -->
-      <div class="cust-field">
-        <div class="cust-field-head">
-          <span class="label">Choose a size</span>
-          <span class="value">Required</span>
-        </div>
-        <div class="size-select">
-          <select id="sizeSelect" aria-label="Choose a size">
-            <option value="0" selected>30&quot; W x 40&quot; H &mdash; $717</option>
-            <option value="1">36&quot; W x 48&quot; H &mdash; $1,143</option>
-            <option value="2">40&quot; W x 60&quot; H &mdash; $1,480</option>
-            <option value="3">Choose My Own Size &mdash; Request a quote</option>
-          </select>
-        </div>
+      <a href="https://madelynnave.com/products/eden-vertical-1" class="btn prod-cart" id="prodCart">Add To Cart &nbsp;&middot;&nbsp; $729</a>
+      <div class="prod-subbadges">
+        <span>14-day easy returns</span>
+        <span>Free shipping nationwide</span>
+        <span>Museum-grade reproduction</span>
       </div>
-
-      <!-- Finish: glazing for Artisanal Canvas, border for Cotton Paper -->
-      <div class="cust-field">
-        <div class="cust-field-head">
-          <span class="label" id="finishLabel">Choose glazing</span>
-          <span class="value" id="finishValue">No Acrylic Glass</span>
-        </div>
-        <p class="finish-note" id="finishNote">Border selection will not change your selected frame size</p>
-        <div class="glaze-opts" id="finishOpts"></div>
-      </div>
-
-      <!-- Buy -->
-      <div class="cust-buy">
-        <div class="cust-price-row">
-          <div class="cust-price-label">Your Eden</div>
-          <div class="cust-price" id="custPrice">$717</div>
-        </div>
-        <a href="https://madelynnave.com/products/eden-vertical" class="btn cust-cart" id="custCart">Add To Cart</a>
-        <div class="cust-secure">Completed securely on madelynnave.com</div>
-      </div>
-
+      <div class="prod-secure">Secure checkout on madelynnave.com</div>
     </div>
   </div>
 </section>
+
 
 <!-- FAQ -->
 <section class="faq">
@@ -776,7 +799,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       </div>
       <div class="faq-item">
         <button class="faq-q">What materials, sizes, and frames can I choose?</button>
-        <div class="faq-a"><div class="faq-a-inner">Choose artisanal canvas, hand-stretched over kiln-dried wood and finished matte, or cotton watercolour paper. Sizes run from 30 by 40 inches up to a custom 94 by 57 inches without losing detail. Every piece is professionally framed, with 19 designer frames handcrafted in hardwoods and metals.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Eden comes framed in oak, walnut, gold, or black, in three sizes: 30 by 40, 36 by 48, and 40 by 60 inches. Each is a giclée reproduction on cotton canvas with a matte finish, framed by hand and made to order.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Where is Eden made?</button>
@@ -784,7 +807,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       </div>
       <div class="faq-item">
         <button class="faq-q">How long does production and shipping take?</button>
-        <div class="faq-a"><div class="faq-a-inner">Art prints typically ship within 1 to 4 days. Tailor-made frames and framed canvases take about 5 to 7 days to produce. Shipping is then about 5 to 7 days, and it is free nationwide. These are carrier estimates and can vary.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Most orders leave our warehouse in 2 to 5 business days. They then ship via FedEx with a 2 to 5 business day delivery window, free nationwide. These are carrier estimates and can vary.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">What is your return policy?</button>
@@ -792,7 +815,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       </div>
       <div class="faq-item">
         <button class="faq-q">Do you offer financing?</button>
-        <div class="faq-a"><div class="faq-a-inner">Yes. On orders from $50 you can pay in 8 weeks interest free, or over 12 months at 15% APR. Choose Shop Pay at checkout and the application guides you through the rest.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Choose Shop Pay at checkout to split your order into interest-free installments or monthly payments. The application is fast and guides you through the rest.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Do you offer trade discounts?</button>
@@ -800,6 +823,7 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
       </div>
     </div>
   </div>
+  <div class="cta-strip fade"><a href="#product" class="btn">Bring Eden Home</a></div>
 </section>
 
 <!-- FINAL CTA -->
@@ -807,9 +831,9 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
   <div class="section-wrap">
     <div class="eyebrow fade">Ready When You Are</div>
     <h2 class="fade">The room is ready.<br><em>The piece is here.</em></h2>
-    <p class="final-sub fade">Eden was painted for exactly the kind of home you have built. Customise yours today and receive it ready to hang, ready to stay, and ready to mean something every day you walk past it.</p>
+    <p class="final-sub fade">Eden was painted for exactly the kind of home you have built. Bring yours home today and receive it ready to hang, ready to stay, and ready to mean something every day you walk past it.</p>
     <div class="final-btns fade">
-      <a href="https://madelynnave.com/products/eden-vertical" class="btn">Customise Your Eden</a>
+      <a href="https://madelynnave.com/products/eden-vertical-1" class="btn">Bring Eden Home</a>
       <a href="https://madelynnave.com/collections/fine-art" class="btn btn-outline">View Fine Art Collection</a>
     </div>
     <p class="guarantee">Free US shipping &nbsp;&middot;&nbsp; 14-day returns &nbsp;&middot;&nbsp; Handmade in the USA</p>
@@ -830,10 +854,10 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
 <!-- STICKY BAR -->
 <div class="sticky">
   <div class="sticky-price">
-    <small>Starting from</small>
-    $717
+    <small>Made to order</small>
+    $729
   </div>
-  <a href="#customise" class="btn">Customise Yours</a>
+  <a href="#product" class="btn">Bring Eden Home</a>
 </div>
 
 <script>
@@ -918,162 +942,87 @@ footer{background:var(--text-dark);padding:32px 56px;display:flex;align-items:ce
   });
 })();
 
-/* ---- Customiser ---- */
+/* ---- Embedded product (mirrors PDP eden-vertical-1) ---- */
 (function(){
   var RENDER = {
-    oak:    'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255735/eden-frame-oak_k3tsqg.jpg',
-    gold:   'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255682/eden-frame-gold_otbpnp.jpg',
-    walnut: 'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255651/eden-frame-walnut_yon4jo.jpg',
-    black:  'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255708/eden-frame-black_sv8evf.jpg'
+    Oak:    'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255735/eden-frame-oak_k3tsqg.jpg',
+    Walnut: 'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255651/eden-frame-walnut_yon4jo.jpg',
+    Gold:   'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255682/eden-frame-gold_otbpnp.jpg',
+    Black:  'https://res.cloudinary.com/dcnabm5nc/image/upload/v1781255708/eden-frame-black_sv8evf.jpg'
   };
-
-  /* 19 frames, exact order + labels, tone family for preview, swatch background, beaded flag */
   var FRAMES = [
-    {name:'Floater Oak',        fam:'oak',    bg:'linear-gradient(135deg,#e8d2a8,#c49a64)'},
-    {name:'Floater Gold',       fam:'gold',   bg:'linear-gradient(135deg,#e8cd80,#b8902f)'},
-    {name:'Floater Walnut',     fam:'walnut', bg:'linear-gradient(135deg,#7c5638,#3f2a1a)'},
-    {name:'Floater Black',      fam:'black',  bg:'linear-gradient(135deg,#3a3a3a,#0d0d0d)'},
-    {name:'Unfinished Oak',     fam:'oak',    bg:'linear-gradient(135deg,#ecdcbd,#cdac7d)'},
-    {name:'Bronze &amp; Black', fam:'black',  bg:'linear-gradient(135deg,#8a6a3a 0%,#8a6a3a 42%,#1a1a1a 58%)'},
-    {name:'Espresso',           fam:'walnut', bg:'linear-gradient(135deg,#4a3526,#241813)'},
-    {name:'Champagne Vintage',  fam:'gold',   bg:'linear-gradient(135deg,#e8dcc0,#cbb78a)'},
-    {name:'Premium Oak',        fam:'oak',    bg:'linear-gradient(135deg,#d9b884,#b08a55)'},
-    {name:'Matte Black',        fam:'black',  bg:'linear-gradient(135deg,#2e2e2e,#101010)'},
-    {name:'Champagne Beaded',   fam:'gold',   bg:'linear-gradient(135deg,#e8dcc0,#cbb78a)', beaded:true},
-    {name:'Black &amp; Gold II',fam:'black',  bg:'linear-gradient(135deg,#1a1a1a 0%,#1a1a1a 55%,#c9a14a 66%)'},
-    {name:'Black &amp; Gold III',fam:'black', bg:'linear-gradient(135deg,#c9a14a 0%,#1a1a1a 38%,#1a1a1a 62%,#c9a14a 100%)'},
-    {name:'Antique Silver',     fam:'oak',    bg:'linear-gradient(135deg,#dad9d3,#a8a89f)'},
-    {name:'Gold Beaded',        fam:'gold',   bg:'linear-gradient(135deg,#e6c878,#b8902f)', beaded:true},
-    {name:'Gold Ornate',        fam:'gold',   bg:'linear-gradient(135deg,#e3c06a,#9c7321)'},
-    {name:'Gold Leaf Wave',     fam:'gold',   bg:'linear-gradient(135deg,#f0d488,#b8902f)'},
-    {name:'Gallery Wrap Canvas',fam:'oak',    bg:'linear-gradient(135deg,#f2ece0,#dcd2c0)'},
-    {name:'Rolled Canvas',      fam:'oak',    bg:'linear-gradient(135deg,#efe7d8,#d6c9b2)'}
+    {name:'Oak',    sw:'linear-gradient(135deg,#ecdcbd,#cdac7d)'},
+    {name:'Walnut', sw:'linear-gradient(135deg,#7c5638,#3f2a1a)'},
+    {name:'Gold',   sw:'linear-gradient(135deg,#e8cd80,#b8902f)'},
+    {name:'Black',  sw:'linear-gradient(135deg,#2e2e2e,#101010)'}
   ];
-
   var SIZES = [
-    {label:'30&Prime; x 40&Prime;', total:717},
-    {label:'36&Prime; x 48&Prime;', total:1143},
-    {label:'40&Prime; x 60&Prime;', total:1480},
-    {label:'Custom size', total:null}
+    {label:'30&Prime; x 40&Prime;'},
+    {label:'36&Prime; x 48&Prime;'},
+    {label:'40&Prime; x 60&Prime;'}
   ];
+  var state = { frame:0, size:0 };
 
-  /* Material and frame never change price. The third option is material-dependent,
-     and only a Cotton Paper mat border adds cost. */
-  var FINISH = {
-    'Artisanal Canvas': {
-      label:'Choose glazing', note:false, cols:'1fr 1fr',
-      opts:[ {v:'No Acrylic Glass', sub:'Recommended', add:0}, {v:'Acrylic Glass', add:0} ]
-    },
-    'Cotton Paper': {
-      label:'Choose border', note:true, cols:'1fr',
-      opts:[ {v:'No Border', add:0}, {v:'1.5&Prime; Mat', add:35}, {v:'2.5&Prime; Mat', add:35} ]
-    }
-  };
+  var img        = document.getElementById('prodImg');
+  var cap        = document.getElementById('prodCap');
+  var frameRow   = document.getElementById('frameRow');
+  var sizeRow    = document.getElementById('sizeRow');
+  var frameValue = document.getElementById('frameValue');
+  var sizeValue  = document.getElementById('sizeValue');
+  if(!frameRow || !sizeRow) return;
 
-  var state = { material:'Artisanal Canvas', frame:4, size:0, finish:'No Acrylic Glass', finishAdd:0 };
+  function plain(s){ return s.replace(/&Prime;/g,'"'); }
 
-  var custImg    = document.getElementById('custImg');
-  var custCap     = document.getElementById('custCap');
-  var custPrice   = document.getElementById('custPrice');
-  var custCart    = document.getElementById('custCart');
-  var frameLabel  = document.getElementById('frameLabel');
-  var matLabel    = document.getElementById('matLabel');
-  var finishLabel = document.getElementById('finishLabel');
-  var finishValue = document.getElementById('finishValue');
-  var finishNote  = document.getElementById('finishNote');
-  var finishOpts  = document.getElementById('finishOpts');
-  var grid        = document.getElementById('frameGrid');
-
-  function money(n){ return '$' + n.toLocaleString('en-US'); }
-  function plain(s){ return s.replace(/&amp;/g,'&').replace(/&Prime;/g,'"'); }
-
-  function render(){
-    var f = FRAMES[state.frame];
-    var s = SIZES[state.size];
-    custImg.style.opacity = '0';
+  function update(){
+    var f = FRAMES[state.frame], s = SIZES[state.size];
+    img.style.opacity = '0';
     setTimeout(function(){
-      custImg.src = RENDER[f.fam];
-      custImg.alt = 'Eden framed in ' + plain(f.name);
-      custImg.style.opacity = '1';
-    }, 180);
-    custCap.innerHTML = state.material + ' &middot; ' + s.label + ' &middot; <strong>' + f.name + '</strong>';
-    frameLabel.innerHTML = f.name;
-    matLabel.textContent = state.material;
-    finishValue.innerHTML = state.finish;
-    if(s.total === null){
-      custPrice.textContent = 'Quote';
-      custCart.textContent = 'Request A Quote';
-    } else {
-      custPrice.textContent = money(s.total + state.finishAdd);
-      custCart.textContent = 'Add To Cart';
-    }
+      img.src = RENDER[f.name];
+      img.alt = 'Eden framed in ' + f.name;
+      img.style.opacity = '1';
+    }, 160);
+    if(cap) cap.innerHTML = 'Shown in <strong>' + f.name + '</strong> &middot; ' + s.label;
+    if(frameValue) frameValue.textContent = f.name;
+    if(sizeValue) sizeValue.innerHTML = s.label;
   }
 
-  function renderFinish(){
-    var cfg = FINISH[state.material];
-    finishLabel.textContent = cfg.label;
-    finishNote.classList.toggle('show', cfg.note);
-    finishOpts.style.gridTemplateColumns = cfg.cols;
-    finishOpts.innerHTML = '';
-    state.finish = cfg.opts[0].v;
-    state.finishAdd = cfg.opts[0].add;
-    cfg.opts.forEach(function(o, i){
-      var el = document.createElement('div');
-      el.className = 'glaze' + (i === 0 ? ' sel' : '');
-      var sub = o.sub ? '<br><span class="gl-sub">' + o.sub + '</span>' : '';
-      var tag = o.add ? ' <span class="add-tag">+' + money(o.add) + '</span>' : '';
-      el.innerHTML = '<span class="ring"></span><span class="gl-txt">' + o.v + tag + sub + '</span>';
-      el.addEventListener('click', function(){
-        finishOpts.querySelectorAll('.glaze').forEach(function(x){ x.classList.remove('sel'); });
-        el.classList.add('sel');
-        state.finish = o.v;
-        state.finishAdd = o.add;
-        render();
-      });
-      finishOpts.appendChild(el);
-    });
-  }
-
-  /* Build frame swatches */
   FRAMES.forEach(function(f, i){
     var el = document.createElement('div');
-    el.className = 'swatch' + (i === state.frame ? ' sel' : '') + (f.beaded ? ' beaded' : '');
+    el.className = 'frame-opt' + (i === state.frame ? ' sel' : '');
     el.setAttribute('role','button');
     el.setAttribute('tabindex','0');
-    el.setAttribute('aria-label', plain(f.name) + ' frame');
-    el.innerHTML = '<span class="dot" style="background:' + f.bg + '"></span><span class="tip">' + f.name + '</span>';
+    el.setAttribute('aria-label', f.name + ' frame');
+    el.innerHTML = '<span class="frame-sw" style="background:' + f.sw + '"></span><span>' + f.name + '</span>';
     function pick(){
       state.frame = i;
-      grid.querySelectorAll('.swatch').forEach(function(x){ x.classList.remove('sel'); });
+      frameRow.querySelectorAll('.frame-opt').forEach(function(x){ x.classList.remove('sel'); });
       el.classList.add('sel');
-      render();
+      update();
     }
     el.addEventListener('click', pick);
     el.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pick(); } });
-    el.addEventListener('mouseenter', function(){ frameLabel.innerHTML = f.name; });
-    el.addEventListener('mouseleave', function(){ frameLabel.innerHTML = FRAMES[state.frame].name; });
-    grid.appendChild(el);
+    frameRow.appendChild(el);
   });
 
-  /* Material */
-  document.querySelectorAll('#matCards .opt-card').forEach(function(card){
-    card.addEventListener('click', function(){
-      document.querySelectorAll('#matCards .opt-card').forEach(function(c){ c.classList.remove('sel'); });
-      card.classList.add('sel');
-      state.material = card.getAttribute('data-mat');
-      renderFinish();
-      render();
-    });
+  SIZES.forEach(function(s, i){
+    var el = document.createElement('div');
+    el.className = 'size-pill' + (i === state.size ? ' sel' : '');
+    el.setAttribute('role','button');
+    el.setAttribute('tabindex','0');
+    el.setAttribute('aria-label', plain(s.label));
+    el.innerHTML = s.label;
+    function pick(){
+      state.size = i;
+      sizeRow.querySelectorAll('.size-pill').forEach(function(x){ x.classList.remove('sel'); });
+      el.classList.add('sel');
+      update();
+    }
+    el.addEventListener('click', pick);
+    el.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pick(); } });
+    sizeRow.appendChild(el);
   });
 
-  /* Size */
-  document.getElementById('sizeSelect').addEventListener('change', function(e){
-    state.size = parseInt(e.target.value, 10);
-    render();
-  });
-
-  renderFinish();
-  render();
+  update();
 })();
 </script>
 </body>
