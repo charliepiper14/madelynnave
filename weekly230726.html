@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg-primary:#0f0f1a;--bg-secondary:#1a1a2e;--bg-card:#16162a;--bg-card-hover:#1e1e3a;--border:rgba(255,255,255,0.06);--accent-green:#00d9a5;--accent-green-dim:rgba(0,217,165,0.15);--accent-purple:#8b5cf6;--accent-purple-dim:rgba(139,92,246,0.15);--accent-red:#ef4444;--accent-orange:#f59e0b;--accent-brand:#785245;--accent-brand-light:#D3CBC0;--text-primary:#fff;--text-secondary:#a0a0b8;--text-muted:#6b6b80;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;font-size:15px;}
+.slide{min-height:100vh;padding:48px 64px;position:relative;display:flex;flex-direction:column;border-bottom:1px solid var(--border);}
+.slide-number{position:absolute;top:24px;right:32px;font-size:13px;color:var(--text-muted);font-weight:600;letter-spacing:1px;}
+.slide-tag{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--accent-brand);margin-bottom:8px;font-weight:600;}
+h1{font-family:'DM Sans',sans-serif;font-size:52px;font-weight:700;line-height:1.15;margin-bottom:16px;}
+h2{font-family:'DM Sans',sans-serif;font-size:34px;font-weight:700;margin-bottom:28px;}
+h3{font-size:18px;font-weight:600;margin-bottom:16px;}
+h4{font-size:14px;font-weight:600;margin-bottom:8px;}
+p{font-size:15px;color:var(--text-secondary);max-width:720px;}
+.subtitle{font-size:18px;color:var(--text-secondary);max-width:780px;margin-bottom:32px;font-weight:400;}
+.cover{justify-content:center;align-items:center;text-align:center;background:radial-gradient(ellipse at 50% 30%,rgba(0,217,165,0.07) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(120,82,69,0.06) 0%,transparent 40%);}
+.cover h1{font-size:56px;}
+.cover .meta{margin-top:48px;display:flex;gap:24px;flex-wrap:wrap;justify-content:center;font-size:13px;color:var(--text-secondary);}
+.cover .meta span{display:flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border-radius:8px;border:1px solid var(--border);}
+.metrics-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:32px 0;}
+.metrics-grid.four-col{grid-template-columns:repeat(4,1fr);}
+.metric-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;}
+.metric-card.green{border-top:3px solid var(--accent-green);}
+.metric-card.purple{border-top:3px solid var(--accent-purple);}
+.metric-card.red{border-top:3px solid var(--accent-red);}
+.metric-card.orange{border-top:3px solid var(--accent-orange);}
+.metric-card.brand{border-top:3px solid var(--accent-brand);}
+.metric-label{font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:8px;font-weight:500;}
+.metric-value{font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;color:var(--text-primary);line-height:1.1;}
+.metric-value.large{font-size:40px;}
+.metric-change{font-size:12px;margin-top:8px;font-weight:600;}
+.metric-change.up{color:var(--accent-green);}
+.metric-change.down{color:var(--accent-red);}
+.metric-change.neutral{color:var(--text-muted);}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;}
+.data-table th{text-align:left;padding:12px 16px;background:var(--bg-card);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);border-bottom:1px solid var(--border);}
+.data-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-secondary);}
+.data-table tr:hover td{background:var(--bg-card-hover);}
+.data-table .highlight{color:var(--text-primary);font-weight:500;}
+.data-table .green{color:var(--accent-green);font-weight:600;}
+.data-table .red{color:var(--accent-red);font-weight:600;}
+.data-table .purple{color:var(--accent-purple);font-weight:600;}
+.data-table .orange{color:var(--accent-orange);font-weight:600;}
+.data-table .neutral{color:var(--text-muted);font-weight:600;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px;}
+.insight-box{background:var(--bg-card);border-left:3px solid var(--accent-green);padding:20px 24px;margin:24px 0;border-radius:0 12px 12px 0;}
+.insight-box.purple{border-left-color:var(--accent-purple);}
+.insight-box.brand{border-left-color:var(--accent-brand);}
+.insight-box.red{border-left-color:var(--accent-red);}
+.insight-box.orange{border-left-color:var(--accent-orange);}
+.insight-box h4{color:var(--accent-green);margin-bottom:8px;font-size:13px;text-transform:uppercase;letter-spacing:0.5px;}
+.insight-box.purple h4{color:var(--accent-purple);}
+.insight-box.brand h4{color:var(--accent-brand-light);}
+.insight-box.red h4{color:var(--accent-red);}
+.insight-box.orange h4{color:var(--accent-orange);}
+.insight-box p{color:var(--text-secondary);font-size:14px;line-height:1.7;max-width:none;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;}
+.concept-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;overflow:hidden;}
+.concept-number{font-family:'DM Sans',sans-serif;font-size:48px;font-weight:700;color:rgba(139,92,246,0.15);position:absolute;top:16px;right:20px;}
+.concept-title{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;position:relative;z-index:1;color:var(--text-primary);}
+.tag{display:inline-block;padding:4px 10px;background:var(--accent-purple-dim);border-radius:6px;font-size:10px;font-weight:600;color:var(--accent-purple);margin-right:6px;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;}
+.tag.green{background:var(--accent-green-dim);color:var(--accent-green);}
+.tag.red{background:rgba(239,68,68,0.15);color:var(--accent-red);}
+.tag.orange{background:rgba(245,158,11,0.15);color:var(--accent-orange);}
+.tag.brand{background:rgba(120,82,69,0.2);color:var(--accent-brand-light);}
+.check-list{list-style:none;margin:16px 0;}
+.check-list li{padding:8px 0;padding-left:24px;position:relative;color:var(--text-secondary);font-size:14px;}
+.check-list li::before{content:'';position:absolute;left:0;top:12px;width:8px;height:8px;border-radius:2px;background:var(--accent-green);}
+.check-list li.red::before{background:var(--accent-red);}
+.check-list li.orange::before{background:var(--accent-orange);}
+.check-list li.purple::before{background:var(--accent-purple);}
+.slide-footer{margin-top:auto;padding-top:32px;font-size:11px;color:var(--text-muted);display:flex;justify-content:space-between;align-items:center;}
+.note{font-size:11px;color:var(--text-muted);font-style:italic;margin-bottom:12px;}
+.trend-bar{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:8px 0;}
+.trend-label{font-size:12px;color:var(--text-muted);width:255px;flex-shrink:0;}
+.trend-track{flex:1;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;}
+.trend-fill{height:100%;border-radius:4px;}
+.trend-value{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;width:80px;text-align:right;}
+.trend-arrow{font-size:18px;width:24px;text-align:center;}
+@media print{.slide{page-break-after:always;}}
+</style>
+</head>
+<body>
+
+<section class="slide cover">
+<div class="slide-tag">Weekly Performance Review</div>
+<h1>Madelynn Ave</h1>
+<p class="subtitle">A hard week on the headline and a completely diagnosable one underneath. The blended read 1.12x because 49 percent of spend sat in test lanes returning 0.10x, while the proven carriers that got only 17 percent of the budget still sold at 3.20x. Demand is at a record high, click through 2.58 percent and landing page views up 55 percent. This is an allocation problem, it is fully in our control, and the correction is already underway.</p>
+<div class="meta">
+<span>Reporting period: July 16 to 22, 2026</span>
+<span>vs Last reported week: July 8 to 14 (2.47x)</span>
+<span>Blended 1.12x floor, proven carriers 3.20x</span>
+<span>Month to date still 2.08x and profitable</span>
+</div>
+</section>
+
+<section class="slide">
+<span class="slide-number">02 / 10</span>
+<div class="slide-tag">The Headline</div>
+<h2>The Blended Read 1.12x Because Half The Budget Sat In Zero Return Test Lanes, While The Proven Carriers Sold At 3.20x On A Sixth Of The Spend</h2>
+<p class="note">All figures validated across three CSV levels, campaign, ad set and ad. The week 16 to 22 Jul reconciles to the cent at every level, $12,411.86 spend and $13,923.60 revenue across all three exports, 15 purchases. The prior column is the 8 to 14 Jul figure reported last week, 2.47x, which keeps the series continuous. Data pulled 23 Jul with the 7 day click window open on most of the week, so this is a floor. Meta adds to cart came in at 3, the Shops leak stayed closed.</p>
+<div class="metrics-grid">
+<div class="metric-card red"><div class="metric-label">Blended ROAS</div><div class="metric-value large">1.12x</div><div class="metric-change down">Floor, from 2.47x, allocation driven</div></div>
+<div class="metric-card green"><div class="metric-label">Proven Carriers</div><div class="metric-value large">3.20x</div><div class="metric-change up">Fine Art and Evergreen, still selling hard</div></div>
+<div class="metric-card green"><div class="metric-label">Link CTR</div><div class="metric-value large">2.58%</div><div class="metric-change up">A record high, demand is not the problem</div></div>
+<div class="metric-card orange"><div class="metric-label">Spend</div><div class="metric-value large">$12,412</div><div class="metric-change down">$1,773/day, over the $1,500 ceiling</div></div>
+<div class="metric-card brand"><div class="metric-label">Month To Date</div><div class="metric-value large">2.08x</div><div class="metric-change up">$76,083 on 81 orders, July still profitable</div></div>
+</div>
+<div class="insight-box orange" style="margin-top:14px;margin-bottom:4px;">
+<h4>The One Number That Explains The Week</h4>
+<p>Three test campaigns took $4,237 and returned nothing, and a fourth took $1,833 and returned $627. That is $6,070, 49 percent of all spend, returning 0.10x. In the same week the two proven carriers, Fine Art Value Opt and Evergreen, took just $2,138, 17 percent of spend, and returned $6,830 at 3.20x. Had that drag budget sat on the carriers at their proven efficiency, the week reads 2.63x. The selling engine did not fail, it was underfunded while unproven lanes were overfunded.</p>
+</div>
+<div class="two-col" style="margin-top:8px;">
+<div class="insight-box green"><h4>The Genuine Positives, Demand Is At Its Strongest All Year</h4>
+<p>Every top of funnel signal hit a record. Link CTR rose to 2.58 percent, the highest of the entire reported run through 1.97, 2.08, 2.53 and now 2.58. Landing page views climbed 55 percent to 11,211 and impressions reached 455,583. The advertorial cold ads went live and their hooks are elite immediately, 5.03 percent and 3.69 percent. The winners kept winning, Eden Faith Design at 6.42x, Abide Versatile at 5.81x, the Refresh Eden static at 5.04x and the Fine Art Grid at 3.27x.</p></div>
+<div class="insight-box red"><h4>The Honest Read, This Is The Weakest Week Since The Post Promo Trough</h4>
+<p>I am not going to dress it up. At 1.12x on 15 orders this is the softest week since early June, and spend ran at $1,773 a day against our $1,500 ceiling for a third week. Two sandboxes have now cooled for three weeks, the Fine Art Refresh at zero this week and the Christian Refresh at 0.34x. The good news is that every one of those causes is a decision we control, not a market we cannot, and each has a specific correction on the plan slide.</p></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</span><span>02 / 10</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">03 / 10</span>
+<div class="slide-tag">Account Wide ROAS Trend</div>
+<h2>The Reported Weekly Series, A Sharp Single Week Dip Off A Known Cause, With The Proven Carriers Still Sitting Near Target</h2>
+<p class="note" style="margin-bottom:20px;">These are the account wide blended figures reported each week, so the series stays consistent and prior points are never restated. This week's bar is a 7 day floor, pulled 23 Jul with the click window open through 29 Jul on most of the week. The bar to read alongside it is the proven carriers, which sold at 3.20x while receiving only 17 percent of the budget.</p>
+<div style="margin-top:8px;">
+<h3 style="margin-bottom:12px;">Account wide weekly ROAS, the dip is allocation not demand, the carriers remain near target</h3>
+<div class="trend-bar" style="border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.07);"><div class="trend-label" style="color:var(--accent-orange);font-weight:600;">Post promo trough, May 28 to Jun 3</div><div class="trend-track"><div class="trend-fill" style="width:19%;background:var(--accent-orange);"></div></div><div class="trend-arrow" style="color:var(--accent-orange);">&#8595;</div><div class="trend-value" style="color:var(--accent-orange);">1.20x</div></div>
+<div class="trend-bar"><div class="trend-label">Jun 4 to 10</div><div class="trend-track"><div class="trend-fill" style="width:49%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div><div class="trend-value" style="color:var(--accent-green);">3.13x</div></div>
+<div class="trend-bar"><div class="trend-label">Jun 11 to 17</div><div class="trend-track"><div class="trend-fill" style="width:29%;background:var(--accent-orange);"></div></div><div class="trend-arrow" style="color:var(--text-muted);">&#8594;</div><div class="trend-value" style="color:var(--accent-orange);">1.85x</div></div>
+<div class="trend-bar"><div class="trend-label">Jun 18 to 24</div><div class="trend-track"><div class="trend-fill" style="width:30%;background:var(--accent-orange);"></div></div><div class="trend-arrow" style="color:var(--text-muted);">&#8594;</div><div class="trend-value" style="color:var(--accent-orange);">1.89x</div></div>
+<div class="trend-bar"><div class="trend-label">Jun 25 to Jul 1</div><div class="trend-track"><div class="trend-fill" style="width:46%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div><div class="trend-value" style="color:var(--accent-green);">2.93x</div></div>
+<div class="trend-bar"><div class="trend-label">Jul 2 to 8</div><div class="trend-track"><div class="trend-fill" style="width:45%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--text-muted);">&#8594;</div><div class="trend-value" style="color:var(--accent-green);">2.90x</div></div>
+<div class="trend-bar"><div class="trend-label">Jul 8 to 14 (reported last week)</div><div class="trend-track"><div class="trend-fill" style="width:39%;background:var(--accent-orange);"></div></div><div class="trend-arrow" style="color:var(--accent-orange);">&#8595;</div><div class="trend-value" style="color:var(--accent-orange);">2.47x</div></div>
+<div class="trend-bar" style="border-color:rgba(239,68,68,0.5);background:rgba(239,68,68,0.09);"><div class="trend-label" style="color:var(--text-primary);font-weight:600;">This week, Jul 16 to 22 (floor)</div><div class="trend-track"><div class="trend-fill" style="width:18%;background:var(--accent-red);"></div></div><div class="trend-arrow" style="color:var(--accent-red);">&#8595;</div><div class="trend-value" style="color:var(--accent-red);">1.12x</div></div>
+<div class="trend-bar" style="border-color:rgba(0,217,165,0.5);background:rgba(0,217,165,0.08);"><div class="trend-label" style="color:var(--accent-green);font-weight:600;">Proven carriers this week (17% of spend)</div><div class="trend-track"><div class="trend-fill" style="width:50%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div><div class="trend-value" style="color:var(--accent-green);">3.20x</div></div>
+<div class="trend-bar" style="border-color:rgba(139,92,246,0.4);background:rgba(139,92,246,0.07);"><div class="trend-label" style="color:var(--accent-purple);font-weight:600;">Same week with drag budget reallocated</div><div class="trend-track"><div class="trend-fill" style="width:41%;background:var(--accent-purple);"></div></div><div class="trend-arrow" style="color:var(--accent-purple);">&#8593;</div><div class="trend-value" style="color:var(--accent-purple);">2.63x</div></div>
+<div class="trend-bar" style="border-color:rgba(0,217,165,0.2);background:rgba(0,217,165,0.04);"><div class="trend-label" style="color:var(--accent-green);font-weight:600;">Account profitability target</div><div class="trend-track"><div class="trend-fill" style="width:55%;background:rgba(0,217,165,0.3);"></div></div><div style="font-size:11px;font-weight:700;letter-spacing:1px;color:var(--accent-green);text-align:right;width:74px;flex-shrink:0;">CARRIERS NEAR</div><div class="trend-value" style="color:var(--accent-green);">3.5x</div></div>
+</div>
+<p class="note" style="margin-top:14px;">The purple bar is the same week's spend and revenue with the drag budget placed on the carriers at their actual efficiency. That is the size of the prize from the correction alone, before any new creative or attribution firming lands. Month to date the account still reads 2.08x on 81 orders, so July as a whole remains profitable.</p>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</span><span>03 / 10</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">04 / 10</span>
+<div class="slide-tag">Campaign Breakdown</div>
+<h2>Fine Art And Evergreen Held Above 3x On Small Budgets, Four Test Lanes Absorbed Half The Spend, The Correction Is Straightforward</h2>
+<p class="note">All campaign figures from campaign level CSV, cross validated against ad set and ad level aggregations, all three totals reconcile to the cent. Reporting period 16 to 22 Jul 2026. The zero rows are genuinely new or genuinely cooled, and the Christian Concept Sandbox alone carries 13 checkouts initiated with no purchase attributed yet, which is the clearest attribution lag signal in the week. Campaign names shown with hyphens.</p>
+<table class="data-table">
+<thead><tr><th>Campaign</th><th>Spend</th><th>Share</th><th>Revenue</th><th>ROAS</th><th>Purchases</th><th>Action</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.12);"><td class="highlight">HM - Fine Art - ABO - Value Opt - Broad US</td><td>$1,329</td><td>10.7%</td><td class="green">$4,009</td><td class="green">3.02x</td><td>5</td><td class="green" style="font-size:12px;">Fund it up</td></tr>
+<tr style="background:rgba(0,217,165,0.14);"><td class="highlight">HM - Evergreen Christian Art - CBO</td><td>$809</td><td>6.5%</td><td class="green">$2,821</td><td class="green">3.49x</td><td>2</td><td class="green" style="font-size:12px;">Fund it up</td></tr>
+<tr style="background:rgba(245,158,11,0.07);"><td class="highlight">HM - TLIMS - ABO</td><td>$1,850</td><td>14.9%</td><td class="orange">$2,999</td><td class="orange">1.62x</td><td>2</td><td class="orange" style="font-size:12px;">Refresh landing today</td></tr>
+<tr style="background:rgba(245,158,11,0.07);"><td class="highlight">HM - Zombie Revival - ABO</td><td>$2,353</td><td>19.0%</td><td class="orange">$3,467</td><td class="orange">1.47x</td><td>5</td><td class="orange" style="font-size:12px;">Trim to closers only</td></tr>
+<tr style="background:rgba(239,68,68,0.08);"><td class="highlight">HM - Jul '26 - Christian Concept Sandbox - ABO</td><td>$2,711</td><td>21.8%</td><td class="red">$0</td><td class="red">0.00x</td><td>0</td><td class="red" style="font-size:12px;">Cap hard, 13 checkouts pending</td></tr>
+<tr style="background:rgba(239,68,68,0.08);"><td class="highlight">Jun '26 - Christian Refresh - Sandbox - ABO</td><td>$1,833</td><td>14.8%</td><td class="red">$627</td><td class="red">0.34x</td><td>1</td><td class="red" style="font-size:12px;">Retire, exhausted</td></tr>
+<tr style="background:rgba(239,68,68,0.08);"><td class="highlight">Jun '26 - Fine Art Refresh - Sandbox - Broad US</td><td>$900</td><td>7.3%</td><td class="red">$0</td><td class="red">0.00x</td><td>0</td><td class="red" style="font-size:12px;">Retire, three weeks cooled</td></tr>
+<tr style="background:rgba(139,92,246,0.08);"><td class="highlight">HM - Jul '26 - Designer Christian LP - Sandbox</td><td>$625</td><td>5.0%</td><td class="purple">New</td><td class="purple">Day 6</td><td>0</td><td class="purple" style="font-size:12px;">Protect, hooks elite</td></tr>
+<tr style="background:rgba(255,255,255,0.04);font-weight:600;"><td class="highlight">Account blended</td><td class="highlight">$12,412</td><td>100%</td><td class="highlight">$13,924</td><td class="red">1.12x</td><td class="highlight">15</td><td style="font-size:12px;">Reallocate</td></tr>
+</tbody>
+</table>
+<div class="two-col" style="margin-top:8px;">
+<div class="insight-box green"><h4>The Selling Engine Is Intact And Starved</h4>
+<p>Fine Art Value Opt returned 3.02x and Evergreen 3.49x, and between them they took only $2,138 of a $12,412 week. Evergreen is now a full month past the sandbox winner injection and still holding above 3x, which is real durability. These two are the proven, funded, scalable base and they have been running on a sixth of the budget. Moving spend onto them is the single highest value action available this week and it needs no new creative to work.</p></div>
+<div class="insight-box red"><h4>Four Lanes Took Half The Budget For $627</h4>
+<p>The Christian Concept Sandbox took the largest share of spend in the account at $2,711 and returned nothing yet, though it does hold 13 checkouts still inside the window. The Christian Refresh Sandbox at 0.34x and the Fine Art Refresh Sandbox at zero have both now cooled for three consecutive weeks and are exhausted. That is the definition of stale creative eating budget while proven creative starves, exactly the pattern Oscar identified, and the fix is to cap, retire and reallocate today.</p></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</span><span>04 / 10</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">05 / 10</span>
+<div class="slide-tag">Anatomy Of The Week</div>
+<h2>The Winners Kept Winning On Small Budgets, Eden Faith Design At 6.42x And Abide Versatile At 5.81x, While The Elite Hooks Sat In Starved Lanes</h2>
+<p class="note">Ad level CSV for 16 to 22 Jul. The pattern of the week is the split between converting ads on small budgets and elite hooks on larger budgets in lanes that have not closed yet. Revenue concentrated into six ads, all of them proven creative in funded structures.</p>
+<table class="data-table">
+<thead><tr><th>Ad</th><th>Lane / Set</th><th>Spend</th><th>Revenue</th><th>ROAS</th><th>Read</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.07);"><td class="highlight">Feb '26 - Grid</td><td style="font-size:11px;color:var(--text-muted);">Fine Art / Value Opt</td><td>$1,226</td><td class="green">$4,009</td><td class="green">3.27x</td><td style="font-size:12px;" class="green">The Fine Art anchor, holds at volume</td></tr>
+<tr style="background:rgba(0,217,165,0.12);"><td class="highlight">Jun '26 - Eden - Faith Design - Static - C1 rebuild</td><td style="font-size:11px;color:var(--text-muted);">TLIMS / Eden Collection</td><td>$467</td><td class="green">$2,999</td><td class="green">6.42x</td><td style="font-size:12px;" class="green">Best converter, the TLIMS rebuild working</td></tr>
+<tr style="background:rgba(0,217,165,0.12);"><td class="highlight">May '26 - Refresh - Eden - Static - C1</td><td style="font-size:11px;color:var(--text-muted);">Evergreen</td><td>$560</td><td class="green">$2,821</td><td class="green">5.04x</td><td style="font-size:12px;" class="green">Evergreen fix still earning a month on</td></tr>
+<tr style="background:rgba(0,217,165,0.10);"><td class="highlight">Jun '26 - Abide With Me - Versatile - Static - C1</td><td style="font-size:11px;color:var(--text-muted);">Christian / Refresh</td><td>$174</td><td class="green">$1,011</td><td class="green">5.81x</td><td style="font-size:12px;" class="green">Tiny spend, strong close, feed it</td></tr>
+<tr style="background:rgba(0,217,165,0.08);"><td class="highlight">May '26 - Refresh - Eden - Video - Zombie</td><td style="font-size:11px;color:var(--text-muted);">Christian / Zombie</td><td>$177</td><td class="green">$716</td><td class="green">4.04x</td><td style="font-size:12px;" class="green">Revival still producing, graduate it</td></tr>
+<tr style="background:rgba(245,158,11,0.07);"><td class="highlight">Feb '26 - Timeless Pieces - Video - Zombie</td><td style="font-size:11px;color:var(--text-muted);">Fine Art / Zombie</td><td>$994</td><td class="orange">$1,740</td><td class="orange">1.75x</td><td style="font-size:12px;" class="orange">Eased from 5.60x, frequency watch</td></tr>
+</tbody>
+</table>
+<div class="three-col" style="margin-top:8px;">
+<div class="concept-card" style="border-color:var(--accent-green);"><div class="concept-number" style="color:rgba(0,217,165,0.15);">01</div><div class="concept-title">The best converters ran on the smallest budgets</div>
+<p style="font-size:13px;color:var(--text-secondary);position:relative;z-index:1;">Eden Faith Design returned 6.42x on $467, the Refresh Eden static 5.04x on $560, and Abide Versatile 5.81x on just $174. Three ads, under $1,200 combined, produced $6,832. Meanwhile $2,711 went to a sandbox that has not closed. That contrast is the entire week in one comparison, and it is why the reallocation is worth more than any new creative we could add.</p>
+<div style="margin-top:12px;position:relative;z-index:1;"><span class="tag green">6.42x on $467</span><span class="tag brand">Fund the closers</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-purple);"><div class="concept-number">02</div><div class="concept-title">Elite hooks are sitting in starved structures</div>
+<p style="font-size:13px;color:var(--text-secondary);position:relative;z-index:1;">The Eden Testimonial Zombie static pulled a 9.62 percent click rate on 18,624 impressions, the strongest hook the account has ever produced. Last Supper Bestseller ran 4.13 percent and Eden Transform 3.98 percent. None have closed yet. These are not weak ads, they are strong ads in structures that are not converting, and the move is to graduate them into funded value sets rather than keep testing them.</p>
+<div style="margin-top:12px;position:relative;z-index:1;"><span class="tag purple">9.62% hook</span><span class="tag brand">Graduate them</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-orange);"><div class="concept-number" style="color:rgba(245,158,11,0.2);">03</div><div class="concept-title">The Zombie eased, which is the fatigue signal to respect</div>
+<p style="font-size:13px;color:var(--text-secondary);position:relative;z-index:1;">Timeless Pieces was last week's hero at 5.60x on ten orders and eased to 1.75x this week on nearly a thousand in spend. That is classic frequency decay on a revived asset scaled quickly, exactly the mechanism Oscar described. The answer is not to kill it, it is to trim its budget, hold it at a controlled level and let the second wave hooks take the load while it recovers.</p>
+<div style="margin-top:12px;position:relative;z-index:1;"><span class="tag orange">5.60x to 1.75x</span><span class="tag brand">Trim, do not kill</span></div></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</span><span>05 / 10</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">06 / 10</span>
+<div class="slide-tag">Funnel And Quality Of Demand</div>
+<h2>Demand Hit A Record High This Week, Click Through, Traffic And Reach All Grew, The Gap Is Entirely In Where The Money Was Placed</h2>
+<p class="note">Funnel from ad set CSV totals across the account, 16 to 22 Jul. This is the most important slide for reading the week correctly. If demand had collapsed we would see it here, and the opposite happened. Meta adds to cart came in at 3, so the Shops surface stayed clean.</p>
+<div class="metrics-grid four-col">
+<div class="metric-card green"><div class="metric-label">Link CTR</div><div class="metric-value">2.58%</div><div class="metric-change up">Record high, from 2.53% last week</div></div>
+<div class="metric-card green"><div class="metric-label">Landing Page Views</div><div class="metric-value">11,211</div><div class="metric-change up">From 7,228, up 55%, record traffic</div></div>
+<div class="metric-card green"><div class="metric-label">Impressions</div><div class="metric-value">455,583</div><div class="metric-change up">Reach at its widest, 11,749 link clicks</div></div>
+<div class="metric-card orange"><div class="metric-label">Purchases</div><div class="metric-value">15</div><div class="metric-change down">From 33, the gap, and a floor in window</div></div>
+</div>
+<div class="two-col" style="margin-top:8px;">
+<div class="insight-box green"><h4>Interest Is At Its Strongest Level All Year</h4>
+<p>Link CTR reached 2.58 percent, the highest of the entire reported run, and it has now risen four weeks straight through 1.97, 2.08, 2.53 and 2.58. Landing page views climbed 55 percent to 11,211, the most traffic the account has ever sent to site in a week, on 455,583 impressions and 11,749 link clicks. The audience is responding to this creative more strongly than at any point we have measured. Nothing in the top of funnel is broken.</p></div>
+<div class="insight-box orange"><h4>Where The Break Is, And The Attribution Caveat</h4>
+<p>Seventy one checkouts produced 15 attributed purchases, a 21 percent close against 29 percent last week. Part of that is real, most of this record traffic went to test lanes rather than proven converting structures. Part of it is timing, the data was pulled a day after the window closed and the three zero return campaigns hold 18 checkouts between them with no purchase attributed yet, which cannot be the final number. The figure will firm, but the allocation is the real fix.</p></div>
+</div>
+<div style="margin-top:8px;">
+<h3 style="margin-bottom:12px;">Funnel step read, this week against the prior week</h3>
+<table class="data-table">
+<thead><tr><th>Step</th><th>This week (16 to 22 Jul)</th><th>Prior week (8 to 14 Jul)</th><th>Read</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">Link CTR</td><td>2.58%</td><td>2.53%</td><td style="font-size:12px;">Record high, fourth straight week up</td></tr>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">Landing page views</td><td>11,211</td><td>7,228</td><td style="font-size:12px;">Up 55%, most site traffic on record</td></tr>
+<tr><td class="highlight">Checkouts initiated</td><td>71</td><td>112</td><td style="font-size:12px;">Down, traffic went to test lanes</td></tr>
+<tr style="background:rgba(239,68,68,0.06);"><td class="highlight">Purchases</td><td>15</td><td>33</td><td style="font-size:12px;">The gap, a floor with the window open</td></tr>
+<tr><td class="highlight">AOV</td><td>$928</td><td>$882</td><td style="font-size:12px;">Recovered, premium basket intact</td></tr>
+</tbody>
+</table>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</span><span>06 / 10</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">07 / 10</span>
+<div class="slide-tag">Test Read, The Advertorial Cold Acquisition Launch</div>
+<h2>The Advertorial Landing Page Ads Went Live This Week And Their Hooks Are The Strongest Cold Creative We Have Run</h2>
+<p class="note">Designer Christian LP Sandbox from ad set and ad level CSV, live from 16 Jul, so this is a six day read. Two matched pockets were built, one to the advertorial page and one to the collection page, cold broad women 35 to 54, on Maximise Conversions for a faster clean read. Purchases are not expected to be meaningful at day six on this basket, the read at this stage is hook quality and cost per landing page view.</p>
+<div class="three-col" style="margin-top:4px;">
+<div class="concept-card" style="border-color:var(--accent-green);"><div class="concept-number" style="color:rgba(0,217,165,0.15);">01</div><div class="concept-title">The setup, matched ad to page pockets</div>
+<p style="font-size:13px;color:var(--text-secondary);position:relative;z-index:1;">Oscar's two cold sets were built as two isolated pockets so each page gets a clean read. The AD LP pocket runs the advertorial angles, Design Conversation, New Christian Home, Founder Story and Tradeoff. The Collection LP pocket runs Subtle Aesthetic, New Christian Home, Ours Was and Meaningful Art. Each ad routes to the page it was written for, so the message carries end to end and any lift is the page, not a mismatch.</p>
+<div style="margin-top:12px;position:relative;z-index:1;"><span class="tag green">Two matched pockets</span><span class="tag brand">Isolated read</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-purple);"><div class="concept-number">02</div><div class="concept-title">The hooks landed immediately, and they are elite</div>
+<p style="font-size:13px;color:var(--text-secondary);position:relative;z-index:1;">Design Conversation returned a 5.03 percent link click rate on 9,522 impressions and Subtle Aesthetic 3.69 percent on 20,568, against an account average of 2.58 percent which is itself a record. New Christian Home ran 3.35 percent on the advertorial side. For cold prospecting creative in its first six days, these are exceptional numbers and they validate the angle led approach Oscar built them around.</p>
+<div style="margin-top:12px;position:relative;z-index:1;"><span class="tag purple">5.03% and 3.69%</span><span class="tag green">Angles validated</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-brand);"><div class="concept-number" style="color:rgba(120,82,69,0.25);">03</div><div class="concept-title">What happens next, protect and read properly</div>
+<p style="font-size:13px;color:var(--text-secondary);position:relative;z-index:1;">This lane took only 5 percent of spend and it stays protected on a controlled budget through its full window, because cold acquisition on a high basket takes longer to read than warm. We read cost per landing page view and cost per add to cart first, purchases across the full window, and we do not judge it on six days. The winning angles then get matched page variants and become the cold acquisition channel.</p>
+<div style="margin-top:12px;position:relative;z-index:1;"><span class="tag brand">Protected window</span><span class="tag orange">No call at day six</span></div></div>
+</div>
+<div class="insight-box green" style="margin-top:24px;"><h4>Why This Launch Matters More Than This Week's Number</h4>
+<p>Every scale conversation we have had comes back to the same ceiling, cold traffic landing on pages built for warm buyers. These two pockets are the first proper test of matched ad to page journeys, and the hook data says the audience is responding harder to this angle led cold creative than to anything else in the account. That is the ingredient we needed. The discipline now is to give it a real window on a small controlled budget rather than scale it early, because the mistake this week was funding unproven lanes too fast, and we do not repeat that on the one test with the most upside.</p></div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</span><span>07 / 10</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">08 / 10</span>
+<div class="slide-tag">Efficiency And Spend Discipline</div>
+<h2>Spend Ran Over Ceiling For A Third Week And Too Little Of It Reached The Carriers, That Is The Discipline Gap And It Closes This Week</h2>
+<p class="note">Spend and efficiency comparison, 16 to 22 Jul, prior column is the 8 to 14 Jul week. Daily spend is the weekly total divided by seven. Test share is spend in unproven or cooled lanes as a percentage of total.</p>
+<div class="metrics-grid four-col">
+<div class="metric-card red"><div class="metric-label">Daily Spend</div><div class="metric-value">$1,773</div><div class="metric-change down">Over the $1,500 ceiling, third week</div></div>
+<div class="metric-card red"><div class="metric-label">Test Share Of Spend</div><div class="metric-value">48.9%</div><div class="metric-change down">Against a 20 to 25% guardrail</div></div>
+<div class="metric-card green"><div class="metric-label">Carrier Share</div><div class="metric-value">17.2%</div><div class="metric-change up">The 3.20x lanes, badly underfunded</div></div>
+<div class="metric-card orange"><div class="metric-label">CPA</div><div class="metric-value">$827</div><div class="metric-change down">Above effective breakeven, floor in window</div></div>
+</div>
+<div class="two-col" style="margin-top:8px;">
+<div class="insight-box red"><h4>Owning The Gap Plainly</h4>
+<p>Spend ran at $1,773 a day against our $1,500 ceiling for a third consecutive week, and nearly half of it sat in lanes returning 0.10x while the lanes returning 3.20x got a sixth of the budget. That is a discipline failure on allocation, not a market problem, and it is mine to fix. The daily guardrail I committed to last week, checking frequency and cost per purchase at ad set level each morning and pausing at ad level before budget burns, is the mechanism that stops this recurring, and it is now backed by a hard cap on test share.</p></div>
+<div class="insight-box green"><h4>Why This Is Recoverable Quickly</h4>
+<p>Allocation problems correct faster than demand problems, which is the good news in a hard week. The carriers need no new creative, no new audience and no learning phase, they simply need the budget that is currently sitting elsewhere. Reallocating the drag spend at proven carrier efficiency takes the same week from 1.12x to 2.63x. Add the refresh landing today and the attribution firming, and the path back above target is short and does not depend on anything new working.</p></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</span><span>08 / 10</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">09 / 10</span>
+<div class="slide-tag">The Turnaround Plan</div>
+<h2>Reallocate To The Carriers, Retire The Exhausted Lanes, Cap Test Share, Graduate The Elite Hooks, And Hold The Ceiling</h2>
+<div class="three-col" style="margin-top:8px;">
+<div class="concept-card" style="border-color:var(--accent-green);"><div class="concept-number" style="color:rgba(0,217,165,0.15);">01</div><div class="concept-title">Move the money to what sells, today</div>
+<p style="font-size:13px;color:var(--text-secondary);position:relative;z-index:1;">Fine Art Value Opt at 3.02x and Evergreen at 3.49x get stepped up first, they are proven, funded structures needing no new learning. The freed budget comes from retiring the two exhausted sandboxes and capping the Concept Sandbox. All moves at ad level so no learning resets, and stepping the carriers the penny way so we lift without tripping a relearn. This alone is worth more than a full point of blended ROAS.</p>
+<div style="margin-top:12px;position:relative;z-index:1;"><span class="tag green">Fund the 3x lanes</span><span class="tag brand">Ad level, no reset</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-red);"><div class="concept-number" style="color:rgba(239,68,68,0.2);">02</div><div class="concept-title">Retire the exhausted, cap the unproven</div>
+<p style="font-size:13px;color:var(--text-secondary);position:relative;z-index:1;">The Christian Refresh Sandbox at 0.34x and the Fine Art Refresh Sandbox at zero have both cooled three weeks running and are retired, their proven units carried into core by post ID first. The Concept Sandbox is capped hard while its 13 open checkouts resolve. From here a standing rule applies, no more than 20 to 25 percent of daily spend in unproven lanes, enforced daily rather than reviewed weekly.</p>
+<div style="margin-top:12px;position:relative;z-index:1;"><span class="tag red">Retire two lanes</span><span class="tag orange">25% test cap</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-purple);"><div class="concept-number">03</div><div class="concept-title">Graduate the hooks, land the refresh</div>
+<p style="font-size:13px;color:var(--text-secondary);position:relative;z-index:1;">The Eden Testimonial at 9.62 percent, Last Supper Bestseller at 4.13 percent and Eden Transform at 3.98 percent move out of starved sandboxes into funded value sets by post ID, where hooks that strong get a real chance to close. This week's creative refresh lands today into the rebuilt TLIMS lane alongside the Eden reversions, and the advertorial pockets stay protected on their controlled budget.</p>
+<div style="margin-top:12px;position:relative;z-index:1;"><span class="tag purple">Graduate elite hooks</span><span class="tag green">Refresh lands today</span></div></div>
+</div>
+<div class="insight-box green" style="margin-top:24px;"><h4>The Logic, Simply</h4>
+<p>Demand is at a record high and the proven carriers still sell at 3.20x, so nothing structural has broken in the account or the market. What went wrong is that half the budget sat in lanes that had not earned it while the lanes that had earned it were starved. That is a decision, and decisions reverse quickly. Reallocate to the carriers, retire what is exhausted, cap test share at a quarter of spend, graduate the strongest hooks into structures that convert, and hold the ceiling. Each of those is actioned today or tomorrow, none of them depends on something new working, and the same week's spend under that allocation reads 2.63x.</p></div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</span><span>09 / 10</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">10 / 10</span>
+<div class="slide-tag">Action Plan And Path Back To Scale</div>
+<h2>Reallocate, Retire, Cap, Graduate, Refresh, Then Rebuild The Run Into August</h2>
+<div class="two-col" style="margin-top:0;">
+<div>
+<h3 style="color:var(--accent-green);margin-bottom:16px;">Active Now, Today And Tomorrow</h3>
+<ul class="check-list" style="font-size:13px;">
+<li><strong>Reallocate to the proven carriers.</strong> Step Fine Art Value Opt at 3.02x and Evergreen at 3.49x up the penny way, funded from the retired lanes, all at ad level so nothing resets</li>
+<li class="red"><strong>Retire the two exhausted sandboxes.</strong> Christian Refresh at 0.34x and Fine Art Refresh at zero, three weeks cooled, carry their proven units to core by post ID first</li>
+<li class="orange"><strong>Cap the Christian Concept Sandbox.</strong> Largest spender in the account at zero return, hold it small while its 13 open checkouts resolve, then read it properly</li>
+<li class="purple"><strong>Graduate the elite hooks into funded sets.</strong> Eden Testimonial at 9.62%, Last Supper Bestseller at 4.13%, Eden Transform at 3.98%, by post ID so they restart warm</li>
+<li><strong>Land this week's creative refresh.</strong> Into the rebuilt TLIMS lane with the Eden reversions, completing today</li>
+<li class="orange"><strong>Bring daily spend back to $1,500.</strong> Third week over ceiling, plus the daily frequency and cost per purchase guardrail at ad set level</li>
+</ul>
+<h3 style="color:var(--accent-orange);margin-top:24px;margin-bottom:16px;">Watch List</h3>
+<ul class="check-list" style="font-size:13px;">
+<li class="orange"><strong>Test share of spend, 48.9%.</strong> The single biggest lever, hard cap at 20 to 25% enforced daily from today</li>
+<li class="orange"><strong>Zombie eased to 1.47x.</strong> Timeless Pieces fell from 5.60x to 1.75x on frequency, trim the budget, do not kill the asset</li>
+<li class="purple"><strong>Advertorial pockets, day six.</strong> Elite hooks at 5.03% and 3.69%, protected budget, no call until the full window</li>
+<li class="brand"><strong>Attribution floor.</strong> 18 checkouts on the zero rows with no purchase attributed, the week firms through 29 Jul</li>
+</ul>
+</div>
+<div>
+<h3 style="color:var(--accent-green);margin-bottom:16px;">Path Back To Scale, The Updated Picture</h3>
+<div class="card" style="margin-bottom:16px;border-left:3px solid var(--accent-green);">
+<h4 style="color:var(--accent-green);margin-bottom:12px;">Where The Account Sits Today</h4>
+<p style="font-size:13px;color:var(--text-secondary);line-height:1.7;">Blended 1.12x floor, proven carriers 3.20x on 17 percent of spend, demand at a record high with click through 2.58 percent and 11,211 landing page views. Month to date still 2.08x on 81 orders and profitable. The account is not broken, the budget was in the wrong lanes, and that is the fastest kind of problem to fix.</p></div>
+<div class="card" style="margin-bottom:16px;border-left:3px solid var(--accent-purple);">
+<h4 style="color:var(--accent-purple);margin-bottom:12px;">The Creative And Testing Engine</h4>
+<p style="font-size:13px;color:var(--text-secondary);line-height:1.7;">Two sandboxes are exhausted and retire, the Concept Sandbox is capped pending its read, and the strongest hooks the account has produced move into funded structures. The advertorial cold pockets stay protected. From here testing runs inside a hard budget share so it can never again crowd out the carriers, which is the structural lesson of this week.</p></div>
+<div class="card" style="margin-bottom:16px;border-left:3px solid var(--accent-brand);">
+<h4 style="color:var(--accent-brand-light);margin-bottom:12px;">The Build Into August</h4>
+<p style="font-size:13px;color:var(--text-secondary);line-height:1.7;">Reallocate and hold the ceiling this week, let the blended firm back toward the carriers, then resume measured steps on proven winners only. The advertorial pockets read on their full window and become the cold acquisition channel. August is the peak, and we go in with a disciplined allocation, a refreshed library and record demand.</p></div>
+<div class="insight-box green" style="margin:0;"><h4>The Strategic Frame, Where We Are</h4>
+<p>A hard week, owned plainly. Demand is the strongest it has been all year and the proven carriers still sell above 3x, so the engine is intact. Half the budget sat where it had not earned the right to be, and that reverses today. Reallocate, retire, cap, graduate and refresh, and the same spend under the same demand reads far closer to target well before August.</p></div>
+</div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 16 to 22, 2026</span><span>Prepared by Charles Piper, July 2026</span></div>
+</section>
+
+</body>
+</html>
