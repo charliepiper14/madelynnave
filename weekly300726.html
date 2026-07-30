@@ -103,12 +103,18 @@ p{font-size:15px;color:var(--text-secondary);max-width:720px;}
 .embed-card.fa{border-top:3px solid var(--accent-purple);}
 .embed-card.chr{border-top:3px solid var(--accent-green);}
 .embed-card.eden{border-top:3px solid var(--accent-brand);}
-.embed-frame{position:relative;width:100%;overflow:hidden;background:#f4f2ee;border-bottom:1px solid var(--border);}
+.embed-frame{position:relative;width:100%;overflow:hidden;border-bottom:1px solid var(--border);}
+.embed-frame.fb{background:#f4f2ee;}
+.embed-frame.cld{background:#0a0a14;display:flex;align-items:center;justify-content:center;}
 .embed-grid.four .embed-frame{height:518px;}
-.embed-grid.five .embed-frame{height:412px;}
+.embed-grid.five .embed-frame{height:414px;}
 .scaler{position:absolute;top:0;left:50%;transform-origin:top center;}
 .scaler iframe{display:block;border:none;}
-.embed-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;}
+.embed-frame.cld img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;}
+.cld-video{position:absolute;inset:0;width:100%;height:100%;}
+.cld-video iframe{display:block;width:100%;height:100%;border:none;}
+.src-tag{position:absolute;bottom:0;left:0;right:0;padding:5px 8px;background:linear-gradient(to top,rgba(10,10,20,0.92),rgba(10,10,20,0));font-size:8.5px;letter-spacing:1.1px;text-transform:uppercase;color:var(--text-muted);text-align:center;z-index:3;}
+body.embeds-unavailable .src-tag{display:none;}
 .fallback{display:none;position:absolute;inset:0;background:var(--bg-card);align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:18px;gap:10px;}
 .fallback .fb-mark{font-family:'DM Sans',sans-serif;font-size:30px;font-weight:700;color:rgba(255,255,255,0.10);letter-spacing:2px;}
 .fallback .fb-txt{font-size:11px;color:var(--text-muted);line-height:1.6;}
@@ -380,28 +386,28 @@ body.embeds-unavailable .embed-frame{background:var(--bg-card);}
 <p class="note">Live post previews carried by post ID, so the engagement history stays attached to each one. Figures are full twelve month lifetime, 1 Aug 2025 to 30 Jul 2026, ad level CSV. Cell budget proposed at $120 a day so no single asset can take the cell the way Timeless Pieces took 96 percent of it this week.</p>
 <div class="embed-grid four">
   <div class="embed-card fa">
-    <div class="embed-frame">
+    <div class="embed-frame fb">
       <div class="scaler" style="transform:translateX(-50%) scale(0.62);"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMadelynnAveHome%2Fposts%2Fpfbid0aBSJgNNMP9CzUwko8rGHkxE3sszv2vvo7EuSsrm3XyVkmN3fpEJ5cXCKr4xDEZcJl&show_text=true&width=500" width="500" height="860" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
       <div class="fallback"><div class="fb-tag">Facebook Post Preview</div><div class="fb-mark">MA</div><div class="fb-txt">The 2025 Fall Colors You've<br>Been Seeing Everywhere<br><br>Live preview renders in the browser version of this deck</div></div>
     </div>
     <div class="embed-body"><div class="embed-name">The 2025 Fall Colors You've Been Seeing Everywhere</div><div class="embed-roas">3.50x</div><div class="embed-stats"><b>11 orders</b> on $2,635.58 &middot; $9,236.61 revenue<br>CPA $239.60 &middot; CTR 2.19% &middot; 34 checkouts<br>Dormant since 2025, fall message ready</div></div>
   </div>
   <div class="embed-card fa">
-    <div class="embed-frame">
+    <div class="embed-frame fb">
       <div class="scaler" style="transform:translateX(-50%) scale(0.62);"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMadelynnAveHome%2Fposts%2Fpfbid02B3a88CgSupimFTEsFxtSCQ3Wzt6U7YkyWJU4NuRmjYByYmTc9BphFsxJzWBP6ZwUl&show_text=true&width=500" width="500" height="802" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
       <div class="fallback"><div class="fb-tag">Facebook Post Preview</div><div class="fb-mark">MA</div><div class="fb-txt">Fine Art - Homeward<br><br>Live preview renders in the browser version of this deck</div></div>
     </div>
     <div class="embed-body"><div class="embed-name">Fine Art - Homeward</div><div class="embed-roas">3.51x</div><div class="embed-stats"><b>9 orders</b> on $1,942.78 &middot; $6,818.99 revenue<br>CPA $215.86 &middot; CTR 1.92% &middot; 21 checkouts<br>Retire the June Homeward duplicate first</div></div>
   </div>
   <div class="embed-card fa">
-    <div class="embed-frame">
+    <div class="embed-frame fb">
       <div class="scaler" style="transform:translateX(-50%) scale(0.62);"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMadelynnAveHome%2Fposts%2Fpfbid032qCLrwdMvxYgvVtrukDc5rpeokFmSTMY88td7oyWoJZbs3fGmv7oZfid85wjnrVpl&show_text=true&width=500" width="500" height="713" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
       <div class="fallback"><div class="fb-tag">Facebook Post Preview</div><div class="fb-mark">MA</div><div class="fb-txt">Timeless Fine Art -<br>Path Perspective<br><br>Live preview renders in the browser version of this deck</div></div>
     </div>
     <div class="embed-body"><div class="embed-name">Timeless Fine Art - Path Perspective</div><div class="embed-roas">2.98x</div><div class="embed-stats"><b>10 orders</b> on $3,368.16 &middot; $10,052.74 revenue<br>CPA $336.82 &middot; CTR <b>3.33%</b> &middot; 34 checkouts<br>Pause the Path Perspective video duplicate</div></div>
   </div>
   <div class="embed-card fa">
-    <div class="embed-frame">
+    <div class="embed-frame fb">
       <div class="scaler" style="transform:translateX(-50%) scale(1.08);"><iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1919601241931202%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
       <div class="fallback"><div class="fb-tag">Facebook Reel Preview</div><div class="fb-mark">MA</div><div class="fb-txt">Video - UGC Unboxing 2 -<br>Your Support<br><br>Live preview renders in the browser version of this deck</div></div>
     </div>
@@ -420,36 +426,39 @@ body.embeds-unavailable .embed-frame{background:var(--bg-card);}
 <p class="note">Live previews carried by post ID. Figures are full twelve month lifetime from the ad level CSV. The General Christian four hold a combined $3,059.29 of spend against $12,123.25 of revenue on 16 orders at a $191.21 cost per purchase. Eden sits in its own cell because Eden buyers behave as a separate pocket, which the 6.09x Eden Sandbox week confirmed.</p>
 <div class="embed-grid five">
   <div class="embed-card chr">
-    <div class="embed-frame">
-      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1785407383/Screenshot_2026-07-30_at_17.28.44_wub4vp.png" alt="Ad1.1 Emotional Angle The Lord Is My Shepherd">
+    <div class="embed-frame cld">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/c_limit,w_760,q_auto,f_auto/v1785407383/Screenshot_2026-07-30_at_17.28.44_wub4vp.png" alt="Ad1.1 Emotional Angle The Lord Is My Shepherd">
+      <div class="src-tag">Ad preview screenshot</div>
       <div class="fallback"><div class="fb-tag">Ad Preview</div><div class="fb-mark">MA</div><div class="fb-txt">Ad1.1 - Emotional Angle -<br>The Lord Is My Shepherd<br><br>Live preview renders in the browser version of this deck</div></div>
     </div>
     <div class="embed-body"><div class="embed-name">Ad1.1 - Emotional Angle - The Lord Is My Shepherd</div><div class="embed-roas">3.76x</div><div class="embed-stats"><b>7 orders</b> on $855.22 &middot; $3,213.06 revenue<br>CPA <b>$122.17</b> &middot; CTR 1.46%<br>Lowest cost per purchase in the account</div></div>
   </div>
   <div class="embed-card chr">
-    <div class="embed-frame">
+    <div class="embed-frame fb">
       <div class="scaler" style="transform:translateX(-50%) scale(0.86);"><iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1883575975559088%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe></div>
       <div class="fallback"><div class="fb-tag">Facebook Reel Preview</div><div class="fb-mark">MA</div><div class="fb-txt">Video - Story - TLIMS<br><br>Live preview renders in the browser version of this deck</div></div>
     </div>
     <div class="embed-body"><div class="embed-name">Video - Story - TLIMS</div><div class="embed-roas">5.83x</div><div class="embed-stats"><b>2 orders</b> on $547.37 &middot; $3,188.50 revenue<br>CPA $273.69 &middot; CTR 2.63%<br>Highest return per dollar in the rotation</div></div>
   </div>
   <div class="embed-card chr">
-    <div class="embed-frame">
+    <div class="embed-frame fb">
       <div class="scaler" style="transform:translateX(-50%) scale(0.50);"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMadelynnAveHome%2Fposts%2Fpfbid02No3SprE7wSe5Ph8Hr5YLq4TLEuApkjCQhKZoigTG1ibZKJprEF8Y6GWHjxCbbVgxl&show_text=true&width=500" width="500" height="713" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>
       <div class="fallback"><div class="fb-tag">Facebook Post Preview</div><div class="fb-mark">MA</div><div class="fb-txt">4 Partitioned Lifestyle<br><br>Live preview renders in the browser version of this deck</div></div>
     </div>
     <div class="embed-body"><div class="embed-name">4 Partitioned Lifestyle</div><div class="embed-roas">3.56x</div><div class="embed-stats"><b>3 orders</b> on $529.82 &middot; $1,884.85 revenue<br>CPA $176.61 &middot; CTR 1.36%<br>Interior design led, matches the brand voice</div></div>
   </div>
   <div class="embed-card chr">
-    <div class="embed-frame">
-      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1785407609/Screenshot_2026-07-30_at_17.33.13_g4pko9.png" alt="Jun 26 Collection Repeat Static C1">
+    <div class="embed-frame cld">
+      <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/c_limit,w_760,q_auto,f_auto/v1785407609/Screenshot_2026-07-30_at_17.33.13_g4pko9.png" alt="Jun 26 Collection Repeat Static C1">
+      <div class="src-tag">Ad preview screenshot</div>
       <div class="fallback"><div class="fb-tag">Ad Preview</div><div class="fb-mark">MA</div><div class="fb-txt">Jun '26 - Collection -<br>Repeat - Static - C1<br><br>Live preview renders in the browser version of this deck</div></div>
     </div>
     <div class="embed-body"><div class="embed-name">Jun '26 - Collection - Repeat - Static - C1</div><div class="embed-roas">3.40x</div><div class="embed-stats"><b>4 orders</b> on $1,126.88 &middot; $3,836.84 revenue<br>CPA $281.72 &middot; CTR 1.38%<br>Took $2.52 this week inside the Eden Sandbox</div></div>
   </div>
   <div class="embed-card eden">
-    <div class="embed-frame" style="display:flex;align-items:center;justify-content:center;">
-      <div class="scaler" style="position:relative;left:auto;transform:none;width:100%;"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=Screen_Recording_2026-07-30_at_17.34.55_ucwin1" width="640" height="360" style="height:auto;width:100%;aspect-ratio:640 / 360;border:none;" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen frameborder="0"></iframe></div>
+    <div class="embed-frame cld">
+      <div class="cld-video"><iframe src="https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=Screen_Recording_2026-07-30_at_17.34.55_ucwin1&player[fluid]=false&player[controls]=true" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen frameborder="0"></iframe></div>
+      <div class="src-tag">Screen recording, plays in browser</div>
       <div class="fallback"><div class="fb-tag">Video Preview</div><div class="fb-mark">MA</div><div class="fb-txt">Mar '26 - Spring - Eden -<br>Video - C1<br><br>Live preview renders in the browser version of this deck</div></div>
     </div>
     <div class="embed-body"><div class="embed-name">Mar '26 - Spring - Eden - Video - C1</div><div class="embed-roas">2.77x</div><div class="embed-stats"><b>7 orders</b> on $3,225.21 &middot; $8,929.14 revenue<br>CPA $460.74 &middot; CTR <b>3.10%</b> &middot; 19 checkouts<br>Inside effective breakeven on a $958 basket</div></div>
