@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Inter';font-weight:300;font-style:normal;font-display:swap;src:url('fonts/inter-latin-300-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:400;font-style:normal;font-display:swap;src:url('fonts/inter-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:500;font-style:normal;font-display:swap;src:url('fonts/inter-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:600;font-style:normal;font-display:swap;src:url('fonts/inter-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:700;font-style:normal;font-display:swap;src:url('fonts/inter-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-weight:800;font-style:normal;font-display:swap;src:url('fonts/inter-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-weight:400;font-style:normal;font-display:swap;src:url('fonts/dm-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-weight:500;font-style:normal;font-display:swap;src:url('fonts/dm-sans-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-weight:600;font-style:normal;font-display:swap;src:url('fonts/dm-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'DM Sans';font-weight:700;font-style:normal;font-display:swap;src:url('fonts/dm-sans-latin-700-normal.woff2') format('woff2');}
+:root{--bg-primary:#0f0f1a;--bg-secondary:#1a1a2e;--bg-card:#16162a;--bg-card-hover:#1e1e3a;--border:rgba(255,255,255,0.06);--accent-green:#00d9a5;--accent-green-dim:rgba(0,217,165,0.15);--accent-purple:#8b5cf6;--accent-purple-dim:rgba(139,92,246,0.15);--accent-red:#ef4444;--accent-orange:#f59e0b;--accent-brand:#785245;--accent-brand-light:#D3CBC0;--text-primary:#fff;--text-secondary:#a0a0b8;--text-muted:#6b6b80;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;font-size:15px;}
+.slide{min-height:1080px;height:1080px;overflow:hidden;padding:38px 56px;position:relative;display:flex;flex-direction:column;border-bottom:1px solid var(--border);}
+.slide-number{position:absolute;top:24px;right:32px;font-size:13px;color:var(--text-muted);font-weight:600;letter-spacing:1px;}
+.slide-tag{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--accent-brand);margin-bottom:8px;font-weight:600;}
+h1{font-family:'DM Sans',sans-serif;font-size:50px;font-weight:700;line-height:1.15;margin-bottom:16px;}
+h2{font-family:'DM Sans',sans-serif;font-size:29px;font-weight:700;line-height:1.2;margin-bottom:18px;}
+h3{font-size:18px;font-weight:600;margin-bottom:16px;}
+h4{font-size:14px;font-weight:600;margin-bottom:8px;}
+p{font-size:15px;color:var(--text-secondary);max-width:720px;}
+.subtitle{font-size:18px;color:var(--text-secondary);max-width:780px;margin-bottom:32px;font-weight:400;}
+.cover{justify-content:center;align-items:center;text-align:center;background:radial-gradient(ellipse at 50% 30%,rgba(0,217,165,0.07) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(120,82,69,0.06) 0%,transparent 40%);}
+.cover h1{font-size:56px;}
+.cover .meta{margin-top:48px;display:flex;gap:24px;flex-wrap:wrap;justify-content:center;font-size:13px;color:var(--text-secondary);}
+.cover .meta span{display:flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border-radius:8px;border:1px solid var(--border);}
+.metrics-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:20px 0;}
+.metrics-grid.four-col{grid-template-columns:repeat(4,1fr);}
+.metrics-grid.three-col{grid-template-columns:repeat(3,1fr);}
+.metric-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+.metric-card.green{border-top:3px solid var(--accent-green);}
+.metric-card.purple{border-top:3px solid var(--accent-purple);}
+.metric-card.red{border-top:3px solid var(--accent-red);}
+.metric-card.orange{border-top:3px solid var(--accent-orange);}
+.metric-card.brand{border-top:3px solid var(--accent-brand);}
+.metric-label{font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);margin-bottom:8px;font-weight:500;}
+.metric-value{font-family:'DM Sans',sans-serif;font-size:29px;font-weight:700;color:var(--text-primary);line-height:1.1;}
+.metric-value.large{font-size:36px;}
+.metric-change{font-size:12px;margin-top:8px;font-weight:600;}
+.metric-change.up{color:var(--accent-green);}
+.metric-change.down{color:var(--accent-red);}
+.metric-change.neutral{color:var(--text-muted);}
+.data-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:12.5px;}
+.data-table th{text-align:left;padding:12px 16px;background:var(--bg-card);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);border-bottom:1px solid var(--border);}
+.data-table td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--text-secondary);}
+.data-table.compact td{padding:7px 12px;}
+.data-table.compact th{padding:10px 14px;}
+.data-table.tight td{padding:5.5px 11px;font-size:11.5px;}
+.data-table.tight th{padding:9px 11px;font-size:10.5px;}
+.data-table tr:hover td{background:var(--bg-card-hover);}
+.data-table .highlight{color:var(--text-primary);font-weight:500;}
+.data-table .green{color:var(--accent-green);font-weight:600;}
+.data-table .red{color:var(--accent-red);font-weight:600;}
+.data-table .purple{color:var(--accent-purple);font-weight:600;}
+.data-table .orange{color:var(--accent-orange);font-weight:600;}
+.data-table .neutral{color:var(--text-muted);font-weight:600;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;}
+.insight-box{background:var(--bg-card);border-left:3px solid var(--accent-green);padding:15px 18px;margin:14px 0;border-radius:0 12px 12px 0;}
+.insight-box.purple{border-left-color:var(--accent-purple);}
+.insight-box.brand{border-left-color:var(--accent-brand);}
+.insight-box.red{border-left-color:var(--accent-red);}
+.insight-box.orange{border-left-color:var(--accent-orange);}
+.insight-box h4{color:var(--accent-green);margin-bottom:8px;font-size:13px;text-transform:uppercase;letter-spacing:0.5px;}
+.insight-box.purple h4{color:var(--accent-purple);}
+.insight-box.brand h4{color:var(--accent-brand-light);}
+.insight-box.red h4{color:var(--accent-red);}
+.insight-box.orange h4{color:var(--accent-orange);}
+.insight-box p{color:var(--text-secondary);font-size:13px;line-height:1.62;max-width:none;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+.concept-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;position:relative;overflow:hidden;}
+.concept-number{font-family:'DM Sans',sans-serif;font-size:48px;font-weight:700;color:rgba(139,92,246,0.15);position:absolute;top:16px;right:20px;}
+.concept-title{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;margin-bottom:10px;position:relative;z-index:1;color:var(--text-primary);}
+.tag{display:inline-block;padding:4px 10px;background:var(--accent-purple-dim);border-radius:6px;font-size:10px;font-weight:600;color:var(--accent-purple);margin-right:6px;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;}
+.tag.green{background:var(--accent-green-dim);color:var(--accent-green);}
+.tag.red{background:rgba(239,68,68,0.15);color:var(--accent-red);}
+.tag.orange{background:rgba(245,158,11,0.15);color:var(--accent-orange);}
+.tag.brand{background:rgba(120,82,69,0.2);color:var(--accent-brand-light);}
+.check-list{list-style:none;margin:16px 0;}
+.check-list li{padding:6px 0;padding-left:22px;position:relative;color:var(--text-secondary);font-size:14px;}
+.check-list li::before{content:'';position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:2px;background:var(--accent-green);}
+.check-list li.red::before{background:var(--accent-red);}
+.check-list li.orange::before{background:var(--accent-orange);}
+.check-list li.purple::before{background:var(--accent-purple);}
+.check-list li.brand::before{background:var(--accent-brand);}
+.slide-footer{margin-top:auto;padding-top:16px;font-size:11px;color:var(--text-muted);display:flex;justify-content:space-between;align-items:center;}
+.note{font-size:11px;color:var(--text-muted);font-style:italic;margin-bottom:12px;}
+.trend-bar{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:6px 18px;margin:3px 0;}
+.trend-label{font-size:12px;color:var(--text-muted);width:265px;flex-shrink:0;}
+.trend-track{flex:1;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;}
+.trend-fill{height:100%;border-radius:4px;}
+.trend-value{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;width:80px;text-align:right;}
+.trend-arrow{font-size:18px;width:24px;text-align:center;}
+.dist-row{display:flex;align-items:center;gap:12px;margin:3px 0;}
+.dist-name{font-size:11px;color:var(--text-secondary);width:330px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.dist-track{flex:1;height:14px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;position:relative;}
+.dist-fill{height:100%;border-radius:3px;}
+.dist-val{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;width:66px;text-align:right;color:var(--text-secondary);}
+.dist-note{font-size:10px;width:118px;text-align:right;color:var(--text-muted);flex-shrink:0;}
+.gate-line{position:absolute;top:0;bottom:0;width:2px;background:var(--accent-red);opacity:0.8;}
+@media print{.slide{page-break-after:always;break-after:page;}} .cover{height:1080px;}
+</style>
+</head>
+<body>
+
+<section class="slide cover">
+<div class="slide-tag">Weekly Performance Review</div>
+<h1>Madelynn Ave</h1>
+<p class="subtitle">The account produced the same revenue on $1,115 less spend. Blended return rose to 2.40x, basket set a record at $1,074.57, and checkouts reached a record 102. The proven engine of core plus Zombie ran 3.08x on twenty of the twenty two orders. Core share of spend reached 46.1 percent, clearing the 45 percent line I committed to for 6 August, a day early. Zombie Revival took under a quarter of the budget and returned four fifths of a proven lane.</p>
+<div class="meta">
+<span>Reporting period: July 30 to August 5, 2026</span>
+<span>vs Last reported week: July 23 to 29 (2.15x)</span>
+<span>Blended 2.40x, proven engine 3.08x</span>
+<span>July closed at $101,574 on 107 orders</span>
+</div>
+</section>
+
+<section class="slide">
+<span class="slide-number">02 / 14</span>
+<div class="slide-tag">The Headline</div>
+<h2>Revenue Held Flat At $23,640 On Ten Percent Less Spend, Blended Return Rose To 2.40x, And The Proven Engine Ran 3.08x On Twenty Of The Twenty Two Orders</h2>
+<p class="note">All figures validated across three CSV levels, campaign, ad set and ad. The week 30 Jul to 5 Aug reconciles to the cent at every level, $9,869.40 spend and $23,640.47 revenue across all three exports, 22 purchases. The prior column is the 23 to 29 Jul figure reported last week, 2.15x, which keeps the series continuous. Pulled 6 Aug with the 7 day click window open through 12 Aug on most of the week, so this is a floor. All 22 purchases are website purchases. Meta adds to cart came in at 1 and Meta purchases at zero, so the Shops surface stayed shut.</p>
+<div class="metrics-grid">
+<div class="metric-card green"><div class="metric-label">Blended ROAS</div><div class="metric-value large">2.40x</div><div class="metric-change up">From 2.15x, up 11.5 percent</div></div>
+<div class="metric-card green"><div class="metric-label">Proven Engine</div><div class="metric-value large">3.08x</div><div class="metric-change up">Core plus Zombie, 20 orders</div></div>
+<div class="metric-card green"><div class="metric-label">Cost Per Purchase</div><div class="metric-value large">$449</div><div class="metric-change up">From $478, well inside breakeven</div></div>
+<div class="metric-card green"><div class="metric-label">Average Order Value</div><div class="metric-value large">$1,075</div><div class="metric-change up">Record, from $1,026</div></div>
+<div class="metric-card brand"><div class="metric-label">Spend</div><div class="metric-value large">$9,869</div><div class="metric-change up">$1,410/day, under the $1,500 ceiling</div></div>
+</div>
+<div class="insight-box green" style="margin-top:14px;margin-bottom:4px;">
+<h4>The One Number That Explains The Week</h4>
+<p>Zombie Revival took 23.7 percent of the budget and produced 41.8 percent of the revenue, 4.22x on nine orders at a $259.98 cost per purchase. Core took 46.1 percent and returned 2.49x on eleven. Together that is 69.8 percent of the money returning 3.08x and carrying twenty of the twenty two orders at a $344.46 cost per purchase, comfortably inside the $697 breakeven we set on Monday. The two sandboxes took the remaining 30.2 percent and returned 0.81x on two orders. Same demand, same library, and the return moved again because the money keeps moving toward the lanes that close.</p>
+</div>
+<div class="two-col" style="margin-top:8px;">
+<div class="insight-box green"><h4>What Went Right, In Order Of Value</h4>
+<p>The Zombie Christian cell returned 6.89x on $1,110.88 across seven orders, and its traffic converted to checkout at 4.51 percent against 1.50 percent account wide. Four Partitioned Lifestyle alone returned 8.65x on $609.44 and five orders, the strongest single ad in the account. The new Christian Collection landing page cell returned 7.42x on $176.61 and converted 2.88 percent of its sessions to checkout, against 0.19 percent on the old advertorial pages last week. Checkouts reached a record 102 and cost per checkout fell 17 percent to $96.76. Fine Art Scale reach rose from 7,590 to 11,211 while frequency fell from 5.40 to 4.54.</p></div>
+<div class="insight-box red"><h4>Three Things I Own Plainly</h4>
+<p>First, three of the four graduations have not taken. Abide Versatile has spent $722.59 in General Christian Scale with no order, which is past the $700 gate we agreed on Monday, and it is the first ad the new rule kills. Timeless Pieces produced nothing on $627.08 across both instances. Second, the Eden Sandbox spent $1,743.44 for one order, and $851.64 of that sat in two legacy cells that produced nothing at all and should have been closed on 1 August. Third, on Monday I paused two ads on six day data and had to reverse both within hours. Nothing on this account gets a return decision inside seven days from here.</p></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>02 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">03 / 14</span>
+<div class="slide-tag">Account Wide ROAS Trend</div>
+<h2>Two Consecutive Weeks Of Recovery, The Proven Engine Sits At 3.08x, And The Zombie Lane Is Running Above The 3.5x Account Target</h2>
+<p class="note" style="margin-bottom:14px;">These are the account wide blended figures reported each week, so the series stays consistent and prior points are never restated. This week's bar is a 7 day floor, pulled 6 Aug with the click window open through 12 Aug on most of the week. The three bars beneath it are the same week cut by role, the proven engine of core plus Zombie, the Zombie lane on its own, and the account target.</p>
+<div style="margin-top:4px;">
+<h3 style="margin-bottom:10px;">Account wide weekly ROAS, second consecutive week of recovery</h3>
+<div class="trend-bar" style="border-color:rgba(245,158,11,0.4);background:rgba(245,158,11,0.07);"><div class="trend-label" style="color:var(--accent-orange);font-weight:600;">Post promo trough, May 28 to Jun 3</div><div class="trend-track"><div class="trend-fill" style="width:19%;background:var(--accent-orange);"></div></div><div class="trend-arrow" style="color:var(--accent-orange);">&#8595;</div><div class="trend-value" style="color:var(--accent-orange);">1.20x</div></div>
+<div class="trend-bar"><div class="trend-label">Jun 4 to 10</div><div class="trend-track"><div class="trend-fill" style="width:49%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div><div class="trend-value" style="color:var(--accent-green);">3.13x</div></div>
+<div class="trend-bar"><div class="trend-label">Jun 11 to 17</div><div class="trend-track"><div class="trend-fill" style="width:29%;background:var(--accent-orange);"></div></div><div class="trend-arrow" style="color:var(--text-muted);">&#8594;</div><div class="trend-value" style="color:var(--accent-orange);">1.85x</div></div>
+<div class="trend-bar"><div class="trend-label">Jun 18 to 24</div><div class="trend-track"><div class="trend-fill" style="width:30%;background:var(--accent-orange);"></div></div><div class="trend-arrow" style="color:var(--text-muted);">&#8594;</div><div class="trend-value" style="color:var(--accent-orange);">1.89x</div></div>
+<div class="trend-bar"><div class="trend-label">Jun 25 to Jul 1</div><div class="trend-track"><div class="trend-fill" style="width:46%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div><div class="trend-value" style="color:var(--accent-green);">2.93x</div></div>
+<div class="trend-bar"><div class="trend-label">Jul 2 to 8</div><div class="trend-track"><div class="trend-fill" style="width:45%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--text-muted);">&#8594;</div><div class="trend-value" style="color:var(--accent-green);">2.90x</div></div>
+<div class="trend-bar"><div class="trend-label">Jul 8 to 14</div><div class="trend-track"><div class="trend-fill" style="width:39%;background:var(--accent-orange);"></div></div><div class="trend-arrow" style="color:var(--accent-orange);">&#8595;</div><div class="trend-value" style="color:var(--accent-orange);">2.47x</div></div>
+<div class="trend-bar"><div class="trend-label">Jul 16 to 22</div><div class="trend-track"><div class="trend-fill" style="width:18%;background:var(--accent-red);"></div></div><div class="trend-arrow" style="color:var(--accent-red);">&#8595;</div><div class="trend-value" style="color:var(--accent-red);">1.12x</div></div>
+<div class="trend-bar"><div class="trend-label">Jul 23 to 29 (reported last week)</div><div class="trend-track"><div class="trend-fill" style="width:34%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div><div class="trend-value" style="color:var(--accent-green);">2.15x</div></div>
+<div class="trend-bar" style="border-color:rgba(0,217,165,0.5);background:rgba(0,217,165,0.09);"><div class="trend-label" style="color:var(--text-primary);font-weight:600;">This week, Jul 30 to Aug 5 (floor)</div><div class="trend-track"><div class="trend-fill" style="width:38%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div><div class="trend-value" style="color:var(--accent-green);">2.40x</div></div>
+<div class="trend-bar" style="border-color:rgba(139,92,246,0.4);background:rgba(139,92,246,0.07);"><div class="trend-label" style="color:var(--accent-purple);font-weight:600;">Proven engine, core plus Zombie</div><div class="trend-track"><div class="trend-fill" style="width:48%;background:var(--accent-purple);"></div></div><div class="trend-arrow" style="color:var(--accent-purple);">&#8593;</div><div class="trend-value" style="color:var(--accent-purple);">3.08x</div></div>
+<div class="trend-bar" style="border-color:rgba(0,217,165,0.55);background:rgba(0,217,165,0.11);"><div class="trend-label" style="color:var(--accent-green);font-weight:600;">Zombie Revival lane on its own</div><div class="trend-track"><div class="trend-fill" style="width:66%;background:var(--accent-green);"></div></div><div class="trend-arrow" style="color:var(--accent-green);">&#8593;</div><div class="trend-value" style="color:var(--accent-green);">4.22x</div></div>
+<div class="trend-bar" style="border-color:rgba(0,217,165,0.2);background:rgba(0,217,165,0.04);"><div class="trend-label" style="color:var(--accent-green);font-weight:600;">Account profitability target</div><div class="trend-track"><div class="trend-fill" style="width:55%;background:rgba(0,217,165,0.3);"></div></div><div style="font-size:11px;font-weight:700;letter-spacing:1px;color:var(--accent-green);text-align:right;width:74px;flex-shrink:0;">LANE OVER</div><div class="trend-value" style="color:var(--accent-green);">3.5x</div></div>
+</div>
+<p class="note" style="margin-top:14px;">The purple bar is $6,889.10 of spend against $21,225.30 of revenue across the three core campaigns and the Zombie, twenty orders at a $344.46 cost per purchase. The green Zombie bar is $2,339.78 against $9,885.11 on nine orders at $259.98, the only lane in the account currently above the 3.5x target. Two weeks ago the blended figure was 1.12x. It has now risen 1.28 points across two reporting weeks without a single new creative concept reaching a fair read, which is worth holding on to, because the creative pipeline is still ahead of us rather than behind us.</p>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>03 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">04 / 14</span>
+<div class="slide-tag">Campaign Breakdown</div>
+<h2>Zombie Revival Was The Best Lane In The Account At 4.22x, Fine Art Scale Held 3.16x, And Every Dollar Of Drag Now Sits In The Two Sandboxes Rather Than In Core</h2>
+<p class="note">All campaign figures from campaign level CSV, cross validated against ad set and ad level aggregations, all three totals reconcile to the cent. Reporting period 30 Jul to 5 Aug 2026. The Designer Christian LP campaign is off and stays off, and the two landing page cells that carry those angles now sit inside the Christian Testing Sandbox so each page gets a clean read against a live control. Advertorial is corrected throughout to AD, meaning Architectural Digest.</p>
+<table class="data-table compact">
+<thead><tr><th>Campaign</th><th>Spend</th><th>Share</th><th>Revenue</th><th>ROAS</th><th>Purchases</th><th>CPA</th><th>Action</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.16);"><td class="highlight">HM - Zombie Revival - ABO</td><td>$2,339.78</td><td>23.7%</td><td class="green">$9,885.11</td><td class="green">4.22x</td><td>9</td><td class="green">$260</td><td class="green" style="font-size:12px;">Best lane, step it again</td></tr>
+<tr style="background:rgba(0,217,165,0.12);"><td class="highlight">HM - Fine Art Scale - ABO</td><td>$1,751.57</td><td>17.7%</td><td class="green">$5,532.42</td><td class="green">3.16x</td><td>3</td><td class="orange">$584</td><td class="orange" style="font-size:12px;">One ad carrying it, needs creative</td></tr>
+<tr style="background:rgba(239,68,68,0.08);"><td class="highlight">Jun '26 - Eden Testing Sandbox - ABO</td><td>$1,743.44</td><td>17.7%</td><td class="red">$1,104.15</td><td class="red">0.63x</td><td>1</td><td class="red">$1,743</td><td class="red" style="font-size:12px;">Close the legacy cells</td></tr>
+<tr style="background:rgba(245,158,11,0.07);"><td class="highlight">HM - General Christian Scale - ABO</td><td>$1,740.13</td><td>17.6%</td><td class="orange">$2,647.37</td><td class="orange">1.52x</td><td>4</td><td class="orange">$435</td><td class="orange" style="font-size:12px;">Kill Abide Versatile at the gate</td></tr>
+<tr style="background:rgba(139,92,246,0.08);"><td class="highlight">Jul '26 - Christian Testing Sandbox - ABO</td><td>$1,236.86</td><td>12.5%</td><td class="purple">$1,311.02</td><td class="purple">1.06x</td><td>1</td><td class="purple">$1,237</td><td class="purple" style="font-size:12px;">Fund CC page, retire Compare</td></tr>
+<tr style="background:rgba(0,217,165,0.10);"><td class="highlight">HM &ndash; Eden Scale Christian Art &ndash; CBO</td><td>$1,057.62</td><td>10.7%</td><td class="green">$3,160.40</td><td class="green">2.99x</td><td>4</td><td class="green">$264</td><td class="green" style="font-size:12px;">Near target, feed it</td></tr>
+<tr style="background:rgba(255,255,255,0.04);font-weight:600;"><td class="highlight">Account blended</td><td class="highlight">$9,869.40</td><td>100%</td><td class="highlight">$23,640.47</td><td class="green">2.40x</td><td class="highlight">22</td><td class="green">$449</td><td style="font-size:12px;">Concentrate and cut</td></tr>
+</tbody>
+</table>
+<div class="three-col" style="margin-top:6px;">
+<div class="insight-box green" style="margin:0;"><h4>The Structural Cut</h4>
+<p>Grouped by role, the three core scale campaigns took $4,549.32 and returned 2.49x on eleven orders. The Zombie took $2,339.78 and returned 4.22x on nine. The two sandboxes took $2,980.30 and returned 0.81x on two. Every campaign carrying proven creative is at or above 2.49x. Every campaign carrying unproven creative is below 1.10x. That is the correct shape for a test structure, and it is the first week this year where the split reads that cleanly.</p></div>
+<div class="insight-box orange" style="margin:0;"><h4>Where The Drag Actually Sits</h4>
+<p>The Eden Sandbox is the single largest loss at $1,743.44 for one order, but the loss is not evenly spread. Two legacy cells, Prospecting and Eden Refresh, took $851.64 and produced no revenue, no checkouts worth the name and an add to cart rate of 1.59 percent. The three cells built on 1 August took $891.80, produced the only sale, and ran a 5.59 percent add to cart rate. The new work is out performing the old work by three and a half times on the same money. Closing the legacy cells recovers roughly $130 a day.</p></div>
+<div class="insight-box purple" style="margin:0;"><h4>One Measurement Item To Fix</h4>
+<p>Five ad sets in the account report on 7 day click and 1 day view. The other eight carry an additional 1 day engaged view, which credits video views as well as clicks. That means the video heavy lanes sit on a marginally wider window than the static lanes, so cross lane comparisons carry a small bias in favour of video. It is not material at this week's volumes and it does not affect any figure in this deck, but I am normalising all thirteen to the account standard so the reads stay clean as spend concentrates.</p></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>04 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">05 / 14</span>
+<div class="slide-tag">Anatomy Of The Week</div>
+<h2>Twelve Ads Produced All Twenty Two Orders, And The Four Highest Returns In The Account Ran On Under $410 Each</h2>
+<p class="note">Ad level CSV for 30 Jul to 5 Aug, every ad with a purchase listed in full. Sixty nine ads received delivery this week and twelve of them sold. The pattern to read is that revenue concentrated into revived and small budget units, while the three largest single ad spends outside Grid produced two orders between them.</p>
+<table class="data-table tight">
+<thead><tr><th>Ad</th><th>Lane</th><th>Spend</th><th>Revenue</th><th>ROAS</th><th>Pur</th><th>CTR</th><th>Read</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.10);"><td class="highlight">Feb '26 - Grid</td><td style="font-size:10.5px;color:var(--text-muted);">Fine Art Scale</td><td>$1,397.84</td><td class="green">$5,532.42</td><td class="green">3.96x</td><td>3</td><td>1.61%</td><td style="font-size:11px;" class="green">The Fine Art anchor, holds at volume</td></tr>
+<tr style="background:rgba(0,217,165,0.16);"><td class="highlight">4 Partitioned Lifestyle &ndash; Zombie</td><td style="font-size:10.5px;color:var(--text-muted);">Zombie Christian</td><td>$609.44</td><td class="green">$5,272.08</td><td class="green">8.65x</td><td>5</td><td>2.18%</td><td style="font-size:11px;" class="green">Best ad in the account, fund it hard</td></tr>
+<tr style="background:rgba(0,217,165,0.14);"><td class="highlight">Mar '26 - Spring - Eden - Video - C1 &ndash; Zombie</td><td style="font-size:10.5px;color:var(--text-muted);">Zombie Christian</td><td>$400.55</td><td class="green">$2,383.56</td><td class="green">5.95x</td><td>2</td><td>2.63%</td><td style="font-size:11px;" class="green">The Eden judgement call, it paid</td></tr>
+<tr style="background:rgba(0,217,165,0.14);"><td class="highlight">Feb '26 - Designed By Madelynn Ave &ndash; ZOMBIE</td><td style="font-size:10.5px;color:var(--text-muted);">Zombie, old cell</td><td>$302.69</td><td class="green">$1,966.40</td><td class="green">6.50x</td><td>1</td><td class="green">6.16%</td><td style="font-size:11px;" class="green">Selling from a switched off cell</td></tr>
+<tr style="background:rgba(0,217,165,0.16);"><td class="highlight">May '26 - Refresh - LightOfLife - Video - C1</td><td style="font-size:10.5px;color:var(--text-muted);">Eden Scale CBO</td><td>$91.82</td><td class="green">$1,746.40</td><td class="green">19.02x</td><td>1</td><td>1.62%</td><td style="font-size:11px;" class="green">Highest return on real spend</td></tr>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">Jun '26 - Eden - Faith Design - Static - C1 &ndash; revival</td><td style="font-size:10.5px;color:var(--text-muted);">Gen Christian Scale</td><td>$558.99</td><td class="green">$1,582.62</td><td class="orange">2.83x</td><td>2</td><td>1.94%</td><td style="font-size:11px;" class="orange">Paused early, reverse and rerun</td></tr>
+<tr style="background:rgba(0,217,165,0.16);"><td class="highlight">20260731 | CCLP | COLLECTION | MOTHERDAUGHTER | HIDEYOURFAITH | STA</td><td style="font-size:10.5px;color:var(--text-muted);">Christian Sandbox</td><td>$38.49</td><td class="green">$1,311.02</td><td class="green">34.06x</td><td>1</td><td>2.61%</td><td style="font-size:11px;" class="green">First sale from the new batch</td></tr>
+<tr style="background:rgba(245,158,11,0.07);"><td class="highlight">May '26 - Refresh - Eden - Static - C1</td><td style="font-size:10.5px;color:var(--text-muted);">Eden Scale CBO</td><td>$692.75</td><td class="orange">$1,174.98</td><td class="orange">1.70x</td><td>2</td><td>1.89%</td><td style="font-size:11px;" class="orange">Two orders, run to the $1,400 gate</td></tr>
+<tr style="background:rgba(0,217,165,0.16);"><td class="highlight">20260731 | EDEN | EDENV | CONSOLE | GUESTSSEEFIRST | STA | C1</td><td style="font-size:10.5px;color:var(--text-muted);">Eden Sandbox</td><td>$123.39</td><td class="green">$1,104.15</td><td class="green">8.95x</td><td>1</td><td class="green">3.41%</td><td style="font-size:11px;" class="green">Second sale from the new batch</td></tr>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">Jul '26 - Abide With Me - Anchor - Static - C1 - graduate</td><td style="font-size:10.5px;color:var(--text-muted);">Gen Christian Scale</td><td>$458.55</td><td class="green">$1,064.75</td><td class="orange">2.32x</td><td>2</td><td>1.41%</td><td style="font-size:11px;" class="orange">Week two of the 23 Jul graduation</td></tr>
+<tr style="background:rgba(239,68,68,0.07);"><td class="highlight">Fine Art - Homeward &ndash; Zombie</td><td style="font-size:10.5px;color:var(--text-muted);">Zombie Fine Art</td><td>$389.50</td><td class="red">$263.07</td><td class="red">0.68x</td><td>1</td><td class="green">3.75%</td><td style="font-size:11px;" class="orange">One order, run to $1,400 then gate</td></tr>
+<tr style="background:rgba(239,68,68,0.07);"><td class="highlight">Jun '26 - Eden - Transform - Static - C1 &ndash; Copy</td><td style="font-size:10.5px;color:var(--text-muted);">Eden Scale CBO</td><td>$268.99</td><td class="red">$239.02</td><td class="red">0.89x</td><td>1</td><td>2.87%</td><td style="font-size:11px;" class="orange">Graduation cooling, watch to $1,400</td></tr>
+<tr style="background:rgba(255,255,255,0.04);font-weight:600;"><td class="highlight">Twelve selling ads</td><td style="font-size:10.5px;color:var(--text-muted);">All lanes</td><td class="highlight">$5,333.00</td><td class="highlight">$23,640.47</td><td class="green">4.43x</td><td class="highlight">22</td><td>2.35%</td><td style="font-size:11px;">54% of spend, 100% of revenue</td></tr>
+</tbody>
+</table>
+<div class="three-col" style="margin-top:2px;">
+<div class="concept-card" style="border-color:var(--accent-green);padding:16px 18px;"><div class="concept-number" style="color:rgba(0,217,165,0.15);">01</div><div class="concept-title" style="font-size:17px;">Revived creative outsold new creative eight to one</div>
+<p style="font-size:12.5px;color:var(--text-secondary);position:relative;z-index:1;line-height:1.6;">Nine of the twenty two orders and $9,885.11 of revenue came from ads first published between February and May. Two orders and $2,415.17 came from the sixteen ads published on 1 August. The library is not the constraint. Delivery is. Every asset in the Zombie had already proven itself and then been starved, and the moment it received real budget it sold again at four times return.</p>
+<div style="margin-top:10px;position:relative;z-index:1;"><span class="tag green">4.22x revived</span><span class="tag brand">Delivery not library</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-purple);padding:16px 18px;"><div class="concept-number">02</div><div class="concept-title" style="font-size:17px;">Both new batch sales came from ads under $125</div>
+<p style="font-size:12.5px;color:var(--text-secondary);position:relative;z-index:1;line-height:1.6;">The Mother and Daughter static sold on $38.49 and the Console vertical sold on $123.39. The three biggest spenders in the new batch, at $326.90, $229.57 and $171.51, produced nothing. At day five that tells us very little about which ads are good and a great deal about how thinly the budget is spread. Slide 08 sets out the arithmetic.</p>
+<div style="margin-top:10px;position:relative;z-index:1;"><span class="tag purple">$38 and $123</span><span class="tag orange">Too thin to read</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-red);padding:16px 18px;"><div class="concept-number" style="color:rgba(239,68,68,0.2);">03</div><div class="concept-title" style="font-size:17px;">The graduation route needs a second condition</div>
+<p style="font-size:12.5px;color:var(--text-secondary);position:relative;z-index:1;line-height:1.6;">Abide Anchor graduated on 23 July and is holding at 2.32x in its second week. The three graduated on 31 July have returned $239.02 on $1,311.81 between them. The difference is that Anchor had two weeks of sandbox evidence and the other three had one. From here an ad graduates on two consecutive weeks above target, not one.</p>
+<div style="margin-top:10px;position:relative;z-index:1;"><span class="tag red">3 of 4 stalled</span><span class="tag green">Two week rule</span></div></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>05 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">06 / 14</span>
+<div class="slide-tag">Funnel And Quality Of Demand</div>
+<h2>The Account Bought Half As Many Sessions And Produced More Checkouts Than Any Week On Record, Which Is The Cleanest Quality Signal We Have Had</h2>
+<p class="note">Funnel from ad set CSV totals across the account, 30 Jul to 5 Aug, cross checked against campaign and ad level. Last week 5,813 of the 12,628 sessions came from two cheap advertorial ads at 36 cents each, which is why the traffic figures fall so sharply this week. The comparison that matters is not how many sessions we bought, it is how many of them reached checkout.</p>
+<div class="metrics-grid four-col">
+<div class="metric-card green"><div class="metric-label">Checkouts Initiated</div><div class="metric-value">102</div><div class="metric-change up">Record, from 94, up 8.5 percent</div></div>
+<div class="metric-card green"><div class="metric-label">Session To Checkout</div><div class="metric-value">1.50%</div><div class="metric-change up">From 1.22% excluding advertorial</div></div>
+<div class="metric-card green"><div class="metric-label">Cost Per Checkout</div><div class="metric-value">$96.76</div><div class="metric-change up">From $116.86, down 17 percent</div></div>
+<div class="metric-card green"><div class="metric-label">Average Order Value</div><div class="metric-value">$1,075</div><div class="metric-change up">Record, from $1,026</div></div>
+</div>
+<div class="two-col" style="margin-top:8px;">
+<div class="insight-box green"><h4>Fewer Sessions, Better Sessions</h4>
+<p>Sessions fell 46 percent to 6,805 and checkouts still rose to a record 102. Put another way, last week the account needed 134 sessions to produce one checkout and this week it needed 67. Add to cart rate on the landing page ran at 4.19 percent. The cheap traffic we removed was never converting, and taking it out has cost the account nothing in orders while cutting $2,000 a week of spend that was buying attention rather than intent. Cost per add to cart came in at $34.63 and cost per checkout at $96.76 against a $1,075 basket.</p></div>
+<div class="insight-box orange"><h4>The One Step That Softened, And Why</h4>
+<p>Checkout to purchase came in at 21.6 percent against 24.5 percent last week. I am not treating that as a real decline. The click window on this week runs to 12 August and Oscar's own point about the buying cycle applies directly here, people initiate checkout, go and measure the wall, and return days later. Last week's file showed the same pattern before it firmed. The number to watch is the checkout count, which is at a record, because a checkout is a decision the customer has already made.</p></div>
+</div>
+<div style="margin-top:8px;">
+<h3 style="margin-bottom:10px;">Funnel step read, this week against the prior week</h3>
+<table class="data-table compact">
+<thead><tr><th>Step</th><th>This week (30 Jul to 5 Aug)</th><th>Prior week (23 to 29 Jul)</th><th>Read</th></tr></thead>
+<tbody>
+<tr style="background:rgba(255,255,255,0.02);"><td class="highlight">Impressions</td><td>302,011</td><td>527,056</td><td style="font-size:12px;">Down 43%, the cheap reach came out</td></tr>
+<tr style="background:rgba(255,255,255,0.02);"><td class="highlight">Link CTR</td><td>2.75%</td><td>2.87%</td><td style="font-size:12px;">Second highest on record, holds</td></tr>
+<tr style="background:rgba(255,255,255,0.02);"><td class="highlight">Landing page views</td><td>6,805</td><td>12,628</td><td style="font-size:12px;">Down 46%, advertorial lane removed</td></tr>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">Session to checkout rate</td><td>1.50%</td><td>0.74% blended, 1.22% ex advertorial</td><td style="font-size:12px;">Up 23% on the clean comparison</td></tr>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">Checkouts initiated</td><td>102</td><td>94</td><td style="font-size:12px;">Record, on half the traffic</td></tr>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">Cost per checkout</td><td>$96.76</td><td>$116.86</td><td style="font-size:12px;">Down 17%, best of the last six weeks</td></tr>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">Purchases</td><td>22</td><td>23</td><td style="font-size:12px;">Flat, and a floor with the window open</td></tr>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">AOV</td><td>$1,074.57</td><td>$1,026.07</td><td style="font-size:12px;">Record basket, second week above $1,000</td></tr>
+<tr style="background:rgba(0,217,165,0.05);"><td class="highlight">Cost per purchase</td><td>$448.61</td><td>$477.59</td><td style="font-size:12px;">Down 6%, against a $697 breakeven</td></tr>
+</tbody>
+</table>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>06 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">07 / 14</span>
+<div class="slide-tag">Attribution, The Point Oscar Made And What It Now Costs Us To Ignore</div>
+<h2>The Same Week Read 1.87x On Monday And Reads 2.40x Today, Which Settles How We Prune And Gives Us The Gates To Run From Here</h2>
+<p class="note">Monday's figure is the 30 Jul to 4 Aug window pulled on 4 August. Today's figure is the same period plus one day, pulled 6 August. Some of the movement is the extra day of delivery. Most of it is revenue crediting back into days that had already been reported, exactly as Oscar described, because Meta credits the click date rather than the purchase date and this basket carries a long consideration cycle.</p>
+<div class="metrics-grid four-col" style="margin:12px 0 2px;">
+<div class="metric-card orange"><div class="metric-label">Read On Monday 4 Aug</div><div class="metric-value">1.87x</div><div class="metric-change neutral">15 orders, $465 per purchase</div></div>
+<div class="metric-card green"><div class="metric-label">Same Week Read Today</div><div class="metric-value">2.40x</div><div class="metric-change up">22 orders, $449 per purchase</div></div>
+<div class="metric-card green"><div class="metric-label">Fine Art Scale, Monday</div><div class="metric-value">0.83x</div><div class="metric-change neutral">Called saturated, budget pulled</div></div>
+<div class="metric-card green"><div class="metric-label">Fine Art Scale, Today</div><div class="metric-value">3.16x</div><div class="metric-change up">$5,532 on $1,752, three orders</div></div>
+</div>
+<div class="two-col" style="margin-top:10px;">
+<div class="insight-box red"><h4>What This Cost Us This Week, Stated Plainly</h4>
+<p>Designed By Madelynn Ave, which I retired at zero on Monday, has since returned $1,966.40 on $302.69 at 6.50x. The Eden static I read at 1.05x settled at 2.36x. I also pulled budget out of Fine Art Scale at 0.83x and that lane finished the week at 3.16x. All three calls were wrong, and the common factor is that I was reading return inside seven days on an account where the customer measures a wall before she buys.</p></div>
+<div class="insight-box green"><h4>The Rule That Replaces It</h4>
+<p>Nothing gets a return decision on data less than seven days old. Pruning still happens fast, but on cost per session, cart rate and session to checkout, which mature in two or three days. Where a call has to come sooner it is made on spend against a cap, which is the mechanism Oscar proposed and it is the right one. In platform return stays a floor by design, because any cycle past seven days never reaches Meta at all.</p></div>
+</div>
+<div style="margin-top:6px;">
+<h3 style="margin-bottom:6px;">The pruning gates, agreed Monday and now live, with the first calls they produce</h3>
+<table class="data-table tight">
+<thead><tr><th>Gate</th><th>Rule as agreed</th><th>Why this number</th><th>First ad it acts on this week</th></tr></thead>
+<tbody>
+<tr style="background:rgba(239,68,68,0.07);"><td class="highlight">Zero purchase kill</td><td>Kill at $700 of lifetime spend with no order</td><td style="font-size:12px;">At a $248 target CPA that is 2.8 expected orders, so a genuine winner shows nothing only 6 percent of the time</td><td class="red" style="font-size:12px;">Abide Versatile in Gen Christian Scale, $722.59 and no order. Kill today</td></tr>
+<tr style="background:rgba(245,158,11,0.07);"><td class="highlight">One purchase, unprofitable</td><td>Run to $1,400, then require 1.5x</td><td style="font-size:12px;">Covers two full acquisition cycles at breakeven, so a slow starter is not cut before its second order lands</td><td class="orange" style="font-size:12px;">Compare Faith Taste Proof, $810.93 lifetime, one order at 0.99x. Runs on</td></tr>
+<tr style="background:rgba(0,217,165,0.07);"><td class="highlight">Kill ads, not ad sets</td><td>Prune at ad level, keep the cell and its learning</td><td style="font-size:12px;">Ad level pauses carry no learning reset. Ad set and budget changes do, and this account never exits learning as it is</td><td class="green" style="font-size:12px;">The old Zombie Christian cell stays on, it sold at 6.15x this week</td></tr>
+<tr style="background:rgba(0,217,165,0.07);"><td class="highlight">New creative placement</td><td>Into existing cells, new cell only above five creatives</td><td style="font-size:12px;">Every new cell splits the same budget further and starts a fresh learning phase on thin signal</td><td class="green" style="font-size:12px;">This week's additions go into the two cells that sold, not into new ones</td></tr>
+<tr style="background:rgba(139,92,246,0.07);"><td class="highlight">Breakeven anchor</td><td>Hold the $697 gate, do not float it</td><td style="font-size:12px;">On this week's $1,075 basket true breakeven is $870, and on the July basket of $949 it is $765</td><td class="purple" style="font-size:12px;">The $700 gate is deliberately conservative and stays where we set it</td></tr>
+</tbody>
+</table>
+</div>
+<div class="insight-box orange" style="margin-top:8px;"><h4>The One Correction I Would Make To My Own Reading</h4>
+<p>Timeless Pieces sits at $320.23 in Fine Art Scale with no order and I switched it off on Monday. Under the gates we have just agreed it has not earned a verdict, because $320 is under half the kill threshold, so it goes back on. That also serves Fine Art directly, since Grid is carrying the lane on its own at 4.46 frequency and a second delivering asset relieves that pressure whether or not it sells.</p></div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>07 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">08 / 14</span>
+<div class="slide-tag">The 1 August Batch, Day Five Read</div>
+<h2>Seventeen Ads Shared $1,248.91 Across Five Days, Not One Reached The $700 Gate, And Two Of Them Sold Anyway</h2>
+<p class="note">All ads in the five cells built on 1 August, sixteen of them new creative and one an existing Eden asset moved across. Ad level CSV, 30 Jul to 5 Aug, which is full life for every ad below. Mean spend $73.47, median spend $17.75, largest single ad $326.90. The bar scale below runs from zero to the $700 kill gate, so the full track width is the spend an ad needs before the rule lets us judge it.</p>
+<div class="metrics-grid four-col" style="margin:12px 0;">
+<div class="metric-card purple"><div class="metric-label">Batch Spend, Five Days</div><div class="metric-value">$1,249</div><div class="metric-change neutral">Across 17 ads in 5 cells</div></div>
+<div class="metric-card red"><div class="metric-label">Ads Past The $700 Gate</div><div class="metric-value">0 of 17</div><div class="metric-change down">11 of 17 are under $50</div></div>
+<div class="metric-card green"><div class="metric-label">Batch Return</div><div class="metric-value">1.93x</div><div class="metric-change up">$2,415 on 2 orders, day five</div></div>
+<div class="metric-card orange"><div class="metric-label">Readable Ads Per Week</div><div class="metric-value">4.3</div><div class="metric-change neutral">$435/day test budget at $700 each</div></div>
+</div>
+<div style="margin-top:2px;">
+<h3 style="margin-bottom:8px;">Spend per ad against the $700 decision gate, five days of delivery</h3>
+<div class="dist-row"><div class="dist-name">EDENH | QUIETROOMS | SUBTLEAESTHETIC | VID</div><div class="dist-track"><div class="dist-fill" style="width:46.7%;background:var(--accent-purple);"></div></div><div class="dist-val">$326.90</div><div class="dist-note">16 carts, 5 checkouts</div></div>
+<div class="dist-row"><div class="dist-name">EDENH | NEUTRAL | CAROUSEL | CAR</div><div class="dist-track"><div class="dist-fill" style="width:32.8%;background:var(--accent-purple);"></div></div><div class="dist-val">$229.57</div><div class="dist-note">7 carts, 2 checkouts</div></div>
+<div class="dist-row"><div class="dist-name">ADLP | DESIGNERNOTES | CHOSENLIKEDESIGNER | STA</div><div class="dist-track"><div class="dist-fill" style="width:24.5%;background:var(--accent-orange);"></div></div><div class="dist-val">$171.51</div><div class="dist-note">2 carts, 0 checkouts</div></div>
+<div class="dist-row"><div class="dist-name">EDENV | SPLITPANELBENCH | ENTRYWAYCOUNT | STA</div><div class="dist-track"><div class="dist-fill" style="width:18.0%;background:var(--accent-purple);"></div></div><div class="dist-val">$125.79</div><div class="dist-note">7 carts, 0 checkouts</div></div>
+<div class="dist-row"><div class="dist-name" style="color:var(--accent-green);font-weight:600;">EDENV | CONSOLE | GUESTSSEEFIRST | STA</div><div class="dist-track"><div class="dist-fill" style="width:17.6%;background:var(--accent-green);"></div></div><div class="dist-val" style="color:var(--accent-green);">$123.39</div><div class="dist-note" style="color:var(--accent-green);">1 order, 8.95x</div></div>
+<div class="dist-row"><div class="dist-name">CCLP | DESIGNNOTES | DESIGNERSCHOICE | STA</div><div class="dist-track"><div class="dist-fill" style="width:17.4%;background:var(--accent-purple);"></div></div><div class="dist-val">$121.98</div><div class="dist-note">2 carts, 1 checkout</div></div>
+<div class="dist-row"><div class="dist-name">EDENH | UNFINISHEDWALLS | EXPLOREEDEN | VID</div><div class="dist-track"><div class="dist-fill" style="width:6.0%;background:var(--text-muted);"></div></div><div class="dist-val">$41.98</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row"><div class="dist-name" style="color:var(--accent-green);font-weight:600;">CCLP | MOTHERDAUGHTER | HIDEYOURFAITH | STA</div><div class="dist-track"><div class="dist-fill" style="width:5.5%;background:var(--accent-green);"></div></div><div class="dist-val" style="color:var(--accent-green);">$38.49</div><div class="dist-note" style="color:var(--accent-green);">1 order, 34.06x</div></div>
+<div class="dist-row"><div class="dist-name">EDENH | LAYEREDLIVING | ROOMLIKETHIS | STA</div><div class="dist-track"><div class="dist-fill" style="width:2.5%;background:var(--text-muted);"></div></div><div class="dist-val">$17.75</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row"><div class="dist-name">CCLP | INSIDESTUDIO | SCRIPTURETOSTATEMENT | STA</div><div class="dist-track"><div class="dist-fill" style="width:2.3%;background:var(--text-muted);"></div></div><div class="dist-val">$16.14</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row"><div class="dist-name">ADLP | MEANINGFULHOMES | ADFEATURE | STA</div><div class="dist-track"><div class="dist-fill" style="width:1.3%;background:var(--text-muted);"></div></div><div class="dist-val">$8.99</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row"><div class="dist-name">EDENH | EVERYROOM | ORIG2606 | STA (moved)</div><div class="dist-track"><div class="dist-fill" style="width:1.1%;background:var(--text-muted);"></div></div><div class="dist-val">$7.64</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row"><div class="dist-name">EDENH | SPLITPANELFIRE | FEATUREDINAD | STA</div><div class="dist-track"><div class="dist-fill" style="width:0.9%;background:var(--text-muted);"></div></div><div class="dist-val">$6.64</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row"><div class="dist-name">EDENH | COLLECTED | CAROUSEL | CAR</div><div class="dist-track"><div class="dist-fill" style="width:0.6%;background:var(--text-muted);"></div></div><div class="dist-val">$4.52</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row"><div class="dist-name">EDENH | EVERYROOM | ASSEENINAD | VID</div><div class="dist-track"><div class="dist-fill" style="width:0.5%;background:var(--text-muted);"></div></div><div class="dist-val">$3.76</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row"><div class="dist-name">EDENH | DININGROOM | DESIGNERART | STA</div><div class="dist-track"><div class="dist-fill" style="width:0.4%;background:var(--text-muted);"></div></div><div class="dist-val">$2.63</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row"><div class="dist-name">EDENH | FIREPLACEBRASS | FAITHDESIGN | STA</div><div class="dist-track"><div class="dist-fill" style="width:0.2%;background:var(--text-muted);"></div></div><div class="dist-val">$1.23</div><div class="dist-note">no read yet</div></div>
+<div class="dist-row" style="margin-top:6px;"><div class="dist-name" style="color:var(--accent-red);font-weight:700;">The $700 decision gate</div><div class="dist-track" style="background:rgba(239,68,68,0.10);border:1px dashed rgba(239,68,68,0.5);"></div><div class="dist-val" style="color:var(--accent-red);">$700.00</div><div class="dist-note" style="color:var(--accent-red);">reached by none</div></div>
+</div>
+<div class="two-col" style="margin-top:12px;">
+<div class="insight-box purple"><h4>The Arithmetic, And It Decides The Next Three Months</h4>
+<p>Test budget is $435 a day, which is $3,045 a week. At $700 per readable ad that is 4.3 ads a week that can be taken to a purchase decision. Sixteen ads need $11,200 to all clear the gate, which at the current test budget is twenty six days. So a sixteen ad batch is not a test, it is a queue, and most of the queue never gets read at all. The two that sold this week did so on $38.49 and $123.39, which is luck of the draw rather than evidence, and the three biggest spenders in the batch produced nothing.</p></div>
+<div class="insight-box green"><h4>What I Am Proposing, And What It Buys Us</h4>
+<p>Four to five new ads a week, each landing in a cell that is already selling, with more angles inside fewer ads rather than more ads carrying one angle each. On the same $435 a day every new ad reaches $700 inside eight days, so we get a real verdict weekly instead of a backlog. Creative volume still matters to Meta, and we hold that with copy rotation, which we already run at three variants per ad, and with the Zombie lane cycling proven assets every twenty one days. Throughput without readability is the thing to avoid, not throughput.</p></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>08 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">09 / 14</span>
+<div class="slide-tag">Zombie Revival, The Engine Of The Week</div>
+<h2>Under A Quarter Of The Budget Produced Forty Two Percent Of The Revenue At 4.22x, And Its Traffic Converted To Checkout At Three Times The Account Rate</h2>
+<p class="note">Ad set and ad level CSV, 30 Jul to 5 Aug. No rotation is due this week, the twenty one day slot falls on 21 August, so this is a read on the nine asset rotation loaded on 31 July plus the two original cells. Cells shown as they sit in the account.</p>
+<div class="metrics-grid four-col">
+<div class="metric-card green"><div class="metric-label">Lane ROAS</div><div class="metric-value">4.22x</div><div class="metric-change up">Above the 3.5x account target</div></div>
+<div class="metric-card green"><div class="metric-label">Cost Per Purchase</div><div class="metric-value">$260</div><div class="metric-change up">Account $449, breakeven $697</div></div>
+<div class="metric-card green"><div class="metric-label">Share Of Spend</div><div class="metric-value">23.7%</div><div class="metric-change up">Producing 41.8% of revenue</div></div>
+<div class="metric-card green"><div class="metric-label">Session To Checkout</div><div class="metric-value">4.51%</div><div class="metric-change up">Christian cell, account 1.50%</div></div>
+</div>
+<table class="data-table compact" style="margin-top:14px;">
+<thead><tr><th>Cell</th><th>State</th><th>Spend</th><th>Revenue</th><th>ROAS</th><th>Pur</th><th>Sessions</th><th>Carts</th><th>Checkouts</th><th>Session to checkout</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.16);"><td class="highlight">20260731 | ZOMB | CHRISTIAN | REVIVAL | BROAD | W35-54 | US</td><td class="green" style="font-size:11px;">Active</td><td>$1,110.88</td><td class="green">$7,655.64</td><td class="green">6.89x</td><td>7</td><td>266</td><td>27</td><td>12</td><td class="green">4.51%</td></tr>
+<tr style="background:rgba(0,217,165,0.10);"><td class="highlight">Jul '26 - Zombie - Christian - Broad W35-54</td><td class="orange" style="font-size:11px;">Switched off</td><td>$319.75</td><td class="green">$1,966.40</td><td class="green">6.15x</td><td>1</td><td>424</td><td>13</td><td>18</td><td class="green">4.25%</td></tr>
+<tr style="background:rgba(239,68,68,0.07);"><td class="highlight">20260731 | ZOMB | FINEART | REVIVAL | BROAD | W35-54 | US</td><td class="green" style="font-size:11px;">Active</td><td>$601.13</td><td class="red">$263.07</td><td class="red">0.44x</td><td>1</td><td>574</td><td>34</td><td>9</td><td class="orange">1.57%</td></tr>
+<tr style="background:rgba(239,68,68,0.07);"><td class="highlight">Jul '26 - Zombie - Fine Art - Broad W35-54</td><td class="orange" style="font-size:11px;">Not delivering</td><td>$308.02</td><td class="red">$0.00</td><td class="red">0.00x</td><td>0</td><td>173</td><td>14</td><td>5</td><td class="orange">2.89%</td></tr>
+<tr style="background:rgba(255,255,255,0.04);font-weight:600;"><td class="highlight">Zombie Revival, week total</td><td style="font-size:11px;">Four cells</td><td class="highlight">$2,339.78</td><td class="highlight">$9,885.11</td><td class="green">4.22x</td><td class="highlight">9</td><td class="highlight">1,437</td><td class="highlight">88</td><td class="highlight">44</td><td class="green">3.06%</td></tr>
+</tbody>
+</table>
+<div class="two-col" style="margin-top:6px;">
+<div class="insight-box green"><h4>Why This Lane Works, And It Is Not Luck</h4>
+<p>The Christian cell bought only 266 sessions all week and turned twelve of them into checkouts. It pays $4.18 a session against 38 cents in the cheapest lane in the account, and it is still the most profitable money we spend, because these are posts with a year of likes, comments and shares attached and they arrive in front of the customer already endorsed. Four Partitioned Lifestyle returned 8.65x on $609.44 across five orders. Spring Eden Video, the one asset in the rotation I flagged openly as above breakeven on cost per purchase, returned 5.95x on $400.55. That call has paid twice over.</p></div>
+<div class="insight-box orange"><h4>Two Corrections Inside This Lane</h4>
+<p>First, Designed By Madelynn Ave returned 6.50x on $302.69 from a cell I had switched off on 31 July, which is the second week running that this asset has sold from a lane with no budget behind it. It moves into the live Christian cell today by post ID. Second, three of the nine revival assets were switched off before they reached $40 of spend, Emotional Angle TLIMS at $10.52, Video Story TLIMS at $35.40 and the Eden Video copy at $27.12. Emotional Angle has the lowest cost per purchase of any ad in the twelve month library at $122.17. None of them has earned a verdict. All three go back on.</p></div>
+</div>
+<div class="insight-box red" style="margin-top:6px;"><h4>The Fine Art Cell Is The Exception, And It Says Something About The Product Not The Creative</h4>
+<p>The Fine Art cell spent $601.13 for $263.07. It is not a hook problem. Path Perspective ran a 5.61 percent link click rate and Stillness Video 5.23 percent, both far above the 2.75 percent account average, and the cell bought sessions at $1.05 and moved 5.92 percent of them into carts. What it did not do is close. Fine Art carried three orders across the whole account this week against nineteen for Christian and Eden, on a comparable share of spend. That is a demand gap in the Fine Art line rather than a creative gap, and it is the reason slide 12 treats Fine Art as the single constraint on August rather than as a lane to keep funding at the current shape.</p></div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>09 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">10 / 14</span>
+<div class="slide-tag">Eden, The Destination Test Answered</div>
+<h2>The Three Cells Built On 1 August Beat The Two Legacy Cells By Three And A Half Times On Add To Cart And Six Times On Checkout, On Almost Identical Money</h2>
+<p class="note">Eden Testing Sandbox, ad set level CSV, 30 Jul to 5 Aug. The 1 August build split Eden by destination and ratio into three cells, horizontal to product page, horizontal to landing page and vertical to product page, so that ratio and destination could be read separately. The two legacy cells, Prospecting and Eden Refresh, were held live for a week to hand over. That week is up and the comparison is decisive.</p>
+<table class="data-table compact">
+<thead><tr><th>Cell</th><th>Built</th><th>Spend</th><th>Revenue</th><th>ROAS</th><th>Pur</th><th>Sessions</th><th>Cost per session</th><th>Session to cart</th><th>Session to checkout</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.14);"><td class="highlight">20260731 | EDEN | EDENV | PDP</td><td style="font-size:11px;">1 Aug</td><td>$249.18</td><td class="green">$1,104.15</td><td class="green">4.43x</td><td>1</td><td>167</td><td>$1.49</td><td class="green">7.19%</td><td class="orange">1.20%</td></tr>
+<tr style="background:rgba(139,92,246,0.09);"><td class="highlight">20260731 | EDEN | EDENH | LP</td><td style="font-size:11px;">1 Aug</td><td>$295.94</td><td class="neutral">$0.00</td><td class="neutral">0.00x</td><td>0</td><td>116</td><td>$2.55</td><td class="green">7.76%</td><td class="green">2.59%</td></tr>
+<tr style="background:rgba(139,92,246,0.09);"><td class="highlight">20260731 | EDEN | EDENH | PDP</td><td style="font-size:11px;">1 Aug</td><td>$346.68</td><td class="neutral">$0.00</td><td class="neutral">0.00x</td><td>0</td><td>379</td><td>$0.91</td><td class="green">4.22%</td><td class="green">1.32%</td></tr>
+<tr style="background:rgba(239,68,68,0.08);"><td class="highlight">Jun '26 - Eden Refresh - ABO</td><td style="font-size:11px;">28 Jun</td><td>$402.52</td><td class="red">$0.00</td><td class="red">0.00x</td><td>0</td><td>372</td><td>$1.08</td><td class="red">1.88%</td><td class="red">0.54%</td></tr>
+<tr style="background:rgba(239,68,68,0.08);"><td class="highlight">Jun '26 - Sandbox - Broad W35-54 - Prospecting</td><td style="font-size:11px;">14 Jun</td><td>$449.12</td><td class="red">$0.00</td><td class="red">0.00x</td><td>0</td><td>510</td><td>$0.88</td><td class="red">1.37%</td><td class="red">0.00%</td></tr>
+<tr style="background:rgba(0,217,165,0.06);font-weight:600;"><td class="highlight">Three cells built 1 August</td><td style="font-size:11px;">New</td><td class="highlight">$891.80</td><td class="highlight">$1,104.15</td><td class="orange">1.24x</td><td class="highlight">1</td><td class="highlight">662</td><td>$1.35</td><td class="green">5.59%</td><td class="green">1.51%</td></tr>
+<tr style="background:rgba(239,68,68,0.06);font-weight:600;"><td class="highlight">Two legacy cells</td><td style="font-size:11px;">June</td><td class="highlight">$851.64</td><td class="highlight">$0.00</td><td class="red">0.00x</td><td class="highlight">0</td><td class="highlight">882</td><td>$0.97</td><td class="red">1.59%</td><td class="red">0.23%</td></tr>
+</tbody>
+</table>
+<div class="three-col" style="margin-top:8px;">
+<div class="concept-card" style="border-color:var(--accent-green);padding:17px 19px;"><div class="concept-number" style="color:rgba(0,217,165,0.15);">01</div><div class="concept-title" style="font-size:17px;">The new build is working at mid funnel</div>
+<p style="font-size:12.5px;color:var(--text-secondary);position:relative;z-index:1;line-height:1.62;">On nearly the same spend, $891.80 against $851.64, the new cells produced 37 carts to 14 and 10 checkouts to 2. Session to cart went from 1.59 percent to 5.59 percent and session to checkout from 0.23 percent to 1.51 percent. The new cells bought fewer sessions and got much further with each one. That is the correct signal at day five, because carts and checkouts mature in days while purchases take a fortnight on this basket.</p>
+<div style="margin-top:10px;position:relative;z-index:1;"><span class="tag green">5.59% to cart</span><span class="tag green">1.51% to checkout</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-purple);padding:17px 19px;"><div class="concept-number">02</div><div class="concept-title" style="font-size:17px;">Destination beat ratio, and the LP won</div>
+<p style="font-size:12.5px;color:var(--text-secondary);position:relative;z-index:1;line-height:1.62;">Horizontal to the landing page ran the best mid funnel in the whole account, 7.76 percent of sessions to cart and 2.59 percent to checkout, on the most expensive traffic at $2.55 a session. Vertical to the product page took the only sale at 4.43x. Horizontal to the product page bought the cheapest sessions and converted them least. The new simple customizer page is doing real work, and that is the first clean evidence we have had that a page change moves this account.</p>
+<div style="margin-top:10px;position:relative;z-index:1;"><span class="tag purple">LP 2.59% to checkout</span><span class="tag green">Page works</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-red);padding:17px 19px;"><div class="concept-number" style="color:rgba(239,68,68,0.2);">03</div><div class="concept-title" style="font-size:17px;">The legacy cells close today</div>
+<p style="font-size:12.5px;color:var(--text-secondary);position:relative;z-index:1;line-height:1.62;">Prospecting carries Eden Transform, which returned 6.55x two weeks ago and has now spent $447.16 with no order and no checkout at all. Eden Refresh carries Faith Design C2, $402.29 with two checkouts. Both are past a fair read and both are exhausted rather than starved. Closing them frees $130 a day, which goes to the two new Eden cells that are converting and to the Zombie Christian cell.</p>
+<div style="margin-top:10px;position:relative;z-index:1;"><span class="tag red">$851.64 for nothing</span><span class="tag orange">$130/day freed</span></div></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>10 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">11 / 14</span>
+<div class="slide-tag">The Pattern Underneath Everything This Week</div>
+<h2>The Cheaper A Lane Buys Its Traffic, The Worse That Traffic Converts, And The Relationship Holds Across All Six Campaigns Without Exception</h2>
+<p class="note">Campaign level CSV, 30 Jul to 5 Aug, ordered by cost per session. Session to cart and session to checkout are calculated from landing page views, adds to cart and checkouts initiated. This is the same pattern that showed up in the advertorial lane last week at 36 cents a session and 0.19 percent to checkout, and it now reads across the whole account.</p>
+<table class="data-table compact">
+<thead><tr><th>Campaign</th><th>Role</th><th>Cost per session</th><th>Sessions</th><th>Session to cart</th><th>Session to checkout</th><th>ROAS</th><th>Read</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.14);"><td class="highlight">HM &ndash; Eden Scale Christian Art &ndash; CBO</td><td class="green" style="font-size:11px;">Core</td><td class="green">$4.20</td><td>252</td><td class="green">12.70%</td><td class="green">3.17%</td><td class="green">2.99x</td><td style="font-size:11px;">Dearest traffic, best conversion</td></tr>
+<tr style="background:rgba(0,217,165,0.10);"><td class="highlight">HM - Fine Art Scale - ABO</td><td class="green" style="font-size:11px;">Core</td><td class="green">$2.79</td><td>628</td><td class="green">7.17%</td><td class="green">2.55%</td><td class="green">3.16x</td><td style="font-size:11px;">Converts well, needs more assets</td></tr>
+<tr style="background:rgba(0,217,165,0.10);"><td class="highlight">HM - General Christian Scale - ABO</td><td class="green" style="font-size:11px;">Core</td><td class="green">$2.66</td><td>653</td><td class="green">5.67%</td><td class="green">2.45%</td><td class="orange">1.52x</td><td style="font-size:11px;">Good traffic, one dead ad inside it</td></tr>
+<tr style="background:rgba(0,217,165,0.10);"><td class="highlight">HM - Zombie Revival - ABO</td><td class="purple" style="font-size:11px;">Revival</td><td class="green">$1.63</td><td>1,437</td><td class="green">6.12%</td><td class="green">3.06%</td><td class="green">4.22x</td><td style="font-size:11px;">Social proof buys quality cheaply</td></tr>
+<tr style="background:rgba(245,158,11,0.08);"><td class="highlight">Jun '26 - Eden Testing Sandbox - ABO</td><td class="orange" style="font-size:11px;">Test</td><td class="orange">$1.13</td><td>1,544</td><td class="orange">3.30%</td><td class="orange">0.78%</td><td class="red">0.63x</td><td style="font-size:11px;">New cells 5.59%, legacy 1.59%</td></tr>
+<tr style="background:rgba(239,68,68,0.08);"><td class="highlight">Jul '26 - Christian Testing Sandbox - ABO</td><td class="orange" style="font-size:11px;">Test</td><td class="red">$0.54</td><td>2,291</td><td class="red">1.40%</td><td class="red">0.26%</td><td class="orange">1.06x</td><td style="font-size:11px;">Cheapest traffic in the account</td></tr>
+<tr style="background:rgba(255,255,255,0.04);font-weight:600;"><td class="highlight">Account</td><td style="font-size:11px;">All</td><td class="highlight">$1.45</td><td class="highlight">6,805</td><td class="highlight">4.19%</td><td class="highlight">1.50%</td><td class="green">2.40x</td><td style="font-size:11px;">Buy intent, not attention</td></tr>
+</tbody>
+</table>
+<div class="two-col" style="margin-top:8px;">
+<div class="insight-box green"><h4>Why This Happens, And What We Do About It</h4>
+<p>Maximise Conversions on a cell with no purchase history buys the cheapest available click, because it has no signal telling it what a buyer looks like. That produces impressive top line numbers, a $15.29 CPM, a 3.30 percent click rate and 2,291 sessions for $1,236.86, and almost none of it is a person buying a thousand dollar hand painted piece. The lanes with purchase history pay two to four times more per session and convert five to twelve times better. From here a low CPM in a test lane is a flag to investigate, not a result to celebrate, and I will report cost per session alongside CPM every week so the two are never confused again.</p></div>
+<div class="insight-box purple"><h4>The Two Landing Pages, Separated As Promised</h4>
+<p>The Christian Collection page cell returned 7.42x on $176.61 and converted 2.88 percent of its sessions to checkout, above the 1.50 percent account rate and fifteen times the 0.19 percent the old advertorial pages managed last week. The Architectural Digest page cell spent $180.50 on the same $35 daily budget, bought 133 sessions and produced no checkouts at all. Same audience, same week, same budget, two different pages. The Collection page is a keeper. The AD page has $180.50 of its $700 allowance spent and runs on under the gate, but I would not bet on it.</p></div>
+</div>
+<div class="insight-box orange" style="margin-top:6px;"><h4>The Compare Cell, An Honest Reversal</h4>
+<p>Last week I reported Compare Faith Taste Proof as the best of the July refresh at 1.98x on day five. It has now spent $404.93 more with no revenue at all, taking it to $810.93 lifetime, one order and 0.99x. It bought 1,412 sessions at 38 cents and moved two of them to checkout. That is the same signature as the advertorial lane and I should have recognised it a week earlier. Under the agreed gate it has an order, so it runs to $1,400 and then needs 1.5x. I expect it to fail that and I would rather say so now than present it again as a survivor.</p></div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>11 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">12 / 14</span>
+<div class="slide-tag">Fine Art, The Single Constraint On August</div>
+<h2>Fine Art Returned 3.16x On One Ad, Has No Sandbox, No Successor And No New Creative, And It Is The Only Lane In The Account Without A Pipeline</h2>
+<p class="note">Fine Art Scale and the Zombie Fine Art cell, ad level CSV, 30 Jul to 5 Aug. Fine Art Scale reached 11,211 people at a frequency of 4.55 this week, against 7,590 at 5.40 last week, so the reach position improved after the graduation added a second asset. That asset has since been switched off, which returns the lane to a single ad.</p>
+<div class="metrics-grid four-col">
+<div class="metric-card green"><div class="metric-label">Fine Art Scale ROAS</div><div class="metric-value">3.16x</div><div class="metric-change up">From 0.83x on Monday's read</div></div>
+<div class="metric-card orange"><div class="metric-label">Grid Share Of The Lane</div><div class="metric-value">79.8%</div><div class="metric-change neutral">And 100% of the revenue</div></div>
+<div class="metric-card orange"><div class="metric-label">Grid Frequency</div><div class="metric-value">4.46</div><div class="metric-change neutral">40,230 impressions on one asset</div></div>
+<div class="metric-card red"><div class="metric-label">Fine Art Orders, Account</div><div class="metric-value">4 of 22</div><div class="metric-change down">On 27.0% of account spend</div></div>
+</div>
+<table class="data-table compact" style="margin-top:14px;">
+<thead><tr><th>Ad</th><th>Lane</th><th>State</th><th>Spend</th><th>Revenue</th><th>ROAS</th><th>Pur</th><th>CTR</th><th>Freq</th><th>Position under the gates</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.12);"><td class="highlight">Feb '26 - Grid</td><td style="font-size:11px;color:var(--text-muted);">Fine Art Scale</td><td class="green" style="font-size:11px;">Active</td><td>$1,397.84</td><td class="green">$5,532.42</td><td class="green">3.96x</td><td>3</td><td>1.61%</td><td class="orange">4.46</td><td class="green" style="font-size:11px;">Above target, protect it</td></tr>
+<tr style="background:rgba(245,158,11,0.07);"><td class="highlight">Feb '26 - Timeless Pieces - Video &ndash; Zombie &ndash; Copy</td><td style="font-size:11px;color:var(--text-muted);">Fine Art Scale</td><td class="orange" style="font-size:11px;">Off</td><td>$320.23</td><td class="red">$0.00</td><td class="red">0.00x</td><td>0</td><td>1.19%</td><td>2.70</td><td class="orange" style="font-size:11px;">$320 of $700, restore it</td></tr>
+<tr style="background:rgba(239,68,68,0.07);"><td class="highlight">Fine Art - Homeward &ndash; Zombie</td><td style="font-size:11px;color:var(--text-muted);">Zombie Fine Art</td><td class="green" style="font-size:11px;">Active</td><td>$389.50</td><td class="red">$263.07</td><td class="red">0.68x</td><td>1</td><td class="green">3.75%</td><td>1.66</td><td class="orange" style="font-size:11px;">One order, runs to $1,400</td></tr>
+<tr style="background:rgba(239,68,68,0.07);"><td class="highlight">Feb '26 - Timeless Pieces - Video &ndash; Zombie</td><td style="font-size:11px;color:var(--text-muted);">Zombie, old cell</td><td class="orange" style="font-size:11px;">Not delivering</td><td>$306.85</td><td class="red">$0.00</td><td class="red">0.00x</td><td>0</td><td>2.39%</td><td>1.49</td><td class="red" style="font-size:11px;">Duplicate instance, retire this one</td></tr>
+<tr style="background:rgba(255,255,255,0.02);"><td class="highlight">28 Apr '26 - Stillness Video &ndash; Zombie</td><td style="font-size:11px;color:var(--text-muted);">Zombie Fine Art</td><td class="green" style="font-size:11px;">Active</td><td>$161.39</td><td class="neutral">$0.00</td><td class="neutral">0.00x</td><td>0</td><td class="green">5.23%</td><td>1.25</td><td class="neutral" style="font-size:11px;">$161 of $700, no verdict yet</td></tr>
+<tr style="background:rgba(255,255,255,0.02);"><td class="highlight">Timeless Fine Art - Path Perspective &ndash; Zombie</td><td style="font-size:11px;color:var(--text-muted);">Zombie Fine Art</td><td class="green" style="font-size:11px;">Active</td><td>$50.24</td><td class="neutral">$0.00</td><td class="neutral">0.00x</td><td>0</td><td class="green">5.61%</td><td>1.31</td><td class="neutral" style="font-size:11px;">$50 of $700, no verdict yet</td></tr>
+<tr style="background:rgba(255,255,255,0.04);font-weight:600;"><td class="highlight">All Fine Art delivery, both lanes</td><td style="font-size:11px;color:var(--text-muted);">Two lanes</td><td style="font-size:11px;">Nine ads</td><td class="highlight">$2,660.72</td><td class="highlight">$5,795.49</td><td class="orange">2.18x</td><td class="highlight">4</td><td>2.20%</td><td>&nbsp;</td><td style="font-size:11px;">27.0% of spend, 18.2% of orders</td></tr>
+</tbody>
+</table>
+<div class="three-col" style="margin-top:8px;">
+<div class="concept-card" style="border-color:var(--accent-orange);padding:17px 19px;"><div class="concept-number" style="color:rgba(245,158,11,0.2);">01</div><div class="concept-title" style="font-size:17px;">One ad is carrying a fifth of the account</div>
+<p style="font-size:12.5px;color:var(--text-secondary);position:relative;z-index:1;line-height:1.62;">Grid took $1,397.84, produced every dollar Fine Art Scale earned and served 40,230 impressions to 11,211 people. It is the single most valuable asset in the account and it is also the single point of failure. Frequency at 4.46 is manageable this week and it was 6.26 across July. There is no version of August where this holds without a second converting Fine Art asset behind it.</p>
+<div style="margin-top:10px;position:relative;z-index:1;"><span class="tag orange">Single point of failure</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-purple);padding:17px 19px;"><div class="concept-number">02</div><div class="concept-title" style="font-size:17px;">The hooks are strong, the close is not</div>
+<p style="font-size:12.5px;color:var(--text-secondary);position:relative;z-index:1;line-height:1.62;">Path Perspective at 5.61 percent and Stillness at 5.23 percent are the two highest link click rates in the account, roughly double the blended 2.75 percent, and neither has sold. Homeward moved 21 sessions into carts and produced one order at 0.68x. Fine Art creative is stopping the scroll. What it is not doing is closing, and that points at the offer and the page rather than at the image.</p>
+<div style="margin-top:10px;position:relative;z-index:1;"><span class="tag purple">5.61% and 5.23%</span><span class="tag orange">No close</span></div></div>
+<div class="concept-card" style="border-color:var(--accent-green);padding:17px 19px;"><div class="concept-number" style="color:rgba(0,217,165,0.15);">03</div><div class="concept-title" style="font-size:17px;">What I need from the creative side</div>
+<p style="font-size:12.5px;color:var(--text-secondary);position:relative;z-index:1;line-height:1.62;">Three to four Fine Art assets opens the Fine Art Sandbox, which is the only one of the three sandboxes never built. The Eden cells have shown that a landing page destination moves mid funnel on this account, so the first Fine Art test should be the same split, product page against collection page, on the same creative. That gives Fine Art a pipeline and answers the close question in one build rather than two.</p>
+<div style="margin-top:10px;position:relative;z-index:1;"><span class="tag green">3 to 4 assets</span><span class="tag brand">Opens the sandbox</span></div></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>12 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">13 / 14</span>
+<div class="slide-tag">Efficiency And Spend Discipline</div>
+<h2>Core Share Reached 46.1 Percent A Day Ahead Of The Commitment, Test Share Fell By Eighteen Points, And The Proposed Shape Below Puts Testing Back Inside The Guardrail</h2>
+<p class="note">Spend and efficiency comparison, 30 Jul to 5 Aug, prior column is the 23 to 29 Jul week. Daily spend is the weekly total divided by seven. The proposed daily budgets below are single steps of 25 percent or less in either direction, so no step disturbs learning, and every figure will be confirmed against live Ads Manager before anything is changed rather than taken from the export.</p>
+<div class="metrics-grid four-col">
+<div class="metric-card green"><div class="metric-label">Core Share Of Spend</div><div class="metric-value">46.1%</div><div class="metric-change up">From 33.2%, commitment was 45%</div></div>
+<div class="metric-card orange"><div class="metric-label">Test Share Of Spend</div><div class="metric-value">30.2%</div><div class="metric-change up">From 47.9%, guardrail 20 to 25%</div></div>
+<div class="metric-card green"><div class="metric-label">Daily Spend</div><div class="metric-value">$1,410</div><div class="metric-change up">From $1,569, under the ceiling</div></div>
+<div class="metric-card green"><div class="metric-label">Cost Per Purchase</div><div class="metric-value">$448.61</div><div class="metric-change up">Breakeven $697, target $248</div></div>
+</div>
+<div class="two-col" style="margin-top:8px;">
+<div class="insight-box green"><h4>What Improved, And By How Much</h4>
+<p>Core share rose from 33.2 percent to 46.1 percent, which clears the 45 percent line I committed to for 6 August a day early. Test share fell from 47.9 percent to 30.2 percent, the lowest it has been since the restructure. Daily spend came down $159 a day and stayed under the ceiling all week. The account is now spending 69.8 percent of its money on lanes with proven purchase history, against 52.2 percent last week, and that single change explains most of the move from 2.15x to 2.40x. It is also why revenue held flat while spend fell.</p></div>
+<div class="insight-box purple"><h4>One Guardrail I Want To Revise With You</h4>
+<p>Zombie Revival sits at 23.7 percent of spend against a 15 to 20 percent band we set when it was an experiment. It has now run 4.22x this week, 2.56x across July and it is the only lane above the 3.5x account target. The band was written for a lane we were unsure about. I would rather raise it to 25 to 30 percent for as long as the lane holds above 3.5x, and review it the moment it drops below, than hold a rule that forces money out of the best performing structure in the account. That is the one change to the framework I am asking for.</p></div>
+</div>
+<div style="margin-top:6px;">
+<h3 style="margin-bottom:8px;">Spend by role this week, and the proposed daily shape from tomorrow</h3>
+<table class="data-table compact">
+<thead><tr><th>Role</th><th>Spend this week</th><th>Share</th><th>Revenue</th><th>ROAS</th><th>Purchases</th><th>Proposed daily</th><th>Proposed share</th><th>Read</th></tr></thead>
+<tbody>
+<tr style="background:rgba(0,217,165,0.08);"><td class="highlight">Core scale, three campaigns</td><td>$4,549.32</td><td>46.1%</td><td>$11,340.19</td><td class="green">2.49x</td><td>11</td><td class="green">$729</td><td class="green">48.9%</td><td style="font-size:12px;">Eden CBO stepped, Fine Art held pending creative</td></tr>
+<tr style="background:rgba(0,217,165,0.08);"><td class="highlight">Zombie Revival, recycling</td><td>$2,339.78</td><td>23.7%</td><td>$9,885.11</td><td class="green">4.22x</td><td>9</td><td class="green">$440</td><td class="green">29.5%</td><td style="font-size:12px;">Christian cell stepped 25%, Fine Art cell held</td></tr>
+<tr style="background:rgba(245,158,11,0.07);"><td class="highlight">Live sandboxes, two campaigns</td><td>$2,980.30</td><td>30.2%</td><td>$2,415.17</td><td class="red">0.81x</td><td>2</td><td class="green">$323</td><td class="green">21.6%</td><td style="font-size:12px;">Legacy Eden cells closed, back inside guardrail</td></tr>
+<tr style="background:rgba(255,255,255,0.04);font-weight:600;"><td class="highlight">Account</td><td class="highlight">$9,869.40</td><td>100%</td><td class="highlight">$23,640.47</td><td class="green">2.40x</td><td class="highlight">22</td><td class="highlight">$1,492</td><td>100%</td><td style="font-size:12px;">Under the $1,500 ceiling with $8 of headroom</td></tr>
+</tbody>
+</table>
+</div>
+<div class="insight-box orange" style="margin-top:8px;"><h4>How The Proposed Shape Gets There</h4>
+<p>Closing the two legacy Eden cells recovers $130 a day. Trimming the Survivors cell 25 percent recovers a further $17. That $147 funds a 25 percent step on the Zombie Christian cell from $256 to $320, a 25 percent step on Eden Scale from $157 to $196, and 25 percent steps on the three cells that produced this week, Eden horizontal to landing page from $60 to $75, Eden vertical to product page from $50 to $62 and the Christian Collection page from $35 to $43. Fine Art Scale holds at $240 because Grid is at 4.46 frequency and more money there raises frequency rather than reach until a second asset lands. General Christian holds at $293, since killing Abide Versatile frees $722 of weekly delivery inside the same budget. That is nine changes, all single steps, all within the 25 percent rule, and it lands the account at $1,492 a day with testing back inside the guardrail for the first time since the restructure.</p></div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>13 / 14</span></div>
+</section>
+
+<section class="slide">
+<span class="slide-number">14 / 14</span>
+<div class="slide-tag">Tactical Plan And Path Into August</div>
+<h2>Cut One Ad At The Gate, Close Two Dead Cells, Restore Four Ads I Judged Too Early, Concentrate The Money Behind What Sold, Then Open Fine Art</h2>
+<div class="two-col" style="margin-top:0;">
+<div>
+<h3 style="color:var(--accent-green);margin-bottom:14px;">Active Now, Today And Tomorrow</h3>
+<ul class="check-list" style="font-size:13px;">
+<li class="red"><strong>Kill Abide Versatile at the $700 gate.</strong> $722.59 in General Christian Scale with no order. Ad level pause, the cell and its learning stay intact. First call the new rule produces</li>
+<li class="red"><strong>Close the two legacy Eden cells.</strong> Prospecting and Eden Refresh took $851.64 for no revenue and no meaningful checkout. Recovers $130 a day</li>
+<li><strong>Restore four ads I switched off too early.</strong> Emotional Angle TLIMS at $10.52, Video Story TLIMS at $35.40, the Eden Video copy at $27.12 and Timeless Pieces at $320.23. None is near the $700 gate, so none has earned a verdict</li>
+<li class="purple"><strong>Move Designed By Madelynn Ave into the live Zombie Christian cell.</strong> 6.50x on $302.69 this week from a cell that is switched off. Carried by post ID so the engagement history holds</li>
+<li><strong>Step the five lanes that produced.</strong> Zombie Christian to $320, Eden Scale to $196, Eden LP to $75, Eden vertical PDP to $62, Christian Collection page to $43. All single 25 percent steps</li>
+<li class="orange"><strong>Normalise the attribution window.</strong> Eight ad sets carry 1 day engaged view and five do not. All thirteen go to the account standard so lane comparisons stay clean</li>
+</ul>
+<h3 style="color:var(--accent-orange);margin-top:16px;margin-bottom:10px;">Watch List</h3>
+<ul class="check-list" style="font-size:13px;">
+<li class="orange"><strong>Grid frequency at 4.46 and rising.</strong> One ad is producing every dollar Fine Art Scale earns. No budget goes into that lane until a second asset is delivering</li>
+<li class="orange"><strong>Compare Faith Taste Proof at $810.93 and 0.99x.</strong> Runs to $1,400 under the gate, then needs 1.5x. I expect it to fail and will not argue for it</li>
+<li class="purple"><strong>Checkout to purchase at 21.6 percent.</strong> The window is open through 12 August. Checkouts are at a record 102, so the orders are in the pipe rather than lost</li>
+<li><strong>No Zombie rotation this week.</strong> The twenty one day slot falls on 21 August. The next pool will be screened from the twelve month export in the week before</li>
+</ul>
+</div>
+<div>
+<h3 style="color:var(--accent-green);margin-bottom:14px;">Path Into August, The Updated Picture</h3>
+<div class="card" style="margin-bottom:12px;border-left:3px solid var(--accent-green);">
+<h4 style="color:var(--accent-green);margin-bottom:8px;">Where The Account Sits Today</h4>
+<p style="font-size:12.5px;color:var(--text-secondary);line-height:1.65;">Blended 2.40x and rising for a second week, proven engine 3.08x, Zombie 4.22x, cost per purchase $448.61 against a $697 breakeven, basket at a record $1,074.57 and checkouts at a record 102. Two weeks ago this account printed 1.12x. It has recovered 1.28 points without a single new creative concept reaching a fair read, which means the recovery has come entirely from allocation and the creative upside is still in front of us.</p></div>
+<div class="card" style="margin-bottom:12px;border-left:3px solid var(--accent-purple);">
+<h4 style="color:var(--accent-purple);margin-bottom:8px;">The Throughput Decision, Put Plainly</h4>
+<p style="font-size:12.5px;color:var(--text-secondary);line-height:1.65;">Sixteen ads went live on 1 August and none reached the $700 gate in five days. On $435 a day of test budget we can take four or five ads a week to a real verdict. My recommendation is four to five new ads a week, landing inside cells that are already selling, with more angles inside fewer ads. That gives a weekly verdict instead of a queue, and it holds creative freshness through copy rotation and the twenty one day Zombie cycle rather than through raw ad count.</p></div>
+<div class="card" style="margin-bottom:12px;border-left:3px solid var(--accent-brand);">
+<h4 style="color:var(--accent-brand-light);margin-bottom:8px;">Two Things I Need From You</h4>
+<p style="font-size:12.5px;color:var(--text-secondary);line-height:1.65;">Fine Art creative, three to four assets, which opens the only sandbox never built and relieves the single point of failure in the account. And Triple Whale access to charles@heathmedia.co.uk, so we can pull Triple Whale against Meta at ad level across thirty days. If the gap is large the pruning gates should read from Triple Whale rather than from Meta, and we set the caps from real numbers instead of from a floor.</p></div>
+<div class="insight-box green" style="margin:0;"><h4>The Strategic Frame, Where We Are</h4>
+<p>Three weeks ago half the budget sat in lanes that returned nothing. Today 69.8 percent of it sits in lanes returning 3.08x, testing is one step from being back inside its guardrail and the account has produced two consecutive weeks of recovery on falling spend. The engine is proven and the allocation problem is close to solved. What decides the next quarter is not another restructure, it is creative supply in Fine Art and a testing cadence the budget can actually read. Both are fixable inside a fortnight, and Q4 planning starts from a stronger base than it did a month ago.</p></div>
+</div>
+</div>
+<div class="metrics-grid" style="margin-top:2px;margin-bottom:0;">
+<div class="metric-card green"><div class="metric-label">Blended ROAS, Floor</div><div class="metric-value">2.40x</div><div class="metric-change up">Second week of recovery</div></div>
+<div class="metric-card green"><div class="metric-label">Proven Engine</div><div class="metric-value">3.08x</div><div class="metric-change up">69.8% of spend, 20 of 22 orders</div></div>
+<div class="metric-card green"><div class="metric-label">Zombie Revival</div><div class="metric-value">4.22x</div><div class="metric-change up">Only lane above the 3.5x target</div></div>
+<div class="metric-card green"><div class="metric-label">Record Basket</div><div class="metric-value">$1,075</div><div class="metric-change up">Second week above $1,000</div></div>
+<div class="metric-card brand"><div class="metric-label">Proposed Daily From Tomorrow</div><div class="metric-value">$1,492</div><div class="metric-change up">Core 48.9%, test 21.6%, in guardrail</div></div>
+</div>
+<div class="slide-footer"><span>Madelynn Ave | Weekly Performance | July 30 to August 5, 2026</span><span>Prepared by Charles Piper, August 2026</span></div>
+</section>
+
+</body>
+</html>
